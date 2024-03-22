@@ -1,8 +1,17 @@
+import React from 'react';
+import { useNavigate } from "react-router-dom";
+
 import joinStyles from '../../styles/join/join.module.css';
 import styles from '../../styles/common/styles.css';
 import TitleBar from '../common/titleBar';
 
 function Join() {
+    // 로그인 화면으로 넘어가기
+    const navigate = useNavigate();
+    const TextClick = (path) => {
+      navigate(path);
+    };
+
     return(
         <div className={joinStyles['divContainer']}>
             <TitleBar />
@@ -34,14 +43,14 @@ function Join() {
                         <div> <input type='text' placeholder='번호' className={joinStyles['studentInputStyles']}/> </div>
                     </div>
                 </div>
+                <div className={joinStyles['buttonContainer']}>
+                    <button className={joinStyles['buttonStyles']}>회원가입</button> {/* SUIT Medium 글꼴 */}
+                </div>
+                <div className={joinStyles['miniTextStyles']}>
+                    <p>이미 계정이 있다면?</p>
+                    <p onClick={() => TextClick('/')}>로그인하기</p>
+                </div>
             </form>
-            <div className={joinStyles['buttonContainer']}>
-                <button className={joinStyles['buttonStyles']}>회원가입</button> {/* SUIT Medium 글꼴 */}
-            </div>
-            <div className={joinStyles['miniTextStyles']}>
-                <p>이미 계정이 있다면?</p>
-                <p>로그인하기</p>
-            </div>
         </div>
     )
 }
