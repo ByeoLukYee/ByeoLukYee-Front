@@ -1,0 +1,83 @@
+.divContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 10vh;
+}
+
+.DivStyle {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    font-size: 1.1rem;
+}
+
+/* 개인정보 입력란 */
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    align-items: center;
+    top: 120%;
+}
+
+.textStyle {
+    font-size: 0.7rem;
+    margin-bottom: 2%;
+    color: var(--gray-300);
+    /* SUIT Medium 폰트 추가 */
+}
+
+.inputStyles {
+    width: 80vw;
+    height: auto;
+    border-color: var(--gray-300);
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 0.8rem;
+    /* SUIT Medium 폰트 추가 */
+}
+
+.studentDivStyle {
+    display: flex;
+    position: relative;
+    column-gap: 20px;
+}
+
+.studentInputStyles {
+    width: 17vw;
+    height: auto;
+    border-color: var(--gray-300);
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 0.8rem;
+}
+
+/* 버튼 스타일 */
+.buttonContainer {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    top: 310%;
+}
+
+.buttonStyles {
+    width: 90vw;
+    height: 6vh;
+    background-color: var(--bg);
+    border: 0;
+    border-radius: 6px;
+}
+
+.miniTextStyles {
+    display: flex;
+    color: var(--gray-700);
+    column-gap: 6px;
+    font-size: 0.9rem;
+    justify-content: center;
+    align-items: flex-end;
+    top: 320%;
+}
