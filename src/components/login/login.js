@@ -20,14 +20,14 @@ function Login() {
             <form className={loginStyles['formContainer']}>
                 <div>
                     <p className={loginStyles['textStyle']}>이메일</p> {/* SUIT Medium 글꼴(input도) */}
-                    <input type="text" placeholder='학교 이메일을 입력하시오.' className={loginStyles['inputStyles']}/>
+                    <input id='txtEmail' type="text" placeholder='학교 이메일을 입력하시오.' className={loginStyles['inputStyles']}/>
                 </div>
                 <div style={{marginBottom: '15%'}}>
                     <p className={loginStyles['textStyle']}>비밀번호</p> {/* SUIT Medium 글꼴(input도) */}
-                    <input type='text' placeholder='비밀번호를 입력하시오.' className={loginStyles['inputStyles']}/>
+                    <input id='txtPw' type='text' placeholder='비밀번호를 입력하시오.' className={loginStyles['inputStyles']}/>
                 </div>
                 <div className={loginStyles['buttonContainer']}>
-                    <button className={loginStyles['buttonStyles']}>로그인</button> {/* SUIT Medium 글꼴 */}
+                    <button id='btnLogin' className={loginStyles['buttonStyles']}>로그인</button> {/* SUIT Medium 글꼴 */}
                     <button className={loginStyles['googleButton']}> <img src={process.env.PUBLIC_URL + '/images/GoogleImg.png'} /> 구글로 로그인</button>
                 </div>
                 <div className={loginStyles['miniTextStyles']}>
