@@ -1,0 +1,12 @@
+/* 피그마 폰트 가지고 오기 */
+
+:root {
+    --bg: #FFD53A;
+    --gray-300: #D2D2D2;
+    --gray-700: #727272;
+}
+
+* {
+    position: relative;
+    margin: 0;
+}
