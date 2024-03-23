@@ -136,10 +136,6 @@
     overflow-y: auto;
 }
 
-.newBoxContainer:last-child {
-    margin-bottom: 20%;
-}
-
 .newScrollContainer::-webkit-scrollbar {
     width: 0;
 }
