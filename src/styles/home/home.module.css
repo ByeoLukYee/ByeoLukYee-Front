@@ -14,6 +14,7 @@
 
 /* 사용자님이 최근 본 글 */
 .lookContainer {
+    width: 97%;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -26,23 +27,25 @@
     font-size: 1.2rem;
 }
 
+.topContainer {
+    display: flex;
+    margin-right: 3%;
+    flex: 0 0 auto;
+}
+
 .boxContainer {
-    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    width: 48vw;
     height: 25vh;
-    padding: 7%;
+    padding: 5%;
     border-radius: 10px;
     border-color: var(--gray-100);
     border-style: solid;
     border-width: 3px;
+    background-color: white;
     /* background-color: var(--gray-100); */ /* 판매완료 되었을 시 */
 }
-
-.boxContainer h2 {
-    top: 3%;
-    /* color: var(--gray-700); */ /* 판매완료 */
-}
-
- /* .boxContainer h4 => color: var(--gray-700); */ /* 판매완료 */
 
 .textContainer {
     display: flex;
@@ -56,9 +59,11 @@
 }
 
 .moneyP {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     top: 5%;
+    /* color: var(--gray-700); */ /* 판매완료 */
 }
+/* .boxContainer h4 => color: var(--gray-700); */ /* 판매완료 */
 
 .lookImgStyle {
     display: flex;
@@ -82,7 +87,8 @@
     justify-content: center;
     align-items: center;
     column-gap: 5px;
-    right: 6%;
+    right: 5%;
+    bottom: 2%;
 }
 
 /* 본 횟수, 찜 횟수 Div */
@@ -122,6 +128,8 @@
     border-color: var(--gray-100);
     border-style: solid;
     border-width: 3px;
+    margin-bottom: 5%;
+    background-color: white;
 }
 
 .newLookImgStyle {
@@ -182,4 +190,32 @@
 
 .newHeartVector {
     font-size: 1rem;
+}
+
+/* 스크롤 뷰 */
+.scrollContainer {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.scrollContainer::-webkit-scrollbar {
+    width: 0;
+}
+
+.newScrollContainer {
+    display: flex;
+    flex-direction: column;
+    width: 105%;
+    height: 30vh;
+    overflow-y: auto;
+}
+
+.newBoxContainer:last-child {
+    margin-bottom: 20%;
+}
+
+.newScrollContainer::-webkit-scrollbar {
+    width: 0;
 }
