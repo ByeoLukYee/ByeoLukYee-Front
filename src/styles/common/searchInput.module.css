@@ -17,7 +17,11 @@
     border-width: 3px;
 }
 
-searchInput::placeholder {
+.searchInput:focus {
+    outline: none;
+}
+
+.searchInput::placeholder {
     color: var(--gray-300);
 }
 
