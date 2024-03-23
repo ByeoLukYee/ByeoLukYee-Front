@@ -2,6 +2,7 @@ import styles from '../../styles/common/styles.css';
 import homeStyle from '../../styles/home/home.module.css';
 import TitleBar from '../common/titleBar';
 import SearchInput from '../common/searchInput';
+import MenuBar from '../common/menuBar';
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
@@ -58,6 +59,8 @@ function Home() {
                         </div>
                     </div>
                 </div>
+                {/* 메뉴바 component */}
+                <MenuBar />
             </div>
         </div>
     )
