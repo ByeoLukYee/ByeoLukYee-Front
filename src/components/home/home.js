@@ -3,6 +3,9 @@ import homeStyle from '../../styles/home/home.module.css';
 import TitleBar from '../common/titleBar';
 import SearchInput from '../common/searchInput';
 
+import { GoHeart } from "react-icons/go";
+import { VscEye } from "react-icons/vsc";
+
 function Home() {
     return(
         <div className={homeStyle['divContainer']}>
@@ -17,11 +20,19 @@ function Home() {
                     <div className={homeStyle['lookImgStyle']}> <img src={process.env.PUBLIC_URL+'/images/exampleImg.png'}/> </div>
                     <div className={homeStyle['textContainer']}>
                         <p>#판매중</p>
-                        <h4>제목입니다.</h4>
+                        <p>제목입니다.</p>
                     </div>
-                    <h2>40,000원</h2>
-                    <div>
+                    <p className={homeStyle['moneyP']}>40,000원</p>
+                    <div className={homeStyle['vectorDiv']}>
                         {/* 몇명 봤는지, 누가 찜했는지 */}
+                        <div className={homeStyle['eyesVectorDiv']}>
+                            <VscEye className={homeStyle['eyesVector']}/>
+                            <p>0</p>
+                        </div>
+                        <div className={homeStyle['heartVectorDiv']}>
+                            <GoHeart className={homeStyle['heartVector']}/>
+                            <p>0</p>
+                        </div>
                     </div>
                 </div>
                 <div className={homeStyle['newContainer']}>
@@ -30,11 +41,20 @@ function Home() {
                         <div className={homeStyle['newLookImgStyle']}> <img src={process.env.PUBLIC_URL+'/images/exampleImg.png'}/> </div>
                         <div className={homeStyle['newTextContainer']}>
                             <p>#판매중</p>
-                            <h4>제목입니다.</h4>
-                            <h3 style={{top: "10%"}}>40,000원</h3>
-                        </div>
-                        <div>
-                            {/* 몇명 봤는지, 누가 찜했는지 */}
+                            <p>제목입니다.</p>
+                            <p style={{top: "5%"}}>40,000원</p>
+
+                            <div className={homeStyle['newVectorDiv']}>
+                                {/* 몇명 봤는지, 누가 찜했는지 */}
+                                <div className={homeStyle['newEyesVectorDiv']}>
+                                    <VscEye className={homeStyle['newEyesVector']}/>
+                                    <p>0</p>
+                                </div>
+                                <div className={homeStyle['newHeartVectorDiv']}>
+                                    <GoHeart className={homeStyle['newHeartVector']}/>
+                                    <p>0</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

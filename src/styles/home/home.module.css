@@ -50,9 +50,14 @@
     top: 2%;
 }
 
-.textContainer p {
+.textContainer > p:nth-child(1) {
     color: var(--green);
     /* color: var(--gray-300); */ /* 판매완료 */
+}
+
+.moneyP {
+    font-size: 1.2rem;
+    top: 5%;
 }
 
 .lookImgStyle {
@@ -69,6 +74,31 @@
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+}
+
+.vectorDiv {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    right: 6%;
+}
+
+/* 본 횟수, 찜 횟수 Div */
+.eyesVectorDiv, .heartVectorDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-300);
+}
+
+.eyesVector {
+    font-size: 1.3rem;
+}
+
+.heartVector {
+    font-size: 1rem;
 }
 
 /* 따끈따끈 최신 글 */
@@ -117,7 +147,39 @@
     left: 5%;
 }
 
-.newTextContainer p {
+.newTextContainer > p:nth-child(1) {
     color: var(--bg);
     /* color: var(--gray-500); */ /* 판매중 */
+}
+
+.newTextContainer > p:nth-child(3) {
+    font-size: 1.2rem;
+}
+
+
+/* 본 횟수, 찜 횟수 전체 Div */
+.newVectorDiv {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 140%;
+    top: 80%;
+    column-gap: 10px;
+}
+
+/* 본 횟수, 찜 횟수 Div */
+.newEyesVectorDiv, .newHeartVectorDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-300);
+}
+
+.newEyesVector {
+    font-size: 1.3rem;
+}
+
+.newHeartVector {
+    font-size: 1rem;
 }
