@@ -1,8 +1,9 @@
-import styles from '../../styles/common/titleBar.module.css';
+import styles from '../../styles/common/styles.css';
+import titleBarStyles from '../../styles/common/titleBar.module.css';
 
 function titleBar() {
     return(
-        <div className={styles['top']}></div>
+        <div className={titleBarStyles['top']}></div>
     )
 }
 
