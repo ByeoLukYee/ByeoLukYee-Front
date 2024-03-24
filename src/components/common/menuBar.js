@@ -20,8 +20,9 @@ function MenuBar() {
 
     /* 아이콘 클릭 시 화면 이동 */
     const navigate = useNavigate();
-    const IconClick = (path) => {
+    const IconClick = (path, iconName) => {
       navigate(path);
+      setActiveIcon(iconName);
     };
 
     return(

@@ -2,7 +2,7 @@
     display: flex;
     align-items: flex-end;
     position: fixed;
-    bottom: 0;
+    bottom: 1%;
     width: auto;
     background-color: #fff;
     padding: 10px;
@@ -40,5 +40,13 @@
 
 /* 아이콘 클릭 시 색상 변경 */
 .activeIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-300);
     color: var(--bg);
+}
+.activeIcon > p {
+    font-size: 0.8rem;
 }
