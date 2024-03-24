@@ -1,3 +1,4 @@
+import styles from '../../styles/common/styles.css';
 import searchInputStyle from '../../styles/common/searchInput.module.css';
 
 function searchInput() {
