@@ -14,6 +14,7 @@
 
 /* 사용자님이 최근 본 글 */
 .lookContainer {
+    width: 97%;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -26,23 +27,25 @@
     font-size: 1.2rem;
 }
 
+.topContainer {
+    display: flex;
+    margin-right: 3%;
+    flex: 0 0 auto;
+}
+
 .boxContainer {
-    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    width: 48vw;
     height: 25vh;
-    padding: 7%;
+    padding: 5%;
     border-radius: 10px;
     border-color: var(--gray-100);
     border-style: solid;
     border-width: 3px;
+    background-color: white;
     /* background-color: var(--gray-100); */ /* 판매완료 되었을 시 */
 }
-
-.boxContainer h2 {
-    top: 3%;
-    /* color: var(--gray-700); */ /* 판매완료 */
-}
-
- /* .boxContainer h4 => color: var(--gray-700); */ /* 판매완료 */
 
 .textContainer {
     display: flex;
@@ -50,10 +53,17 @@
     top: 2%;
 }
 
-.textContainer p {
+.textContainer > p:nth-child(1) {
     color: var(--green);
     /* color: var(--gray-300); */ /* 판매완료 */
 }
+
+.moneyP {
+    font-size: 1.4rem;
+    top: 5%;
+    /* color: var(--gray-700); */ /* 판매완료 */
+}
+/* .boxContainer h4 => color: var(--gray-700); */ /* 판매완료 */
 
 .lookImgStyle {
     display: flex;
@@ -71,6 +81,32 @@
     border-radius: 10px;
 }
 
+.vectorDiv {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    right: 5%;
+    bottom: 2%;
+}
+
+/* 본 횟수, 찜 횟수 Div */
+.eyesVectorDiv, .heartVectorDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-300);
+}
+
+.eyesVector {
+    font-size: 1.3rem;
+}
+
+.heartVector {
+    font-size: 1rem;
+}
+
 /* 따끈따끈 최신 글 */
 .newContainer {
     display: flex;
@@ -80,44 +116,26 @@
     row-gap: 10px;
 }
 
-.newBoxContainer {
+/* 스크롤 뷰 */
+.scrollContainer {
     display: flex;
-    flex-direction: row;
-    width: 87vw;
-    height: 10vh;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 4%;
-    border-radius: 10px;
-    border-color: var(--gray-100);
-    border-style: solid;
-    border-width: 3px;
-}
-
-.newLookImgStyle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 27vw;
-    height: 100%;
-    overflow: hidden;
-}
-
-.newLookImgStyle img {
+    overflow-x: auto;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
 }
 
-.newTextContainer {
+.scrollContainer::-webkit-scrollbar {
+    width: 0;
+}
+
+.newScrollContainer {
     display: flex;
-    row-gap: 3px;
     flex-direction: column;
-    left: 5%;
+    width: 105%;
+    height: 30vh;
+    overflow-y: auto;
 }
 
-.newTextContainer p {
-    color: var(--bg);
-    /* color: var(--gray-500); */ /* 판매중 */
+.newScrollContainer::-webkit-scrollbar {
+    width: 0;
 }
