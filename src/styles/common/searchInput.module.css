@@ -28,8 +28,10 @@
 .searchImg {
     position: absolute;
     width: auto;
+    display: flex;
     height: auto;
-    left: 80%;
+    right: 5%;
+    align-items: center;
 }
 
 .imageStyle {

@@ -1,0 +1,82 @@
+.BoxContainer {
+    display: flex;
+    width: 87vw;
+    height: 13vh;
+    padding: 4% 3%;
+    border-radius: 10px;
+    border-color: var(--gray-100);
+    border-style: solid;
+    border-width: 3px;
+    margin-bottom: 5%;
+    background-color: white;
+    /* gray-100 : 낙찰 */
+    column-gap: 43px;
+}
+.BoxContainer:last-child {
+    margin-bottom: 10%;
+}
+
+.firstDiv {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.contextDiv {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.contextDiv > p:nth-child(1) {
+    font-size: 0.9rem;
+    /* gray-700 : 낙찰 */
+}
+.contextDiv > p:nth-child(2) {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+}
+
+.moneyDiv {
+    display: flex;
+    align-items: baseline;
+    column-gap: 8px;
+}
+.moneyDiv > p:nth-child(1) {
+    font-size: 1.4rem;
+    /* gray-700 : 낙찰 */
+}
+.moneyDiv > p:nth-child(2) {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    /* text: 낙찰가 */
+}
+
+.secondDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.secondDiv > p {
+    font-size: 0.8rem;
+    color: var(--bg);
+    /* gray-500 : 낙찰, 예약중 */
+}
+.iconDiv {
+    display: flex;
+    column-gap: 10px;
+}
+.iconDiv > .eyesVectorDiv,
+.iconDiv > .heartVectorDiv {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: var(--gray-300);
+    column-gap: 1px;
+}
+.eyesVectorDiv > .eyesVector {
+    font-size: 1.3rem;
+}
+.heartVectorDiv > .heartVector {
+    font-size: 1.1rem;
+}

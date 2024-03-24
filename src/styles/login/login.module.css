@@ -26,6 +26,10 @@ p, h3 {
 }
 
 /* 이메일, 비밀번호 입력란 */
+input:focus {
+    outline: none;
+}
+
 .formContainer {
     display: flex;
     flex-direction: column;

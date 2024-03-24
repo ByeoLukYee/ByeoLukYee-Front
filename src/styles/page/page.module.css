@@ -1,44 +1,42 @@
-.topContainer {
-    display: flex;
-    align-items: flex-end;
+nav {
+    overflow: hidden;
     position: fixed;
-    bottom: 0;
-    width: auto;
-    background-color: #fff;
-    padding: 10px;
+    bottom: 1%;
+    left: 0;
+    right: 0;
 }
 
 .menuBarIconDiv {
     display: flex;
-    align-items: baseline;
-    column-gap: 40px;
+    justify-content: space-around;
 }
-
 .iconDiv {
+    float: left;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     color: var(--gray-300);
 }
-
 .iconDiv > p {
     font-size: 0.8rem;
 }
-
 .iconStyles {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
-
 .bigIconStyles {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
-
 .smallIconStyles {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
 }
 
 /* 아이콘 클릭 시 색상 변경 */
 .activeIcon {
     color: var(--bg);
+}
+.activeIcon > p {
+    font-size: 0.8rem;
 }

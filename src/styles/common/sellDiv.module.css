@@ -53,25 +53,24 @@
 
 /* 본 횟수, 찜 횟수 전체 Div */
 .newVectorDiv {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 140%;
-    top: 80%;
+    left: 130%;
     column-gap: 10px;
+    bottom: 15%;
 }
 
 /* 본 횟수, 찜 횟수 Div */
 .newEyesVectorDiv, .newHeartVectorDiv {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     color: var(--gray-300);
 }
 
 .newEyesVector {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .newHeartVector {

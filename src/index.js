@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Login from './pages/login';
 import Join from './pages/join';
-import Home from './pages/home';
+import Page from './pages/page';
 
 ReactDOM.render(
     <Router>
         <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/join" element={<Join />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/page" element={<Page />} />
         </Routes>
     </Router>,
     document.getElementById('root')
