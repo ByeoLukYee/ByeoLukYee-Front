@@ -1,0 +1,42 @@
+nav {
+    overflow: hidden;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    right: 0;
+}
+
+.menuBarIconDiv {
+    display: flex;
+    justify-content: space-around;
+}
+.iconDiv {
+    float: left;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: var(--gray-300);
+}
+.iconDiv > p {
+    font-size: 0.8rem;
+}
+.iconStyles {
+    font-size: 1.5rem;
+}
+.bigIconStyles {
+    font-size: 1.3rem;
+}
+.smallIconStyles {
+    font-size: 1.7rem;
+}
+
+/* 아이콘 클릭 시 색상 변경 */
+.activeIcon {
+    color: var(--bg);
+}
+.activeIcon > p {
+    font-size: 0.8rem;
+}
