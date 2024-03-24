@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100vw;
     height: 10vh;
+    align-items: center;
 }
 
 .DivStyle {
@@ -14,13 +15,16 @@
 
 /* 사용자님이 최근 본 글 */
 .lookContainer {
-    width: 97%;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 220%;
     left: 3%;
     row-gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .lookUserP {
@@ -71,7 +75,6 @@
     align-items: center;
     width: 100%;
     height: 14vh;
-    overflow: hidden;
 }
 
 .lookImgStyle img {

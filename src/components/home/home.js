@@ -48,8 +48,6 @@ function Home() {
                         <SellDiv />
                     </div>
                 </div>
-                {/* 메뉴바 component */}
-                <MenuBar />
             </div>
         </div>
     )
