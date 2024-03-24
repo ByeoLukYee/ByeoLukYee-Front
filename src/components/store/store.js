@@ -4,7 +4,6 @@ import storeStyle from '../../styles/store/store.module.css';
 
 import TitleBar from '../common/titleBar';
 import SearchInput from '../common/searchInput';
-import MenuBar from '../common/menuBar';
 import SellDiv from '../common/sellDiv';
 import BuyDiv from '../common/buyDiv';
 

@@ -2,7 +2,6 @@ import styles from '../../styles/common/styles.css';
 import homeStyle from '../../styles/home/home.module.css';
 import TitleBar from '../common/titleBar';
 import SearchInput from '../common/searchInput';
-import MenuBar from '../common/menuBar';
 import SellDiv from '../common/sellDiv';
 
 import { GoHeart } from "react-icons/go";
