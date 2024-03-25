@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import joinStyles from '../../styles/join/join.module.css';
 import styles from '../../styles/common/styles.css';
 import TitleBar from '../common/titleBar';
-import { handleJoinClick } from '../../sevices/join/join';
 
 function Join() {
     // 로그인 화면으로 넘어가기
@@ -46,7 +45,7 @@ function Join() {
                 </div>
                 <div className={joinStyles['buttontextContainer']}>
                     <div className={joinStyles['buttonContainer']}>
-                        <button id='btnJoin' className={joinStyles['buttonStyles']} onClick={handleJoinClick}>회원가입</button> {/* SUIT Medium 글꼴 */}
+                        <button id='btnJoin' className={joinStyles['buttonStyles']}>회원가입</button> {/* SUIT Medium 글꼴 */}
                     </div>
                     <div className={joinStyles['miniTextStyles']}>
                         <p>이미 계정이 있다면?</p>
