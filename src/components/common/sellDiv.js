@@ -9,7 +9,7 @@ import { VscEye } from "react-icons/vsc";
 function SellDiv() {
     return(
         <>
-            <Link to="/sellDetail" style={{ textDecoration: "none" }}>
+            <Link to="/sellDetail" style={{ textDecoration: "none", color: 'black' }}>
                 <div className={sellStyle['newBoxContainer']}>
                     <div className={sellStyle['newLookImgStyle']}>
                         <img src={process.env.PUBLIC_URL+'/images/exampleImg.png'} alt="example"/>

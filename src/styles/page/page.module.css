@@ -9,6 +9,7 @@ nav {
 .menuBarIconDiv {
     display: flex;
     justify-content: space-around;
+    align-items: flex-end;
 }
 .iconDiv {
     float: left;
