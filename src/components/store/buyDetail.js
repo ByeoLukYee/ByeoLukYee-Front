@@ -4,7 +4,7 @@ import buyStyle from '../../styles/store/buyDetail.module.css';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function buyDetail() {
+function BuyDetail() {
     return(
         <>
             <div className={buyStyle['top']}>
@@ -39,4 +39,4 @@ function buyDetail() {
     )
 }
 
-export default buyDetail;
+export default BuyDetail;

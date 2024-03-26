@@ -4,7 +4,7 @@ import buyStyle from '../../styles/common/buyDiv.module.css';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function buyDiv() {
+function BuyDiv() {
     return(
         <>
             <div className={buyStyle['BoxContainer']}>
@@ -36,4 +36,4 @@ function buyDiv() {
     )
 }
 
-export default buyDiv;
+export default BuyDiv;

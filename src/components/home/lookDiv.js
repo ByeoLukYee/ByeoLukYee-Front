@@ -4,7 +4,7 @@ import lookStyle from '../../styles/home/home.module.css';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function lookDiv() {
+function LookDiv() {
     return(
         <div className={lookStyle['topContainer']}>
             <div className={lookStyle['boxContainer']}>
@@ -30,4 +30,4 @@ function lookDiv() {
     )
 }
 
-export default lookDiv;
+export default LookDiv;

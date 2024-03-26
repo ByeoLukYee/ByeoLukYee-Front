@@ -6,7 +6,7 @@ import sellStyle from '../../styles/common/sellDiv.module.css'
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function sellDiv() {
+function SellDiv() {
     return(
         <>
             <Link to="/sellDetail" style={{ textDecoration: "none" }}>
@@ -36,4 +36,4 @@ function sellDiv() {
     )
 }
 
-export default sellDiv;
+export default SellDiv;
