@@ -1,10 +1,29 @@
+import React, {useEffect, useState} from 'react';
 import styles from '../../styles/common/styles.css';
 import sellStyle from '../../styles/store/sellDetail.module.css';
-
+import axios from 'axios';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function sellDetail() {
+function SellDetail() {
+
+    const [sellingPost, setSellingPost] = useState(null);
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`/selling-posts/1`);
+            console.log(response.data);
+            setSellingPost(response.data);
+        } catch(error){
+                console.log(error);
+        }
+    }
+
+
     return(
         <>
             <div className={sellStyle['imageDiv']}> <img src={process.env.PUBLIC_URL+'/images/exampleImg.png'} alt='example' /> </div>
@@ -12,7 +31,7 @@ function sellDetail() {
                 {/* titleDiv */}
                 <div className={sellStyle['titleDiv']}>
                     <div className={sellStyle['information']}>
-                        <p>#판매중</p>
+                        <p>#{sellingPost ? sellingPost.krStatus : "로딩중"}</p>
                         <div className={sellStyle['p']}>
                             <p>2024</p><p>/</p><p>03</p><p>/</p><p>24</p>
                         </div>
@@ -38,16 +57,16 @@ function sellDetail() {
                     <div className={sellStyle['topDiv']}>
                         <div className={sellStyle['contextDiv']}>
                             <p>가격</p>
-                            <p>거래 장소</p>
+                            <p>희망 거래 장소</p>
                         </div>
                         <div className={sellStyle['contextDiv']}>
-                            <p>100,000원</p>
-                            <p>신림역 또는 학교</p>
+                            <p>{sellingPost ? sellingPost.price+"원" : "로딩중"}</p>
+                            <p>{sellingPost ? sellingPost.location : "로딩중"}</p>
                         </div>
                     </div>
 
                     <div className={sellStyle['contextDetail']}>
-                        <p>해피해킹키보드 입니다 좋습니다. 맥 유저이고 1년동안 썼는데 다른 키보드 쓰려고 팝니다. 소중하게 다뤘습니다 ㄹㅇ 많이 구매해주세요 여러분~ 담배 안 펴서 담배 냄새 안 아요 물 흘린적 없고 정상작동 합니다. 해피해킹키보드 입니다 좋습니다. 맥 유저이고 1년동안 썼는데 다른 키보드 쓰려고 팝니다. 소중하게 다뤘습니다 ㄹㅇ 많이 구매해주세요 여러분~ 담배 안 펴서 담배 냄새 안 아요 물 흘린적 없고 정상작동 합니다.</p>
+                        <p>{sellingPost ? sellingPost.description : "로딩중"}</p>
                     </div>
 
                     <div className={sellStyle['buttonDiv']}>
@@ -60,4 +79,4 @@ function sellDetail() {
     )
 }
 
-export default sellDetail;
+export default SellDetail;
