@@ -6,10 +6,10 @@ import sellStyle from '../../styles/common/sellDiv.module.css'
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function sellDiv() {
+function SellDiv() {
     return(
         <>
-            <Link to="/sellDetail" style={{ textDecoration: "none" }}>
+            <Link to="/sellDetail" style={{ textDecoration: "none", color: 'black' }}>
                 <div className={sellStyle['newBoxContainer']}>
                     <div className={sellStyle['newLookImgStyle']}>
                         <img src={process.env.PUBLIC_URL+'/images/exampleImg.png'} alt="example"/>
@@ -36,4 +36,4 @@ function sellDiv() {
     )
 }
 
-export default sellDiv;
+export default SellDiv;

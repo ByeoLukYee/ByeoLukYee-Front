@@ -1,11 +1,11 @@
 import styles from '../../styles/common/styles.css';
 import homeStyle from '../../styles/home/home.module.css';
+
 import TitleBar from '../common/titleBar';
 import SearchInput from '../common/searchInput';
 import SellDiv from '../common/sellDiv';
-
-import { GoHeart } from "react-icons/go";
-import { VscEye } from "react-icons/vsc";
+import LookDiv from '../home/lookDiv';
+import TextComponent from '../home/text';
 
 function Home() {
     return(
@@ -16,29 +16,9 @@ function Home() {
             </div>
             <SearchInput />
             <div className={homeStyle['lookContainer']}>
-                <p className={homeStyle['lookUserP']}>사용자님이 최근 본 글</p>
+                <TextComponent />
                 <div className={homeStyle['scrollContainer']}>
-                    <div className={homeStyle['topContainer']}>
-                        <div className={homeStyle['boxContainer']}>
-                            <div className={homeStyle['lookImgStyle']}> <img src={process.env.PUBLIC_URL+'/images/exampleImg.png'}/> </div>
-                            <div className={homeStyle['textContainer']}>
-                                <p>#판매중</p>
-                                <p>제목입니다.</p>
-                            </div>
-                            <p className={homeStyle['moneyP']}>40,000원</p>
-                            <div className={homeStyle['vectorDiv']}>
-                                {/* 몇명 봤는지, 누가 찜했는지 */}
-                                <div className={homeStyle['eyesVectorDiv']}>
-                                    <VscEye className={homeStyle['eyesVector']}/>
-                                    <p>0</p>
-                                </div>
-                                <div className={homeStyle['heartVectorDiv']}>
-                                    <GoHeart className={homeStyle['heartVector']}/>
-                                    <p>0</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <LookDiv />
                 </div>
 
                 <div className={homeStyle['newContainer']}>

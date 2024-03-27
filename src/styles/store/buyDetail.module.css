@@ -1,0 +1,82 @@
+.topContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    row-gap: 13px;
+}
+.topDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+}
+.hr {
+    width: 90vw;
+    height: 1px;
+    border: 0;
+    background: var(--gray-300);
+    margin-bottom: 3%;
+}
+.hashTag {
+    display: flex;
+    color: var(--bg);
+    font-family: 'S-CoreDream-3Light', sans-serif;
+}
+.title {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'S-CoreDream-3Light', sans-serif;
+}
+
+.day {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+.day > .p {
+    display: flex;
+    color: var(--gray-300);
+    font-family: 'S-CoreDream-3Light', sans-serif;
+}
+
+.vectorDiv {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+}
+.vectorDiv > .eyesVectorDiv,
+.vectorDiv > .heartVectorDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2px;
+    color: var(--gray-300);
+    font-family: 'S-CoreDream-3Light', sans-serif;
+}
+
+.contextContainer {
+    display: flex;
+    width: 90vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    font-family: 'SUIT-Regular', sans-serif;
+}
+
+.informationDiv {
+    display: flex;
+    column-gap: 15px;
+}
+.hopeDiv {
+    display: flex;
+    flex-direction: column;
+}
+.answerDiv {
+    display: flex;
+    flex-direction: column;
+}
