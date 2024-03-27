@@ -1,0 +1,54 @@
+hr {
+    width: 20vw;
+    color: black;
+}
+
+.divContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+}
+.DivStyle {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    font-size: 1.1rem;
+}
+
+.profileDiv {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 130%;
+    row-gap: 15px;
+}
+.imgDiv {
+    display: flex;
+    width: 35vw;
+    height: 16vh;
+    justify-content: center;
+    overflow: hidden;
+}
+.imgDiv > img {
+    border-radius: 70px;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.enameDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nameDiv > p {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.emailDiv > p {
+    color: var(--gray-700);
+}
