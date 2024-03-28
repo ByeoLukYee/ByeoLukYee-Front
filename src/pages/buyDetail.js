@@ -1,9 +1,10 @@
-import BuyDetail from '../components/store/buyDetail';
+import BuyDetailYou from '../components/store/buyDetailYou';
+import BuyDetailMe from '../components/store/buyDetailMe';
 
 function BuyDetailPage() {
     return(
         <>
-            <BuyDetail />
+            <BuyDetailYou />
         </>
     )
 }
