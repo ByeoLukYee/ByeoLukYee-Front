@@ -7,6 +7,7 @@ import Page from './pages/page';
 
 import SellDetail from './pages/sellDetail';
 import BuyDetail from './pages/buyDetail';
+import AuctionParticipation from './pages/auctionParticipation';
 
 function App() {
     return(
@@ -18,6 +19,7 @@ function App() {
                 
                 <Route path="/sellDetail" element={<SellDetail />} />
                 <Route path="/buyDetail" element={<BuyDetail />} />
+                <Route path="/auctionParticipation" element={<AuctionParticipation />} />
             </Routes>
         </Router>
     )
