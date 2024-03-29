@@ -55,9 +55,8 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 15px;
 }
-
 .textDiv:first-child {
     margin-top: 3%;
 }
@@ -71,6 +70,7 @@
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
     color: var(--gray-300);
+    font-size: 0.9rem;
 }
 .textDiv > input {
     padding: 4%;
@@ -94,18 +94,23 @@
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
     color: var(--gray-300);
+    font-size: 0.9rem;
 }
-.contextDiv > input {
+.contextDiv > textarea {
     height: auto;
     min-height: 15vh;
     padding: 4%;
+    border: 2px;
     border-style: solid;
     border-radius: 5px;
     border-color: var(--gray-300);
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
 }
-.contextDiv > input::placeholder {
+.contextDiv > textarea:focus {
+    outline: none;
+}
+.contextDiv > textarea::placeholder {
     color: var(--gray-500);
 }
 

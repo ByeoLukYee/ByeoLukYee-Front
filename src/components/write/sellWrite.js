@@ -73,7 +73,7 @@ function SellWrite() {
                 {/* 설명 */}
                 <div className={sellWriteStyle['contextDiv']}>
                     <p>설명</p>
-                    <input placeholder='설명을 입력하시오.'/>
+                    <textarea placeholder='설명을 입력하시오.'/>
                 </div>
             </div>
 
