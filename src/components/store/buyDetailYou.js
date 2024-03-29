@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
 import styles from '../../styles/common/styles.css';
 import buyStyle from '../../styles/store/buyDetailYou.module.css';
 
 import AuctionDiv from './auctionDiv';
+import AuctionParticipation from './auctionParticipation';
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
@@ -57,7 +59,7 @@ function BuyDetailYou() {
                     </div>
                     
                     <div className={buyStyle['buttonContainer']}>
-                        <button className={buyStyle['buttonStyle']}>경매 참여하기</button>
+                        <Link to="/auctionParticipation"> <button className={buyStyle['buttonStyle']}>경매 참여하기</button> </Link>
                     </div>
                 </div>
 

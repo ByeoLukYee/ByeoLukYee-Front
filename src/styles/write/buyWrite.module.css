@@ -1,0 +1,77 @@
+.inputContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.textDiv {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.textDiv > p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+    color: var(--gray-300);
+    font-size: 0.9rem;
+}
+.textDiv > input {
+    padding: 4%;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: var(--gray-300);
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+}
+.textDiv > input::placeholder {
+    color: var(--gray-500);
+}
+
+.contextDiv {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.contextDiv > p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+    color: var(--gray-300);
+    font-size: 0.9rem;
+}
+.contextDiv > textarea {
+    height: auto;
+    min-height: 15vh;
+    padding: 4%;
+    border: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: var(--gray-300);
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+}
+.contextDiv > textarea:focus {
+    outline: none;
+}
+.contextDiv > textarea::placeholder {
+    color: var(--gray-500);
+}
+
+.buttonContainer {
+    position: relative;
+    width: 90vw;
+    height: auto;
+    display: flex;
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+.buttonStyle {
+    width: 100%;
+    height: 7vh;
+    background-color: var(--bg);
+    border: 0;
+    border-radius: 6px;
+    font-size: 1rem;
+}
