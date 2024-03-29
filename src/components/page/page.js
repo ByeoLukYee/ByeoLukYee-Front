@@ -8,6 +8,7 @@ import barStyle from '../../styles/page/page.module.css'
 import Home from '../../components/home/home';
 import Store from '../../components/store/store';
 import Profile from '../../components/profile/profile';
+import Write from '../../components/write/write';
 
 import { RiHome2Line } from "react-icons/ri";
 import { MdOutlineStore } from "react-icons/md";
@@ -31,6 +32,8 @@ function Page() {
                 return <Store />;
             case 'profile':
                 return <Profile />;
+            case 'write':
+                return <Write />;
             default:
                 return null;
         }
