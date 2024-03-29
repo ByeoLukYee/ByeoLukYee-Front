@@ -1,0 +1,99 @@
+.divContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+}
+
+.DivStyle {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    font-size: 1.1rem;
+}
+
+.mainDiv {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    top: 95%;
+    row-gap: 10px;
+    align-items: flex-start;
+}
+
+/* 탭바 스타일 */
+.tabBarDiv {
+    width: auto;
+    height: auto;
+    display: flex;
+    top: 50%;
+    column-gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabBarDiv button{
+    background-color: transparent;
+    border: 0;
+    font-size: 1rem;
+}
+
+.sellDiv,
+.buyDiv {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    justify-content: center;
+}
+
+.sellDiv > button,
+.buyDiv > button {
+    color: var(--gray-300);
+}
+
+.sellDiv > hr,
+.buyDiv > hr {
+    width: 45vw;
+    height: 0.2vh;
+    border: 0;
+    background: var(--gray-300);
+    border-color: var(--gray-300);
+}
+
+.sellDivActive,
+.buyDivActive {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    justify-content: center;
+}
+
+.sellDivActive > button,
+.buyDivActive > button {
+    color: var(--bg);
+}
+
+.sellDivActive > hr,
+.buyDivActive > hr {
+    width: 45vw;
+    height: 0.2vh;
+    border: 0;
+    background: var(--bg);
+    border-color: var(--bg);
+}
+
+/* 팝니다 삽니다 버튼 클릭 시 바뀌는 부분 스타일 */
+.changeBody {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 19%;
+}
