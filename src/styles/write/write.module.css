@@ -15,7 +15,7 @@
 
 .mainDiv {
     width: auto;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     top: 95%;
@@ -28,7 +28,7 @@
     width: auto;
     height: auto;
     display: flex;
-    top: 50%;
+    top: 25%;
     column-gap: 6px;
     justify-content: center;
     align-items: center;
@@ -91,9 +91,10 @@
 /* 팝니다 삽니다 버튼 클릭 시 바뀌는 부분 스타일 */
 .changeBody {
     width: 100%;
-    height: 60vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     position: fixed;
+    overflow-y: auto;
     top: 19%;
 }
