@@ -115,13 +115,12 @@
 }
 .buttonContainer {
     position: fixed;
-    width: 90vw;
     height: auto;
     display: flex;
     top: 90%;
 }
 .buttonStyle {
-    width: 100%;
+    width: 90vw;
     height: 7vh;
     background-color: var(--bg);
     border: 0;

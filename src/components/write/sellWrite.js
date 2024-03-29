@@ -40,10 +40,10 @@ function SellWrite() {
                 <p>상품 이미지 등록</p>
                 <div className={sellWriteStyle['imgScroll']}>
                     <div className={sellWriteStyle['imgContainer']}>
-                        {[...Array(10)].map((_, index) => (
+                        {imageURLs.map((_, index) => (
                             <div key={index} className={sellWriteStyle['imgDiv']} onClick={() => handleImageUpload(index)}>
-                                {index === 0 && cameraIconIndex === -1 && <CameraIcon position={index} />}
-                                {index === cameraIconIndex && <CameraIcon position={index} />}
+                                {index === 0 && cameraIconIndex === -1 && <CameraIcon position={index} length={imageURLs.length}/>}
+                                {index === cameraIconIndex && <CameraIcon position={index} length={imageURLs.length} />}
                                 {imageURLs[index] && <img src={imageURLs[index]} alt={`Uploaded Image ${index + 1}`} className={sellWriteStyle['imageURL']} />}
                             </div>
                         ))}
