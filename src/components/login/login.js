@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import loginStyles from '../../styles/login/login.module.css'
 import styles from '../../styles/common/styles.css';
 
+import Footer from '../common/footer';
+
 function Login() {
     // 회원가입 화면으로 넘어가기
     const navigate = useNavigate();
@@ -35,6 +37,8 @@ function Login() {
                     <p onClick={() => TextClick('/join')}>회원가입</p>
                 </div>
             </form>
+
+            <Footer />
         </div>
     )
 }
