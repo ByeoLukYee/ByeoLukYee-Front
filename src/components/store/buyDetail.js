@@ -1,22 +1,41 @@
+import { useState, useEffect } from 'react';
 import styles from '../../styles/common/styles.css';
 import buyStyle from '../../styles/store/buyDetail.module.css';
-
+import axios from 'axios';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
 function BuyDetail() {
+
+    const[buyingPost, setBuyingPost] = useState(null);
+
+    
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+    const fetchData = async() => {
+        try {
+            const response = await axios.get(`/buying-posts/1`);
+            console.log(response.data);
+            setBuyingPost(response.data);;
+        }catch(error){
+            console.log(error);
+        }
+    }
+    
     return(
         <>
             <div className={buyStyle['top']}>
                 <div className={buyStyle['hashTag']}>
-                    <p>#경매중</p>
+                    <p>#{buyingPost ? buyingPost.krStatus : "로딩중"}</p>
                 </div>
                 <div className={buyStyle['title']}>
-                    <p>로지텍 버티컬 마우스 삽니다 ㅠㅠ</p>
+                    <p>#{buyingPost ? buyingPost.title : "로딩중"}</p>
                 </div>
                 <div className={buyStyle['day']}>
                     <div className={buyStyle['p']}>
-                        <p>2024</p><p>/</p><p>03</p><p>/</p><p>24</p>
+                        <p>{buyingPost ? buyingPost.createdAt.split("T")[0] : "로딩중"}</p>
                     </div>
                     <div className={buyStyle['vectorDiv']}>
                         <div className={buyStyle['eyesVectorDiv']}>

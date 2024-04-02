@@ -12,7 +12,6 @@ function SellDetail() {
     useEffect(() => {
         fetchData()
     }, [])
-
     const fetchData = async () => {
         try {
             const response = await axios.get(`/selling-posts/1`);
@@ -33,11 +32,11 @@ function SellDetail() {
                     <div className={sellStyle['information']}>
                         <p>#{sellingPost ? sellingPost.krStatus : "로딩중"}</p>
                         <div className={sellStyle['p']}>
-                            <p>2024</p><p>/</p><p>03</p><p>/</p><p>24</p>
+                            <p>{sellingPost ? sellingPost.createdAt.split("T")[0] : "로딩중"}</p>
                         </div>
                     </div>
                     <div className={sellStyle['title']}>
-                        <p>해피해킹 하이브리드 모델 (1년 사용)</p>
+                        <p>{sellingPost ? sellingPost.title : "로딩중"}</p>
                     </div>
                     <div className={sellStyle['vectorDiv']}>
                         <div className={sellStyle['eyesVectorDiv']}>
