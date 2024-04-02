@@ -26,7 +26,7 @@ function SellDetail() {
     return(
         <>
             <div className={sellStyle['imageDiv']}> <img src={process.env.PUBLIC_URL+'/images/exampleImg.png'} alt='example' /> </div>
-            <div>
+            <div className={sellStyle['allDiv']}>
                 {/* titleDiv */}
                 <div className={sellStyle['titleDiv']}>
                     <div className={sellStyle['information']}>

@@ -1,13 +1,53 @@
-/* 피그마 폰트 가지고 오기 */
+/* kyobo handwriting 2019, Regular 폰트 */
+/* font-family: 'KyoboHand', sans-serif; */
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* pretendard 폰트 */
+/* font-family: 'Pretendard', sans-serif; */
+@import url('https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css');
+
+/* S-CoreDream 5Medium 폰트 */
+/* font-family: 'S-CoreDream 5Medium', sans-serif; */
+@import url('https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-5medium@0.0.1/index.min.css');
+
+/* S-CoreDream 4Regular 폰트 */
+/* font-family: 'S-CoreDream 4Regular', sans-serif; */
+@import url('https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-4regular@0.0.1/index.min.css');
+
+/* S-CoreDream 3Light 폰트 */
+/* font-family: 'S-CoreDream 3Light', sans-serif; */
+@import url('https://cdn.jsdelivr.net/npm/@noonnu/s-core-dream-3-light@0.1.0/index.min.css');
+
+/* SUIT 폰트 */
+/* font-family: 'SUIT'; */
+/* font-weight: 400; => Regular */
+/* font-weight: 500; => Medium */
+/* font-weight: 600; => SemiBold */
+/* font-weight: 700; => Bold */
+/* font-weight: 800; => ExtraBold */
+@import url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css');
 
 :root {
     --bg: #FFD53A;
+    --primary-100: #FFFBED;
     --gray-100: #F6F6F6;
     --gray-300: #D2D2D2;
     --gray-500: #ABABAB;
     --gray-700: #727272;
     --gray-800: #5B5B5B;
     --green: #40C646;
+
+    --SUIT-font: 'SUIT';
+    --ExtraBold: '800';
+    --Bold: '700';
+    --SemiBold: '600';
+    --Medium: '500';
+    --Regular: '400';
 }
 
 * {

@@ -1,0 +1,134 @@
+.topContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    position: fixed;
+}
+.topDiv {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+    padding-left: 10%;
+}
+.hr {
+    width: 90vw;
+    height: 1px;
+    border: 0;
+    background: var(--gray-300);
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+.hashTag {
+    display: flex;
+    color: var(--bg);
+    font-family: 'S-CoreDream-3Light', sans-serif;
+}
+.title {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'S-CoreDream-3Light', sans-serif;
+}
+
+.day {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+.day > .p {
+    display: flex;
+    color: var(--gray-300);
+    font-family: 'S-CoreDream-3Light', sans-serif;
+}
+
+.vectorDiv {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+}
+.vectorDiv > .eyesVectorDiv,
+.vectorDiv > .heartVectorDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2px;
+    color: var(--gray-300);
+    font-family: 'S-CoreDream-3Light', sans-serif;
+}
+
+.contextContainer {
+    display: flex;
+    width: 90vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--SUIT-font), sans-serif;
+    font-weight: var(--Regular);
+}
+
+.informationDiv {
+    width: 100%;
+    display: flex;
+    column-gap: 15px;
+    margin-top: 3%;
+    margin-bottom: 8%;
+}
+.hopeDiv,
+.answerDiv {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.hopeDiv > p {
+    font-family: var(--SUIT-font), sans-serif;
+    font-weight: var(--Regular);
+    color: var(--gray-500);
+}
+.answerDiv > p {
+    font-family: var(--SUIT-font), sans-serif;
+    font-weight: var(--SemiBold);
+}
+
+.bottomContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 55vh;
+    background-color: var(--gray-100);
+    padding-top: 5%;
+    align-items: center;
+}
+.auctionDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* 낙찰하기 클릭 시 */
+/* .auctionSelect {
+    background-color: var(--primary-100);
+} */
+.buttonContainer {
+    position: fixed;
+    width: 90vw;
+    height: auto;
+    display: flex;
+    top: 90%;
+}
+.buttonStyle {
+    width: 100%;
+    height: 7vh;
+    background-color: var(--bg);
+    border: 0;
+    border-radius: 6px;
+    font-size: 1rem;
+}

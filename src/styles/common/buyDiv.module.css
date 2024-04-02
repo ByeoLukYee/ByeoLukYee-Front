@@ -10,7 +10,7 @@
     margin-bottom: 5%;
     background-color: white;
     /* gray-100 : 낙찰 */
-    column-gap: 43px;
+    column-gap: 40px;
 }
 .BoxContainer:last-child {
     margin-bottom: 10%;
@@ -64,7 +64,7 @@
 }
 .iconDiv {
     display: flex;
-    column-gap: 10px;
+    column-gap: 7px;
 }
 .iconDiv > .eyesVectorDiv,
 .iconDiv > .heartVectorDiv {

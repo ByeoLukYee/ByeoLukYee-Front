@@ -42,5 +42,6 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "proxy": "http://byelukyee.ap-northeast-2.elasticbeanstalk.com"
 }

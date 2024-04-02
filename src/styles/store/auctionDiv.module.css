@@ -1,0 +1,54 @@
+.boxContainer {
+    display: flex;
+    flex-direction: row;
+    width: 85vw;
+    height: 11vh;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 2%;
+    border-radius: 10px;
+    border-color: white;
+    border-style: solid;
+    border-width: 3px;
+    margin-bottom: 5%;
+    background-color: white;
+    column-gap: 20px;
+}
+.boxContainer:last-child {
+    margin-bottom: 20%;
+}
+.lookImgStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 27vw;
+    height: 100%;
+    overflow: hidden;
+}
+.lookImgStyle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+}
+.textContainer > p:nth-child(1) {
+    font-size: 0.9rem;
+    color: var(--bg);
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+}
+.textContainer > p:nth-child(2) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+    font-size: 1.1rem;
+}
+.textContainer > p:nth-child(3) {
+    font-size: 1.3rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--ExtraBold);
+}
