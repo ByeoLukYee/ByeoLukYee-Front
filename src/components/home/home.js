@@ -1,11 +1,17 @@
 import styles from "../../styles/common/styles.css";
 import homeStyle from "../../styles/home/home.module.css";
 
+import TitleBar from '../common/titleBar';
+import SearchInput from '../common/searchInput';
+import SellDiv from '../selling-item/sellDiv';
+import LookDiv from '../home/lookDiv';
+import TextComponent from '../home/text';
 import TitleBar from "../common/titleBar";
 import SearchInput from "../common/searchInput";
 import SellDiv from "../common/sellDiv";
 import LookDiv from "../home/lookDiv";
 import TextComponent from "../home/text";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { HOST } from "../../config/config";

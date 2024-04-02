@@ -18,11 +18,14 @@ p, h3 {
 }
 
 .titleP {
+    font-family: var(--S-CoreDream-3Light);
     font-size: 1.1rem;
 }
 
 .titleH3 {
-    font-size: 2.1rem;
+    font-family: var(--Kyobo-font);
+    font-weight: var(--Regular);
+    font-size: 3rem;
 }
 
 /* 이메일, 비밀번호 입력란 */
@@ -42,7 +45,9 @@ input:focus {
     font-size: 0.7rem;
     margin-bottom: 2%;
     color: var(--gray-300);
-    /* SUIT Medium 폰트 추가 */
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
 }
 
 .inputStyles {
@@ -54,7 +59,9 @@ input:focus {
     border-style: solid;
     border-width: 2px;
     border-radius: 7px;
-    /* SUIT Medium 폰트 추가 */
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
 }
 
 /* 버튼 스타일 */
@@ -64,6 +71,9 @@ input:focus {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
 }
 
 .googleButton {
@@ -95,4 +105,7 @@ input:focus {
     font-size: 0.9rem;
     justify-content: center;
     align-items: center;
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Light);
 }

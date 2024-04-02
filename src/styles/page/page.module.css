@@ -28,6 +28,7 @@ nav {
 }
 .iconDiv > p {
     font-size: 0.8rem;
+    font-family: var(--S-CoreDream-4Regular);
 }
 .iconStyles {
     font-size: 1.5rem;
@@ -42,7 +43,4 @@ nav {
 /* 아이콘 클릭 시 색상 변경 */
 .activeIcon {
     color: var(--bg);
-}
-.activeIcon > p {
-    font-size: 0.8rem;
 }

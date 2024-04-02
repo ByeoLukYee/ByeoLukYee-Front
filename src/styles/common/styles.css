@@ -12,15 +12,15 @@
 @import url('https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css');
 
 /* S-CoreDream 5Medium 폰트 */
-/* font-family: 'S-CoreDream 5Medium', sans-serif; */
+/* font-family: 'S-CoreDream-5Medium', sans-serif; */
 @import url('https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-5medium@0.0.1/index.min.css');
 
 /* S-CoreDream 4Regular 폰트 */
-/* font-family: 'S-CoreDream 4Regular', sans-serif; */
+/* font-family: 'S-CoreDream-4Regular', sans-serif; */
 @import url('https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-4regular@0.0.1/index.min.css');
 
 /* S-CoreDream 3Light 폰트 */
-/* font-family: 'S-CoreDream 3Light', sans-serif; */
+/* font-family: 'S-CoreDream-3Light', sans-serif; */
 @import url('https://cdn.jsdelivr.net/npm/@noonnu/s-core-dream-3-light@0.1.0/index.min.css');
 
 /* SUIT 폰트 */
@@ -43,11 +43,18 @@
     --green: #40C646;
 
     --SUIT-font: 'SUIT';
-    --ExtraBold: '800';
-    --Bold: '700';
-    --SemiBold: '600';
-    --Medium: '500';
-    --Regular: '400';
+    --ExtraBold: 800;
+    --Bold: 700;
+    --SemiBold: 600;
+    --Medium: 500;
+    --Regular: 400;
+    --Light: 300;
+
+    --Kyobo-font: 'KyoboHand';
+
+    --S-CoreDream-3Light: 'S-CoreDream-3Light';
+    --S-CoreDream-4Regular: 'S-CoreDream-4Regular';
+    --S-CoreDream-5Medium: 'S-CoreDream-5Medium';
 }
 
 * {

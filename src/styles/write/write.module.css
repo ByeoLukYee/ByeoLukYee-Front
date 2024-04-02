@@ -10,7 +10,9 @@
     position: absolute;
     top: 60%;
     left: 5%;
+
     font-size: 1.1rem;
+    font-family: var(--S-CoreDream-4Regular);
 }
 
 .mainDiv {
@@ -32,6 +34,8 @@
     column-gap: 6px;
     justify-content: center;
     align-items: center;
+
+    font-family: var(--S-CoreDream-4Regular);
 }
 
 .tabBarDiv button{
