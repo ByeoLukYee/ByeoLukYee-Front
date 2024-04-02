@@ -12,16 +12,18 @@
     row-gap: 5px;
 }
 .textDiv > p {
+    color: var(--gray-300);
+    
+    font-size: 0.9rem;
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
-    color: var(--gray-300);
-    font-size: 0.9rem;
 }
 .textDiv > input {
     padding: 4%;
     border-style: solid;
     border-radius: 5px;
     border-color: var(--gray-300);
+
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
 }
@@ -36,10 +38,11 @@
     row-gap: 5px;
 }
 .contextDiv > p {
+    color: var(--gray-300);
+
+    font-size: 0.9rem;
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
-    color: var(--gray-300);
-    font-size: 0.9rem;
 }
 .contextDiv > textarea {
     height: auto;
@@ -49,6 +52,7 @@
     border-style: solid;
     border-radius: 5px;
     border-color: var(--gray-300);
+
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
 }
@@ -73,5 +77,8 @@
     background-color: var(--bg);
     border: 0;
     border-radius: 6px;
+
     font-size: 1rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
 }

@@ -14,7 +14,9 @@
     position: absolute;
     top: 60%;
     left: 5%;
+    
     font-size: 1.1rem;
+    font-family: var(--S-CoreDream-4Regular);
 }
 
 .profileDiv {
@@ -46,11 +48,16 @@
     align-items: center;
 }
 .nameDiv > p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
 }
 .emailDiv > p {
-    font-size: 0.9rem;
     color: var(--gray-700);
+
+    font-size: 0.9rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--Light);
 }
 
 .informationDiv {
@@ -72,7 +79,10 @@
 }
 .selectorDiv1 > p {
     color: #C0C0C0;
+
     font-size: 0.8rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
 }
 .iconDiv {
     display: flex;
@@ -81,6 +91,9 @@
 }
 .iconDiv > p {
     color: var(--gray-700);
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
 }
 .informationDiv > hr {
     width: 90vw;
@@ -96,5 +109,8 @@
 }
 .selectorDiv2 > p {
     color: #C0C0C0;
+
     font-size: 0.8rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
 }
