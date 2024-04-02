@@ -20,23 +20,23 @@ function Join() {
             </div>
             <div className={joinStyles['formContainer']}>
                 <div>
-                    <p className={joinStyles['textStyle']}>이름</p> {/* SUIT Medium 글꼴(input도) */}
+                    <p className={joinStyles['textStyle']}>이름</p>
                     <input id="txtName" type="text" placeholder='이름을 입력하시오.' className={joinStyles['inputStyles']}/>
                 </div>
                 <div>
-                    <p className={joinStyles['textStyle']}>이메일</p> {/* SUIT Medium 글꼴(input도) */}
+                    <p className={joinStyles['textStyle']}>이메일</p>
                     <input id="txtEmail" type="text" placeholder='학교 이메일을 입력하시오.' className={joinStyles['inputStyles']}/>
                 </div>
                 <div>
-                    <p className={joinStyles['textStyle']}>비밀번호</p> {/* SUIT Medium 글꼴(input도) */}
+                    <p className={joinStyles['textStyle']}>비밀번호</p>
                     <input id="txtPw" type="password" placeholder='비밀번호를 입력하시오.' className={joinStyles['inputStyles']}/>
                 </div>
                 <div>
-                    <p className={joinStyles['textStyle']}>비밀번호 검사</p> {/* SUIT Medium 글꼴(input도) */}
+                    <p className={joinStyles['textStyle']}>비밀번호 검사</p>
                     <input id="txtRePw" type="password" placeholder='비밀번호를 입력하시오.' className={joinStyles['inputStyles']}/>
                 </div>
                 <div>
-                    <p className={joinStyles['textStyle']}>학생 정보</p> {/* SUIT Medium 글꼴(input도) */}
+                    <p className={joinStyles['textStyle']}>학생 정보</p>
                     <div className={joinStyles['studentDivStyle']}>
                         <div> <input id='txtGrade' type='text' placeholder='학년' className={joinStyles['studentInputStyles']}/> </div>
                         <div> <input id='txtClass' type='text' placeholder='반' className={joinStyles['studentInputStyles']}/> </div>
@@ -45,7 +45,7 @@ function Join() {
                 </div>
                 <div className={joinStyles['buttontextContainer']}>
                     <div className={joinStyles['buttonContainer']}>
-                        <button id='btnJoin' className={joinStyles['buttonStyles']}>회원가입</button> {/* SUIT Medium 글꼴 */}
+                        <button id='btnJoin' className={joinStyles['buttonStyles']}>회원가입</button>
                     </div>
                     <div className={joinStyles['miniTextStyles']}>
                         <p>이미 계정이 있다면?</p>
