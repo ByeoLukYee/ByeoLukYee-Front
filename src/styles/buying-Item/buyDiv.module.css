@@ -25,10 +25,14 @@
     row-gap: 5px;
 }
 .contextDiv > p:nth-child(1) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
     font-size: 0.9rem;
     /* gray-700 : 낙찰 */
 }
 .contextDiv > p:nth-child(2) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
     font-size: 0.8rem;
     color: var(--gray-500);
 }
@@ -39,10 +43,14 @@
     column-gap: 8px;
 }
 .moneyDiv > p:nth-child(1) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--ExtraBold);
     font-size: 1.4rem;
     /* gray-700 : 낙찰 */
 }
 .moneyDiv > p:nth-child(2) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
     font-size: 0.9rem;
     color: var(--gray-500);
     /* text: 낙찰가 */
@@ -55,6 +63,8 @@
     align-items: flex-end;
 }
 .secondDiv > p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
     font-size: 0.8rem;
     color: var(--bg);
     /* gray-500 : 낙찰, 예약중 */
@@ -70,6 +80,9 @@
     align-items: flex-end;
     color: var(--gray-300);
     column-gap: 1px;
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
 }
 .eyesVectorDiv > .eyesVector {
     font-size: 1.3rem;

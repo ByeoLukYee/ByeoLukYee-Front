@@ -45,9 +45,17 @@
 .textContainer > p:nth-child(1) {
     color: var(--bg);
     /* color: var(--gray-500); */ /* 판매중 */
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+}
+.textContainer > p:nth-child(2) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
 }
 
 .textContainer > p:nth-child(3) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--ExtraBold);
     font-size: 1.3rem;
 }
 
@@ -68,6 +76,9 @@
     justify-content: center;
     align-items: flex-end;
     color: var(--gray-300);
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
 }
 
 .eyesVector {
