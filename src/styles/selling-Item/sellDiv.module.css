@@ -12,9 +12,6 @@
     border-width: 3px;
     background-color: white;
     column-gap: 10px;
-}
-
-.boxContainer:last-child {
     margin-bottom: 5%;
 }
 

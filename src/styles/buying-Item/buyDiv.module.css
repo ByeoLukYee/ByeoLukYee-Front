@@ -10,8 +10,6 @@
     background-color: white;
     /* gray-100 : 낙찰 */
     column-gap: 40px;
-}
-.BoxContainer:last-child {
     margin-bottom: 5%;
 }
 
