@@ -4,8 +4,8 @@ import storeStyle from '../../styles/store/store.module.css';
 
 import TitleBar from '../common/titleBar';
 import SearchInput from '../common/searchInput';
-import SellDiv from '../selling-item/sellDiv';
-import BuyDiv from '../buying-item/buyDiv';
+import SellingItemList from '../selling-Item/sellingItemList';
+import BuyingItemList from '../buying-Item/buyingItemList';
 
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -38,7 +38,7 @@ function Store() {
 
                 <div className={storeStyle['changeBody']}>
                     <div className={storeStyle['scrollContainer']}>
-                        {selectedTab === 'sell' ? <SellDiv /> : <BuyDiv />}
+                        {selectedTab === 'sell' ? <SellingItemList /> : <BuyingItemList />}
                     </div>
                 </div>
             </div>

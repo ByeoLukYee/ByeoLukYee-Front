@@ -10,6 +10,8 @@
     position: absolute;
     top: 60%;
     left: 5%;
+
+    font-family: var(--S-CoreDream-4Regular);
     font-size: 1.1rem;
 }
 
@@ -53,6 +55,7 @@
 .sellDiv > button,
 .buyDiv > button {
     color: var(--gray-300);
+    font-family: var(--S-CoreDream-4Regular);
 }
 
 .sellDiv > hr,
@@ -77,6 +80,7 @@
 .sellDivActive > button,
 .buyDivActive > button {
     color: var(--bg);
+    font-family: var(--S-CoreDream-4Regular);
 }
 
 .sellDivActive > hr,
@@ -97,7 +101,11 @@
     left: 3%;
     top: 55%;
 }
-
+.sortDiv > p {
+    /* 적용 안됨 */
+    font-family: var(--Inter-font);
+    font-weight: var(--Regular);
+}
 .sortDiv > .sortIcon {
     color: var(--gray-700);
 }
