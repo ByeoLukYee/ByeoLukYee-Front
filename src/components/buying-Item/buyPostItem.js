@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 
 import styles from '../../styles/common/styles.css';
-<<<<<<< HEAD:src/components/buyingItem/buyDiv.js
-import buyStyle from '../../styles/buyingItem/buyDiv.module.css';
-=======
+
 import buyStyle from '../../styles/buying-Item/buyDiv.module.css';
->>>>>>> d5ab3ea98f8c4a995a656249b892947c7883b182:src/components/buying-Item/buyPostItem.js
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
