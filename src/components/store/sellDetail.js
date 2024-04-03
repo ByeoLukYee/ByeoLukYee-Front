@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../styles/common/styles.css";
 import sellStyle from "../../styles/store/sellDetail.module.css";
+
 import axios from "axios";
+
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 import { HOST } from "../../config/config";

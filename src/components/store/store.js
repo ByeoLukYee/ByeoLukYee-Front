@@ -4,8 +4,8 @@ import storeStyle from '../../styles/store/store.module.css';
 
 import TitleBar from '../common/titleBar';
 import SearchInput from '../common/searchInput';
-import SellDiv from '../selling-item/sellDiv';
-import BuyDiv from '../buying-item/buyDiv';
+import SellDiv from '../sellingItem/sellDiv';
+import BuyDiv from '../buyingItem/buyDiv';
 
 import { IoIosArrowDown } from "react-icons/io";
 
