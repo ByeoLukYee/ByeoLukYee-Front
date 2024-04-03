@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import styles from "../../styles/common/styles.css";
 import buyStyle from "../../styles/store/buyDetail.module.css";
+
 import axios from "axios";
+
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 import { HOST } from "../../config/config";
@@ -25,7 +27,7 @@ function BuyDetail() {
 
   return (
     <>
-      <div className={buyStyle["top"]}>
+      <div className={buyStyle["topDiv"]}>
         <div className={buyStyle["hashTag"]}>
           <p>#{buyingPost ? buyingPost.krStatus : "로딩중"}</p>
         </div>
