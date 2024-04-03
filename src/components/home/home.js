@@ -3,9 +3,9 @@ import homeStyle from "../../styles/home/home.module.css";
 
 import SearchInput from '../common/searchInput';
 import TitleBar from "../common/titleBar";
+import SellDiv from "../selling-Item/sellPostItem";
 import TextComponent from '../home/text';
 import LookDiv from "../home/lookDiv";
-import SellDiv from '../sellingItem/sellDiv';
 
 import axios from "axios";
 import { useEffect, useState } from "react";
