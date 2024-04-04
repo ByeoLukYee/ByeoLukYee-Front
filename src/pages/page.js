@@ -45,7 +45,7 @@ function Pages() {
             <div>{renderComponent()}</div>
 
             {/* 메뉴바 */}
-            <nav>
+            <nav className={barStyle['nav']}>
                 <div className={barStyle['menuBarIconDiv']}>
                     <Link>
                         <div className={activeIcon === 'home' ? `${barStyle['iconDiv']} ${barStyle['activeIcon']}` : barStyle['iconDiv']} onClick={() => { handleIconClick('home'); }}>

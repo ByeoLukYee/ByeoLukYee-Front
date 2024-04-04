@@ -3,14 +3,19 @@
     flex-direction: column;
 }
 
+.formDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 /* 타이틀 */
 .titleContainer {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10%;
     justify-content: center;
-    left: 6%;
-    margin-top: 40%;
+    align-items: center;
 }
 
 p, h3 {
@@ -18,14 +23,15 @@ p, h3 {
 }
 
 .titleP {
-    font-family: var(--S-CoreDream-3Light);
+    font-family: var(--SUIT-font);
+    font-weight: var(--Light);
     font-size: 1.1rem;
 }
 
 .titleH3 {
-    font-family: var(--Kyobo-font);
+    font-family: var(--LaundryGothic-font);
     font-weight: var(--Regular);
-    font-size: 3rem;
+    font-size: 2.4rem;
 }
 
 /* 이메일, 비밀번호 입력란 */
@@ -51,9 +57,9 @@ input:focus {
 }
 
 .inputStyles {
-    width: 80vw;
+    width: 20vw;
     height: auto;
-    padding: 15px;
+    padding: 17px;
     font-size: 0.8rem;
     border-color: var(--gray-300);
     border-style: solid;
@@ -66,7 +72,7 @@ input:focus {
 
 /* 버튼 스타일 */
 .buttonContainer {
-    width: 90vw;
+    width: 22vw;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -80,7 +86,7 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 7vh;
+    height: 5vh;
     background-color: transparent;
     column-gap: 10px;
     font-size: 1rem;
@@ -91,7 +97,7 @@ input:focus {
 }
 
 .buttonStyles {
-    height: 7vh;
+    height: 5vh;
     background-color: var(--bg);
     border: 0;
     border-radius: 6px;

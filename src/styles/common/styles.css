@@ -1,9 +1,17 @@
-/* kyobo handwriting 2019, Regular 폰트 */
+/* kyobo handwriting 2019 폰트 */
 /* font-family: 'KyoboHand', sans-serif; */
 @font-face {
     font-family: 'KyoboHand';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
     font-weight: normal;
+    font-style: normal;
+}
+
+/* LaundryGothic 폰트 */
+/* Regular, Bold */
+@font-face {
+    font-family: 'TTLaundryGothicB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2') format('woff2');
     font-style: normal;
 }
 
@@ -56,6 +64,7 @@
     --Light: 300;
 
     --Kyobo-font: 'KyoboHand';
+    --LaundryGothic-font: 'TTLaundryGothicB';
 
     --S-CoreDream-3Light: 'S-CoreDream-3Light';
     --S-CoreDream-4Regular: 'S-CoreDream-4Regular';
