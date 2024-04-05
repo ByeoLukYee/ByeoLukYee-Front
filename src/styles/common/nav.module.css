@@ -12,6 +12,7 @@
 }
 .titleDiv {
     width: 10vw;
+
     font-family: var(--LaundryGothic-font);
     font-weight: var(--Regular);
     font-size: 2rem;
