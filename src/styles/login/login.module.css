@@ -1,16 +1,17 @@
 .container {
     width: 100vw;
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .formDiv {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10.5%;
 }
 
 /* 타이틀 */
@@ -28,13 +29,12 @@ p, h3 {
 .titleP {
     font-family: var(--SUIT-font);
     font-weight: var(--Light);
-    font-size: 1.1rem;
 }
 
 .titleH3 {
     font-family: var(--LaundryGothic-font);
     font-weight: var(--Regular);
-    font-size: 2.4rem;
+    font-size: 3rem;
 }
 
 /* 이메일, 비밀번호 입력란 */
@@ -43,15 +43,21 @@ input:focus {
 }
 
 .formContainer {
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+}
+.inputContainer {
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
 }
 
 .textStyle {
-    font-size: 0.7rem;
     margin-bottom: 2%;
     color: var(--gray-300);
 
@@ -60,9 +66,9 @@ input:focus {
 }
 
 .inputStyles {
-    width: 20vw;
-    height: auto;
-    padding: 17px;
+    width: 17vw;
+    height: 2vh;
+    padding: 13px;
     font-size: 0.8rem;
     border-color: var(--gray-300);
     border-style: solid;
@@ -75,30 +81,17 @@ input:focus {
 
 /* 버튼 스타일 */
 .buttonContainer {
-    width: 22vw;
-    height: auto;
+    width: 19vw;
+    height: 2vh;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 }
 .buttonContainer > button {
+    padding: 5%;
+
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
-    font-size: 1.1rem;
-}
-
-.googleButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5vh;
-    background-color: transparent;
-    column-gap: 10px;
-    font-size: 1rem;
-    border-color: var(--gray-300);
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 7px;
 }
 
 .buttonStyles {
@@ -106,16 +99,30 @@ input:focus {
     background-color: var(--bg);
     border: 0;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 1.1rem;
+}
+.googleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    column-gap: 10px;
+    border-color: var(--gray-300);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    background-color: white;
 }
 
 .miniTextStyles {
     display: flex;
     color: var(--gray-700);
     column-gap: 6px;
-    font-size: 0.9rem;
+    font-size: 13px;
     justify-content: center;
     align-items: center;
+    margin-top: 30%;
 
     font-family: var(--SUIT-font);
     font-weight: var(--Light);

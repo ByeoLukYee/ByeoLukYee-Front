@@ -7,10 +7,10 @@
 
 .searchInput {
     width: 35vw;
-    height: auto;
-    padding: 15px;
+    height: 2vh;
+    padding: 2%;
     border: 0;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: var(--gray-100);
 
     font-family: var(--SUIT-font);
@@ -22,5 +22,6 @@
 }
 
 .searchInput::placeholder {
+    font-size: 1rem;
     color: var(--gray-300);
 }
