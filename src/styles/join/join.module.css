@@ -1,17 +1,23 @@
 .divContainer {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 10vh;
+    overflow-y: auto;
+}
+.divContainer::-webkit-scrollbar {
+    display: none;
 }
 
-.DivStyle {
-    position: absolute;
-    top: 60%;
-    left: 5%;
-    font-size: 1.1rem;
+.joinText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    font-family: var(--S-CoreDream-4Regular);
+    font-family: var(--LaundryGothic-font);
+    font-weight: var(--Regular);
+    font-size: 1.3rem;
 }
 
 /* 개인정보 입력란 */
@@ -19,82 +25,91 @@ input:focus {
     outline: none;
 }
 
-.formContainer {
+.formDiv {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
     align-items: center;
-    top: 120%;
+    justify-content: center;
+}
+
+.formContainer {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.inputContainer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
 }
 
 .textStyle {
-    font-size: 0.7rem;
     margin-bottom: 2%;
     color: var(--gray-300);
-    
+
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
 }
 
 .inputStyles {
-    width: 80vw;
-    height: auto;
-    padding: 15px;
+    width: 17vw;
+    height: 2vh;
+    padding: 13px;
     font-size: 0.8rem;
     border-color: var(--gray-300);
     border-style: solid;
     border-width: 2px;
     border-radius: 7px;
-    
+
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
 }
 
 .studentDivStyle {
     display: flex;
-    position: relative;
     column-gap: 20px;
 }
 
 .studentInputStyles {
-    width: 17vw;
-    height: auto;
-    padding: 15px;
+    width: 4vw;
+    height: 2vh;
+    padding: 13px;
     font-size: 0.8rem;
     border-color: var(--gray-300);
     border-style: solid;
     border-width: 2px;
     border-radius: 7px;
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
 }
 
 /* 버튼 스타일 */
-.buttontextContainer {
-    width: auto;
-    height: auto;
+.buttonContainer {
+    width: 19vw;
+    height: 2vh;
     display: flex;
     flex-direction: column;
-    top: 25%;
-    row-gap: 10px;
+    row-gap: 20px;
 }
-
-.buttonContainer {
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
+.buttonContainer > button {
+    padding: 5%;
 
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
 }
 
 .buttonStyles {
-    width: 90vw;
     height: 6vh;
     background-color: var(--bg);
     border: 0;
-    border-radius: 7px;
+    border-radius: 6px;
+    font-size: 1.1rem;
 }
 
 .miniTextStyles {
@@ -103,7 +118,8 @@ input:focus {
     column-gap: 6px;
     font-size: 0.9rem;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    margin-top: 12%;
 
     font-family: var(--SUIT-font);
     font-weight: var(--Light);

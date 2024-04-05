@@ -10,10 +10,9 @@
 .container1 {
     display: flex;
     align-items: center;
+    column-gap: 120px;
 }
 .titleDiv {
-    width: 15vw;
-
     font-family: var(--LaundryGothic-font);
     font-weight: var(--Regular);
 }
