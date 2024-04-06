@@ -1,8 +1,9 @@
 .nav {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    left: 15vw;
     align-items: center;
-    column-gap: 13%;
+    column-gap: 12%;
     margin-top: 1.5%;
     margin-bottom: 1.5%;
     top: 0;
@@ -37,4 +38,15 @@ hr {
     border: 0;
     border-style: solid;
     background: var(--gray-300);
+}
+
+.textDiv {
+    display: flex;
+    margin-top: 1.5%;
+    left: 15vw;
+    column-gap: 2%;
+
+    font-family: var(--LaundryGothic-font);
+    font-weight: var(--Regular);
+    color: var(--gray-700);
 }
