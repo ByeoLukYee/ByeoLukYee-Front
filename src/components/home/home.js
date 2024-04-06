@@ -1,8 +1,6 @@
 import styles from "../../styles/common/styles.css";
 import homeStyle from "../../styles/home/home.module.css";
 
-import HeaderWithInnderNav from "../common/header-with-innder-nav";
-import Footer from "../common/footer";
 import SellingItemList from '../selling-Item/sellingItemList'
 import BuyingItemList from "../buying-Item/buyingItemList";
 

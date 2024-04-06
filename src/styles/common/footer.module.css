@@ -2,7 +2,6 @@
     display: flex;
     width: 100%;
     bottom: 0;
-    right: 0.5%;
 }
 .background {
     width: 100%;
@@ -13,6 +12,7 @@
     background-color: var(--gray-100);
     padding: 3% 0;
     row-gap: 40px;
+    margin-top: 0.5%;
 }
 .background > p {
     font-family: var(--LaundryGothic-font);

@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 
 import headerStyle from '../../styles/common/header.module.css';
 
 import SearchInput from './searchInput';
 
 function Header({ onTitleClick }) {
-
     return (
         <>
             <nav className={headerStyle['nav']}>
                 <div className={headerStyle['container1']}>
-                    <div className={headerStyle['titleDiv']} onClick={onTitleClick}> <p>벼룩이</p> </div>
+                    <Link to='/' style={{ textDecoration: "none", color: 'black' }}> <div className={headerStyle['titleDiv']} onClick={onTitleClick}> <p>벼룩이</p> </div> </Link>
                     <div> <SearchInput /> </div>
                 </div>
                 <div className={headerStyle['optionDiv']}>
