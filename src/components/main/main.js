@@ -21,11 +21,14 @@ function Main() {
                 return <Home />;
         }
     };
+    const handleTitleClick = () => {
+        setSelectedTab('/');
+    };
 
     return (
         <>
             <div className={mainStyle["container"]}>
-                <Header />
+                <Header onTitleClick={handleTitleClick} />
                 <div className={mainStyle['textDiv']}>
                     <p className={selectedTab === 'sell' ? mainStyle['textActive'] : mainStyle['text']} onClick={() => setSelectedTab('sell')}>팝니다 게시글</p>
                     <p className={selectedTab === 'buy' ? mainStyle['textActive'] : mainStyle['text']} onClick={() => setSelectedTab('buy')}>삽니다 게시글</p>

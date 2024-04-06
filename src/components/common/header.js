@@ -1,13 +1,16 @@
+import React, { useState } from 'react';
+
 import headerStyle from '../../styles/common/header.module.css';
 
 import SearchInput from './searchInput';
 
-function Header() {
+function Header({ onTitleClick }) {
+
     return (
         <>
             <nav className={headerStyle['nav']}>
                 <div className={headerStyle['container1']}>
-                    <div className={headerStyle['titleDiv']}> <p>벼룩이</p> </div>
+                    <div className={headerStyle['titleDiv']} onClick={onTitleClick}> <p>벼룩이</p> </div>
                     <div> <SearchInput /> </div>
                 </div>
                 <div className={headerStyle['optionDiv']}>
