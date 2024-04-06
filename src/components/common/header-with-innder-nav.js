@@ -7,17 +7,6 @@ import SearchInput from './searchInput';
 
 function HeaderWithInnderNav() {
     const [selectedTab, setSelectedTab] = useState('');
-    const navigate = useNavigate();
-
-    const handleSellTabClick = () => {
-        setSelectedTab('sell');
-        navigate('/selling-posts');
-    };
-
-    const handleBuyTabClick = () => {
-        setSelectedTab('buy');
-        navigate('/buying-posts');
-    };
 
     return (
         <>
@@ -34,8 +23,8 @@ function HeaderWithInnderNav() {
             </nav>
             <div style={{textAlign: 'center'}}> <hr /> </div>
             <div className={headerStyle['textDiv']}>
-                <p className={selectedTab === 'sell' ? headerStyle['textActive'] : headerStyle['text']} onClick={handleSellTabClick}>팝니다 게시글</p>
-                <p className={selectedTab === 'buy' ? headerStyle['textActive'] : headerStyle['text']} onClick={handleBuyTabClick}>삽니다 게시글</p>
+                <p className={selectedTab === 'sell' ? headerStyle['textActive'] : headerStyle['text']} onClick={() => setSelectedTab('sell')}>팝니다 게시글</p>
+                <p className={selectedTab === 'buy' ? headerStyle['textActive'] : headerStyle['text']} onClick={() => setSelectedTab('buy')}>삽니다 게시글</p>
             </div>
         </>
     )

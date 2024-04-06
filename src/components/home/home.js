@@ -28,11 +28,8 @@ function Home() {
   };
 
   return (
-    <div className={homeStyle["container"]}>
-      <HeaderWithInnderNav />
+    <div style={{width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', left: '15vw', marginTop: '1.5%', marginRight: '15.5%', zIndex: 100}}>
 
-      <div style={{width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', left: '15vw', marginTop: '1.5%', marginRight: '15.5%', zIndex: 100}}>
-        
         <div>{/* 피그마 : 회색 박스 */}</div>
         <div className={homeStyle['recentlySeenSellDiv']}>
           <div className={homeStyle['sellTextDiv']}> <p>최근 본 팝니다</p> </div>
@@ -66,31 +63,7 @@ function Home() {
             <p>더보기</p>
           </div>
         </div>
-
       </div>
-      
-      {/* <div className={homeStyle["lookContainer"]}>
-        <TextComponent />
-        <div className={homeStyle["scrollContainer"]}>
-          <LookDiv />
-        </div>
-
-        <div className={homeStyle["newContainer"]}>
-          <p className={homeStyle["lookUserP"]}>따끈따끈 최신 글</p>
-          <div className={homeStyle["newScrollContainer"]}>
-            {sellingPostList.map((item) => (
-              <SellDiv
-                title={item.title}
-                status={item.krStatus}
-                price={item.price}
-              />
-            ))}
-          </div>
-        </div>
-      </div> */}
-      {/* <div className={homeStyle['footerStyle']}> <Footer /> </div> */}
-      <Footer />
-    </div>
   );
 }
 
