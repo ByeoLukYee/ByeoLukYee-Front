@@ -99,6 +99,7 @@ input:focus {
 }
 .buttonContainer > button {
     padding: 5%;
+    cursor : pointer;
 
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
@@ -123,4 +124,7 @@ input:focus {
 
     font-family: var(--SUIT-font);
     font-weight: var(--Light);
+}
+.miniTextStyles > p:nth-child(2) {
+    cursor : pointer;
 }
