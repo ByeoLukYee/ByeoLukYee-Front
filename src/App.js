@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Login from './pages/login';
 import Join from './pages/join';
-import Main from './components/main/main';
-import SellingPosts from './components/selling-Item/selling-posts';
-import BuyingPostsId from './components/store/buying-posts-id';
+import Main from './pages/main';
+import SellingPosts from './pages/selling-posts';
+import BuyingPostsId from './pages/buying-posts-id';
 
 function App() {
     return(
