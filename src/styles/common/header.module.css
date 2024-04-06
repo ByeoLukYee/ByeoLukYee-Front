@@ -48,6 +48,7 @@ hr {
 
     font-family: var(--LaundryGothic-font);
     font-weight: var(--Regular);
+    font-size: 1.1rem;
 }
 .textDiv > .text {
     color: var(--gray-700);
