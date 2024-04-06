@@ -5,15 +5,18 @@
     column-gap: 13%;
     margin-top: 1.5%;
     margin-bottom: 1.5%;
+    top: 0;
 }
 .container1 {
     display: flex;
-    column-gap: 10%;
+    align-items: center;
+    column-gap: 120px;
 }
 .titleDiv {
-    width: 10vw;
     font-family: var(--LaundryGothic-font);
     font-weight: var(--Regular);
+}
+.titleDiv > p {
     font-size: 2rem;
 }
 
@@ -25,7 +28,6 @@
 
     font-family: var(--SUIT-font);
     font-weight: var(--Light);
-    font-size: 1.1rem;
 }
 
 hr {

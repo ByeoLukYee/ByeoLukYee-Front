@@ -1,9 +1,17 @@
 .container {
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    justify-content: flex-end;
     flex-direction: column;
+    overflow-y: auto;
+}
+.container::-webkit-scrollbar {
+    display: none;
 }
 
 .formDiv {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,13 +33,12 @@ p, h3 {
 .titleP {
     font-family: var(--SUIT-font);
     font-weight: var(--Light);
-    font-size: 1.1rem;
 }
 
 .titleH3 {
     font-family: var(--LaundryGothic-font);
     font-weight: var(--Regular);
-    font-size: 2.4rem;
+    font-size: 2.5rem;
 }
 
 /* 이메일, 비밀번호 입력란 */
@@ -40,15 +47,21 @@ input:focus {
 }
 
 .formContainer {
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+}
+.inputContainer {
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
 }
 
 .textStyle {
-    font-size: 0.7rem;
     margin-bottom: 2%;
     color: var(--gray-300);
 
@@ -57,9 +70,9 @@ input:focus {
 }
 
 .inputStyles {
-    width: 20vw;
-    height: auto;
-    padding: 17px;
+    width: 17vw;
+    height: 2vh;
+    padding: 13px;
     font-size: 0.8rem;
     border-color: var(--gray-300);
     border-style: solid;
@@ -72,36 +85,38 @@ input:focus {
 
 /* 버튼 스타일 */
 .buttonContainer {
-    width: 22vw;
-    height: auto;
+    width: 19vw;
+    height: 2vh;
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 20px;
+}
+.buttonContainer > button {
+    padding: 5%;
 
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
 }
 
+.buttonStyles {
+    height: 6vh;
+    background-color: var(--bg);
+    border: 0;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
 .googleButton {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 5vh;
-    background-color: transparent;
+    height: 6vh;
     column-gap: 10px;
-    font-size: 1rem;
     border-color: var(--gray-300);
     border-style: solid;
     border-width: 2px;
     border-radius: 7px;
-}
-
-.buttonStyles {
-    height: 5vh;
-    background-color: var(--bg);
-    border: 0;
-    border-radius: 6px;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    background-color: white;
 }
 
 .miniTextStyles {
@@ -111,6 +126,7 @@ input:focus {
     font-size: 0.9rem;
     justify-content: center;
     align-items: center;
+    margin-top: 32%;
 
     font-family: var(--SUIT-font);
     font-weight: var(--Light);
