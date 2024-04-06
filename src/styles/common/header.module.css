@@ -48,5 +48,12 @@ hr {
 
     font-family: var(--LaundryGothic-font);
     font-weight: var(--Regular);
+}
+.textDiv > .text {
     color: var(--gray-700);
+    cursor: pointer;
+}
+.textDiv > .textActive {
+    color: var(--bg);
+    cursor: pointer;
 }
