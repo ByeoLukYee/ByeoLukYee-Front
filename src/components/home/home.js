@@ -1,11 +1,10 @@
 import styles from "../../styles/common/styles.css";
 import homeStyle from "../../styles/home/home.module.css";
 
-import SearchInput from '../common/searchInput';
-import TitleBar from "../common/titleBar";
-import SellDiv from "../selling-Item/sellPostItem";
-import TextComponent from '../home/text';
-import LookDiv from "../home/lookDiv";
+import HeaderWithInnderNav from "../common/header-with-innder-nav";
+import Footer from "../common/footer";
+import SellingItemList from '../selling-Item/sellingItemList'
+import BuyingItemList from "../buying-Item/buyingItemList";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -29,13 +28,48 @@ function Home() {
   };
 
   return (
-    <div className={homeStyle["divContainer"]}>
-      <TitleBar />
-      <div className={homeStyle["DivStyle"]}>
-        <p>벼룩이</p>
+    <div className={homeStyle["container"]}>
+      <HeaderWithInnderNav />
+
+      <div style={{width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', left: '15vw', marginTop: '1.5%', marginRight: '15.5%', zIndex: 100}}>
+        
+        <div>{/* 피그마 : 회색 박스 */}</div>
+        <div className={homeStyle['recentlySeenSellDiv']}>
+          <div className={homeStyle['sellTextDiv']}> <p>최근 본 팝니다</p> </div>
+          <div className={homeStyle['sellContainer']}>
+            <SellingItemList />
+          </div>
+
+          <div className={homeStyle['moreDiv']}>
+            <p>더보기</p>
+          </div>
+        </div>
+
+        <div className={homeStyle['recentlySellDiv']}>
+          <div className={homeStyle['sellTextDiv']}> <p>따끈따근 최신 팝니다 글</p> </div>
+          <div className={homeStyle['sellContainer']}>
+            <SellingItemList />
+          </div>
+
+          <div className={homeStyle['moreDiv']}>
+            <p>더보기</p>
+          </div>
+        </div>
+
+        <div className={homeStyle['recentlyBuyDiv']}>
+          <div className={homeStyle['buyTextDiv']}> <p>따끈따근 최신 삽니다 글</p> </div>
+          <div className={homeStyle['buyContainer']}>
+            <BuyingItemList />
+          </div>
+
+          <div className={homeStyle['moreDiv']}>
+            <p>더보기</p>
+          </div>
+        </div>
+
       </div>
-      <SearchInput />
-      <div className={homeStyle["lookContainer"]}>
+      
+      {/* <div className={homeStyle["lookContainer"]}>
         <TextComponent />
         <div className={homeStyle["scrollContainer"]}>
           <LookDiv />
@@ -53,7 +87,9 @@ function Home() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
+      {/* <div className={homeStyle['footerStyle']}> <Footer /> </div> */}
+      <Footer />
     </div>
   );
 }

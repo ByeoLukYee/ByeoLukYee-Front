@@ -1,19 +1,59 @@
-.divContainer {
+.container {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 10vh;
+    overflow-y: auto;
+}
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.recentlySeenSellDiv,
+.recentlySellDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+}
+.recentlyBuyDiv {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+}
+.sellTextDiv,
+.buyTextDiv {
+    display: flex;
+
+}
+.sellTextDiv > p,
+.buyTextDiv > p {
+    color: var(--gray-900);
+    margin-bottom: 1%;
+
+    font-family: var(--LaundryGothic-font);
+    font-weight: var(--Regular);
+    font-size: 1.2rem;
+}
+
+.sellContainer,
+.buyContainer {
+    display: flex;
     align-items: center;
 }
 
-.DivStyle {
-    position: absolute;
-    top: 60%;
-    left: 5%;
-
-    font-family: var(--S-CoreDream-4Regular);
-    font-size: 1.1rem;
+.moreDiv {
+    display: flex;
+    align-items: center;
+    top: 20%;
+    left: 38.7%;
+    cursor: pointer;
+    color: var(--gray-400);
 }
+
 
 /* 사용자님이 최근 본 글 */
 .lookContainer {
