@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import joinStyles from '../../styles/join/join.module.css';
 import styles from '../../styles/common/styles.css';
 
-import Nav from '../common/nav';
+import Header from '../common/header';
 import Footer from '../common/footer';
 
 function Join() {
@@ -16,7 +16,7 @@ function Join() {
 
     return(
         <div className={joinStyles['divContainer']}>
-            <Nav />
+            <Header />
             <div className={joinStyles['formDiv']}>
                 <div className={joinStyles['joinText']}> <p>회원가입</p> </div>
                 <form className={joinStyles['formContainer']}>
@@ -55,7 +55,7 @@ function Join() {
                     </div>
                 </form>
             </div>
-            <Footer />
+            <div className={joinStyles['footerStyle']}> <Footer /> </div>
         </div>
     )
 }

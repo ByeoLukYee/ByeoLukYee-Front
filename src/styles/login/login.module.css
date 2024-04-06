@@ -2,7 +2,6 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: flex-end;
     flex-direction: column;
     overflow-y: auto;
 }
@@ -103,6 +102,7 @@ input:focus {
     background-color: var(--bg);
     border: 0;
     border-radius: 6px;
+    cursor : pointer;
     font-size: 1.1rem;
 }
 .googleButton {
@@ -115,8 +115,9 @@ input:focus {
     border-style: solid;
     border-width: 2px;
     border-radius: 7px;
-    font-size: 1.1rem;
     background-color: white;
+    cursor : pointer;
+    font-size: 1.1rem;
 }
 
 .miniTextStyles {
@@ -130,4 +131,15 @@ input:focus {
 
     font-family: var(--SUIT-font);
     font-weight: var(--Light);
+}
+.miniTextStyles > p:nth-child(2) {
+    cursor : pointer
+}
+
+.footerStyle {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    bottom: -25%;
 }

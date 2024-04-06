@@ -4,8 +4,8 @@ import BuyPostItem from '../../components/buying-Item/buyPostItem';
 
 function BuyingItemList() {
     return (
-        <div style={{display: 'flex', flexDirection: 'column'}}>
-            <BuyPostItem />
+        <div className={buyStyle['grid-container']}>
+            <div className={buyStyle['grid-item']}> <BuyPostItem /> </div>
         </div>
     )
 }

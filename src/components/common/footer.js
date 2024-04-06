@@ -2,7 +2,7 @@ import footerStyle from '../../styles/common/footer.module.css';
 
 function Footer() {
     return (
-        <footer>
+        <footer className={footerStyle['footer']}>
             <div className={footerStyle['background']}>
                 <p>벼룩이</p>
                 <div className={footerStyle['divStyle']}>

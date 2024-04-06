@@ -4,8 +4,8 @@ import SellPostItem from '../../components/selling-Item/sellPostItem';
 
 function SellingItemList() {
     return (
-        <div style={{display: 'flex', flexDirection: 'column'}}>
-            <SellPostItem />
+        <div className={sellStyle['grid-container']}>
+            <div className={sellStyle['grid-item']}> <SellPostItem /> </div>
         </div>
     )
 }
