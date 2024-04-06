@@ -21,12 +21,9 @@ function SellPostItem({ status, price, title }) {
 
           <div className={sellStyle['contextContainer']}>
             <div className={sellStyle["textContainer"]}>
-              {/* <p># {status}</p>
+              <p># {status}</p>
               <p>{title}</p>
-              <p style={{ top: "5%" }}>{price}원</p> */}
-              <p># 판매중</p>
-              <p>아이폰 6 생활기스 있어요</p>
-              <p style={{ top: "5%" }}>100,000원</p>
+              <p style={{ top: "5%" }}>{price}원</p>
             </div>
 
             <div className={sellStyle["vectorDiv"]}>
