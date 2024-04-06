@@ -40,7 +40,7 @@ function Home() {
             <SellingItemList />
           </div>
 
-          <div className={homeStyle['moreDiv']}>
+          <div className={homeStyle['sellMoreDiv']}>
             <p>더보기</p>
           </div>
         </div>
@@ -51,7 +51,7 @@ function Home() {
             <SellingItemList />
           </div>
 
-          <div className={homeStyle['moreDiv']}>
+          <div className={homeStyle['sellMoreDiv']}>
             <p>더보기</p>
           </div>
         </div>
@@ -62,7 +62,7 @@ function Home() {
             <BuyingItemList />
           </div>
 
-          <div className={homeStyle['moreDiv']}>
+          <div className={homeStyle['buyMoreDiv']}>
             <p>더보기</p>
           </div>
         </div>

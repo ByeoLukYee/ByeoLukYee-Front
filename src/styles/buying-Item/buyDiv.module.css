@@ -4,7 +4,7 @@
     grid-template-columns: repeat(4, 1fr);
     justify-content: flex-start;
     align-items: center;
-    column-gap: 5.1%;
+    column-gap: 2.5%;
     row-gap: 15%;
 }
 .grid-item {

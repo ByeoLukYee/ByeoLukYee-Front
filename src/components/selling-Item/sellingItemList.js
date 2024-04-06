@@ -6,6 +6,9 @@ function SellingItemList() {
     return (
         <div className={sellStyle['grid-container']}>
             <div className={sellStyle['grid-item']}> <SellPostItem /> </div>
+            <div className={sellStyle['grid-item']}> <SellPostItem /> </div>
+            <div className={sellStyle['grid-item']}> <SellPostItem /> </div>
+            <div className={sellStyle['grid-item']}> <SellPostItem /> </div>
         </div>
     )
 }

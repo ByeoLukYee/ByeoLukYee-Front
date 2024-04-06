@@ -15,14 +15,14 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 10%;
+    margin-bottom: 6%;
 }
 .recentlyBuyDiv {
     width: 100%;
     height: 50%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
 }
 .sellTextDiv,
 .buyTextDiv {
@@ -45,11 +45,19 @@
     align-items: center;
 }
 
-.moreDiv {
+.sellMoreDiv {
     display: flex;
     align-items: center;
     top: 20%;
-    left: 38.7%;
+    left: 32.7%;
+    cursor: pointer;
+    color: var(--gray-400);
+}
+.buyMoreDiv {
+    display: flex;
+    align-items: center;
+    top: 35%;
+    left: 32.7%;
     cursor: pointer;
     color: var(--gray-400);
 }

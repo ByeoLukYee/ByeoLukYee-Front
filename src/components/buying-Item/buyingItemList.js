@@ -6,6 +6,9 @@ function BuyingItemList() {
     return (
         <div className={buyStyle['grid-container']}>
             <div className={buyStyle['grid-item']}> <BuyPostItem /> </div>
+            <div className={buyStyle['grid-item']}> <BuyPostItem /> </div>
+            <div className={buyStyle['grid-item']}> <BuyPostItem /> </div>
+            <div className={buyStyle['grid-item']}> <BuyPostItem /> </div>
         </div>
     )
 }
