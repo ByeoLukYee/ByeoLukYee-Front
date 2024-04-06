@@ -8,14 +8,15 @@ import Page from './pages/page';
 import SellDetail from './pages/sellDetail';
 import BuyDetail from './pages/buyDetail';
 import AuctionParticipation from './pages/auctionParticipation';
+import Home from './components/home/home';
 
 function App() {
     return(
         <Router>
             <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/join" element={<Join />} />
-                <Route path="/page" element={<Page />} />
+                <Route path="/signin" element={<Login />} />
+                <Route path="/signup" element={<Join />} />
+                <Route path="/" element={<Home />} />
                 
                 <Route path="/sellDetail" element={<SellDetail />} />
                 <Route path="/buyDetail" element={<BuyDetail />} />
