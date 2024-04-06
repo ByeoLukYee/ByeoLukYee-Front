@@ -19,7 +19,7 @@ function BuyingPosts() {
                 <p style={{cursor: "pointer", color: selectedSort === "가격 낮은 순" ? "#424242" : "#D2D2D2"}} onClick={() => handleSortClick("가격 낮은 순")}>가격 낮은 순</p>
             </div>
 
-            <div>
+            <div style={{marginBottom: '40%'}}>
                 <BuyingItemList />
             </div>
         </div>

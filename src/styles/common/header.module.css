@@ -16,6 +16,7 @@
 .titleDiv {
     font-family: var(--LaundryGothic-font);
     font-weight: var(--Regular);
+    cursor: pointer;
 }
 .titleDiv > p {
     font-size: 2rem;
