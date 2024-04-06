@@ -5,7 +5,7 @@ import loginStyles from '../../styles/login/login.module.css'
 import styles from '../../styles/common/styles.css';
 
 import Footer from '../common/footer';
-import Nav from '../common/nav';
+import Header from '../common/header';
 
 function Login() {
     // 회원가입 화면으로 넘어가기
@@ -16,7 +16,7 @@ function Login() {
 
     return (
         <div className={loginStyles['container']}>
-            <Nav />
+            <Header />
             <div className={loginStyles['formDiv']}>
                 <div className={loginStyles['titleContainer']}>
                     <p className={loginStyles['titleP']}>우리 학교의 작은 마켓</p>
@@ -39,11 +39,11 @@ function Login() {
                     </div>
                     <div className={loginStyles['miniTextStyles']}>
                         <p>계정이 없다면?</p>
-                        <p onClick={() => TextClick('/join')}>회원가입</p>
+                        <p onClick={() => TextClick('/signup')}>회원가입</p>
                     </div>
                 </form>
             </div>
-            <Footer />
+            <div className={loginStyles['footerStyle']}> <Footer /> </div>
         </div>
     )
 }
