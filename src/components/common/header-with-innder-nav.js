@@ -1,8 +1,13 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import headerStyle from '../../styles/common/header.module.css';
 
 import SearchInput from './searchInput';
 
 function HeaderWithInnderNav() {
+    const [selectedTab, setSelectedTab] = useState('');
+
     return (
         <>
             <nav className={headerStyle['nav']}>
@@ -18,8 +23,8 @@ function HeaderWithInnderNav() {
             </nav>
             <div style={{textAlign: 'center'}}> <hr /> </div>
             <div className={headerStyle['textDiv']}>
-                <p>팝니다 게시글</p>
-                <p>삽니다 게시글</p>
+                <p className={selectedTab === 'sell' ? headerStyle['textActive'] : headerStyle['text']} onClick={() => setSelectedTab('sell')}>팝니다 게시글</p>
+                <p className={selectedTab === 'buy' ? headerStyle['textActive'] : headerStyle['text']} onClick={() => setSelectedTab('buy')}>삽니다 게시글</p>
             </div>
         </>
     )

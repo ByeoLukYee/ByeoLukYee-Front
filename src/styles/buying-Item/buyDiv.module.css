@@ -6,6 +6,7 @@
     align-items: center;
     column-gap: 2.5%;
     row-gap: 15%;
+    margin-bottom: 40%;
 }
 .grid-item {
     width: 15vw;
