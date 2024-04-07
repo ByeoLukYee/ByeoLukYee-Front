@@ -1,18 +1,5 @@
-.grid-container {
-    width: calc((14vw + 35px) * 4);
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: flex-start;
-    align-items: center;
-    column-gap: 5.1%;
-    row-gap: 15%;
-    margin-bottom: 5%;
-}
-.grid-item {
-    width: 14vw;
-    height: 32vh;
-}
-
+/* /component/selling-Item/sellingPostItem.js (팝니다 글쓰기 item)*/
+/* /component/selling-Item/sellPostItem.js (따끈따근 최신 팝니다 글 item) */
 .boxContainer {
     display: flex;
     flex-direction: column;
