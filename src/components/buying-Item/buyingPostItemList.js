@@ -6,7 +6,6 @@ function BuyingPostItemList() {
     return (
         <div className={buyGridStyle['buying-grid-container']}>
             <div className={buyGridStyle['buying-grid-item']}> <BuyingPostItem /> </div>
-            <div className={buyGridStyle['buying-grid-item']}> <BuyingPostItem /> </div>
         </div>
     )
 }

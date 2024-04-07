@@ -7,9 +7,9 @@
     height: 100%;
     padding: 7%;
     border-radius: 10px;
-    border-color: var(--gray-100);
+    border-color: var(--gray-200);
     border-style: solid;
-    border-width: 3px;
+    border-width: 1px;
     background-color: white;
 }
 

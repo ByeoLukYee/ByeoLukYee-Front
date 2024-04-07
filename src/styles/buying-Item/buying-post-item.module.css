@@ -13,15 +13,104 @@
 /* /component/buying-Item/buyingPostItem.js (삽니다 글쓰기 item) */
 .BoxContainer {
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
-    padding: 4% 3%;
-    border-radius: 10px;
-    border-color: var(--gray-100);
+    padding: 4%;
+    border-radius: 20px;
+    border-color: var(--gray-200);
     border-style: solid;
-    border-width: 3px;
+    border-width: 1px;
     background-color: white;
     column-gap: 40px;
+    row-gap: 20px;
     margin-bottom: 5%;
+    cursor: pointer;
 }
 
+.topDiv {
+    width: 100%;
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.topDiv > p { /* 경매중 */
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    color: var(--green);
+}
+.topLeftDiv {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.topLeftDiv > .imgDiv { 
+    width: 3vw;
+    height: 6.5vh;
+}
+.topLeftDiv > .imgDiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.topLeftDiv p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+}
+.topLeftDiv p:nth-child(2) {
+    font-size: 0.9rem;
+    color: var(--gray-200);
+}
+
+.middleDiv {
+    width: 100%;
+    display: flex;
+}
+.middleDiv > .context {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    /* 최대 5줄 */
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.moneyDiv {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+.moneyDiv > p:nth-child(1) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    font-size: 0.8rem;
+    color: var(--gray-200);
+}
+.moneyDiv > p:nth-child(2) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--ExtraBold);
+    font-size: 1.2rem;
+}
+
+.iconDiv {
+    display: flex;
+    column-gap: 7px;
+}
+.iconDiv > .eyesVectorDiv,
+.iconDiv > .heartVectorDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-300);
+    column-gap: 1px;
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+}
+.heartVector {
+    font-size: 0.9rem;
+}

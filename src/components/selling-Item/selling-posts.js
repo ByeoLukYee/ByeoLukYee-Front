@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import sellingPostStyle from '../../styles/selling-Item/selling-post-item.module.css';
+import sellingPostStyle from '../../styles/selling-Item/selling-posts-item.module.css';
 
 import SellingPostItemList from './sellingPostItemList';
 
