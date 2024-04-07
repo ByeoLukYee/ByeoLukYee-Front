@@ -12,7 +12,7 @@ function BuyingPosts() {
     };
 
     return (
-        <div style={{left: '15vw'}}>
+        <div style={{left: '15vw', marginTop: '2%'}}>
             <div className={buyingStyle['sortText']}>
                 <p style={{cursor: "pointer", color: selectedSort === "최신순" ? "#424242" : "#D2D2D2"}} onClick={() => handleSortClick("최신순")}>최신순</p>
                 <p style={{cursor: "pointer", color: selectedSort === "인기순" ? "#424242" : "#D2D2D2"}} onClick={() => handleSortClick("인기순")}>인기순</p>

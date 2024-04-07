@@ -38,7 +38,6 @@ function Main() {
                     {renderContent()}
                 </div>
 
-                {/* <div style={{width: '100%', display: 'flex', bottom: '-30%', position: 'absolute'}}> <Footer /> </div> */}
                 <Footer />
             </div>
         </>
