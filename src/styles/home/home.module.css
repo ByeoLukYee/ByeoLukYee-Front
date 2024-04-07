@@ -22,7 +22,6 @@
     height: 50%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 15%;
 }
 .sellTextDiv,
 .buyTextDiv {
@@ -46,150 +45,20 @@
 }
 
 .sellMoreDiv {
+    width: 3vw;
     display: flex;
     align-items: center;
     top: 20%;
-    left: 32.7%;
+    left: 40%;
     cursor: pointer;
     color: var(--gray-400);
 }
 .buyMoreDiv {
+    width: 3vw;
     display: flex;
     align-items: center;
     top: 35%;
-    left: 32.7%;
+    left: 40%;
     cursor: pointer;
     color: var(--gray-400);
-}
-
-
-/* 사용자님이 최근 본 글 */
-.lookContainer {
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 220%;
-    left: 3%;
-    row-gap: 10px;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.lookUserP {
-    font-size: 1.1rem;
-    font-family: var(--S-CoreDream-4Regular);
-}
-
-.topContainer {
-    display: flex;
-    margin-right: 3%;
-    flex: 0 0 auto;
-}
-
-.boxContainer {
-    display: flex;
-    flex-direction: column;
-    width: 48vw;
-    height: 25vh;
-    padding: 5%;
-    border-radius: 10px;
-    border-color: var(--gray-100);
-    border-style: solid;
-    border-width: 3px;
-    background-color: white;
-    /* background-color: var(--gray-100); */ /* 판매완료 되었을 시 */
-}
-
-.textContainer {
-    display: flex;
-    flex-direction: column;
-    top: 2%;
-}
-
-.textContainer > p:nth-child(1) {
-    color: var(--green);
-    /* color: var(--gray-300); */ /* 판매완료 */
-}
-
-.moneyP {
-    font-size: 1.4rem;
-    top: 5%;
-    /* color: var(--gray-700); */ /* 판매완료 */
-}
-/* .boxContainer h4 => color: var(--gray-700); */ /* 판매완료 */
-
-.lookImgStyle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 14vh;
-}
-
-.lookImgStyle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.vectorDiv {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 5px;
-    right: 5%;
-    bottom: 2%;
-}
-
-/* 본 횟수, 찜 횟수 Div */
-.eyesVectorDiv, .heartVectorDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--gray-300);
-}
-
-.eyesVector {
-    font-size: 1.3rem;
-}
-
-.heartVector {
-    font-size: 1rem;
-}
-
-/* 따끈따끈 최신 글 */
-.newContainer {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 110%;
-    row-gap: 10px;
-}
-
-/* 스크롤 뷰 */
-.scrollContainer {
-    display: flex;
-    overflow-x: auto;
-    width: 100%;
-    height: 100%;
-}
-
-.scrollContainer::-webkit-scrollbar {
-    width: 0;
-}
-
-.newScrollContainer {
-    display: flex;
-    flex-direction: column;
-    width: 105%;
-    height: 30vh;
-    overflow-y: auto;
-}
-
-.newScrollContainer::-webkit-scrollbar {
-    width: 0;
 }
