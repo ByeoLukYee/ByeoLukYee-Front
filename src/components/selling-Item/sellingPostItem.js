@@ -6,7 +6,7 @@ import sellStyle from "../../styles/selling-Item/sell-post-item.module.css";
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function SellPostItem({ status, price, title }) {
+function SellingPostItem({ status, price, title }) {
   return (
     <>
       <Link to="/buying-posts" style={{textDecoration: "none", color: "black"}}>
@@ -45,4 +45,4 @@ function SellPostItem({ status, price, title }) {
   );
 }
 
-export default SellPostItem;
+export default SellingPostItem;

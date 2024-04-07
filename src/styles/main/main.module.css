@@ -10,8 +10,10 @@
 }
 
 .textDiv {
+    width: 85%;
     display: flex;
     margin-top: 1.5%;
+    margin-bottom: 1.5%;
     left: 15vw;
     column-gap: 2%;
 

@@ -2,15 +2,15 @@ import { Link } from "react-router-dom";
 
 import styles from '../../styles/common/styles.css';
 
-import buyStyle from '../../styles/buying-Item/buyDiv.module.css';
+import buyStyle from '../../styles/buying-Item/buy-post-item.module.css';
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function BuyDiv() {
+function BuyPostItem() {
     return(
         <>
-            <Link to="/buyDetail" style={{ textDecoration: "none", color: 'black' }}>
+            <Link to="/selling-posts" style={{ textDecoration: "none", color: 'black' }}>
                 <div className={buyStyle['BoxContainer']}>
                     <div className={buyStyle['firstDiv']}>
                         <div className={buyStyle['contextDiv']}>
@@ -41,4 +41,4 @@ function BuyDiv() {
     )
 }
 
-export default BuyDiv;
+export default BuyPostItem;

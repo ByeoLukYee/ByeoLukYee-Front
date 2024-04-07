@@ -1,0 +1,31 @@
+/* /component/buying-Item/buyingPostItemList.js (삽니다 글쓰기 item 리스트) */
+.buy-grid-container {
+    width: calc((15vw + 35px) * 4);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 2.5%;
+    row-gap: 5%;
+    margin-bottom: 5%;
+}
+.buy-grid-item {
+    width: 15vw;
+    height: 11vh;
+}
+
+/* /component/buying-Item/buyPostItemList.js (따끈따근 최신 삽니다 글) */
+.buying-grid-container {
+    width: calc((15vw + 35px) * 4);
+    display: grid;
+    grid: repeat(4, 1fr) / repeat(2, 1fr);
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 2%;
+    row-gap: 5%;
+    margin-bottom: 5%;
+}
+.buying-grid-item {
+    width: 30vw;
+    height: 27vh;
+}

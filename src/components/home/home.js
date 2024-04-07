@@ -1,8 +1,8 @@
 import styles from "../../styles/common/styles.css";
 import homeStyle from "../../styles/home/home.module.css";
 
-import SellingItemList from '../selling-Item/sellingItemList'
-import BuyingItemList from "../buying-Item/buyingItemList";
+import SellingItemList from '../selling-Item/sellPostItemList'
+import BuyingItemList from "../buying-Item/buyPostItemList";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -26,9 +26,14 @@ function Home() {
   };
 
   return (
-    <div style={{width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', left: '15vw', marginTop: '1.5%', marginRight: '15.5%', zIndex: 100}}>
+    <div style={{width: '85%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', left: '15vw', marginBottom: '10%', zIndex: 100, overflowX: 'hidden'}}>
 
-        <div>{/* 피그마 : 회색 박스 */}</div>
+        <div style={{width: '85%', height: '45vh', display: 'flex', columnGap: '30px', marginBottom: '6%'}}>
+          <div className={homeStyle['grayContainer']}></div>
+          <div className={homeStyle['grayContainer']}></div>
+          <div className={homeStyle['grayContainer']}></div>
+        </div>
+
         <div className={homeStyle['recentlySeenSellDiv']}>
           <div className={homeStyle['sellTextDiv']}> <p>최근 본 팝니다</p> </div>
           <div className={homeStyle['sellContainer']}>
