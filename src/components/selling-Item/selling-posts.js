@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import sellingPostStyle from '../../styles/selling-Item/selling-posts.module.css';
+import sellingPostStyle from '../../styles/selling-Item/selling-post-item.module.css';
 
-import SellingItemList from '../selling-Item/sellingItemList';
+import SellingPostItemList from './sellingPostItemList';
 
 function SellingPosts() {
     const [selectedSort, setSelectedSort] = useState('');
@@ -12,15 +12,15 @@ function SellingPosts() {
     };
 
     return (
-        <div style={{top: '7%', left: '15vw'}}>
+        <div style={{left: '15vw'}}>
             <div className={sellingPostStyle['sortText']}>
                 <p style={{cursor: "pointer", color: selectedSort === "최신순" ? "#424242" : "#D2D2D2"}} onClick={() => handleSortClick("최신순")}>최신순</p>
                 <p style={{cursor: "pointer", color: selectedSort === "인기순" ? "#424242" : "#D2D2D2"}} onClick={() => handleSortClick("인기순")}>인기순</p>
                 <p style={{cursor: "pointer", color: selectedSort === "가격 낮은 순" ? "#424242" : "#D2D2D2"}} onClick={() => handleSortClick("가격 낮은 순")}>가격 낮은 순</p>
             </div>
 
-            <div style={{marginBottom: '40%'}}>
-                <SellingItemList />
+            <div style={{marginBottom: '10%'}}>
+                <SellingPostItemList />
             </div>
         </div>
     )

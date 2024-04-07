@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/login';
 import Join from './pages/join';
 import Main from './pages/main';
-import SellingPosts from './pages/selling-posts';
+import SellingPostsId from './pages/selling-posts-id';
 import BuyingPostsId from './pages/buying-posts-id';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
                 <Route path="/signin" element={<Login />} />
                 <Route path="/signup" element={<Join />} />
                 <Route path="/" element={<Main />} />
-                <Route path='/selling-posts' element={<SellingPosts />}/>
+                <Route path='/selling-posts' element={<SellingPostsId />}/>
                 <Route path='/buying-posts' element={<BuyingPostsId />}/>
             </Routes>
         </Router>
