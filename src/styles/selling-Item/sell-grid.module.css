@@ -1,6 +1,5 @@
 /* /component/selling-Item/sellPostItemList.js */
-.sell-grid-container,
-.selling-grid-container {
+.sell-grid-container {
     width: calc((14vw + 35px) * 4);
     display: grid;
     justify-content: flex-start;
@@ -14,6 +13,14 @@
 }
 
 /* /component/selling-Item/sellingPostItemList.js */
+.selling-grid-container {
+    width: calc((14vw + 35px) * 4);
+    display: grid;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 5.1%;
+    row-gap: 5%;
+}
 .selling-grid-container {
     grid: repeat(4,1fr) / repeat(4,1fr);
 }
