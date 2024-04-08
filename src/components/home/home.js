@@ -1,29 +1,10 @@
 import styles from "../../styles/common/styles.css";
 import homeStyle from "../../styles/home/home.module.css";
 
-import SellingItemList from '../selling-Item/sellPostItemList'
-import BuyingItemList from "../buying-Item/buyPostItemList";
-
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { HOST } from "../../config/config";
+import SellingPostItemList from '../selling-Item/sellingPostItemList'
+import BuyPostItemList from "../buying-Item/buyPostItemList";
 
 function Home() {
-  const [sellingPostList, setsellingPostList] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(`${HOST}/selling-posts`);
-      console.log(response.data);
-      setsellingPostList(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <div style={{width: '85%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', left: '15vw', marginBottom: '10%', zIndex: 100, overflowX: 'hidden'}}>
@@ -36,8 +17,8 @@ function Home() {
 
         <div className={homeStyle['recentlySeenSellDiv']}>
           <div className={homeStyle['sellTextDiv']}> <p>최근 본 팝니다</p> </div>
-          <div className={homeStyle['sellContainer']}>
-            <SellingItemList />
+          <div className={homeStyle['sellContainer']}> 
+            <SellingPostItemList /> 
           </div>
 
           <div className={homeStyle['sellMoreDiv']}>
@@ -48,7 +29,7 @@ function Home() {
         <div className={homeStyle['recentlySellDiv']}>
           <div className={homeStyle['sellTextDiv']}> <p>따끈따근 최신 팝니다 글</p> </div>
           <div className={homeStyle['sellContainer']}>
-            <SellingItemList />
+            <SellingPostItemList /> 
           </div>
 
           <div className={homeStyle['sellMoreDiv']}>
@@ -59,7 +40,7 @@ function Home() {
         <div className={homeStyle['recentlyBuyDiv']}>
           <div className={homeStyle['buyTextDiv']}> <p>따끈따근 최신 삽니다 글</p> </div>
           <div className={homeStyle['buyContainer']}>
-            <BuyingItemList />
+            <BuyPostItemList />
           </div>
 
           <div className={homeStyle['buyMoreDiv']}>
