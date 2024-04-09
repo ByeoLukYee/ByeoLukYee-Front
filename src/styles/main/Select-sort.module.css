@@ -1,0 +1,15 @@
+.sortText {
+    cursor: pointer;
+
+    font-family: var(--LaundryGothic-font);
+    font-weight: var(--Regular);
+    font-size: 1.2rem;
+}
+
+.defaultText {
+    color: var(--gray-300);
+}
+
+.selectText {
+    color: var(--gray-900);
+}
