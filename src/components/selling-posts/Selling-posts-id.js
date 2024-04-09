@@ -5,6 +5,7 @@ import Header from '../common/Header';
 import Footer from '../common/Footer';
 import SellingPostsIdConsumerInfo from './Selling-posts-id-consumerInfo';
 import SellingPostsIdInfo from './Selling-posts-id-info';
+import CommentList from '../comment/CommentList';
 
 function SellingPostsId() {
     return (
@@ -43,10 +44,10 @@ function SellingPostsId() {
                     <div className={styles['bottomContainer']}>
                         <p>경매댓글</p>
                         <div className={styles['commentContainer']}>
-
+                            <CommentList />
                         </div>
                     </div>
-
+                    
                 </div>
                 <Footer />
             </div>

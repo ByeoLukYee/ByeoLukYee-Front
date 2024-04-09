@@ -1,0 +1,42 @@
+.container {
+    width: 63vw;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+.top > p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 1.3rem;
+}
+
+.info {
+    display: flex;
+    column-gap: 20px;
+}
+.info > p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 1.1rem;
+}
+
+.hr {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: var(--gray-300);
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.bottom > p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    color: var(--gray-800);
+}

@@ -126,3 +126,9 @@
     font-weight: var(--SemiBold);
     color: var(--gray-200);
 }
+
+.commentContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15%;
+}
