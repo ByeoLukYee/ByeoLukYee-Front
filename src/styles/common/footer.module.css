@@ -32,7 +32,7 @@
 .textStyle {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     column-gap: 10px;
 }
 .textStyle > p {

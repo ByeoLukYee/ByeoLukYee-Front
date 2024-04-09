@@ -15,11 +15,21 @@ function Footer() {
                 <div className={footerStyle['divStyle']}>
                     <div className={footerStyle['textStyle']}>
                         <p>Email</p>
-                        <p>w2216@e-mirim.hs.kr</p>
+                        <div>
+                            <p>w2210@e-mirim.hs.kr</p>
+                            <p>w2216@e-mirim.hs.kr</p>
+                            <p>w2218@e-mirim.hs.kr</p>
+                            <p>w2222@e-mirim.hs.kr</p>
+                        </div>
                     </div>
                     <div className={footerStyle['textStyle']}>
                         <p>Github</p>
-                        <p>github.com/bhark.065</p>
+                        <div>
+                            <p>github.com/seoyoung1276</p>
+                            <p>github.com/bhark065</p>
+                            <p>github.com/hyeg0121</p>
+                            <p>github.com/seoyeon0203</p>
+                        </div>
                     </div>
                 </div>
             </div>
