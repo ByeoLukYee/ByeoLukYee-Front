@@ -1,0 +1,5 @@
+p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    font-size: 1.1rem;
+}

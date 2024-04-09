@@ -1,4 +1,4 @@
-import '../../styles/common/styles.css';
+import '../../styles/common/Styles.css';
 import styles from '../../styles/upload/BuyWrite.module.css';
 
 function BuyWrite() {

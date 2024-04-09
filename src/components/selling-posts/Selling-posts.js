@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import '../../styles/common/styles.css';
-import sellingPostStyle from '../../styles/selling-Item/selling-posts.module.css';
+import '../../styles/common/Styles.css';
+import sellingPostStyle from '../../styles/selling-posts/Selling-posts.module.css';
 
-import SellingPostItemList from './sellingPostItemList';
+import SellingPostItemList from '../selling-Item/SellingPostItemList';
 import SelectSort from '../main/Select-sort';
 
 function SellingPosts() {

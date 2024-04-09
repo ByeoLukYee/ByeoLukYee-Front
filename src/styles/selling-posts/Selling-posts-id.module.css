@@ -1,0 +1,128 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.allContainer {
+    display: flex;
+    flex-direction: column;
+    left: 15vw;
+    margin-top: 3%;
+    margin-bottom: 20%;
+}
+
+.topContainer {
+    display: flex;
+    column-gap: 7%;
+}
+
+.container1 {
+    width: 40vw;
+    height: auto;
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contextDiv {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    border-color: var(--gray-300);
+}
+.contextDiv > p:nth-child(1) { /* title */
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 2rem;
+}
+.contextDiv > p:nth-child(3) { /* context */
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    font-size: 1.2rem;
+    color: var(--gray-800);
+}
+
+.priceDiv {
+    display: flex;
+    flex-direction: column;
+}
+.priceDiv > p { /* 희망 거래 가격 */
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    color: var(--gray-300);
+}
+.price {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+.price > p:nth-child(1) { /* price */
+    font-family: var(--LaundryGothic-font);
+    font-weight: var(--Regular);
+    font-size: 2.7rem;
+}
+.price > p:nth-child(2) { /* 원 이하 */
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    font-size: 1.6rem;
+}
+
+.container2 {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 45vh;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.button {
+    width: 16vw;
+    height: 7.5vh;
+}
+.button > button {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--bg);
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 1.1rem;
+}
+
+.hr {
+    width: 63%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: var(--gray-300);
+    margin-top: 3%;
+    margin-bottom: 1%;
+}
+
+.bottomContainer {
+    display: flex;
+    flex-direction: column;
+}
+.bottomContainer > p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    color: var(--gray-200);
+}

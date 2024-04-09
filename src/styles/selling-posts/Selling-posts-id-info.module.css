@@ -1,0 +1,38 @@
+.info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.info > p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 1.2rem;
+    color: var(--green);
+}
+
+.GoodCheck {
+    display: flex;
+    column-gap: 20px;
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 1.1rem;
+    color: var(--gray-500);
+}
+
+.place {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+.place > p:nth-child(1) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 1.1rem;
+    color: var(--gray-500);
+}
+.place > p:nth-child(2) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+    font-size: 1.1rem;
+}

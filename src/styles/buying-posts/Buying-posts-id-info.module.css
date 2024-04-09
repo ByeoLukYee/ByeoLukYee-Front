@@ -1,0 +1,21 @@
+.checkDiv {
+    display: flex;
+    column-gap: 30px;
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    font-size: 1.1rem;
+    color: var(--gray-500);
+}
+
+.placeDiv {
+    display: flex;
+    column-gap: 20px;
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    font-size: 1.1rem;
+}
+.placeDiv > p:nth-child(1) {
+    color: var(--gray-500);
+}

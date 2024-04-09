@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
-import buyingStyle from '../../styles/buying-Item/buying-posts.module.css';
+import '../../styles/common/Styles.css';
+import styles from '../../styles/buying-posts/Buying-posts.module.css';
 
-import BuyingPostItemList from './buyingPostItemList';
+import BuyingPostItemList from '../buying-Item/BuyingPostItemList';
 import SelectSort from '../main/Select-sort';
 
 function BuyingPosts() {
     return (
         <div style={{left: '15vw', marginTop: '2%'}}>
-            <div className={buyingStyle['sortTextDiv']}>
+            <div className={styles['sortTextDiv']}>
                 <SelectSort />
             </div>
 

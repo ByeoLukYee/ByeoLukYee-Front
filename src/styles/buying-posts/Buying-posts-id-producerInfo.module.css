@@ -1,0 +1,36 @@
+.userDiv {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+.userImg {
+    width: 6vw;
+    height: 13vh;
+}
+.userImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profileDiv {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.profileDiv > p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    font-size: 1.1rem;
+}
+
+.myInformation {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    color: var(--gray-500);
+}

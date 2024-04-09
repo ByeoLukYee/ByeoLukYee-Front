@@ -1,36 +1,36 @@
 import { Link } from "react-router-dom";
 
-import styles from '../../styles/common/styles.css';
+import '../../styles/common/Styles.css';
 
-import buyStyle from '../../styles/buying-Item/buy-post-item.module.css';
+import styles from '../../styles/buying-Item/Buy-post-item.module.css';
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function BuyPostItem() {
+function BuyPostItem({ status, price, title }) {
     return(
         <>
-            <Link to="/selling-posts" style={{ textDecoration: "none", color: 'black' }}>
-                <div className={buyStyle['BoxContainer']}>
-                    <div className={buyStyle['firstDiv']}>
-                        <div className={buyStyle['contextDiv']}>
-                            <p>아이폰 7 카메라용으로 삽니다!!</p>
-                            <p>생활기스 있어도 괜찮아요! 배터리는 80% 이상만 제시해주세요</p>
+            <Link to="/selling-posts/1" style={{ textDecoration: "none", color: 'black' }}>
+                <div className={styles['BoxContainer']}>
+                    <div className={styles['firstDiv']}>
+                        <div className={styles['contextDiv']}>
+                            <p>{title}</p>
+                            <p>content</p>
                         </div>
-                        <div className={buyStyle['moneyDiv']}>
-                            <p>100,000원</p>
+                        <div className={styles['moneyDiv']}>
+                            <p>{price}원</p>
                             <p>희망 구매 가격</p>
                         </div>
                     </div>
-                    <div className={buyStyle['secondDiv']}>
-                        <p>#경매중</p>
-                        <div className={buyStyle['iconDiv']}>
-                            <div className={buyStyle['eyesVectorDiv']}>
-                                <VscEye className={buyStyle['eyesVector']}/>
+                    <div className={styles['secondDiv']}>
+                        <p>#{status}</p>
+                        <div className={styles['iconDiv']}>
+                            <div className={styles['eyesVectorDiv']}>
+                                <VscEye className={styles['eyesVector']}/>
                                 <p>0</p>
                             </div>
-                            <div className={buyStyle['heartVectorDiv']}>
-                                <GoHeart className={buyStyle['heartVector']}/>
+                            <div className={styles['heartVectorDiv']}>
+                                <GoHeart className={styles['heartVector']}/>
                                 <p>0</p>
                             </div>
                         </div>

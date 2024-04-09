@@ -1,4 +1,5 @@
-import '../../styles/common/styles.css';
+import '../../styles/common/Styles.css';
+
 import React, { useState } from 'react';
 import styles from '../../styles/main/Select-sort.module.css';
 
