@@ -1,27 +1,43 @@
-.inputContainer {
+.container {
     width: 100%;
+    height: 100%;
+    left: 22vw;
+    margin-bottom: 10%;
+}
+
+.inputContainer {
+    width: 60%;
     height: auto;
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+    margin-bottom: 2%;
+}
+
+.hr {
+    width: 60vw;
+}
+
+.textDiv:first-child {
+    margin-top: 10%;
 }
 .textDiv {
-    width: 90vw;
+    width: 60vw;
     display: flex;
     flex-direction: column;
     row-gap: 5px;
 }
 .textDiv > p {
     color: var(--gray-300);
-    
+
     font-size: 0.9rem;
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
 }
 .textDiv > input {
-    padding: 4%;
+    padding: 1.5%;
     border-style: solid;
-    border-radius: 5px;
+    border-radius: 15px;
     border-color: var(--gray-300);
 
     font-family: var(--SUIT-font);
@@ -31,8 +47,14 @@
     color: var(--gray-500);
 }
 
+.textDiv > .price::-webkit-outer-spin-button,
+.textDiv > .price::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .contextDiv {
-    width: 90vw;
+    width: 60vw;
     display: flex;
     flex-direction: column;
     row-gap: 5px;
@@ -45,14 +67,14 @@
     font-weight: var(--Medium);
 }
 .contextDiv > textarea {
-    height: auto;
-    min-height: 15vh;
-    padding: 4%;
+    height: 40vh;
+    padding: 1.5%;
     border: 2px;
     border-style: solid;
-    border-radius: 5px;
+    border-radius: 15px;
     border-color: var(--gray-300);
-
+    resize: none;
+    
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
 }
@@ -64,19 +86,18 @@
 }
 
 .buttonContainer {
-    position: relative;
-    width: 90vw;
+    width: 60vw;
     height: auto;
     display: flex;
-    margin-top: 10%;
-    margin-bottom: 15%;
+    margin-top: 2%;
+    justify-content: flex-end;
 }
 .buttonStyle {
-    width: 100%;
+    width: 17vw;
     height: 7vh;
     background-color: var(--bg);
     border: 0;
-    border-radius: 6px;
+    border-radius: 15px;
 
     font-size: 1rem;
     font-family: var(--SUIT-font);
