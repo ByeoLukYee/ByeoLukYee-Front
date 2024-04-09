@@ -22,7 +22,7 @@ function SellWrite() {
                     {/* 가격 */}
                     <div className={sellWriteStyle['textDiv']}>
                         <p>가격</p>
-                        <input placeholder='거래 가격'/>
+                        <input placeholder='거래 가격' type='number' className={sellWriteStyle['price']}/>
                     </div>
 
                     {/* 거래 희망 장소 */}

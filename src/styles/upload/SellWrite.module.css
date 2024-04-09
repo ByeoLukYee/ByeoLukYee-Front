@@ -59,6 +59,12 @@
     color: var(--gray-500);
 }
 
+.textDiv > .price::-webkit-outer-spin-button,
+.textDiv > .price::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .contextDiv {
     width: 60vw;
     display: flex;
