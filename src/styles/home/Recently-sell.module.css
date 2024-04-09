@@ -1,0 +1,27 @@
+.sellTextDiv {
+    display: flex;
+}
+
+.sellTextDiv > p {
+    color: var(--gray-900);
+    margin-bottom: 1%;
+
+    font-family: var(--LaundryGothic-font);
+    font-weight: var(--Regular);
+    font-size: 1.2rem;
+}
+
+.sellContainer {
+    display: flex;
+    align-items: center;
+}
+
+.sellMoreDiv {
+    width: 3vw;
+    display: flex;
+    align-items: center;
+    top: 20%;
+    left: 40%;
+    cursor: pointer;
+    color: var(--gray-400);
+}
