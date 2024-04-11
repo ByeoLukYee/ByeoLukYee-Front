@@ -10,7 +10,7 @@ import { VscEye } from "react-icons/vsc";
 function BuyPostItem() {
     return(
         <>
-            <Link to="/selling-posts" style={{ textDecoration: "none", color: 'black' }}>
+            <Link to="/selling-posts/1" style={{ textDecoration: "none", color: 'black' }}>
                 <div className={buyStyle['BoxContainer']}>
                     <div className={buyStyle['firstDiv']}>
                         <div className={buyStyle['contextDiv']}>
