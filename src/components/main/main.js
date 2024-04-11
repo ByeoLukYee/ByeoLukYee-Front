@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
-import mainStyle from '../../styles/main/main.module.css';
+import '../../styles/common/Styles.css';
+import mainStyle from '../../styles/main/Main.module.css';
 
-import Footer from '../common/footer';
-import Header from '../common/header';
-import Home from '../home/home';
+import Footer from '../common/Footer';
+import Header from '../common/Header';
+import Home from '../home/Home';
 import SellingPosts from '../selling-Item/selling-posts';
-import BuyingPosts from '../buying-Item/buying-posts';
+import BuyingPosts from '../buying-Item/Buying-posts';
 
 function Main() {
     const [selectedTab, setSelectedTab] = useState('/');

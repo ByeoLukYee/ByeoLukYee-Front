@@ -1,6 +1,6 @@
 import buyGridStyle from '../../styles/buying-Item/buy-grid.module.css';
 
-import BuyPostItem from './buyPostItem';
+import BuyPostItem from './BuyPostItem';
 
 function BuyingItemList() {
     return (

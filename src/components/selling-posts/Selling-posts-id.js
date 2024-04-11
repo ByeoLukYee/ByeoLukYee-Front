@@ -6,4 +6,4 @@ function SellingPostsId() {
     )
 }
 
-export default SellingPostsId;
+export default SellingPostsId; 

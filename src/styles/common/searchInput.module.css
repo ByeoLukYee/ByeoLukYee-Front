@@ -16,7 +16,7 @@
     font-family: var(--SUIT-font);
     font-weight: var(--Light);
 }
-
+ 
 .searchInput:focus {
     outline: none;
 }

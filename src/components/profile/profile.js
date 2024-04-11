@@ -6,7 +6,7 @@ import ProfileInfo from './ProfileInfo';
 import ProfileList from './ProfileList';
 
 function Profile() {
-    return(
+    return( 
        <div className={profileStyle['divContainer']}>
             <TitleBar />
             <div className={profileStyle['DivStyle']}>

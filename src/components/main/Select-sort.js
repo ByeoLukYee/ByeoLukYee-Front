@@ -1,5 +1,6 @@
-import '../../styles/common/styles.css';
 import React, { useState } from 'react';
+
+import '../../styles/common/Styles.css';
 import styles from '../../styles/main/Select-sort.module.css';
 
 function SelectSort() {

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-import buyingStyle from '../../styles/buying-Item/buying-posts.module.css';
+import '../../styles/common/Styles.css';
+import buyingStyle from '../../styles/buying-Item/Buying-posts.module.css';
 
-import BuyingPostItemList from './buyingPostItemList';
+import BuyingPostItemList from '../buying-Item/BuyingPostItemList';
 import SelectSort from '../main/Select-sort';
 
 function BuyingPosts() {

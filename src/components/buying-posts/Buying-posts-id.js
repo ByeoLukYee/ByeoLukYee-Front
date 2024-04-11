@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import styles from '../../styles/common/styles.css';
+import '../../styles/common/Styles.css';
 import buyingPostsIdStyle from '../../styles/store/buying-posts-id.module.css';
 
-import Header from '../common/header';
-import Footer from '../common/footer';
+import Header from '../common/Header';
+import Footer from '../common/Footer';
 
 function BuyingPostsId({ status, price, title }) {
     return (

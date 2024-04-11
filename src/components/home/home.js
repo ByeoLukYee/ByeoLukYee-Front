@@ -1,5 +1,5 @@
-import "../../styles/common/styles.css";
-import styles from "../../styles/home/home.module.css";
+import '../../styles/common/Styles.css';
+import styles from "../../styles/home/Home.module.css";
 
 import RecentlySeenSell from "./RecentlySeen-sell";
 import RecentlySell from "./Recently-sell";

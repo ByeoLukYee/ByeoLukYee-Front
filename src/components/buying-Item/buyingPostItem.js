@@ -13,7 +13,7 @@ function BuyingPostItem() {
             <Link to="/selling-posts" style={{ textDecoration: "none", color: 'black' }}>
                 
                 <div className={buyingStyle['BoxContainer']}>
-                    
+                     
                     <div className={buyingStyle['topDiv']}>
                         <div className={buyingStyle['topLeftDiv']}>
                             <div className={buyingStyle['imgDiv']}> <img src={process.env.PUBLIC_URL + "/images/exampleImg.png"} alt="example" /> </div>

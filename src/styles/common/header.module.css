@@ -14,7 +14,7 @@
     align-items: center;
     column-gap: 120px;
 }
-.titleDiv {
+.titleDiv { 
     font-family: var(--LaundryGothic-font);
     font-weight: var(--Regular);
     cursor: pointer;
