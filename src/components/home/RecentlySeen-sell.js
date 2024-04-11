@@ -1,7 +1,7 @@
-import '../../styles/common/Styles.css';
+import '../../styles/common/styles.css';
 import styles from '../../styles/home/RecentlySeen-sell.module.css';
 
-import SellingPostItemList from '../selling-Item/SellingPostItemList';
+import SellingPostItemList from '../selling-Item/sellingPostItemList';
 
 function RecentlySeenSell() {
     return (

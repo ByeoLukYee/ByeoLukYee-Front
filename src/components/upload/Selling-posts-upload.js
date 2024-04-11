@@ -1,9 +1,9 @@
-import '../../styles/common/Styles.css';
+import '../../styles/common/styles.css';
 import styles from '../../styles/upload/Selling-posts-upload.module.css';
 
-import Header from '../common/Header';
+import Header from '../common/header';
 import BuyWrite from './BuyWrite';
-import Footer from '../common/Footer';
+import Footer from '../common/footer';
 
 function SellingPostsUpload() {
     return (

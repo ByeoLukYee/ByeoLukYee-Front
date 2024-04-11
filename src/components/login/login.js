@@ -4,11 +4,11 @@ import axios from "axios";
 
 import { HOST } from "../../config/config";
 
-import '../../styles/common/Styles.css';
-import loginStyles from '../../styles/login/Login.module.css'
+import loginStyles from '../../styles/login/login.module.css'
+import styles from '../../styles/common/styles.css';
 
-import Header from '../common/Header';
-import Footer from '../common/Footer';
+import Footer from '../common/footer';
+import Header from '../common/header';
 
 function Login() {
     // 회원가입 화면으로 넘어가기

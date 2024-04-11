@@ -1,22 +1,22 @@
-import '../../styles/common/Styles.css';
-import styles from '../../styles/profile/Profile.module.css';
+import '../../styles/common/Style.css';
+import profileStyle from '../../styles/profile/profile.module.css';
 
-import TitleBar from '../common/TitleBar';
+import TitleBar from '../common/titleBar';
 import ProfileInfo from './ProfileInfo';
 import ProfileList from './ProfileList';
 
 function Profile() {
     return(
-       <div className={styles['divContainer']}>
+       <div className={profileStyle['divContainer']}>
             <TitleBar />
-            <div className={styles['DivStyle']}>
+            <div className={profileStyle['DivStyle']}>
                 <p>프로필</p>
             </div>
-            <div className={styles['profileDiv']}>
+            <div className={profileStyle['profileDiv']}>
                 <ProfileInfo />
             </div>
             <hr />
-            <div className={styles['informationDiv']}> 
+            <div className={profileStyle['informationDiv']}> 
                 <ProfileList />
             </div>
        </div>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import '../../styles/common/Styles.css';
-import styles from "../../styles/selling-Item/Selling-posts-item.module.css";
+import '../../styles/common/styles.css';
+import sellStyle from "../../styles/selling-Item/selling-posts-item.module.css";
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
@@ -9,31 +9,31 @@ import { VscEye } from "react-icons/vsc";
 function SellingPostItem({ status, price, title }) {
   return (
     <>
-      <Link to="/buying-posts/1" style={{textDecoration: "none", color: "black"}}>
-        <div className={styles["boxContainer"]}>
+      <Link to="/buying-posts" style={{textDecoration: "none", color: "black"}}>
+        <div className={sellStyle["boxContainer"]}>
 
-          <div className={styles["lookImgStyle"]}>
+          <div className={sellStyle["lookImgStyle"]}>
             <img
               src={process.env.PUBLIC_URL + "/images/exampleImg.png"}
               alt="example"
             />
           </div>
 
-          <div className={styles['contextContainer']}>
-            <div className={styles["textContainer"]}>
+          <div className={sellStyle['contextContainer']}>
+            <div className={sellStyle["textContainer"]}>
               <p># {status}</p>
               <p>{title}</p>
               <p style={{ top: "5%" }}>{price}원</p>
             </div>
 
-            <div className={styles["vectorDiv"]}>
+            <div className={sellStyle["vectorDiv"]}>
               {/* 몇명 봤는지, 누가 찜했는지 */}
-              <div className={styles["eyesVectorDiv"]}>
-                <VscEye className={styles["eyesVector"]} />
+              <div className={sellStyle["eyesVectorDiv"]}>
+                <VscEye className={sellStyle["eyesVector"]} />
                 <p>0</p>
               </div>
-              <div className={styles["heartVectorDiv"]}>
-                <GoHeart className={styles["heartVector"]} />
+              <div className={sellStyle["heartVectorDiv"]}>
+                <GoHeart className={sellStyle["heartVector"]} />
                 <p>0</p>
               </div>
             </div>

@@ -1,15 +1,14 @@
-import '../../styles/common/Styles.css';
-import styles from '../../styles/selling-Item/Sell-grid.module.css';
+import '../../styles/common/styles.css';
+import sellStyle from '../../styles/selling-Item/sell-grid.module.css';
 
-import SellingPostItem from './SellingPostItem';
+import SellingPostItem from './sellingPostItem';
 
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { HOST } from "../../config/config";
 
 function SellingPostItemList() {
-    const [sellingPostList, setSellingPostList] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [sellingPostList, setsellingPostList] = useState([]);
 
     useEffect(() => {
       fetchData();
@@ -17,31 +16,26 @@ function SellingPostItemList() {
   
     const fetchData = async () => {
       try {
-        // `${HOST}/selling-posts/1`
-        const response = await axios.get('http://localhost:8080/selling-posts/1');
+        // `${HOST}/selling-posts`
+        const response = await axios.get('http://localhost:8080/selling-posts');
         console.log(response.data);
-        setSellingPostList(response.data);
-        setIsLoading(false);
+        setsellingPostList(response.data);
       } catch (error) {
         console.log(error);
       }
     };
     
     return (
-        <div className={styles['selling-grid-container']}>
-            {isLoading ? (
-                <p className={styles['noMessage']}>게시글이 없습니다.</p>
-            ) : (
-              sellingPostList.map((item, index) => (
-                    <div key={index} className={styles['selling-grid-item']}> 
-                        <SellingPostItem
-                            title={item.title}
-                            status={item.krStatus}
-                            price={item.price}
-                        />
-                    </div>
-                ))
-            )}
+        <div className={sellStyle['selling-grid-container']}>
+            {sellingPostList.map((item, index) => (
+                <div key={index} className={sellStyle['grid-item']}> 
+                    <SellingPostItem
+                        title={item.title}
+                        status={item.krStatus}
+                        price={item.price}
+                    />
+                </div>
+            ))}
         </div>
     )
 }

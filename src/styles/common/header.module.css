@@ -1,9 +1,10 @@
 .nav {
     width: 85%;
     display: flex;
+    /* justify-content: center; */
     left: 15vw;
     align-items: center;
-    column-gap: 6.5%;
+    column-gap: 12%;
     margin-top: 1.5%;
     margin-bottom: 1.5%;
     top: 0;
@@ -11,7 +12,7 @@
 .container1 {
     display: flex;
     align-items: center;
-    column-gap: 50px;
+    column-gap: 120px;
 }
 .titleDiv {
     font-family: var(--LaundryGothic-font);

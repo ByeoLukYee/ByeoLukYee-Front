@@ -1,4 +1,4 @@
-import SellingPosts from '../components/selling-posts/Selling-posts';
+import SellingPosts from '../components/selling-Item/selling-posts';
 
 function SellingPostsPage() {
     return(

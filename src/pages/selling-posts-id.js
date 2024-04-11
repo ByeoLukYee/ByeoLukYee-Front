@@ -1,4 +1,4 @@
-import SellingPostsId from '../components/selling-posts/Selling-posts-id';
+import SellingPostsId from '../components/store/selling-posts-id';
 
 function SellingPostsIdPage() {
     return(

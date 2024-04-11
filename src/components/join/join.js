@@ -4,11 +4,11 @@ import axios from "axios";
 
 import { HOST } from "../../config/config";
 
-import '../../styles/common/Styles.css';
-import joinStyles from '../../styles/join/Join.module.css';
+import joinStyles from '../../styles/join/join.module.css';
+import styles from '../../styles/common/styles.css';
 
-import Header from '../common/Header';
-import Footer from '../common/Footer';
+import Header from '../common/header';
+import Footer from '../common/footer';
 
 function Join() {
     // 로그인 화면으로 넘어가기

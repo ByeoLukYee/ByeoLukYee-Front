@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import '../../styles/common/Styles.css';
+import '../../styles/common/styles.css';
 import styles from '../../styles/upload/Image-upload.module.css';
 
 function ImageUpload() {

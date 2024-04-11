@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import '../../styles/common/Styles.css';
+import '../../styles/common/styles.css';
 import styles from '../../styles/home/Recently-buy.module.css';
 
-import BuyPostItemList from "../buying-Item/BuyPostItemList";
+import BuyPostItemList from "../buying-Item/buyPostItemList";
 
 function RecentlyBuy() {
     return (

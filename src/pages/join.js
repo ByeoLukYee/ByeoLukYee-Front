@@ -1,5 +1,5 @@
 import React from 'react';
-import Join from '../components/join/Join'
+import Join from '../components/join/join'
 
 function JoinPage() {
     return (
