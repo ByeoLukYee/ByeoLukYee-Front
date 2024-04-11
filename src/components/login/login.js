@@ -1,11 +1,10 @@
+import axios from "axios";
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 import { HOST } from "../../config/config";
 
-import loginStyles from '../../styles/login/login.module.css'
-import styles from '../../styles/common/styles.css';
+import loginStyles from '../../styles/login/login.module.css';
 
 import Footer from '../common/footer';
 import Header from '../common/header';
@@ -14,7 +13,7 @@ function Login() {
     // 회원가입 화면으로 넘어가기
     const navigate = useNavigate();
     const TextClick = (path) => {
-      navigate(path);
+        navigate(path);
     };
 
     const [email, setEmail] = useState('');
@@ -34,12 +33,12 @@ function Login() {
             // 서버로 로그인 요청
             // `${HOST}/signin`
             // http://localhost:8080/signin
-            const response = await axios.post(`${HOST}/signin`, {
+            const response = await axios.post(`${HOST}/users/signin`, {
                 email: email,
                 password: password
             });
 
-            if (response.status === 200) {
+            if (response.status === 201) {
                 console.log('로그인 성공');
                 navigate('/');
             } else {
@@ -62,11 +61,11 @@ function Login() {
                     <div className={loginStyles['inputContainer']}>
                         <div>
                             <p className={loginStyles['textStyle']}>이메일</p>
-                            <input id='txtEmail' type="text" placeholder='학교 이메일을 입력하시오.' className={loginStyles['inputStyles']} onChange={handleEmailChange} value={email}/>
+                            <input id='txtEmail' type="text" placeholder='학교 이메일을 입력하시오.' className={loginStyles['inputStyles']} onChange={handleEmailChange} value={email} />
                         </div>
-                        <div style={{marginBottom: '5%'}}>
+                        <div style={{ marginBottom: '5%' }}>
                             <p className={loginStyles['textStyle']}>비밀번호</p>
-                            <input id='txtPw' type="password" placeholder='비밀번호를 입력하시오.' className={loginStyles['inputStyles']} onChange={handlePasswordChange} value={password}/>
+                            <input id='txtPw' type="password" placeholder='비밀번호를 입력하시오.' className={loginStyles['inputStyles']} onChange={handlePasswordChange} value={password} />
                         </div>
                         <div className={loginStyles['buttonContainer']}>
                             <button id='btnLogin' className={loginStyles['buttonStyles']} type="submit">로그인</button>
