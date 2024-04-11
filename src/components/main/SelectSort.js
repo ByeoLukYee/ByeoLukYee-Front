@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import '../../styles/common/Styles.css';
-import styles from '../../styles/main/Select-sort.module.css';
+import styles from '../../styles/main/SelectSort.module.css';
 
 function SelectSort() {
     const [selectedSort, setSelectedSort] = useState('');

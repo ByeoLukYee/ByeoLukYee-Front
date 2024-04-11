@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import '../../styles/common/Styles.css';
-import buyingStyle from '../../styles/buying-Item/Buying-posts.module.css';
+import buyingStyle from '../../styles/buying-posts/BuyingPost.module.css';
 
 import BuyingPostItemList from '../buying-Item/BuyingPostItemList';
-import SelectSort from '../main/Select-sort';
+import SelectSort from '../main/SelectSort';
 
 function BuyingPosts() {
     return (

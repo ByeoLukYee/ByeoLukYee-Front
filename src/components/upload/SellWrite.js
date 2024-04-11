@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import '../../styles/common/styles.css';
-import sellWriteStyle from '../../styles/upload/SellWrite.module.css';
-import ImageUpload from './Image-upload';
+import '../../styles/common/Styles.css';
+import sellWriteStyle from '../../styles/upload/SellingWrite.module.css';
+import ImageUpload from './ImageUpload';
 
 function SellWrite() {
     return (

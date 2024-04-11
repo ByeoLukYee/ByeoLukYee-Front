@@ -1,4 +1,4 @@
-import SellingPostsUpload from '../components/upload/Selling-posts-upload';
+import SellingPostsUpload from '../components/upload/SellingPostUpload';
 
 function SellingPostsUploadPage() {
     return(

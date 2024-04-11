@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import '../../styles/common/styles.css';
-import sellStyle from "../../styles/selling-Item/selling-posts-item.module.css";
+import '../../styles/common/Styles.css';
+import sellStyle from "../../styles/selling-Item/SellingPostItem.module.css";
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
@@ -9,7 +9,7 @@ import { VscEye } from "react-icons/vsc";
 function SellingPostItem({ status, price, title }) {
   return (
     <>
-      <Link to="/buying-posts" style={{textDecoration: "none", color: "black"}}>
+      <Link to="/buying-posts/1" style={{textDecoration: "none", color: "black"}}>
         <div className={sellStyle["boxContainer"]}>
 
           <div className={sellStyle["lookImgStyle"]}>
@@ -30,7 +30,7 @@ function SellingPostItem({ status, price, title }) {
               {/* 몇명 봤는지, 누가 찜했는지 */}
               <div className={sellStyle["eyesVectorDiv"]}>
                 <VscEye className={sellStyle["eyesVector"]} />
-                <p>0</p>
+                <p>0</p> 
               </div>
               <div className={sellStyle["heartVectorDiv"]}>
                 <GoHeart className={sellStyle["heartVector"]} />

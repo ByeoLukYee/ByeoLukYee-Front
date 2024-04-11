@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Join from './pages/Join';
 import Main from './pages/Main';
-import SellingPostsId from './pages/Selling-posts-id';
-import SellingPostsUpload from './pages/Selling-posts-upload';
-import BuyingPostsId from './pages/Buying-posts-id';
-import BuyingPostsUpload from './pages/Buying-posts-upload';
+import SellingPostId from './pages/SellingPostId';
+import SellingPostUpload from './pages/SellingPostUpload';
+import BuyingPostId from './pages/BuyingPostId';
+import BuyingPostUpload from './pages/BuyingPostUpload';
 
 function App() {
     return(
@@ -18,11 +18,11 @@ function App() {
 
                 <Route path="/" element={<Main />} />
 
-                <Route path='/selling-posts/1' element={<SellingPostsId />}/>
-                <Route path='/selling-posts/upload' element={<SellingPostsUpload />} />
+                <Route path='/selling-posts/1' element={<SellingPostId />}/>
+                <Route path='/selling-posts/upload' element={<SellingPostUpload />} />
 
-                <Route path='/buying-posts/1' element={<BuyingPostsId />}/>
-                <Route path='/buying-posts/upload' element={<BuyingPostsUpload />} />
+                <Route path='/buying-posts/1' element={<BuyingPostId />}/>
+                <Route path='/buying-posts/upload' element={<BuyingPostUpload />} />
             </Routes>
         </Router>
     )

@@ -1,4 +1,4 @@
-import BuyingPostsUpload from '../components/upload/Buying-posts-upload';
+import BuyingPostsUpload from '../components/upload/BuyingPostUpload';
 
 function BuyingPostsUploadPage() {
     return(

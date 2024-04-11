@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import '../../styles/common/Styles.css';
-import buyingPostsIdStyle from '../../styles/store/buying-posts-id.module.css';
+import buyingPostsIdStyle from '../../styles/buying-posts/BuyingPostId.module.css';
 
 import Header from '../common/Header';
 import Footer from '../common/Footer';

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import styles from '../../styles/common/styles.css';
+import '../../styles/common/Styles.css';
 
-import buyingStyle from '../../styles/buying-Item/buying-post-item.module.css';
+import buyingStyle from '../../styles/buying-Item/BuyingPostItem.module.css';
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
@@ -10,7 +10,7 @@ import { VscEye } from "react-icons/vsc";
 function BuyingPostItem() {
     return(
         <>
-            <Link to="/selling-posts" style={{ textDecoration: "none", color: 'black' }}>
+            <Link to="/selling-posts/1" style={{ textDecoration: "none", color: 'black' }}>
                 
                 <div className={buyingStyle['BoxContainer']}>
                      
