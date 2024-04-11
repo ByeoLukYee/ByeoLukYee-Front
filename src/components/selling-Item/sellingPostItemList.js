@@ -1,11 +1,11 @@
-import '../../styles/common/styles.css';
-import sellStyle from '../../styles/selling-Item/sell-grid.module.css';
+import '../../styles/common/Styles.css';
+import sellStyle from '../../styles/selling-Item/SellGrid.module.css';
 
 import SellingPostItem from './SellingPostItem';
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { HOST } from "../../config/config";
+import { HOST } from "../../config/Config";
 
 function SellingPostItemList() {
     const [sellingPostList, setsellingPostList] = useState([]);

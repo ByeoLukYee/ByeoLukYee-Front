@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import '../../styles/common/styles.css';
-import styles from '../../styles/upload/Image-upload.module.css';
+import '../../styles/common/Styles.css';
+import styles from '../../styles/upload/ImageUpload.module.css';
 
 function ImageUpload() {
     const [imageURLs, setImageURLs] = useState([]);

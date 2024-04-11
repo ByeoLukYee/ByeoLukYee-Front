@@ -15,7 +15,7 @@ function Header({ onTitleClick }) {
                     <div> <SearchInput /> </div>
                 </div>
                 <div className={headerStyle['optionDiv']}>
-                    <p>글쓰기</p>
+                    <Link to='/selling-posts/upload' style={{ textDecoration: "none", color: 'black' }}> <p>글쓰기</p> </Link>
                     <p>채팅</p>
                     <p>마이페이지</p>
                 </div>

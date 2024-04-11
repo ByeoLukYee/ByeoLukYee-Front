@@ -1,5 +1,5 @@
-import '../../styles/common/styles.css';
-import styles from '../../styles/upload/BuyWrite.module.css';
+import '../../styles/common/Styles.css';
+import styles from '../../styles/upload/BuyingWrite.module.css';
 
 function BuyWrite() {
     return (

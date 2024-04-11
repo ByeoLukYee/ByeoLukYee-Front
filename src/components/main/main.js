@@ -6,8 +6,8 @@ import mainStyle from '../../styles/main/Main.module.css';
 import Footer from '../common/Footer';
 import Header from '../common/Header';
 import Home from '../home/Home';
-import SellingPosts from '../selling-Item/selling-posts';
-import BuyingPosts from '../buying-Item/Buying-posts';
+import SellingPosts from '../selling-posts/SellingPost';
+import BuyingPosts from '../buying-posts/BuyingPost';
 
 function Main() {
     const [selectedTab, setSelectedTab] = useState('/');

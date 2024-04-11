@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import '../../styles/common/styles.css';
-import sellStyle from "../../styles/selling-Item/selling-posts-item.module.css";
+import '../../styles/common/Styles.css';
+import sellStyle from "../../styles/selling-Item/SellingPostItem.module.css";
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";

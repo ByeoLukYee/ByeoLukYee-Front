@@ -1,9 +1,9 @@
 import '../../styles/common/Styles.css';
 import styles from "../../styles/home/Home.module.css";
 
-import RecentlySeenSell from "./RecentlySeen-sell";
-import RecentlySell from "./Recently-sell";
-import RecentlyBuy from "./Recently-buy";
+import RecentlySeenSell from "./RecentlySeenSell";
+import RecentlySell from "./RecentlySell";
+import RecentlyBuy from "./RecentlyBuy";
 
 function Home() {
 

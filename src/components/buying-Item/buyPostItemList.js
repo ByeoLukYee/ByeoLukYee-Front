@@ -1,4 +1,4 @@
-import buyGridStyle from '../../styles/buying-Item/buy-grid.module.css';
+import buyGridStyle from '../../styles/buying-Item/BuyGrid.module.css';
 
 import BuyPostItem from './BuyPostItem';
 

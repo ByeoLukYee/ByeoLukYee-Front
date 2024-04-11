@@ -1,13 +1,13 @@
-import '../../styles/common/styles.css';
-import styles from '../../styles/home/RecentlySeen-sell.module.css';
+import '../../styles/common/Styles.css';
+import styles from '../../styles/home/RecentlySeenSell.module.css';
 
-import SellingPostItemList from '../selling-Item/sellingPostItemList';
+import SellingPostItemList from '../selling-Item/SellingPostItemList';
 
 function RecentlySeenSell() {
     return (
         <>
             <div className={styles['sellTextDiv']}> <p>최근 본 팝니다</p> </div>
-            <div className={styles['sellContainer']}> 
+            <div className={styles['sellContainer']}> -0
                 <SellingPostItemList /> 
             </div>
 
