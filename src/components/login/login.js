@@ -4,10 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 import { HOST } from "../../config/config";
 
-import loginStyles from '../../styles/login/login.module.css';
+import loginStyles from '../../styles/login/Login.module.css';
+import '../../styles/common/Styles.css';
 
-import Footer from '../common/footer';
-import Header from '../common/header';
+import Footer from '../common/Footer';
+import Header from '../common/Header';
 
 function Login() {
     // 회원가입 화면으로 넘어가기
@@ -15,7 +16,7 @@ function Login() {
     const TextClick = (path) => {
         navigate(path);
     };
-
+ 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 

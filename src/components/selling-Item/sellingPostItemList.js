@@ -1,6 +1,7 @@
+import '../../styles/common/styles.css';
 import sellStyle from '../../styles/selling-Item/sell-grid.module.css';
 
-import SellingPostItem from './sellingPostItem';
+import SellingPostItem from './SellingPostItem';
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -15,7 +16,8 @@ function SellingPostItemList() {
   
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${HOST}/selling-posts`);
+        // `${HOST}/selling-posts`
+        const response = await axios.get('http://localhost:8080/selling-posts');
         console.log(response.data);
         setsellingPostList(response.data);
       } catch (error) {

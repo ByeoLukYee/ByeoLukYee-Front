@@ -6,7 +6,7 @@ import buyStyle from '../../styles/buying-Item/buy-post-item.module.css';
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
-
+ 
 function BuyPostItem() {
     return(
         <>

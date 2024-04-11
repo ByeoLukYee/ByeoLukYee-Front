@@ -1,9 +1,10 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
-import headerStyle from '../../styles/common/header.module.css';
+import '../../styles/common/Styles.css';
+import headerStyle from '../../styles/common/Header.module.css';
 
-import SearchInput from './searchInput';
+import SearchInput from './SearchInput';
 
 function Header({ onTitleClick }) {
     return (

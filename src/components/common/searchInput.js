@@ -1,5 +1,5 @@
-import styles from '../../styles/common/styles.css';
-import searchInputStyle from '../../styles/common/searchInput.module.css';
+import '../../styles/common/Styles.css';
+import searchInputStyle from '../../styles/common/SearchInput.module.css';
 
 function SearchInput() {
     return(

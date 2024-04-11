@@ -1,4 +1,5 @@
-import footerStyle from '../../styles/common/footer.module.css';
+import '../../styles/common/Styles.css';
+import footerStyle from '../../styles/common/Footer.module.css';
 
 function Footer() {
     return (
@@ -16,19 +17,13 @@ function Footer() {
                     <div className={footerStyle['textStyle']}>
                         <p>Email</p>
                         <div>
-                            <p>w2210@e-mirim.hs.kr</p>
-                            <p>w2216@e-mirim.hs.kr</p>
                             <p>w2218@e-mirim.hs.kr</p>
-                            <p>w2222@e-mirim.hs.kr</p>
                         </div>
                     </div>
                     <div className={footerStyle['textStyle']}>
                         <p>Github</p>
                         <div>
-                            <p>github.com/seoyoung1276</p>
-                            <p>github.com/bhark065</p>
                             <p>github.com/hyeg0121</p>
-                            <p>github.com/seoyeon0203</p>
                         </div>
                     </div>
                 </div>

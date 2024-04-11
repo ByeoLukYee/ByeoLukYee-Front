@@ -1,41 +1,82 @@
-/* /component/selling-Item/selling-posts.js */
-.sortText {
+.boxContainer {
     display: flex;
-    column-gap: 25px;
-    margin-bottom: 1%;
-
-    font-family: var(--LaundryGothic-font);
-    font-weight: var(--Regular);
-    font-size: 1.2rem;
-    color: var(--gray-300); /* 선택 시 gray-900 */
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 7%;
+    border-radius: 10px;
+    border-color: var(--gray-200);
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
 }
 
-.selectDiv {
+.lookImgStyle {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 10px;
-    margin-top: 15%;
+    overflow: hidden;
     margin-bottom: 5%;
 }
-.selectDiv > div {
-    width: 2vw;
-    height: 4vh;
+
+.lookImgStyle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.contextContainer {
     display: flex;
-    border-radius: 10px;
+    flex-direction: column;
     column-gap: 10px;
+}
+.textContainer {
+    display: flex;
+    row-gap: 3px;
+    flex-direction: column;
+}
+
+.textContainer > p:nth-child(1) {
+    color: var(--green); /* 판매중 */
+    /* color: var(--gray-300); */ /* 판매완료 */
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    font-size: 0.9rem;
+}
+.textContainer > p:nth-child(2) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+    font-size: 0.9rem;
+}
+
+.textContainer > p:nth-child(3) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--ExtraBold);
+}
+
+
+/* 본 횟수, 찜 횟수 전체 Div */
+.vectorDiv {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 10px;
+    top: 10%;
+}
+
+/* 본 횟수, 찜 횟수 Div */
+.eyesVectorDiv, .heartVectorDiv {
+    display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-
-    font-family: var(--LaundryGothic-font);
-    font-weight: var(--Regular);
+    column-gap: 1px;
     color: var(--gray-300);
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
 }
 
-.selected {
-    background-color: var(--bg);
-}
-.selected > p {
-    color: white;
+.heartVector {
+    font-size: 0.9rem;
 }
