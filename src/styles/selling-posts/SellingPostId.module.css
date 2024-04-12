@@ -1,10 +1,6 @@
 .container {
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
-}
-.container::-webkit-scrollbar {
-    display: none;
 }
 
 .allContainer {
@@ -118,6 +114,7 @@
 }
 
 .bottomContainer {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -128,7 +125,10 @@
 }
 
 .commentContainer {
+    width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-bottom: 15%;
+    left: 7%;
 }

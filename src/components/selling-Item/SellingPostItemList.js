@@ -25,6 +25,10 @@ function SellingPostItemList() {
       }
     };
 
+    if (sellingPostList.length === 0) {
+      return <p>게시글이 존재하지 않음.</p>
+    }
+
     const pathName = window.location.pathname;
     return (
         <div className={ pathName === '/' ? styles['four-grid-container'] : styles['all-grid-container'] }>
