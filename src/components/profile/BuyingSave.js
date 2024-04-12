@@ -1,7 +1,7 @@
 import '../../styles/common/Styles.css';
 import styles from '../../styles/profile/BuyingSave.module.css';
 
-import BuyPostItemList from '../buying-Item/BuyPostItemList-change.js';
+import BuyPostItemList from '../buying-Item/BuyPostItemList.js';
 
 function BuyingSave() {
     return (

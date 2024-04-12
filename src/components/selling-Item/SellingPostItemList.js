@@ -1,7 +1,7 @@
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-Item/SellGrid.module.css';
 
-import SellingPostItem from './SellingPostItem-change';
+import SellingPostItem from './SellingPostItem';
 
 import axios from "axios";
 import { useEffect, useState } from "react";
