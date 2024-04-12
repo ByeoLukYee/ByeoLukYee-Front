@@ -1,7 +1,7 @@
 import '../../styles/common/Styles.css';
-import styles from '../../styles/upload/SellWrite.module.css';
+import styles from '../../styles/upload/SellingInput.module.css';
 
-function SellWrite() {
+function SellingInput() {
     return (
         <>
             <div className={styles['container']}>
@@ -42,4 +42,4 @@ function SellWrite() {
     )
 }
 
-export default SellWrite;
+export default SellingInput;
