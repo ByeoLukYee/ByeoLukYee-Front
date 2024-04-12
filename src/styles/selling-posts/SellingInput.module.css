@@ -1,0 +1,100 @@
+.inputContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-bottom: 5%;
+    left: 3%;
+}
+
+.hr {
+    width: 100%;
+}
+
+.textDiv:first-child {
+    margin-top: 3%;
+}
+.textDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.textDiv > p {
+    color: var(--gray-300);
+
+    font-size: 0.9rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+}
+.textDiv > input {
+    padding: 1.5%;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: var(--gray-300);
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+}
+.textDiv > input::placeholder {
+    color: var(--gray-500);
+}
+
+.textDiv > .price::-webkit-outer-spin-button,
+.textDiv > .price::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.contextDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 3%;
+}
+.contextDiv > p {
+    color: var(--gray-300);
+
+    font-size: 0.9rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+}
+.contextDiv > textarea {
+    height: 35vh;
+    padding: 1.5%;
+    border: 2px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: var(--gray-300);
+    resize: none;
+    
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+}
+.contextDiv > textarea:focus {
+    outline: none;
+}
+.contextDiv > textarea::placeholder {
+    color: var(--gray-500);
+}
+
+.buttonContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 2%;
+    justify-content: flex-end;
+}
+.buttonStyle {
+    width: 14vw;
+    height: 6vh;
+    background-color: var(--bg);
+    border: 0;
+    border-radius: 10px;
+
+    font-size: 1rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+}

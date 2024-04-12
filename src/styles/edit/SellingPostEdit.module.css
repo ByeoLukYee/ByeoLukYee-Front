@@ -1,0 +1,13 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.uploadDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20%;
+}
