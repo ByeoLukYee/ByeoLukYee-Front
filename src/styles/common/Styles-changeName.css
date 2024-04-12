@@ -78,3 +78,10 @@
     position: relative;
     margin: 0;
 }
+body {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
