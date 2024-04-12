@@ -1,47 +1,41 @@
-import React from 'react';
-
 import '../../styles/common/Styles.css';
-import sellWriteStyle from '../../styles/upload/SellingWrite.module.css';
-import ImageUpload from './ImageUpload';
+import styles from '../../styles/upload/SellWrite.module.css';
 
 function SellWrite() {
     return (
         <>
-            <div className={sellWriteStyle['container']}>
-                <div className={sellWriteStyle['topDiv']}>
-                    <ImageUpload />
-                </div>
-
-                <div className={sellWriteStyle['inputContainer']}>
+            <div className={styles['container']}>
+                <div className={styles['inputContainer']}>
                     {/* 제목 */}
-                    <div className={sellWriteStyle['textDiv']}>
+                    <div className={styles['textDiv']}>
                         <p>제목</p>
                         <input placeholder='제목'/>
                     </div>
 
                     {/* 가격 */}
-                    <div className={sellWriteStyle['textDiv']}>
+                    <div className={styles['textDiv']}>
                         <p>가격</p>
-                        <input placeholder='거래 가격' type='number' className={sellWriteStyle['price']}/>
+                        <input placeholder='희망 거래 가격' className={styles['price']}/>
                     </div>
 
                     {/* 거래 희망 장소 */}
-                    <div className={sellWriteStyle['textDiv']}>
+                    <div className={styles['textDiv']}>
                         <p>거래 희망 장소</p>
                         <input placeholder='희망 거래 장소'/>
                     </div>
 
                     {/* 설명 */}
-                    <div className={sellWriteStyle['contextDiv']}>
+                    <div className={styles['contextDiv']}>
                         <p>설명</p>
-                        <textarea placeholder='상품 상세 정보'/>
+                        <textarea placeholder='본문'/>
                     </div>
                 </div>
 
-                <div className={sellWriteStyle['hr']}> <hr /> </div>
+                <div className={styles['hr']}> <hr /> </div>
 
-                <div className={sellWriteStyle['buttonContainer']}>
-                    <button className={sellWriteStyle['buttonStyle']}>등록하기</button>
+                <div className={styles['buttonContainer']}>
+                    <button className={styles['removeButtonStyle']}>삭제하기</button>
+                    <button className={styles['okButtonStyle']}>등록하기</button>
                 </div>
             </div>
         </>
