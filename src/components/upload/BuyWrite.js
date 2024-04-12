@@ -34,7 +34,8 @@ function BuyWrite() {
                 <div className={styles['hr']}> <hr /> </div>
 
                 <div className={styles['buttonContainer']}>
-                    <button className={styles['buttonStyle']}>등록하기</button>
+                    <button className={styles['removeButtonStyle']}>삭제하기</button>
+                    <button className={styles['okButtonStyle']}>등록하기</button>
                 </div>
             </div>
         </>
