@@ -1,5 +1,5 @@
 import '../../styles/common/Styles.css';
-import sellStyle from '../../styles/selling-Item/SellGrid.module.css';
+import styles from '../../styles/selling-Item/SellGrid.module.css';
 
 import SellingPostItem from './SellingPostItem';
 
@@ -24,11 +24,16 @@ function SellingPostItemList() {
         console.log(error);
       }
     };
-    
+
+    if (sellingPostList.length === 0) {
+      return <p>게시글이 존재하지 않음.</p>
+    }
+
+    const pathName = window.location.pathname;
     return (
-        <div className={sellStyle['selling-grid-container']}>
+        <div className={ pathName === '/' ? styles['four-grid-container'] : styles['all-grid-container'] }>
             {sellingPostList.map((item, index) => (
-                <div key={index} className={sellStyle['grid-item']}> 
+                <div key={index} className={styles['grid-item']}> 
                     <SellingPostItem
                         title={item.title}
                         status={item.krStatus}
@@ -36,6 +41,7 @@ function SellingPostItemList() {
                     />
                 </div>
             ))}
+            
         </div>
     )
 }

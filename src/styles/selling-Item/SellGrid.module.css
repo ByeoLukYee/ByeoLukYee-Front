@@ -1,28 +1,24 @@
-/* /component/selling-Item/sellPostItemList.js */
-.sell-grid-container {
+.all-grid-container {
     width: calc((14vw + 35px) * 4);
     display: grid;
+    grid: repeat(4,1fr) / repeat(4,1fr);
     justify-content: flex-start;
     align-items: center;
-    column-gap: 5.1%;
+    column-gap: 6%;
     row-gap: 5%;
-    margin-bottom: 5%;
-}
-.sell-grid-container {
-    grid-template-columns: repeat(4, 1fr);
 }
 
-/* /component/selling-Item/sellingPostItemList.js */
-.selling-grid-container {
+.four-grid-container {
     width: calc((14vw + 35px) * 4);
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
     justify-content: flex-start;
     align-items: center;
-    column-gap: 5.1%;
+    column-gap: 6%;
     row-gap: 5%;
 }
-.selling-grid-container {
-    grid: repeat(4,1fr) / repeat(4,1fr);
+.four-grid-container .grid-item:nth-child(n+5) {
+    display: none;
 }
 
 .grid-item {

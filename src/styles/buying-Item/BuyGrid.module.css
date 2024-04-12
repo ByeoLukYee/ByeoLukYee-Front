@@ -1,20 +1,19 @@
-/* /component/buying-Item/buyingPostItemList.js (삽니다 글쓰기 item 리스트) */
+/* /component/buying-Item/buyPostItemList.js (따끈따근 최신 삽니다 글) */
 .buy-grid-container {
     width: calc((15vw + 35px) * 4);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: flex-start;
     align-items: center;
-    column-gap: 2.5%;
-    row-gap: 5%;
-    margin-bottom: 5%;
+    column-gap: 4%;
+    margin-bottom: 3%;
 } 
 .buy-grid-item {
     width: 15vw;
     height: 11vh;
 }
 
-/* /component/buying-Item/buyPostItemList.js (따끈따근 최신 삽니다 글) */
+/* /component/buying-Item/buyingPostItemList.js (삽니다 글쓰기 item 리스트) */
 .buying-grid-container {
     width: calc((15vw + 35px) * 4);
     display: grid;

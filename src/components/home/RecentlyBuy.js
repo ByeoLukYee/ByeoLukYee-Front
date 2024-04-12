@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/home/RecentlyBuy.module.css';
@@ -14,7 +15,7 @@ function RecentlyBuy() {
             </div>
 
             <div className={styles['buyMoreDiv']}>
-                <p>더보기</p>
+                <Link to='/buying-posts' style={{ textDecoration: 'none', color: '#C0C0C0' }}> <p>더보기</p> </Link>
             </div>
         </>
     )

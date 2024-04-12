@@ -8,24 +8,3 @@
 .container::-webkit-scrollbar {
     display: none;
 }
-
-.textDiv {
-    width: 85%;
-    display: flex;
-    margin-top: 1.5%;
-    margin-bottom: 1.5%;
-    left: 15vw;
-    column-gap: 2%;
-
-    font-family: var(--LaundryGothic-font);
-    font-weight: var(--Regular);
-    font-size: 1.1rem;
-}
-.textDiv > .text {
-    color: var(--gray-700);
-    cursor: pointer;
-}
-.textDiv > .textActive {
-    color: var(--bg);
-    cursor: pointer;
-}

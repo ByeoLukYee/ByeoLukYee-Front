@@ -20,8 +20,6 @@
     width: 3vw;
     display: flex;
     align-items: center;
-    top: 35%;
-    left: 40%;
+    left: 39.5%;
     cursor: pointer;
-    color: var(--gray-400);
 }
