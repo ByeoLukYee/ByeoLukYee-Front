@@ -1,0 +1,46 @@
+.container {
+    width: 18vw;
+    height: 5vh;
+    display: flex;
+    column-gap: 35px;
+    padding: 4%;
+    justify-content: center;
+    align-items: center;
+
+    border-color: var(--gray-200);
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 1px;
+}
+
+.sellingDiv,
+.buyingDiv,
+.auctionDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 7px;
+}
+
+.sellingDiv > p:nth-child(1),
+.buyingDiv > p:nth-child(1),
+.auctionDiv > p:nth-child(1) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 0.9rem;
+    color: var(--gray-300);
+}
+
+.sellingDiv > p:nth-child(2),
+.buyingDiv > p:nth-child(2),
+.auctionDiv > p:nth-child(2) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--ExtraBold);
+    font-size: 1.2rem;
+}
+
+.line {
+    border-left : thin solid var(--gray-200);
+    height : 50px;
+}

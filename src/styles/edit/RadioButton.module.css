@@ -1,0 +1,36 @@
+.radioButton {
+    display: flex;
+    column-gap: 15px;
+    margin-top: 2%;
+}
+[type="radio"] {
+    width: 1.7em;
+    height: 1.7em;
+    appearance: none;
+    background-color: var(--gray-200);
+    border-radius: 50%;
+
+    cursor: pointer;
+    vertical-align: middle;
+}
+[type="radio"]:checked {
+    background-color: white;
+    border: 0.5em solid var(--bg);
+}
+[type="radio"]:nth-child(1) {
+    
+}
+
+.button {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button > label {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+    font-size: 0.9rem;
+    color: var(--gray-800);
+}

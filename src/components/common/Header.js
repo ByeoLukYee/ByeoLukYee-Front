@@ -18,7 +18,7 @@ function Header({ onTitleClick }) {
                     <Link to='/buying-posts/upload' style={{ textDecoration: "none", color: 'black' }}> <p>팝니다 글쓰기</p> </Link>
                     <Link to='/selling-posts/upload' style={{ textDecoration: "none", color: 'black' }}> <p>삽니다 글쓰기</p> </Link>
                     <p>채팅</p>
-                    <p>마이페이지</p>
+                    <Link to='/profile' style={{ textDecoration: "none", color: 'black' }}> <p>마이페이지</p> </Link>
                 </div>
             </nav>
             <div style={{textAlign: 'center'}}> <hr /> </div>

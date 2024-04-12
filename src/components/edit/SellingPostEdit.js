@@ -1,18 +1,18 @@
 import '../../styles/common/Styles.css';
-import styles from '../../styles/upload/SellingPostUpload.module.css';
+import styles from '../../styles/edit/SellingPostEdit.module.css';
 
-import SellingInput from './SellingInput';
 import Header from '../common/Header';
+import SellWriteEdit from '../edit/SellWriteEdit';
 import Footer from '../common/Footer';
 
-function SellingPostsUpload() {
+function SellingPostEdit() {
     return (
         <>
             <div className={styles['container']}>
                 <Header />
 
                 <div className={styles['uploadDiv']}>
-                    <SellingInput />
+                    <SellWriteEdit />
                 </div>
 
                 <Footer />
@@ -21,4 +21,4 @@ function SellingPostsUpload() {
     )
 }
 
-export default SellingPostsUpload;
+export default SellingPostEdit;
