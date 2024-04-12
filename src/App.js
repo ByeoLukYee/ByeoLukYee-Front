@@ -4,14 +4,18 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Join from './pages/Join';
 import Main from './pages/Main';
+import Profile from './pages/Profile';
+
 import SellingPost from './pages/SellingPost';
 import SellingPostId from './pages/SellingPostId';
 import SellingPostUpload from './pages/SellingPostUpload';
 import SellingPostEdit from './pages/SellingPostEdit';
+
 import BuyingPost from './pages/BuyingPost';
 import BuyingPostId from './pages/BuyingPostId';
 import BuyingPostUpload from './pages/BuyingPostUpload';
 import BuyingPostEdit from './pages/BuyingPostEdit';
+
 
 function App() {
     return(
@@ -31,6 +35,8 @@ function App() {
                 <Route path='/buying-posts/1' element={<BuyingPostId />}/>
                 <Route path='/buying-posts/upload' element={<BuyingPostUpload />} />
                 <Route path='/buying-posts/edit' element={<BuyingPostEdit />} />
+
+                <Route path='/profile' element={<Profile />} />
             </Routes>
         </Router>
     )

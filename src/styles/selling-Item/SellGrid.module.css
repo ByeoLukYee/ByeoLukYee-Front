@@ -5,7 +5,7 @@
     justify-content: flex-start;
     align-items: center;
     column-gap: 6%;
-    row-gap: 5%;
+    row-gap: 6%;
 }
 
 .four-grid-container {
@@ -19,6 +19,16 @@
 }
 .four-grid-container .grid-item:nth-child(n+5) {
     display: none;
+}
+
+.three-grid-container {
+    width: calc((14vw + 35px) * 3);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 6.5%;
+    row-gap: 10%;
 }
 
 .grid-item {

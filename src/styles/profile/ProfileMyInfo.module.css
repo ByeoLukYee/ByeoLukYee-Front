@@ -1,0 +1,55 @@
+.container {
+    width: 15vw;
+    height: 10vh;
+    display: flex;
+    column-gap: 20px;
+}
+
+.imgDiv {
+    display: flex;
+    width: 5vw;
+    height: 11vh;
+    justify-content: center;
+    overflow: hidden;
+}
+.imgDiv > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.information {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+}
+.nameDiv > p {
+    font-size: 0.9rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--ExtraBold);
+}
+.emailDiv > p {
+    font-size: 0.9rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+}
+.studentId > p {
+    font-size: 0.9rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+    color: var(--gray-300);
+}
+
+.informationDiv {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 10%;
+    margin-top: 88%;
+}

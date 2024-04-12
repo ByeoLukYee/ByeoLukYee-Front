@@ -1,7 +1,7 @@
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-Item/SellGrid.module.css';
 
-import SellingPostItem from './SellingPostItem';
+import SellingPostItem from './SellingPostItem-change';
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -30,8 +30,17 @@ function SellingPostItemList() {
     }
 
     const pathName = window.location.pathname;
+    let className = '';
+    if (pathName === '/') {
+      className = 'four-grid-container';
+    } else if (pathName === '/profile') {
+      className = 'three-grid-container';
+    } else {
+      className = 'all-grid-container';
+    }
+
     return (
-        <div className={ pathName === '/' ? styles['four-grid-container'] : styles['all-grid-container'] }>
+        <div className={styles[className]}>
             {sellingPostList.map((item, index) => (
                 <div key={index} className={styles['grid-item']}> 
                     <SellingPostItem
@@ -41,7 +50,6 @@ function SellingPostItemList() {
                     />
                 </div>
             ))}
-            
         </div>
     )
 }

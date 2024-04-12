@@ -1,43 +1,5 @@
-.imgDiv {
+.container {
     display: flex;
-    width: 30vw;
-    height: 14vh;
-    justify-content: center;
-    overflow: hidden;
-}
-.imgDiv > img {
-    border-radius: 70px;
-    display: block;
-    width: 100%;
-    height: auto;
-}
-.enameDiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
-.nameDiv > p {
-    font-size: 1.2rem;
-    font-family: var(--SUIT-font);
-    font-weight: var(--SemiBold);
-}
-.emailDiv > p {
-    color: var(--gray-700);
-
-    font-size: 0.9rem;
-    font-family: var(--SUIT-font);
-    font-weight: var(--Light);
-}
-
-.informationDiv {
-    position: fixed;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-left: 10%;
-    margin-top: 88%;
+    column-gap: 40px;
 }
