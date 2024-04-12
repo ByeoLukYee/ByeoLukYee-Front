@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-posts/SellingPostId.module.css';
 
@@ -5,9 +7,16 @@ import Header from '../common/Header';
 import Footer from '../common/Footer';
 import SellingPostIdConsumerInfo from './SellingPostIdConsumerInfo';
 import SellingPostIdInfo from './SellingPostIdInfo';
+import SellingInput from  './SellingInput';
 import CommentList from '../comment/CommentList';
 
 function SellingPostId() {
+    const [showBuyingInput, setShowBuyingInput] = useState(false);
+
+    const handleBuyButtonClick = () => {
+        setShowBuyingInput(prevState => !prevState);
+    };
+    
     return (
         <div className={styles['container']}>
             <Header />
@@ -31,7 +40,7 @@ function SellingPostId() {
                                 <SellingPostIdConsumerInfo />
                                 <SellingPostIdInfo />
                             </div>
-                            <div className={styles['button']}> <button>참여하기</button> </div>
+                            <div className={styles['button']}> <button onClick={handleBuyButtonClick}>참여하기</button> </div>
                         </div>
                     </div>
                 </div>
@@ -39,11 +48,10 @@ function SellingPostId() {
                 <div className={styles['bottomContainer']}>
                     <p>경매댓글</p>
                     <div className={styles['commentContainer']}>
+                        {showBuyingInput && <SellingInput />}
                         <CommentList />
                     </div>
                 </div>
-
-                
             </div>
             <Footer />
         </div>

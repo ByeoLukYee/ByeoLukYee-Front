@@ -3,7 +3,7 @@ import styles from '../../styles/upload/BuyingPostUpload.module.css';
 
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import BuyWrite from './BuyWrite';
+import BuyingWrite from './BuyingWrite';
 
 function BuyingPostsUpload() {
     return (
@@ -12,10 +12,10 @@ function BuyingPostsUpload() {
                 <Header />
 
                 <div className={styles['uploadDiv']}>
-                    <BuyWrite />
+                    <BuyingWrite />
                 </div>
 
-                <div className={styles['footer']}> <Footer /> </div>
+                <Footer />
             </div>
         </>
     )
