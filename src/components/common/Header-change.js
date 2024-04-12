@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../../styles/common/Styles.css';
 import headerStyle from '../../styles/common/Header.module.css';
 
-import SearchInput from './SearchInput';
+import SearchInput from './SearchInput-change';
 
 function Header({ onTitleClick }) {
     return (
@@ -18,7 +18,7 @@ function Header({ onTitleClick }) {
                     <Link to='/buying-posts/upload' style={{ textDecoration: "none", color: 'black' }}> <p>팝니다 글쓰기</p> </Link>
                     <Link to='/selling-posts/upload' style={{ textDecoration: "none", color: 'black' }}> <p>삽니다 글쓰기</p> </Link>
                     <p>채팅</p>
-                    <p>마이페이지</p>
+                    <Link to='/profile' style={{ textDecoration: "none", color: 'black' }}> <p>마이페이지</p> </Link>
                 </div>
             </nav>
             <div style={{textAlign: 'center'}}> <hr /> </div>
