@@ -1,9 +1,9 @@
-import SellingPosts from '../components/selling-posts/SellingPost';
+import SellingPost from '../components/selling-posts/SellingPost';
 
 function SellingPostsPage() {
     return(
         <>
-            <SellingPosts />
+            <SellingPost />
         </>
     )
 }

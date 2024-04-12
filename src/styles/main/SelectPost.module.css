@@ -1,0 +1,25 @@
+.textDiv {
+    width: 85%;
+    display: flex;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    left: 15vw;
+    column-gap: 2%;
+}
+
+.text {
+    font-family: var(--LaundryGothic-font);
+    font-weight: var(--Regular);
+    font-size: 1.1rem;
+
+    color: var(--gray-700);
+    cursor: pointer;
+}
+.textActive {
+    font-family: var(--LaundryGothic-font);
+    font-weight: var(--Regular);
+    font-size: 1.1rem;
+    
+    color: var(--bg);
+    cursor: pointer;
+}
