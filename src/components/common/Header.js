@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../../styles/common/Styles.css';
 import headerStyle from '../../styles/common/Header.module.css';
 
-import SearchInput from './SearchInput-change';
+import SearchInput from './SearchInput';
 
 function Header({ onTitleClick }) {
     return (

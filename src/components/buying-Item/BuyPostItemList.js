@@ -1,6 +1,6 @@
 import styles from '../../styles/buying-Item/BuyGrid.module.css';
 
-import BuyPostItem from './BuyPostItem-change';
+import BuyPostItem from './BuyPostItem';
 
 function BuyingItemList() {
     // if (buyingPostList.length === 0) {

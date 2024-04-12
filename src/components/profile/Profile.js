@@ -1,11 +1,11 @@
 import '../../styles/common/Styles.css';
 import styles from '../../styles/profile/Profile.module.css';
 
-import Header from '../common/Header-change';
+import Header from '../common/Header';
 import ProfileList from './ProfileList';
 import ProfileInfo from './ProfileInfo';
 import ProfileSave from './ProfileSave';
-import Footer from '../common/Footer-change';
+import Footer from '../common/Footer';
 
 function Profile() {
     return( 
