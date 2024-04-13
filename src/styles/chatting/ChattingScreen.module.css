@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.chatting-box{
+    height: 25vw;
+    width: 100%;
+    margin-top: 2%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.chatting-box::-webkit-scrollbar {
+    display: none;
+}
+
+.input-box {
+    width: 100%;
+}
