@@ -5,7 +5,7 @@ import buyingPostsIdStyle from '../../styles/buying-posts/BuyingPostId.module.cs
 
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import BuyingPostIdSellerInfo from './BuyingPostIdSellerInfo';
+import BuyingPostIdProducerInfo from './BuyingPostIdProducerInfo';
 import BuyingPostIdInfo from './BuyingPostIdInfo';
 
 function BuyingPostsId({ status, price, title }) {
@@ -43,7 +43,7 @@ function BuyingPostsId({ status, price, title }) {
                         <p>판매자 정보</p> 
                         <div className={buyingPostsIdStyle['userContainer']}>
                             <div className={buyingPostsIdStyle['userDiv']}>
-                                <BuyingPostIdSellerInfo />
+                                <BuyingPostIdProducerInfo />
                             </div>
                         </div>
                     </div>

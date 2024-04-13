@@ -15,6 +15,7 @@ import BuyingPost from './pages/BuyingPost';
 import BuyingPostId from './pages/BuyingPostId';
 import BuyingPostUpload from './pages/BuyingPostUpload';
 import BuyingPostEdit from './pages/BuyingPostEdit';
+import Chatting from './pages/Chatting';
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
                 <Route path='/buying-posts/1' element={<BuyingPostId />}/>
                 <Route path='/buying-posts/upload' element={<BuyingPostUpload />} />
                 <Route path='/buying-posts/edit' element={<BuyingPostEdit />} />
+
+                <Route path='/chatting' element={<Chatting />} />
 
                 <Route path='/profile' element={<Profile />} />
             </Routes>

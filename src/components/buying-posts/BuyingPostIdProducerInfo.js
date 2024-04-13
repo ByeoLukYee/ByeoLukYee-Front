@@ -1,5 +1,5 @@
 import '../../styles/common/Styles.css';
-import styles from '../../styles/buying-posts/BuyingPostIdSellerInfo.module.css';
+import styles from '../../styles/buying-posts/BuyingPostIdProducerInfo.module.css';
 
 function BuyingPostIdSellerInfo() {
     return (
