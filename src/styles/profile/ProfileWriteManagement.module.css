@@ -1,8 +1,17 @@
 .container {
     display: flex;
     flex-direction: column;
+    row-gap: 40%;
 }
-.container > p {
+
+.sellContainer,
+.buyContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.sellContainer > p,
+.buyContainer > p {
     font-family: var(--SUIT-font);
     font-weight: var(--SemiBold);
     color: var(--gray-300);

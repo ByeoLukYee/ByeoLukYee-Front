@@ -21,12 +21,29 @@
     display: flex;
     align-items: center;
     column-gap: 10px;
-}
-.iconDiv > p {
     color: var(--gray-700);
+    cursor: pointer;
 
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
+}
+.selectIconDiv {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: var(--primary-500);
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+}
+
+.icon {
+    font-size: 1.1rem;
+    color: var(--gray-300);
+}
+.selectIcon {
+    font-size: 1.1rem;
+    color: var(--primary-500);
 }
 
 .selectorDiv2 {
