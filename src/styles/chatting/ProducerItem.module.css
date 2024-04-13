@@ -1,21 +1,6 @@
 .container {
-    width: 17vw;
-    height: 9vh;
     display: flex;
     column-gap: 20px;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 5%;
-}
-.clickedContainer {
-    width: 17vw;
-    height: 9vh;
-    display: flex;
-    column-gap: 20px;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: var(--gray-100);
-    padding-left: 5%;
 }
 
 .img {
