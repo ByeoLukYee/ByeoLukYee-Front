@@ -1,13 +1,13 @@
 import '../../styles/common/Styles.css';
 import styles from '../../styles/chatting/ChattingProducer.module.css';
 
-function ChattingProducer() {
+function ChattingProducer({ name }) {
     return (
         <>
              <div className={styles['container']}>
                 <div className={styles['img']}> <img src='/images/exampleImg.png' alt='example'/> </div>
                 <div className={styles['textDiv']}>
-                    <p>최보람</p>
+                    <p>{name}</p>
                     <p>3413</p>
                 </div>
             </div>

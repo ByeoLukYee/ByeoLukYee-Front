@@ -1,17 +1,15 @@
+import React, { useState } from 'react';
 import '../../styles/common/Styles.css';
 import styles from '../../styles/chatting/ProducerItem.module.css';
-import { useState } from 'react';
 
-function ProducerItem() {
-    const [clicked, setClicked] = useState('');
-
+function ProducerItem({ onClick }) {
     const handleClick = () => {
-        setClicked(!clicked);
-    }
+        onClick();
+    };
 
     return (
         <>
-            <div className={clicked ? `${styles['clickedContainer']}` : styles['container']} onClick={handleClick}>
+            <div className={styles['container']} onClick={handleClick}>
                 <div className={styles['img']}> <img src='/images/exampleImg.png' alt='example'/> </div>
                 <div className={styles['textDiv']}>
                     <p>최보람</p>
