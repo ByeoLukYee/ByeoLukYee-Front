@@ -1,9 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/profile/ProfileList.module.css'
-
-import PostWriteManagement from './PostWriteManagement';
 
 import { BsPencilSquare } from "react-icons/bs";
 import { PiChatThin } from "react-icons/pi";
