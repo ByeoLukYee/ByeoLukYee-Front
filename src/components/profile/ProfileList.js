@@ -13,18 +13,7 @@ import { BsCodeSlash } from "react-icons/bs";
 import { LuBookMarked } from "react-icons/lu";
 import { BsBoxArrowInRight } from "react-icons/bs";
 
-import { logout } from '../../reducers/actions';
-
 function ProfileList({ showSelectComponent }) {
-    const navigate = useNavigate();
-
-    // 로그아웃 액션 디스패치
-    const dispatch = useDispatch();
-    const handleLogout = (path) => {
-        dispatch(logout());
-        navigate(path);
-    };
-
     return (
         <>
             <div className={styles['container']}>
@@ -47,7 +36,7 @@ function ProfileList({ showSelectComponent }) {
 
                 <div className={styles['selectorDiv2']}>
                     <p>계정</p>
-                    <div className={styles['iconDiv']} onClick={() => handleLogout('/signup')}> <BsBoxArrowInRight className={styles['icon']} /> <p>로그아웃</p> </div>
+                    <div className={styles['iconDiv']}> <BsBoxArrowInRight className={styles['icon']} /> <p>로그아웃</p> </div>
                 </div>
             </div>
         </>
