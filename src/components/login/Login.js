@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import { HOST } from "../../config/Config";
+import { useDispatch } from 'react-redux';
+import { login } from '../../reducers/actions';
 
 import loginStyles from '../../styles/login/Login.module.css';
 import '../../styles/common/Styles.css';
@@ -13,6 +15,8 @@ import Header from '../common/Header';
 function Login() {
     // 회원가입 화면으로 넘어가기
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const TextClick = (path) => {
         navigate(path);
     };
@@ -41,6 +45,7 @@ function Login() {
 
             if (response.status === 201) {
                 console.log('로그인 성공');
+                dispatch(login());
                 navigate('/');
             } else {
                 console.error('로그인 실패');
@@ -70,7 +75,7 @@ function Login() {
                         </div>
                         <div className={loginStyles['buttonContainer']}>
                             <button id='btnLogin' className={loginStyles['buttonStyles']} type="submit">로그인</button>
-                            <button className={loginStyles['googleButton']}> <img src={process.env.PUBLIC_URL + '/images/GoogleImg.png'} /> 구글로 로그인</button>
+                            <button className={loginStyles['googleButton']}> <img src={'/images/GoogleImg.png'} /> 구글로 로그인</button>
                         </div>
                     </div>
                     <div className={loginStyles['miniTextStyles']}>
