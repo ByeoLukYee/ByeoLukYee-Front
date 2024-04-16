@@ -2,7 +2,7 @@ import styles from '../../styles/buying-Item/BuyGrid.module.css';
 
 import BuyPostItem from './BuyPostItem';
 
-function BuyingItemList() {
+function BuyPostItemList() {
     // if (buyingPostList.length === 0) {
     //     return <p>게시글이 존재하지 않음.</p>
     // }
@@ -22,4 +22,4 @@ function BuyingItemList() {
     )
 }
 
-export default BuyingItemList;
+export default BuyPostItemList;
