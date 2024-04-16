@@ -1,8 +1,9 @@
 import '../../styles/common/Styles.css';
 import styles from '../../styles/profile/ProfileWriteManagement.module.css';
 
-import SellingPostItemList from '../../components/selling-Item/SellingPostItemList';
-import BuyPostItemList from '../../components/buying-Item/BuyPostItemList';
+import ProfileSellingPostItemList from '../../components/profile/ProfileSellingPostItemList';
+import ProfileBuyPostItemList from '../../components/profile/ProfileBuyPostItemList';
+import ProfileCommentList from '../../components/profile/ProfileCommentList';
 
 function PostWriteManagement() {
     return (
@@ -12,7 +13,7 @@ function PostWriteManagement() {
                     <p>내가 쓴 팝니다 글</p>
 
                     <div className={styles['itemList']}>
-                        <SellingPostItemList />
+                        <ProfileSellingPostItemList />
                     </div>
                 </div>
 
@@ -20,7 +21,15 @@ function PostWriteManagement() {
                     <p>내가 쓴 삽니다 글</p>
 
                     <div className={styles['itemList']}>
-                        <BuyPostItemList />
+                        <ProfileBuyPostItemList />
+                    </div>
+                </div>
+
+                <div className={styles['commentContainer']}>
+                    <p>내가 쓴 삽니다 글</p>
+
+                    <div className={styles['itemList']}>
+                        <ProfileCommentList />
                     </div>
                 </div>
             </div>
