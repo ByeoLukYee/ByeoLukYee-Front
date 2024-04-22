@@ -21,7 +21,10 @@ function Join() {
         name: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        grade: '',
+        class: '',
+        number: ''
     });
     const [passwordMismatch, setPasswordMismatch] = useState(false);
 
@@ -36,17 +39,26 @@ function Join() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const studentId = `${userData.grade}학년 ${userData.class}반 ${userData.number}번`;
+            if (!userData.grade || !userData.class || !userData.number) {
+                alert('학생 정보를 모두 입력하세요.');
+                return;
+            }
+
+            let studentId = `${userData.grade}학년 ${userData.class}반 ${userData.number}번`;
+            console.log(studentId);
 
             // `${HOST}/users`
             // http://localhost:8080/users
             const response = await axios.post(`${HOST}/users`, {
-                ...userData,
+                name: userData.name,
+                email: userData.email,
+                password: userData.password,
                 studentId: studentId
             });
             console.log(response.data);
+            console.log(response.status);
 
-            if (response.ok) {
+            if (response.status === 200) {
                 console.log('회원가입 성공');
                 navigate('/signin');
             } else {
@@ -103,9 +115,9 @@ function Join() {
                         <div>
                             <p className={joinStyles['textStyle']}>학생 정보</p>
                             <div className={joinStyles['studentDivStyle']}>
-                                <div> <input id='txtGrade' type='text' placeholder='학년' className={joinStyles['studentInputStyles']} onChange={handleChange}/> </div>
-                                <div> <input id='txtClass' type='text' placeholder='반' className={joinStyles['studentInputStyles']} onChange={handleChange}/> </div>
-                                <div> <input id='txtNumber' type='text' placeholder='번호' className={joinStyles['studentInputStyles']} onChange={handleChange}/> </div>
+                                <div> <input id='grade' type='text' placeholder='학년' className={joinStyles['studentInputStyles']} onChange={handleChange}/> </div>
+                                <div> <input id='class' type='text' placeholder='반' className={joinStyles['studentInputStyles']} onChange={handleChange}/> </div>
+                                <div> <input id='number' type='text' placeholder='번호' className={joinStyles['studentInputStyles']} onChange={handleChange}/> </div>
                             </div>
                         </div>
                         <div className={joinStyles['buttonContainer']}>

@@ -15,7 +15,7 @@ import Header from '../common/Header';
 function Login() {
     // 회원가입 화면으로 넘어가기
     const navigate = useNavigate();
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const TextClick = (path) => {
         navigate(path);
@@ -45,7 +45,7 @@ function Login() {
 
             if (response.status === 201) {
                 console.log('로그인 성공');
-                dispatch(login());
+                // dispatch(login());
                 navigate('/');
             } else {
                 console.error('로그인 실패');
