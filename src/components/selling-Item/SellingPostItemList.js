@@ -7,27 +7,25 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { HOST } from "../../config/Config";
 
-function SellingPostItemList() {
-    const [sellingPostList, setsellingPostList] = useState([]);
+function SellingPostItemList({ data }) {
+  // 팝니다 글쓰기 selling-posts 화면에 띄우기
+    // const [sellingPostList, setsellingPostList] = useState([]);
 
-    useEffect(() => {
-      fetchData();
-    }, []);
-  
-    const fetchData = async () => {
-      try {
-        // `${HOST}/selling-posts`
-        const response = await axios.get('http://localhost:8080/selling-posts');
-        console.log(response.data);
-        setsellingPostList(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //     try {
+    //       const response = await axios.get(`${HOST}/selling-posts`);
+    //       console.log(response.data);
+    //       setsellingPostList(response.data);
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //   };
+    // }, []);
 
-    if (sellingPostList.length === 0) {
-      return <p>게시글이 존재하지 않음.</p>
-    }
+    // if (sellingPostList.length === 0) {
+    //   return <p>게시글이 존재하지 않음.</p>
+    // }
 
     const pathName = window.location.pathname;
     let className = '';
@@ -41,7 +39,7 @@ function SellingPostItemList() {
 
     return (
         <div className={styles[className]}>
-            {sellingPostList.map((item, index) => (
+            {data.map((item, index) => (
                 <div key={index} className={styles['grid-item']}> 
                     <SellingPostItem
                         title={item.title}

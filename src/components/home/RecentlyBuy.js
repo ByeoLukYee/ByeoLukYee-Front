@@ -11,7 +11,7 @@ function RecentlyBuy() {
         <>
             <div className={styles['buyTextDiv']}> <p>따끈따근 최신 삽니다 글</p> </div>
             <div className={styles['buyContainer']}>
-                <BuyPostItemList />
+                {/* <BuyPostItemList /> */}
             </div>
 
             <div className={styles['buyMoreDiv']}>

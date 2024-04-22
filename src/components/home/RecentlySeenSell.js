@@ -11,7 +11,7 @@ function RecentlySeenSell() {
         <>
             <div className={styles['sellTextDiv']}> <p>최근 본 팝니다</p> </div>
             <div className={styles['sellContainer']}>
-                <SellingPostItemList />
+                {/* <SellingPostItemList /> */}
             </div>
 
             <div className={styles['sellMoreDiv']}>
