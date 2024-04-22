@@ -6,20 +6,23 @@ import styles from '../../styles/common/Header.module.css';
 
 import SearchInput from './SearchInput';
 
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 function Header({ onTitleClick }) {
-    const isLoggedIn = useSelector(state => state.isLoggedIn);
+    // const isLoggedIn = useSelector(state => state.isLoggedIn);
     const navigate = useNavigate();
-
     const handleMenuClick = (path) => {
-        if (!isLoggedIn) {
-            console.log('로그인 안함');
-            navigate('/signin');
-        } else {
-            navigate(path);
-        }
-    };
+        navigate(path);
+    }
+
+    // const handleMenuClick = (path) => {
+    //     if (!isLoggedIn) {
+    //         console.log('로그인 안함');
+    //         navigate('/signin');
+    //     } else {
+    //         navigate(path);
+    //     }
+    // };
 
     return (
         <>

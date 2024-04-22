@@ -30,12 +30,12 @@
 
 .info {
     display: flex;
-    column-gap: 20px;
+    column-gap: 80px;
 }
 .info > p {
     font-family: var(--SUIT-font);
     font-weight: var(--SemiBold);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 .hr {

@@ -23,53 +23,53 @@ import Chatting from './pages/Chatting';
 
 function App() {
     return(
-        // <Router>
-        //     <Routes>
-        //         <Route path="/signin" element={<Login />} />
-        //         <Route path="/signup" element={<Join />} />
-
-        //         <Route path="/" element={<Main />} />
-
-        //         <Route path='/selling-posts' element={<SellingPost />} />
-        //         <Route path='/selling-posts/1' element={<SellingPostId />}/>
-        //         <Route path='/selling-posts/upload' element={<SellingPostUpload />} />
-        //         <Route path='/selling-posts/edit' element={<SellingPostEdit />} />
-
-        //         <Route path='/buying-posts' element={<BuyingPost />} />
-        //         <Route path='/buying-posts/1' element={<BuyingPostId />}/>
-        //         <Route path='/buying-posts/upload' element={<BuyingPostUpload />} />
-        //         <Route path='/buying-posts/edit' element={<BuyingPostEdit />} />
-
-        //         <Route path='/chatting' element={<Chatting />} />
-
-        //         <Route path='/profile' element={<Profile />} />
-        //     </Routes>
-        // </Router>
-
-        <Provider store={store}>
-            <Router>
-                <Routes>
+        <Router>
+            <Routes>
                 <Route path="/signin" element={<Login />} />
-                    <Route path="/signup" element={<Join />} />
+                <Route path="/signup" element={<Join />} />
 
-                    <Route path="/" element={<Main />} />
+                <Route path="/" element={<Main />} />
 
-                    <Route path='/selling-posts' element={<SellingPost />} />
-                    <Route path='/selling-posts/1' element={<SellingPostId />}/>
-                    <Route path='/selling-posts/upload' element={<SellingPostUpload />} />
-                    <Route path='/selling-posts/edit' element={<SellingPostEdit />} />
+                <Route path='/selling-posts' element={<SellingPost />} />
+                <Route path='/selling-posts/1' element={<SellingPostId />}/>
+                <Route path='/selling-posts/upload' element={<SellingPostUpload />} />
+                <Route path='/selling-posts/edit' element={<SellingPostEdit />} />
 
-                    <Route path='/buying-posts' element={<BuyingPost />} />
-                    <Route path='/buying-posts/1' element={<BuyingPostId />}/>
-                    <Route path='/buying-posts/upload' element={<BuyingPostUpload />} />
-                    <Route path='/buying-posts/edit' element={<BuyingPostEdit />} />
+                <Route path='/buying-posts' element={<BuyingPost />} />
+                <Route path='/buying-posts/1' element={<BuyingPostId />}/>
+                <Route path='/buying-posts/upload' element={<BuyingPostUpload />} />
+                <Route path='/buying-posts/edit' element={<BuyingPostEdit />} />
 
-                    <Route path='/chatting' element={<Chatting />} />
+                <Route path='/chatting' element={<Chatting />} />
 
-                    <Route path='/profile' element={<Profile />} />
-                </Routes>
-            </Router>
-        </Provider>
+                <Route path='/profile' element={<Profile />} />
+            </Routes>
+        </Router>
+
+        // <Provider store={store}>
+        //     <Router>
+        //         <Routes>
+        //         <Route path="/signin" element={<Login />} />
+        //             <Route path="/signup" element={<Join />} />
+
+        //             <Route path="/" element={<Main />} />
+
+        //             <Route path='/selling-posts' element={<SellingPost />} />
+        //             <Route path='/selling-posts/1' element={<SellingPostId />}/>
+        //             <Route path='/selling-posts/upload' element={<SellingPostUpload />} />
+        //             <Route path='/selling-posts/edit' element={<SellingPostEdit />} />
+
+        //             <Route path='/buying-posts' element={<BuyingPost />} />
+        //             <Route path='/buying-posts/1' element={<BuyingPostId />}/>
+        //             <Route path='/buying-posts/upload' element={<BuyingPostUpload />} />
+        //             <Route path='/buying-posts/edit' element={<BuyingPostEdit />} />
+
+        //             <Route path='/chatting' element={<Chatting />} />
+
+        //             <Route path='/profile' element={<Profile />} />
+        //         </Routes>
+        //     </Router>
+        // </Provider>
     )
 }
 

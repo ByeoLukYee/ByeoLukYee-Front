@@ -7,7 +7,7 @@
 }
 .container::-webkit-scrollbar {
     display: none;
-}
+} 
 
 .formDiv {
     height: 100%;

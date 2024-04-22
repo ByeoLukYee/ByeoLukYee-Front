@@ -10,7 +10,7 @@ function RecentlySell() {
         <>
             <div className={styles['sellTextDiv']}> <p>따끈따근 최신 팝니다 글</p> </div>
             <div className={styles['sellContainer']}>
-                <SellingPostItemList /> 
+                {/* <SellingPostItemList />  */}
             </div>
 
             <div className={styles['sellMoreDiv']}>

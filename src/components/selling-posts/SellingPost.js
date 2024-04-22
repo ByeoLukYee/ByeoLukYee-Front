@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-posts/SellingPost.module.css';
+
+import { HOST } from '../../config/Config';
+import axios from 'axios';
 
 import Header from '../common/Header';
 import SelectPost from '../main/SelectPost';
@@ -21,6 +24,23 @@ function SellingPosts() {
         setSelectedTab('/');
     };
 
+    // 삽니다 글쓰기 buying-posts 화면에 보여주기
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get(`${HOST}/buying-posts`);
+                if (response.status === 200) {
+                    setData(response.data);
+                }
+            } catch (error) {
+                console.error("데이터 가져오기 실패: ", error);
+            }
+        }
+
+        fetchData();
+    }, []);
+
     return (
         <>
             <div className={styles['container']}>
@@ -33,7 +53,7 @@ function SellingPosts() {
                     </div>
 
                     <div style={{marginBottom: '10%'}}>
-                        <SellingPostItemList />
+                        <SellingPostItemList data={data}/>
                     </div>
                 </div>
 

@@ -10,10 +10,10 @@ function Home() {
   return (
     <div className={styles['container']}>
 
-      <div className={styles['grayContainer']}>
-        <div className={styles['grayDiv']}></div>
-        <div className={styles['grayDiv']}></div>
-        <div className={styles['grayDiv']}></div>
+      <div className={styles['imgContainer']}>
+        <div className={styles['imgDiv']}> <img src='/images/home/homeImg1.png' /> </div>
+        <div className={styles['imgDiv']}> <img src='/images/home/homeImg2.png' /> </div>
+        <div className={styles['imgDiv']}> <img src='/images/home/homeImg3.png' /> </div>
       </div>
 
       <div className={styles['recentlySeenSellDiv']}>
