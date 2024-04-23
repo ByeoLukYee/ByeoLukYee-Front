@@ -18,6 +18,8 @@ function ImageUpload() {
         input.click();
     };
 
+    // image저장하는 api를 axios.post하여 image를 저장하기
+
     return (
         <>
             <div className={styles['imgScroll']}>

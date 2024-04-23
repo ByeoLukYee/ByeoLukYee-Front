@@ -19,6 +19,9 @@ function BuyingPosts() {
         setSelectedTab('/');
     };
 
+    // 삽니다 게시글
+    // /buying-posts GET해서 삽니다 게시물 데이터 가져오기
+    // 가져온 데이터는 BuyingPostItemList에 전달하기
     const [data, setData] = useState([]);
     useEffect(() => {
         async function fetchData() {

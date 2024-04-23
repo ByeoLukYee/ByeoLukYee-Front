@@ -37,7 +37,7 @@ function BuyPostItemList() {
 
     return (
         <div className={styles[className]}>
-            <div className={styles['buy-grid-item']}> <BuyPostItem /> </div>
+            {/* <div className={styles['buy-grid-item']}> <BuyPostItem /> </div>/ */}
 
             {latestPosts.map(post => (
               <div className={styles['buy-grid-item']} key={post.id}>
