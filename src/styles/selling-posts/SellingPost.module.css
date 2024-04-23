@@ -22,33 +22,3 @@
     font-size: 1.2rem;
     color: var(--gray-300); /* 선택 시 gray-900 */
 }
-
-.selectDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 10px;
-    margin-top: 6%;
-    margin-bottom: 5%;
-}
-.selectDiv > div {
-    width: 2vw;
-    height: 4vh;
-    display: flex;
-    border-radius: 10px;
-    column-gap: 10px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    font-family: var(--LaundryGothic-font);
-    font-weight: var(--Regular);
-    color: var(--gray-300);
-}
-
-.selected {
-    background-color: var(--bg);
-}
-.selected > p {
-    color: white;
-}

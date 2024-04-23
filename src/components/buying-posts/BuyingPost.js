@@ -11,6 +11,7 @@ import SelectPost from '../main/SelectPost';
 import BuyingPostItemList from '../buying-Item/BuyingPostItemList';
 import SelectSort from '../main/SelectSort';
 import Footer from '../common/Footer';
+import PageNumber from '../common/PageNumber';
 
 function BuyingPosts() {
     const [selectedTad, setSelectedTab] = useState('/');
@@ -53,7 +54,7 @@ function BuyingPosts() {
                 </div>
             </div>
 
-            {/* <div className={styles['footer']}> <Footer /> </div> */}
+            <PageNumber />
             <Footer />
         </div>
     )

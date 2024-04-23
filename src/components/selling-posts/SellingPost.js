@@ -10,15 +10,11 @@ import Header from '../common/Header';
 import SelectPost from '../main/SelectPost';
 import SellingPostItemList from '../selling-Item/SellingPostItemList';
 import SelectSort from '../main/SelectSort';
+import PageNumber from '../common/PageNumber';
 import Footer from '../../components/common/Footer';
 
 function SellingPosts() {
     const [selectedTad, setSelectedTab] = useState('/');
-    const [selected, setSelected] = useState('1');
-
-    const handleSelectedClick = (number) => {
-        setSelected(number);
-    };
 
     const handleTitleClick = () => {
         setSelectedTab('/');
@@ -59,10 +55,7 @@ function SellingPosts() {
                     </div>
                 </div>
 
-                <div className={styles['selectDiv']}>
-                    <div className={styles[selected === '1' ? 'selected' : '']} onClick={() => handleSelectedClick('1')}> <p>1</p> </div>
-                </div>
-
+                <PageNumber />
                 <Footer />
             </div>
 

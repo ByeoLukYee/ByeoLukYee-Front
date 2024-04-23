@@ -1,0 +1,48 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.selectContainer {
+    display: flex;
+    column-gap: 0.5px;
+    justify-content: center;
+    align-items: center;
+    top: 5%;
+}
+
+.select,
+.selected {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+    row-gap: 10px;
+    cursor: pointer;
+}
+.select > p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 16px;
+    color: var(--gray-500);
+}
+.select > hr {
+    height: 1px;
+    border: 0;
+    background-color: var(--gray-500);
+}
+
+.selected > p {
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 16px;
+    color: var(--bg);
+}
+.selected > hr {
+    height: 1px;
+    border: 0;
+    background-color: var(--bg);
+}
