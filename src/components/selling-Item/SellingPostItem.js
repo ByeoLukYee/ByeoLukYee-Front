@@ -7,6 +7,7 @@ import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
 function SellingPostItem({ status, price, title }) {
+  // SellingPostItemList.js에서 전달 받은 status, price, title를 화면에 보여주기
   return (
     <>
       <Link to="/buying-posts/1" style={{textDecoration: "none", color: "black"}}>

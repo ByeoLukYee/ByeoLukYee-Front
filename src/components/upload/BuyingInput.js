@@ -43,7 +43,7 @@ function BuyingInput() {
 
             if (response.status === 200) {
                 console.log("업로드 성공");
-                // /buying-posts/${id}
+                // /selling-posts/${id}
                 navigate(`/selling-posts`);
             } else {
                 console.error("업로드 실패");

@@ -24,12 +24,14 @@ function SellingPosts() {
         setSelectedTab('/');
     };
 
-    // 삽니다 글쓰기 buying-posts 화면에 보여주기
+    // 팝니다 글쓰기
+    // /selling-posts GET해서 팝니다 게시물 데이터 가져오기
+    // 가져온 데이터는 SellingPostItemList에 전달하기
     const [data, setData] = useState([]);
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`${HOST}/buying-posts`);
+                const response = await axios.get(`${HOST}/selling-posts`);
                 if (response.status === 200) {
                     setData(response.data);
                 }

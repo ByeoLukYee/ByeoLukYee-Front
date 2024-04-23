@@ -17,6 +17,11 @@ function SellingPostId() {
         setShowBuyingInput(prevState => !prevState);
     };
     
+    // /selling-posts/{id}에서 GET하고
+    // title, desc 보여주기
+    // user/ name, studentId, 팝니다, 삽니다 올린 횟수 SellingPostIdConsumerInfo에 전달하기
+    // krStatus, location, 좋아요, 조회 횟수 SellingPostIdInfo에 전달하기
+
     return (
         <div className={styles['container']}>
             <Header />

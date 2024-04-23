@@ -8,7 +8,14 @@ import Footer from '../common/Footer';
 import BuyingPostIdProducerInfo from './BuyingPostIdProducerInfo';
 import BuyingPostIdInfo from './BuyingPostIdInfo';
 
-function BuyingPostsId({ status, price, title }) {
+function BuyingPostsId() {
+    // 팝니다 글 쓴 정보를 보여주는 화면
+    // /buying-posts/{id} GET해서
+    // title, price, desc는 BuyingPostId
+    // krStatus, location는 BuyingPostIdInfo(판매중, 조회수, 찜횟수)
+    // user/name, studentId는 BuyingPostIdProducerInfo(글 쓴 사람 이름, 학번, 팝니다 갯수, 삽니다 갯수)
+    // Image GET해서 exampleImg대신 src에 넣기
+    
     return (
         <>
             <div className={buyingPostsIdStyle["container"]}>
@@ -19,11 +26,11 @@ function BuyingPostsId({ status, price, title }) {
                         <div className={buyingPostsIdStyle['sellInformationContainer']}>
                             <div>
                                 <div className={buyingPostsIdStyle['titleDiv']}>
-                                    <p>{title}</p>
-                                    <div className={buyingPostsIdStyle['moneyDiv']}> <p>{price}</p> <p>원</p> </div>
+                                    <p>제목</p>
+                                    <div className={buyingPostsIdStyle['moneyDiv']}> <p>20000</p> <p>원</p> </div>
                                 </div>
                                 <hr />
-                                <BuyingPostIdInfo status={status}/>
+                                <BuyingPostIdInfo />
                             </div>
                             <div className={buyingPostsIdStyle['buttonDiv']}>
                                 <button style={{cursor: 'pointer'}}>채팅하기</button>
