@@ -18,7 +18,10 @@ import BuyingPost from './pages/BuyingPost';
 import BuyingPostId from './pages/BuyingPostId';
 import BuyingPostUpload from './pages/BuyingPostUpload';
 import BuyingPostEdit from './pages/BuyingPostEdit';
+
 import Chatting from './pages/Chatting';
+
+import Search from './pages/Search';
 
 
 function App() {
@@ -43,6 +46,8 @@ function App() {
                 <Route path='/chatting' element={<Chatting />} />
 
                 <Route path='/profile' element={<Profile />} />
+
+                <Route path='/search' element={<Search />} />
             </Routes>
         </Router>
 
