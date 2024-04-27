@@ -10,7 +10,7 @@ import Header from '../common/Header';
 import Footer from '../common/Footer';
 import SellingPostIdConsumerInfo from './SellingPostIdConsumerInfo';
 import SellingPostIdInfo from './SellingPostIdInfo';
-import SellingInput from  './SellingInput';
+import SellingInput from  './SellingCommentInput';
 import CommentList from '../comment/CommentList';
 
 function SellingPostId() {
@@ -41,7 +41,7 @@ function SellingPostId() {
         fetchData();
     }, [id]);
 
-    const price = data.price && data.price.toLocaleString() + '원';
+    const price = data.price && data.price.toLocaleString();
 
     return (
         <div className={styles['container']}>
@@ -68,7 +68,17 @@ function SellingPostId() {
                                 )}
                                 <SellingPostIdInfo data={data} />
                             </div>
-                            <div className={styles['button']}> <button onClick={handleBuyButtonClick}>참여하기</button> </div>
+                            {data.user && data.user.id !== 1 && (
+                                <>
+                                   <div className={styles['particButton']}> <button onClick={handleBuyButtonClick}>참여하기</button> </div>
+                                </>
+                            )}
+                            
+                            {data.user && data.user.id === 1 && (
+                                <>
+                                    <div className={styles['selectButton']}> <button>선택하기</button> </div>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
