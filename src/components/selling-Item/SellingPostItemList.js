@@ -36,15 +36,18 @@ function SellingPostItemList({ data }) {
 
   // 팝니다 글쓰기 itemList 컴포넌트
   // SellingPost.js에서 받은 데이터 title, status, price를 SellingPostItem에 전달하기
+  let price = 0;
   return (
       <>
         <div className={styles[className]}>
           {currentPosts.map(post => (
+              price = post.price && post.price.toLocaleString(),
               <div key={post.id} className={styles['grid-item']}> 
                   <SellingPostItem
                       title={post.title}
                       status={post.krStatus}
-                      price={post.price}
+                      price={price}
+                      id={post.id}
                   />
               </div>
           ))}

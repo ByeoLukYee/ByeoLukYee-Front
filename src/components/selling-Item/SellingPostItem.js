@@ -6,11 +6,11 @@ import sellStyle from "../../styles/selling-Item/SellingPostItem.module.css";
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function SellingPostItem({ status, price, title }) {
+function SellingPostItem({ status, price, title, id }) {
   // SellingPostItemList.js에서 전달 받은 status, price, title를 화면에 보여주기
   return (
     <>
-      <Link to="/buying-posts/1" style={{textDecoration: "none", color: "black"}}>
+      <Link to={`/buying-posts/${id}`} style={{textDecoration: "none", color: "black"}}>
         <div className={sellStyle["boxContainer"]}>
 
           <div className={sellStyle["lookImgStyle"]}>

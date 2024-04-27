@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
+import { HOST } from '../../config/Config';
+import axios from 'axios';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-posts/SellingPostId.module.css';
@@ -21,6 +24,24 @@ function SellingPostId() {
     // title, desc 보여주기
     // user/ name, studentId, 팝니다, 삽니다 올린 횟수 SellingPostIdConsumerInfo에 전달하기
     // krStatus, location, 좋아요, 조회 횟수 SellingPostIdInfo에 전달하기
+    const [data, setData] = useState([]);
+    const { id } = useParams();
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get(`${HOST}/buying-posts/${id}`);
+                if (response.status === 200) {
+                    setData(response.data);
+                }
+            } catch (error) {
+                console.error("데이터 가져오기 실패: ", error);
+            }
+        }
+
+        fetchData();
+    }, [id]);
+
+    const price = data.price && data.price.toLocaleString() + '원';
 
     return (
         <div className={styles['container']}>
@@ -30,20 +51,22 @@ function SellingPostId() {
                 <div className={styles['topContainer']}>
                     <div className={styles['container1']}>
                         <div className={styles['contextDiv']}>
-                            <p>title</p>
+                            <p>{data.title}</p>
                             <hr />
-                            <p>context</p>
+                            <p>{data.description}</p>
                         </div>
                         <div className={styles['priceDiv']}>
                             <p>희망 거래 가격</p>
-                            <div className={styles['price']}> <p>price</p> <p>원 이하</p> </div>
+                            <div className={styles['price']}> <p>{price}</p> <p>원 이하</p> </div>
                         </div>
                     </div>
                     <div className={styles['container2']}>
                         <div className={styles['profile']}>
                             <div className={styles['information']}>
-                                <SellingPostIdConsumerInfo />
-                                <SellingPostIdInfo />
+                                {data.user && (
+                                    <SellingPostIdConsumerInfo user={data.user} />
+                                )}
+                                <SellingPostIdInfo data={data} />
                             </div>
                             <div className={styles['button']}> <button onClick={handleBuyButtonClick}>참여하기</button> </div>
                         </div>

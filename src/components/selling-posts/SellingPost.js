@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { HOST } from '../../config/Config';
+import axios from 'axios';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-posts/SellingPost.module.css';
 
-import { HOST } from '../../config/Config';
-import axios from 'axios';
 
 import Header from '../common/Header';
 import SelectPost from '../main/SelectPost';
@@ -36,6 +36,7 @@ function SellingPosts() {
 
         fetchData();
     }, []);
+    console.log(data);
 
     return (
         <>
