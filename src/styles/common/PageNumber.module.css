@@ -1,12 +1,28 @@
-.selectDiv {
+.buyingSelectDiv {
+    width: 69%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    column-gap: 10px;
+    justify-content: center;
     margin-top: 6%;
     margin-bottom: 5%;
 }
-.selectDiv > div {
+
+.sellingSelectDiv {
+    width: 82%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6%;
+    margin-bottom: 5%;
+}
+
+.div {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.div > div {
     width: 2vw;
     height: 4vh;
     display: flex;

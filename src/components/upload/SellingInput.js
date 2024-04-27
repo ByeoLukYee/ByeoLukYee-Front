@@ -29,11 +29,19 @@ function SellingInput() {
         setDesc(e.target.value);
     }
 
+    const resetInputs = () => {
+        setTitle('');
+        setPrice('');
+        setLocation('');
+        setDesc('');
+    }
+
 
     const addSellWrite = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${HOST}/selling-posts`, {
+            const response = await axios.post(`${HOST}/buying-posts`, {
+                userId: 1,
                 title: title,
                 description: desc,
                 price: price,
@@ -41,12 +49,10 @@ function SellingInput() {
             });
             console.log(response);
 
-            if (response.status === 200) {
+            if (response.status === 201) {
                 console.log("업로드 성공");
-                // /buying-posts/${id}
-                navigate(`/buying-posts`);
-            } else {
-                console.error("업로드 실패");
+                const id = response.data.id;
+                navigate(`/selling-posts/${id}`);
             }
         } catch(error) {
             console.error("요청 실패 : ", error);
@@ -105,7 +111,7 @@ function SellingInput() {
                 <div className={styles['hr']}> <hr /> </div>
 
                 <div className={styles['buttonContainer']}>
-                    <button className={styles['removeButtonStyle']}>삭제하기</button>
+                    <button className={styles['removeButtonStyle']} onClick={resetInputs}>삭제하기</button>
                     <button className={styles['okButtonStyle']} onClick={addSellWrite}>등록하기</button>
                 </div>
             </div>

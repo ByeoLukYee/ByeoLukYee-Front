@@ -7,11 +7,11 @@ import buyStyle from '../../styles/buying-Item/BuyPostItem.module.css';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
  
-function BuyPostItem({ title, description, price }) {
+function BuyPostItem({ title, description, price, status, id }) {
     // home 화면 최신 글 데이터 정보 화면에 보여주기
     return(
         <>
-            <Link to="/selling-posts/1" style={{ textDecoration: "none", color: 'black' }}>
+            <Link to={`/selling-posts/${id}`} style={{ textDecoration: "none", color: 'black' }}>
                 <div className={buyStyle['BoxContainer']}>
                     <div className={buyStyle['firstDiv']}>
                         <div className={buyStyle['contextDiv']}>
@@ -24,7 +24,7 @@ function BuyPostItem({ title, description, price }) {
                         </div>
                     </div>
                     <div className={buyStyle['secondDiv']}>
-                        <p>#경매중</p>
+                        <p>#{status}</p>
                         <div className={buyStyle['iconDiv']}>
                             <div className={buyStyle['eyesVectorDiv']}>
                                 <VscEye className={buyStyle['eyesVector']}/>

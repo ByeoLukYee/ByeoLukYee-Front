@@ -5,7 +5,7 @@
     grid-template-columns: repeat(4, 1fr);
     justify-content: flex-start;
     align-items: center;
-    column-gap: 3.5%;
+    column-gap: 4%;
     margin-bottom: 3%;
     row-gap: 21%;
 }
@@ -17,6 +17,22 @@
     height: 11vh;
 }
 
+/* /component/buying-Item/buyingPostItemList.js (삽니다 글쓰기 item 리스트) */
+.buying-grid-container {
+    width: calc((15vw + 35px) * 4);
+    display: grid;
+    grid: repeat(4, 1fr) / repeat(2, 1fr);
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 5%;
+    row-gap: 5%;
+    margin-bottom: 5%;
+}
+.buying-grid-item {
+    width: 31vw;
+    height: 27vh;
+}
+
 .profile-grid-container {
     width: calc((15vw + 35px) * 3);
     display: grid;
@@ -25,21 +41,5 @@
     align-items: center;
     column-gap: 1%;
     margin-bottom: 3%;
-    row-gap: 23%;
-}
-
-/* /component/buying-Item/buyingPostItemList.js (삽니다 글쓰기 item 리스트) */
-.buying-grid-container {
-    width: calc((15vw + 35px) * 4);
-    display: grid;
-    grid: repeat(4, 1fr) / repeat(2, 1fr);
-    justify-content: flex-start;
-    align-items: center;
-    column-gap: 2%;
-    row-gap: 5%;
-    margin-bottom: 5%;
-}
-.buying-grid-item {
-    width: 30vw;
-    height: 27vh;
+    row-gap: 13%;
 }

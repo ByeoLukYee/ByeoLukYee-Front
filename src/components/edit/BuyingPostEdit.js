@@ -1,3 +1,5 @@
+import React from 'react';
+
 import '../../styles/common/Styles.css';
 import styles from '../../styles/edit/BuyingPostEdit.module.css';
 

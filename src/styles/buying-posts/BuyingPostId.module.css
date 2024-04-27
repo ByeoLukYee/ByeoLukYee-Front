@@ -53,7 +53,7 @@
 .moneyDiv {
     display: flex;
     column-gap: 10px;
-    align-items: flex-end;
+    align-items: center;
 }
 .moneyDiv > p:nth-child(1) {
     font-family: var(--LaundryGothic-font);
@@ -71,23 +71,34 @@
     column-gap: 20px;
 }
 .buttonDiv > button {
-    height: 10vh;
+    height: 8.5vh;
     border: 0;
     border-radius: 10px;
 }
-.buttonDiv > button:nth-child(1) {
+.chattingButton {
     width: 22vw;
     background-color: var(--bg);
+    cursor: pointer;
 
     font-family: var(--SUIT-font);
     font-weight: var(--SemiBold);
     font-size: 1.3rem;
 }
-.buttonDiv > button:nth-child(2) {
+.heartButton {
     width: 10vw;
     background-color: var(--primary-200);
+    cursor: pointer;
 
     color: var(--primary-500);
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 1.3rem;
+}
+.updateButton {
+    width: 32vw;
+    background-color: var(--bg);
+    cursor: pointer;
+
     font-family: var(--SUIT-font);
     font-weight: var(--SemiBold);
     font-size: 1.3rem;

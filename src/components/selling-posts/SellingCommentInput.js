@@ -1,16 +1,15 @@
-import '../../styles/common/Styles.css';
-import styles from '../../styles/upload/BuyingInput.module.css';
-
+import React, { useState } from 'react';
 import { HOST } from '../../config/Config';
-import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
-function BuyingInput() {
-    // 팝니다 글쓰기 buying-posts/upload
-    // 내가 쓴 팝니다 글쓰기 데이터 정보 post
-    const navigate = useNavigate();
+import '../../styles/common/Styles.css';
+import styles from '../../styles/selling-posts/SellingCommentInput.module.css';
+import { useParams } from 'react-router';
 
+
+function SellingInput() {
+    // comment 추가하기
+    // 등록하기 버튼 클릭 시 selling-comments post
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
     const [price, setPrice] = useState('');
@@ -29,29 +28,27 @@ function BuyingInput() {
         setDesc(e.target.value);
     }
 
-
-    const addBuyWrite = async (e) => {
+    const { id } = useParams();
+    const addComment = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${HOST}/selling-posts`, {
+            const response = await axios.post(`${HOST}/selling-comments`, {
                 userId: 1,
                 title: title,
                 description: desc,
                 price: price,
-                location: location
+                location: location,
+                referenceItemId: id
             });
             console.log(response);
 
-            if (response.status === 201) {
-                console.log("업로드 성공");
-                const id = response.data.id;
-                navigate(`/buying-posts/${id}`);
+            if(response.status === 200) {
+                console.log("댓글 추가 성공");
             } else {
-                console.error("업로드 실패");
+                console.log("댓글 추가 실패 : ", response.status);
             }
-            
         } catch(error) {
-            console.error("요청 실패 : ", error);
+            console.log("요청 실패 : ", error);
         }
     }
 
@@ -61,7 +58,7 @@ function BuyingInput() {
                 {/* 제목 */}
                 <div className={styles['textDiv']}>
                     <p>제목</p>
-                    <input
+                    <input 
                         placeholder='제목'
                         type='text'
                         value={title}
@@ -96,20 +93,21 @@ function BuyingInput() {
                 <div className={styles['contextDiv']}>
                     <p>설명</p>
                     <textarea 
-                        placeholder='상품 상세 정보'
+                        placeholder='본문'
                         value={desc}
                         onChange={descValue}
                     />
                 </div>
 
                 <div className={styles['hr']}> <hr /> </div>
+                
+                <div className={styles['buttonContainer']}>
+                    <button className={styles['buttonStyle']} onClick={addComment}>등록하기</button>
+                </div>
             </div>
 
-            <div className={styles['buttonContainer']}>
-                <button className={styles['buttonStyle']} onClick={addBuyWrite}>등록하기</button>
-            </div>
         </>
     )
 }
 
-export default BuyingInput;
+export default SellingInput;

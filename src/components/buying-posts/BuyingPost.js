@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { HOST } from '../../config/Config';
+import axios from 'axios';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/buying-posts/BuyingPost.module.css';
-
-import { HOST } from '../../config/Config';
-import axios from 'axios';
 
 import Header from '../common/Header';
 import SelectPost from '../main/SelectPost';
 import BuyingPostItemList from '../buying-Item/BuyingPostItemList';
 import SelectSort from '../main/SelectSort';
 import Footer from '../common/Footer';
-import PageNumber from '../common/PageNumber';
 
 function BuyingPosts() {
     const [selectedTad, setSelectedTab] = useState('/');
-
     const handleTitleClick = () => {
         setSelectedTab('/');
     };
@@ -31,13 +28,14 @@ function BuyingPosts() {
                 if (response.status === 200) {
                     setData(response.data);
                 }
-            } catch (error) {
+            } catch(error) {
                 console.error("데이터 가져오기 실패: ", error);
             }
         }
 
         fetchData();
     }, []);
+    console.log(data);
 
     return (
         <div className={styles['container']}>
@@ -49,12 +47,10 @@ function BuyingPosts() {
                     <SelectSort />
                 </div>
 
-                <div>
+                <div className={styles['buying-post-item-list']}>
                     <BuyingPostItemList data={data} />
                 </div>
             </div>
-
-            <PageNumber />
             <Footer />
         </div>
     )

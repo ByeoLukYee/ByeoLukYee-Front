@@ -26,7 +26,7 @@ function PostWriteManagement() {
                 </div>
 
                 <div className={styles['commentContainer']}>
-                    <p>내가 쓴 삽니다 글</p>
+                    <p>내가 올린 경매댓글</p>
 
                     <div className={styles['itemList']}>
                         <ProfileCommentList />

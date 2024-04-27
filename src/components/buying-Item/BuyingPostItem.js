@@ -7,12 +7,12 @@ import buyingStyle from '../../styles/buying-Item/BuyingPostItem.module.css';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function BuyingPostItem({ title, status, price, desc, userName }) {
+function BuyingPostItem({ title, status, price, desc, id, userName }) {
     // 삽니다 게시글 각각의 item 컴포넌트
     // BuyingPostItemList에서 보낸 title, status, price, desc, userName를 받아서 화면에 보여주기
     return(
         <>
-            <Link to="/selling-posts/1" style={{ textDecoration: "none", color: 'black' }}>
+            <Link to={`/selling-posts/${id}`} style={{ textDecoration: "none", color: 'black' }}>
                 
                 <div className={buyingStyle['BoxContainer']}>
                      

@@ -1,45 +1,48 @@
+import React, { useEffect, useState } from "react";
+import { HOST } from "../../config/Config";
+import axios from "axios";
+
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-Item/SellGrid.module.css';
 
 import SellingPostItem from '../selling-Item/SellingPostItem';
 
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { HOST } from "../../config/Config";
 
 function SellingPostItemList() {
-    const [sellingPostList, setsellingPostList] = useState([]);
+    //  user.id가 같은 selling-posts item만 GET
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get(`${HOST}/selling-posts`);
+                if (response.status === 200) {
+                    const filteredData = response.data.filter(item => item.user.id === 1);
+                    setData(filteredData);
+                }
+            } catch (error) {
+                console.error("데이터 가져오기 실패: ", error);
+            }
+        };
 
-    // useEffect(() => {
-    //   fetchData();
-    // }, []);
-  
-    // const fetchData = async () => {
-    //   try {
-    //     // `${HOST}/selling-posts`
-    //     const response = await axios.get('http://localhost:8080/selling-posts');
-    //     console.log(response.data);
-    //     setsellingPostList(response.data);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // };
-
-    if (sellingPostList.length === 0) {
-      return <p>게시글이 존재하지 않음.</p>
-    }
+        fetchData();
+    }, []);
+    console.log(data);
 
     return (
         <div className={styles['three-grid-container']}>
-            {sellingPostList.map((item, index) => (
-                <div key={index} className={styles['grid-item']}> 
+            {data.length > 0 && data.map(item  => (
+                <div key={item.id} className={styles['grid-item']}> 
                     <SellingPostItem
-                        title={item.title}
                         status={item.krStatus}
                         price={item.price}
+                        title={item.title}
+                        id={item.id}
                     />
                 </div>
             ))}
+            {data.length <= 0 && 
+                <p>게시글 없습니다.</p>
+            }
         </div>
     )
 }
