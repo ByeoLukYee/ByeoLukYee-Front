@@ -7,7 +7,7 @@ import buyStyle from '../../styles/buying-Item/BuyPostItem.module.css';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
  
-function BuyPostItem({ title, description, price }) {
+function BuyPostItem({ title, description, price, status }) {
     // home 화면 최신 글 데이터 정보 화면에 보여주기
     return(
         <>
@@ -24,7 +24,7 @@ function BuyPostItem({ title, description, price }) {
                         </div>
                     </div>
                     <div className={buyStyle['secondDiv']}>
-                        <p>#경매중</p>
+                        <p>#{status}</p>
                         <div className={buyStyle['iconDiv']}>
                             <div className={buyStyle['eyesVectorDiv']}>
                                 <VscEye className={buyStyle['eyesVector']}/>
