@@ -9,8 +9,8 @@ import styles from '../../styles/home/RecentlySell.module.css';
 import SellingPostItemList from '../selling-Item/SellingPostItemList';
 
 function RecentlySell() {
+    // 최신 팝니다 서버 연결
     const [latestPosts, setLatestPosts] = useState([]);
-
     useEffect(() => {
         async function fetchLatestPosts() {
             try {
