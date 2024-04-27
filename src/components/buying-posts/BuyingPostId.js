@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
+import axios from 'axios';
+import { HOST } from '../../config/Config';
 
 import '../../styles/common/Styles.css';
 import buyingPostsIdStyle from '../../styles/buying-posts/BuyingPostId.module.css';
@@ -15,6 +18,24 @@ function BuyingPostsId() {
     // krStatus, location는 BuyingPostIdInfo(판매중, 조회수, 찜횟수)
     // user/name, studentId는 BuyingPostIdProducerInfo(글 쓴 사람 이름, 학번, 팝니다 갯수, 삽니다 갯수)
     // Image GET해서 exampleImg대신 src에 넣기
+    const [data, setData] = useState([]);
+    const { id } = useParams();
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get(`${HOST}/selling-posts/${id}`);
+                if (response.status === 200) {
+                    setData(response.data);
+                }
+            } catch (error) {
+                console.error("데이터 가져오기 실패: ", error);
+            }
+        }
+        fetchData();
+    }, [id]);
+    console.log(data);
+
+    const price = data.price && data.price.toLocaleString() + '원';
     
     return (
         <>
@@ -26,11 +47,11 @@ function BuyingPostsId() {
                         <div className={buyingPostsIdStyle['sellInformationContainer']}>
                             <div>
                                 <div className={buyingPostsIdStyle['titleDiv']}>
-                                    <p>제목</p>
-                                    <div className={buyingPostsIdStyle['moneyDiv']}> <p>20000</p> <p>원</p> </div>
+                                    <p>{data.title}</p>
+                                    <div className={buyingPostsIdStyle['moneyDiv']}> <p>{price}</p> <p>원</p> </div>
                                 </div>
                                 <hr />
-                                <BuyingPostIdInfo />
+                                <BuyingPostIdInfo data={data}/>
                             </div>
                             <div className={buyingPostsIdStyle['buttonDiv']}>
                                 <button style={{cursor: 'pointer'}}>채팅하기</button>
@@ -42,7 +63,7 @@ function BuyingPostsId() {
                     <div className={buyingPostsIdStyle['contextContainer']}>
                         <p>상품 정보</p> 
                         <div className={buyingPostsIdStyle['informationDiv']}>
-                            <p>상품 정보 적는 부분</p>
+                            <p>{data.description}</p>
                         </div>
                     </div>
                     <div className={buyingPostsIdStyle['hrDiv']}> <hr /> </div>
@@ -50,7 +71,9 @@ function BuyingPostsId() {
                         <p>판매자 정보</p> 
                         <div className={buyingPostsIdStyle['userContainer']}>
                             <div className={buyingPostsIdStyle['userDiv']}>
-                                <BuyingPostIdProducerInfo />
+                                {data.user && (
+                                    <BuyingPostIdProducerInfo user={data.user}/>
+                                )}
                             </div>
                         </div>
                     </div>

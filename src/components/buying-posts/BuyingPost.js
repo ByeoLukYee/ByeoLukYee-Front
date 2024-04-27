@@ -35,6 +35,7 @@ function BuyingPosts() {
 
         fetchData();
     }, []);
+    console.log(data);
 
     return (
         <div className={styles['container']}>

@@ -18,15 +18,18 @@ function BuyPostItemList({ data }) {
     className = 'profile-grid-container';
   }
 
+  let price = 0;
   return (
       <div className={styles[className]}>
           {data.map(post => (
+            price = post.price && post.price.toLocaleString(),
             <div className={styles['buy-grid-item']} key={post.id}>
                 <BuyPostItem 
                   title = {post.title}
                   description = {post.description}
-                  price = {post.price}
+                  price = {price}
                   status={post.krStatus}
+                  id={post.id}
                 />
             </div>
           ))}

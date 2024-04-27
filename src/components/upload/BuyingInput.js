@@ -33,7 +33,8 @@ function BuyingInput() {
     const addBuyWrite = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${HOST}/buying-posts`, {
+            const response = await axios.post(`${HOST}/selling-posts`, {
+                userId: 1,
                 title: title,
                 description: desc,
                 price: price,
@@ -41,10 +42,10 @@ function BuyingInput() {
             });
             console.log(response);
 
-            if (response.status === 200) {
+            if (response.status === 201) {
                 console.log("업로드 성공");
-                // /selling-posts/${id}
-                navigate(`/selling-posts`);
+                const id = response.data.id;
+                navigate(`/buying-posts/${id}`);
             } else {
                 console.error("업로드 실패");
             }

@@ -24,17 +24,20 @@ function BuyingPostItemList({ data }) {
     };
 
     // 삽니다 글쓰기 itemList 컴포넌트
-  // BuyingPost.js에서 받은 데이터 title, status, price, desc, userName를 BuyingPostItem에 전달하기
+    // BuyingPost.js에서 받은 데이터 title, status, price, desc, userName를 BuyingPostItem에 전달하기
+    let price = 0;
     return ( 
         <>
             <div className={styles['buying-grid-container']}>
                 {currentPosts.map(post => (
+                    price = post.price && post.price.toLocaleString(),
                     <div key={post.id} className={styles['buying-grid-item']}> 
                         <BuyingPostItem
                             title={post.title}
                             status={post.krStatus}
-                            price={post.price}
+                            price={price}
                             desc={post.description}
+                            id={post.id}
                             userName={post.user.name}
                         />
                     </div>
