@@ -49,6 +49,7 @@ function BuyingInput() {
             } else {
                 console.error("업로드 실패");
             }
+            
         } catch(error) {
             console.error("요청 실패 : ", error);
         }

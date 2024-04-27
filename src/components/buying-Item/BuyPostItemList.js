@@ -9,18 +9,10 @@ function BuyPostItemList({ data }) {
   if (!data || data.length === 0) {
     return <p>게시글이 존재하지 않음.</p>;
   }
-  
-  const pathName = window.location.pathname;
-  let className = '';
-  if (pathName === '/') {
-    className = 'home-grid-container';
-  } else if (pathName === '/profile') {
-    className = 'profile-grid-container';
-  }
 
   let price = 0;
   return (
-      <div className={styles[className]}>
+      <div className={styles['home-grid-container']}>
           {data.map(post => (
             price = post.price && post.price.toLocaleString(),
             <div className={styles['buy-grid-item']} key={post.id}>
