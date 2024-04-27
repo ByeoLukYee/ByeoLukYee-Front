@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    row-gap: 20%;
+    row-gap: 10%;
 }
 
 .sellContainer,
@@ -9,6 +9,7 @@
 .commentContainer {
     display: flex;
     flex-direction: column;
+    margin-bottom: 5%;
 }
 
 .sellContainer > p,
