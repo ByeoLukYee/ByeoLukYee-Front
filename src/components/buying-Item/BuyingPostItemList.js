@@ -11,8 +11,8 @@ function BuyingPostItemList({ data }) {
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 8;
 
-    if (data.length === 0) {
-        return <p>게시글이 존재하지 않음.</p>
+    if (!data || data.length === 0) {
+        return <p>게시글이 존재하지 않음.</p>;
     }
 
     const indexOfLastPost = currentPage * postsPerPage;

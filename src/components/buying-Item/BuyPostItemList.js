@@ -6,8 +6,8 @@ import BuyPostItem from './BuyPostItem';
 
 function BuyPostItemList({ data }) {
   // main 화면에 최근 본 팝니다 최신 글 데이터 정보 가지고 오기
-  if (data.length === 0) {
-      return <p>게시글이 존재하지 않음.</p>
+  if (!data || data.length === 0) {
+    return <p>게시글이 존재하지 않음.</p>;
   }
   
   const pathName = window.location.pathname;
