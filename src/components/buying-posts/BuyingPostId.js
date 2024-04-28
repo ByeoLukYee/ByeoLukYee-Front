@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
 import { HOST } from '../../config/Config';
+import { Link } from "react-router-dom";
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/buying-posts/BuyingPostId.module.css';
@@ -59,7 +60,7 @@ function BuyingPostsId() {
                                 )}
                                 
                                 {data.user && data.user.id === 1 && (
-                                    <button className={styles['updateButton']}>수정하기</button>
+                                    <Link to={`/buying-posts/${id}/edit`}> <button className={styles['updateButton']}>수정하기</button> </Link>
                                 )}
                             </div>
                         </div>
