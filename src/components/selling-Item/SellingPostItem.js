@@ -8,10 +8,14 @@ import { VscEye } from "react-icons/vsc";
 
 function SellingPostItem({ status, price, title, id }) {
   // SellingPostItemList.js에서 전달 받은 status, price, title를 화면에 보여주기
+  const containerStyle = {
+    backgroundColor: status === '판매완료' ? '#F6F6F6' : ''
+  }
+
   return (
     <>
       <Link to={`/buying-posts/${id}`} style={{textDecoration: "none", color: "black"}}>
-        <div className={sellStyle["boxContainer"]}>
+        <div className={sellStyle["boxContainer"]} style={containerStyle}>
 
           <div className={sellStyle["lookImgStyle"]}>
             <img

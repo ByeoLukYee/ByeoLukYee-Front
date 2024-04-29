@@ -31,17 +31,16 @@ function BuyingPostsId() {
         }
         fetchData();
     }, [id]);
-    console.log(data);
 
     const price = data.price && data.price.toLocaleString();
-    
+
     return (
         <>
             <div className={styles["container"]}>
                 <Header />
                 <div className={styles['topContainer']}>
                     <div className={styles['topDiv']}>
-                        <div className={styles['imgDiv']}> <img src={process.env.PUBLIC_URL + "/images/exampleImg.png"} alt="example" /> </div>
+                        <div className={styles['imgDiv']}> <img src='/images/exampleImg.png' alt="product" /> </div>
                         <div className={styles['sellInformationContainer']}>
                             <div>
                                 <div className={styles['titleDiv']}>
@@ -78,7 +77,7 @@ function BuyingPostsId() {
                         <div className={styles['userContainer']}>
                             <div className={styles['userDiv']}>
                                 {data.user && (
-                                    <BuyingPostIdProducerInfo user={data.user}/>
+                                    <BuyingPostIdProducerInfo user={data.user} />
                                 )}
                             </div>
                         </div>
