@@ -9,10 +9,14 @@ import { VscEye } from "react-icons/vsc";
  
 function BuyPostItem({ title, description, price, status, id }) {
     // home 화면 최신 글 데이터 정보 화면에 보여주기
+    const containerStyle = {
+        backgroundColor: status === '경매완료' ? '#F6F6F6' : ''
+    }
+
     return(
         <>
             <Link to={`/selling-posts/${id}`} style={{ textDecoration: "none", color: 'black' }}>
-                <div className={buyStyle['BoxContainer']}>
+                <div className={buyStyle['BoxContainer']} style={containerStyle}>
                     <div className={buyStyle['firstDiv']}>
                         <div className={buyStyle['contextDiv']}>
                             <p>{title}</p>
