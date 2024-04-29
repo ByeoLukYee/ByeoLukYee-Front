@@ -12,7 +12,7 @@ function SellingPostIdConsumerInfo({ user }) {
         <>
             <div className={styles['container']}>
                 <div className={styles['outBox']}>
-                    <div className={styles['img']}> <img src={process.env.PUBLIC_URL + "/images/exampleImg.png"} alt="example" /> </div>
+                    <div className={styles['img']}> <img src="/images/exampleImg.png" alt="example" /> </div>
                     <div className={styles['inBox']}>
                         <p>{user.name}</p>
                         <div className={styles['userInfo']}>

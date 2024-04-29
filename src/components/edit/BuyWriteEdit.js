@@ -10,8 +10,8 @@ import styles from '../../styles/edit/BuyWriteEdit.module.css';
 import ImageUpload from '../upload/ImageUpload';
 import RadioButton from './RadioButton';
 
-function BuyWriteEdit() {
-    // 팝니다 글쓰기 buying-posts/id/edit
+function BuyWriteEdit({ updateData }) {
+    // 팝니다 글쓰기 buying-posts/id/edit PUT
     // 내가 쓴 팝니다 글쓰기 정보 수정
     const navigate = useNavigate();
 
@@ -20,6 +20,15 @@ function BuyWriteEdit() {
     const [price, setPrice] = useState('');
     const [location, setLocation] = useState('');
     const [postStatus, setPostStatus] = useState(0);
+
+    useEffect(() => {
+        if (updateData) {
+            setTitle(updateData.title);
+            setDesc(updateData.description);
+            setPrice(updateData.price);
+            setLocation(updateData.location);
+        }
+    }, [updateData]);
 
     const titleValue = (e) => {
         setTitle(e.target.value);
@@ -34,7 +43,12 @@ function BuyWriteEdit() {
         setDesc(e.target.value);
     }
 
-    const [data, setData] = useState([]);
+    const labelNames=['판매중', '예약중', '판매완료'];
+    const optionValue = (e) => {
+        setPostStatus(labelNames[postStatus]);
+    }
+
+
     const { id } = useParams();
     const update = async (e) => {
         e.preventDefault();
@@ -46,13 +60,12 @@ function BuyWriteEdit() {
                 location: location,
                 status: postStatus
             });
-            console.log(response);
 
-            if (response.status === 201) {
-                console.log("업데이트 성공");
+            if (response.status === 200) {
+                console.log("업데이트 성공", response);
                 navigate(`/buying-posts/${id}`);
             } else {
-                console.error("업데이트 실패");
+                console.error("업데이트 실패", response.status);
             }
 
         } catch(error) {
@@ -113,7 +126,13 @@ function BuyWriteEdit() {
                     </div>
 
                     {/* 라디오 버튼 */}
-                    <RadioButton quantity={3} labelNames={['판매중', '예약중', '판매완료']} setSelectedOption={setPostStatus}/>
+                    <RadioButton 
+                        quantity={3} 
+                        labelNames={labelNames} 
+                        krStatus={updateData.krStatus} 
+                        setSelectedOption={setPostStatus} 
+                        onChange={optionValue}
+                    />
                 </div>
 
                 <div className={styles['hr']}> <hr /> </div>
