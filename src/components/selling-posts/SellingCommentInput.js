@@ -42,7 +42,7 @@ function SellingInput() {
             });
             console.log(response);
 
-            if(response.status === 200) {
+            if(response.status === 201) {
                 console.log("댓글 추가 성공");
             } else {
                 console.log("댓글 추가 실패 : ", response.status);
@@ -50,6 +50,7 @@ function SellingInput() {
         } catch(error) {
             console.log("요청 실패 : ", error);
         }
+        window.location.replace(`/selling-posts/${id}`);
     }
 
     return (

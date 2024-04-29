@@ -7,14 +7,20 @@ function CommentItem({ data }) {
     const [clicked, setClicked] = useState(false);
 
     const handleClick = () => {
-        setClicked(!clicked);
+        if(data.krStatus !== "낙찰") {
+            setClicked(true);
+        }
+    };
+
+    const containerStyle = {
+        backgroundColor: data.krStatus === "낙찰" ? '#FFFBED' : '',
     };
 
     const price = data.price && data.price.toLocaleString() + ' 원';
 
     return (
         <>
-            <div className={`${styles['container']} ${clicked ? styles['clickedContainer'] : ''}`} onClick={handleClick}>
+            <div className={`${styles['container']} ${clicked ? styles['clickedContainer'] : ''}`} onClick={handleClick} style={containerStyle}>
                 <div className={styles['top']}>
                     <p>{data.title}</p>
                     <div className={styles['info']}>

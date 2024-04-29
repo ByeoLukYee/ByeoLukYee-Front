@@ -52,7 +52,7 @@ function BuyWriteEdit() {
                 console.log("업데이트 성공");
                 navigate(`/buying-posts/${id}`);
             } else {
-                console.error("업로드 실패");
+                console.error("업데이트 실패");
             }
 
         } catch(error) {

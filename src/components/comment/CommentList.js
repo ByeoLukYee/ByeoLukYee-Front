@@ -16,7 +16,7 @@ function CommentList() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`${HOST}/selling-comments/${id}`);
+                const response = await axios.get(`${HOST}/buying-posts/${id}/selling-comments`);
                 if(response.status === 200) {
                     setData(response.data);
                 }
@@ -27,13 +27,22 @@ function CommentList() {
         fetchData();
     }, [id]);
 
+    const [selectedItemIndex, setSelectedItemIndex] = useState(null);
+    const handleClick = (index) => {
+        setSelectedItemIndex(index);
+    };
+
     return (
         <>
             <div className={styles['comment-container']}>
                 {data.length > 0 && (
                     data.map((comment, index) => (
                         <div key={index} className={styles['comment-item']}>
-                            <CommentItem data={comment}/>
+                            <CommentItem 
+                                data={comment}
+                                onClick={() => handleClick(index)}
+                                isSelected={selectedItemIndex === index}
+                            />
                         </div>
                     ))
                 )}
