@@ -10,11 +10,15 @@ import { VscEye } from "react-icons/vsc";
 function BuyingPostItem({ title, status, price, desc, id, userName }) {
     // 삽니다 게시글 각각의 item 컴포넌트
     // BuyingPostItemList에서 보낸 title, status, price, desc, userName를 받아서 화면에 보여주기
+    const containerStyle = {
+        backgroundColor: status === '경매완료' ? '#F6F6F6' : ''
+    }
+
     return(
         <>
             <Link to={`/selling-posts/${id}`} style={{ textDecoration: "none", color: 'black' }}>
                 
-                <div className={buyingStyle['BoxContainer']}>
+                <div className={buyingStyle['BoxContainer']} style={containerStyle}>
                      
                     <div className={buyingStyle['topDiv']}>
                         <div className={buyingStyle['topLeftDiv']}>

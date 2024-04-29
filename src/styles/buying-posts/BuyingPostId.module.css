@@ -70,7 +70,7 @@
     display: flex;
     column-gap: 20px;
 }
-.buttonDiv > button {
+.buttonDiv button {
     height: 8.5vh;
     border: 0;
     border-radius: 10px;

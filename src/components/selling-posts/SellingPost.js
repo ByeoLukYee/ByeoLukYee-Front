@@ -36,7 +36,6 @@ function SellingPosts() {
 
         fetchData();
     }, []);
-    console.log(data);
 
     return (
         <>
@@ -50,7 +49,7 @@ function SellingPosts() {
                     </div>
 
                     <div className={styles['selling-post-item-list']}>
-                        <SellingPostItemList data={data}/>
+                        <SellingPostItemList data={data} />
                     </div>
                 </div>
                 <Footer />

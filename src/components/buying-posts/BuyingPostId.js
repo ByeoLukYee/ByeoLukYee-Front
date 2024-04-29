@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
 import { HOST } from '../../config/Config';
+import { Link } from "react-router-dom";
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/buying-posts/BuyingPostId.module.css';
@@ -30,17 +31,16 @@ function BuyingPostsId() {
         }
         fetchData();
     }, [id]);
-    console.log(data);
 
     const price = data.price && data.price.toLocaleString();
-    
+
     return (
         <>
             <div className={styles["container"]}>
                 <Header />
                 <div className={styles['topContainer']}>
                     <div className={styles['topDiv']}>
-                        <div className={styles['imgDiv']}> <img src={process.env.PUBLIC_URL + "/images/exampleImg.png"} alt="example" /> </div>
+                        <div className={styles['imgDiv']}> <img src='/images/exampleImg.png' alt="product" /> </div>
                         <div className={styles['sellInformationContainer']}>
                             <div>
                                 <div className={styles['titleDiv']}>
@@ -59,7 +59,7 @@ function BuyingPostsId() {
                                 )}
                                 
                                 {data.user && data.user.id === 1 && (
-                                    <button className={styles['updateButton']}>수정하기</button>
+                                    <Link to={`/buying-posts/${id}/edit`}> <button className={styles['updateButton']}>수정하기</button> </Link>
                                 )}
                             </div>
                         </div>
@@ -77,7 +77,7 @@ function BuyingPostsId() {
                         <div className={styles['userContainer']}>
                             <div className={styles['userDiv']}>
                                 {data.user && (
-                                    <BuyingPostIdProducerInfo user={data.user}/>
+                                    <BuyingPostIdProducerInfo user={data.user} />
                                 )}
                             </div>
                         </div>

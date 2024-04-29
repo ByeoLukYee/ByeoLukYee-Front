@@ -20,11 +20,9 @@ function SellingPostId() {
         setShowBuyingInput(prevState => !prevState);
     };
     
-    // /selling-posts/{id}에서 GET하고
-    // title, desc 보여주기
-    // user/ name, studentId, 팝니다, 삽니다 올린 횟수 SellingPostIdConsumerInfo에 전달하기
-    // krStatus, location, 좋아요, 조회 횟수 SellingPostIdInfo에 전달하기
+    // /selling-posts/{id}에서 GET
     const [data, setData] = useState([]);
+    const [commentData, setCommentData] = useState([]);
     const { id } = useParams();
     useEffect(() => {
         async function fetchData() {
@@ -32,6 +30,11 @@ function SellingPostId() {
                 const response = await axios.get(`${HOST}/buying-posts/${id}`);
                 if (response.status === 200) {
                     setData(response.data);
+                    // 댓글 api 불러오기
+                    const commentResponse = await axios.get(`${HOST}/buying-posts/${id}/selling-comments`);
+                    if(commentResponse.status === 200) {
+                        setCommentData(commentResponse.data);
+                    }
                 }
             } catch (error) {
                 console.error("데이터 가져오기 실패: ", error);
@@ -42,6 +45,7 @@ function SellingPostId() {
     }, [id]);
 
     const price = data.price && data.price.toLocaleString();
+    const successful = commentData.some(comment => comment.krStatus === '낙찰');
 
     return (
         <div className={styles['container']}>
@@ -74,9 +78,14 @@ function SellingPostId() {
                                 </>
                             )}
                             
-                            {data.user && data.user.id === 1 && (
+                            {data.user && data.user.id === 1 && !successful &&(
                                 <>
                                     <div className={styles['selectButton']}> <button>선택하기</button> </div>
+                                </>
+                            )}
+                            {data.user && data.user.id === 1 && successful && (
+                                <>
+                                    <div className={styles['disabledButton']}> <button disabled>선택하기</button> </div>
                                 </>
                             )}
                         </div>
@@ -87,7 +96,7 @@ function SellingPostId() {
                     <p>경매댓글</p>
                     <div className={styles['commentContainer']}>
                         {showBuyingInput && <SellingInput />}
-                        <CommentList />
+                        <CommentList data={commentData}/>
                     </div>
                 </div>
             </div>
