@@ -49,7 +49,7 @@ function SellWriteEdit({ updateData }) {
     const update = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`${HOST}/buying-posts/${id}`, {
+            const request = await axios.put(`${HOST}/buying-posts/${id}`, {
                 title: title,
                 description: desc,
                 price: price,
@@ -57,11 +57,11 @@ function SellWriteEdit({ updateData }) {
                 status: postStatus
             });
 
-            if (response.status === 200) {
-                console.log("업데이트 성공", response);
+            if (request.status === 200) {
+                console.log("업데이트 성공");
                 navigate(`/selling-posts/${id}`);
             } else {
-                console.error("업데이트 실패", response.status);
+                console.error("업데이트 실패", request.status);
             }
 
         } catch(error) {
@@ -71,6 +71,20 @@ function SellWriteEdit({ updateData }) {
 
     // 삽니다 글쓰기 selling-posts/id DELETE
     // 삭제하기
+    const remove = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.delete(`${HOST}/buying-posts/${id}`);
+            if (response.status === 204) {
+                console.log("게시글 삭제 완료");
+                navigate('/buying-posts');
+            } else {
+                console.log("게시글 삭제 실패 : ", response.status);
+            }
+        } catch(error) {
+            console.log("삭제 api 호출 실패 : ", error);
+        }
+    }
 
     return (
         <>
@@ -132,7 +146,7 @@ function SellWriteEdit({ updateData }) {
                 <div className={styles['hr']}> <hr /> </div>
 
                 <div className={styles['buttonContainer']}>
-                    <button className={styles['removeButtonStyle']}>삭제하기</button>
+                    <button className={styles['removeButtonStyle']} onClick={remove}>삭제하기</button>
                     <button className={styles['okButtonStyle']} onClick={update}>등록하기</button>
                 </div>
             </div>

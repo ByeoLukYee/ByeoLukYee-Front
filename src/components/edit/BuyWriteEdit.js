@@ -73,6 +73,23 @@ function BuyWriteEdit({ updateData }) {
         }
     }
 
+    // 팝니다 글쓰기 buying-posts/id DELETE
+    // 삭제하기
+    const remove = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.delete(`${HOST}/selling-posts/${id}`);
+            if (response.status === 204) {
+                console.log("게시글 삭제 완료");
+                navigate('/selling-posts');
+            } else {
+                console.log("게시글 삭제 실패 : ", response.status);
+            }
+        } catch(error) {
+            console.log("삭제 api 호출 실패 : ", error);
+        }
+    }
+
     return (
         <>
              <div className={styles['container']}>
@@ -138,7 +155,8 @@ function BuyWriteEdit({ updateData }) {
                 <div className={styles['hr']}> <hr /> </div>
 
                 <div className={styles['buttonContainer']}>
-                    <button className={styles['buttonStyle']} onClick={update}>등록하기</button>
+                    <button className={styles['removeButtonStyle']} onClick={remove}>삭제하기</button>
+                    <button className={styles['okButtonStyle']} onClick={update}>등록하기</button>
                 </div>
             </div>
         </>
