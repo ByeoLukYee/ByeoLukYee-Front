@@ -51,7 +51,9 @@ function BuyingPosts() {
                     <BuyingPostItemList data={data} />
                 </div>
             </div>
-            <Footer />
+            <div className={styles['footer']}>
+                <Footer />
+            </div>
         </div>
     )
 }
