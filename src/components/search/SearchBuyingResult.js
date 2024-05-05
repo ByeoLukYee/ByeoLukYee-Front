@@ -5,6 +5,8 @@ import { HOST } from '../../config/Config';
 import '../../styles/common/Styles.css';
 import styles from '../../styles/search/SearchBuyingResult.module.css';
 
+import BuyingPostList from '../buying-Item/BuyingPostItemList';
+
 function SearchBuyingResult({ keyword }) {
     // /buying-posts에 저장된 게시글 데이터를 GET하여
     // 내가 검색창에 입력 값과 일치하거나 포함되어있는 데이터가 있으면 그 데이터만 가져와서 화면에 보여주기
@@ -32,7 +34,9 @@ function SearchBuyingResult({ keyword }) {
 
     return (
         <>
-        
+            <div className={styles['container']}>
+                <BuyingPostList data={data}/>
+            </div>
         </>
     )
 }
