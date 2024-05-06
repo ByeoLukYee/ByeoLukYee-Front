@@ -17,7 +17,7 @@ function SellingPostRemoveButton() {
         e.preventDefault();
         try {
             const response = await axios.delete(`${HOST}/buying-posts/${id}`);
-            if (response.status === 204) {
+            if (response.status === 200) {
                 console.log("게시글 삭제 완료");
                 navigate('/buying-posts');
             } else {
