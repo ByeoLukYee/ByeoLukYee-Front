@@ -1,10 +1,8 @@
 import axios from "axios";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import { HOST } from "../../config/Config";
-import { useDispatch } from 'react-redux';
-import { login } from '../../reducers/actions';
 
 import loginStyles from '../../styles/login/Login.module.css';
 import '../../styles/common/Styles.css';
@@ -15,7 +13,6 @@ import Header from '../common/Header';
 function Login() {
     // 회원가입 화면으로 넘어가기
     const navigate = useNavigate();
-    // const dispatch = useDispatch();
 
     const TextClick = (path) => {
         navigate(path);
@@ -36,8 +33,6 @@ function Login() {
         e.preventDefault();
         try {
             // 서버로 로그인 요청
-            // `${HOST}/signin`
-            // http://localhost:8080/signin
             const response = await axios.post(`${HOST}/users/signin`, {
                 email: email,
                 password: password
@@ -45,7 +40,7 @@ function Login() {
 
             if (response.status === 201) {
                 console.log('로그인 성공');
-                // dispatch(login());
+                localStorage.setItem('userId', response.data.id);
                 navigate('/');
             } else {
                 console.error('로그인 실패');
@@ -54,6 +49,13 @@ function Login() {
             console.error('로그인 요청 중 에러:', error);
         }
     };
+
+    useEffect(() => {
+        const userId = localStorage.getItem('userId');
+        if (userId) {
+            navigate('/');
+        }
+    }, [navigate]);
 
     return (
         <div className={loginStyles['container']}>
