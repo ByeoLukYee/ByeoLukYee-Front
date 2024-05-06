@@ -6,7 +6,6 @@ import RecentlySell from "./RecentlySell";
 import RecentlyBuy from "./RecentlyBuy";
 
 function Home() {
-
   return (
     <div className={styles['container']}>
 
