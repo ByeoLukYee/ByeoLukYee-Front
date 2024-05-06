@@ -11,12 +11,13 @@ import SellingPostItem from '../selling-Item/SellingPostItem';
 function SellingPostItemList() {
     //  user.id가 같은 selling-posts item만 GET
     const [data, setData] = useState([]);
+    let userId = Number(localStorage.getItem('userId'));
     useEffect(() => {
         async function fetchData() {
             try {
                 const response = await axios.get(`${HOST}/selling-posts`);
                 if (response.status === 200) {
-                    const filteredData = response.data.filter(item => item.user.id === 1);
+                    const filteredData = response.data.filter(item => item.user.id === userId);
                     setData(filteredData);
                 }
             } catch (error) {
@@ -26,7 +27,6 @@ function SellingPostItemList() {
 
         fetchData();
     }, []);
-    console.log(data);
 
     return (
         <div className={styles['three-grid-container']}>

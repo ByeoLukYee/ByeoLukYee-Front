@@ -8,13 +8,14 @@ import BuyPostItem from '../buying-Item/BuyPostItem';
 
 function BuyPostItemList() {
     //  user.id가 같은 buying-posts item만 GET
+    let userId = Number(localStorage.getItem('userId'));
     const [data, setData] = useState([]);
     useEffect(() => {
         async function fetchData() {
             try {
                 const response = await axios.get(`${HOST}/buying-posts`);
                 if (response.status === 200) {
-                    const filteredData = response.data.filter(item => item.user.id === 1);
+                    const filteredData = response.data.filter(item => item.user.id === userId);
                     setData(filteredData);
                 }
             } catch (error) {
@@ -24,12 +25,10 @@ function BuyPostItemList() {
 
         fetchData();
     }, []);
-    console.log(data);
 
     return (
         <div className={styles['profile-grid-container']}>
             {data.length > 0 && data.map(item => (
-              console.log(item),
               <div className={styles['buy-grid-item']} key={item.id}> 
                 <BuyPostItem
                   title={item.title}

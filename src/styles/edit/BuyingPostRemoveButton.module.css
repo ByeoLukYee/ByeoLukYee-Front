@@ -1,0 +1,11 @@
+.removeButtonStyle {
+    width: 17vw;
+    height: 7vh;
+    background-color: var(--gray-100);
+    border: 0;
+    border-radius: 10px;
+
+    font-size: 1rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+}

@@ -16,10 +16,10 @@ function ProfileMyInfo({ data }) {
                 <div className={styles['imgDiv']}> <img src={process.env.PUBLIC_URL+'/images/exampleImg.png'} /> </div>
                 <div className={styles['information']}>
                     <div className={styles['enameDiv']}>
-                        <div className={styles['nameDiv']}> <p>data.name</p> </div>
-                        <div className={styles['emailDiv']}> <p>data.email</p> </div>
+                        <div className={styles['nameDiv']}> <p>{data.name}</p> </div>
+                        <div className={styles['emailDiv']}> <p>{data.email}</p> </div>
                     </div>
-                    <div className={styles['studentId']}> <p>studentId</p> </div>
+                    <div className={styles['studentId']}> <p>{data.studentId}</p> </div>
                 </div>
             </div>
         </>

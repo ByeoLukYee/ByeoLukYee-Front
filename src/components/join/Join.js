@@ -44,19 +44,13 @@ function Join() {
                 return;
             }
 
-            let studentId = `${userData.grade}학년 ${userData.class}반 ${userData.number}번`;
-            console.log(studentId);
-
-            // `${HOST}/users`
-            // http://localhost:8080/users
+            let studentId = `${userData.grade}${userData.class}${userData.number}`;
             const response = await axios.post(`${HOST}/users`, {
                 name: userData.name,
                 email: userData.email,
                 password: userData.password,
                 studentId: studentId
             });
-            console.log(response.data);
-            console.log(response.status);
 
             if (response.status === 200) {
                 console.log('회원가입 성공');

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/main/Main.module.css';
@@ -9,11 +10,19 @@ import SelectPost from './SelectPost';
 import Home from '../home/Home';
 
 function Main() {
+    const navigate = useNavigate();
     const [selectedTab, setSelectedTab] = useState('/');
 
     const handleTitleClick = () => {
         setSelectedTab('/');
     };
+
+    useEffect(() => {
+        const userId = localStorage.getItem('userId');
+        if (!userId) {
+            navigate('/signin');
+        }
+    }, [navigate]);
 
     return (
         <>
