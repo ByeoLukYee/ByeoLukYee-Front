@@ -9,13 +9,14 @@ import CommentItem from '../comment/CommentItem';
 
 function ProfileCommentList() {
     // 내가 쓴 댓글 조회하기
+    let userId = Number(localStorage.getItem('userId'));
     const [data, setData] = useState([]);
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`${HOST}/selling-comments/1`);
+                const response = await axios.get(`${HOST}/selling-comments`);
                 if(response.status === 200) {
-                    const filteredData = response.data.filter(item => item.user.id === 1);
+                    const filteredData = response.data.filter(item => item.user.id === userId);
                     setData(filteredData);
                 }
             } catch(error) {

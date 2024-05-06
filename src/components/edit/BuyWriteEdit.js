@@ -9,6 +9,7 @@ import styles from '../../styles/edit/BuyWriteEdit.module.css';
 
 import ImageUpload from '../upload/ImageUpload';
 import RadioButton from './RadioButton';
+import BuyingPostRemoveButton from './BuyingPostRemoveButton';
 
 function BuyWriteEdit({ updateData }) {
     // 팝니다 글쓰기 buying-posts/id/edit PUT
@@ -34,7 +35,10 @@ function BuyWriteEdit({ updateData }) {
         setTitle(e.target.value);
     }
     const priceValue = (e) => {
-        setPrice(e.target.value);
+        const inputValue = e.target.value;
+        if (!isNaN(inputValue)) {
+            setPrice(inputValue);
+        }
     }
     const locationValue = (e) => {
         setLocation(e.target.value);
@@ -73,23 +77,6 @@ function BuyWriteEdit({ updateData }) {
         }
     }
 
-    // 팝니다 글쓰기 buying-posts/id DELETE
-    // 삭제하기
-    const remove = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.delete(`${HOST}/selling-posts/${id}`);
-            if (response.status === 204) {
-                console.log("게시글 삭제 완료");
-                navigate('/selling-posts');
-            } else {
-                console.log("게시글 삭제 실패 : ", response.status);
-            }
-        } catch(error) {
-            console.log("삭제 api 호출 실패 : ", error);
-        }
-    }
-
     return (
         <>
              <div className={styles['container']}>
@@ -114,7 +101,7 @@ function BuyWriteEdit({ updateData }) {
                         <p>가격</p>
                         <input 
                             placeholder='거래 가격' 
-                            type='number' 
+                            type='text' 
                             className={styles['price']}
                             value={price}
                             onChange={priceValue}
@@ -155,7 +142,7 @@ function BuyWriteEdit({ updateData }) {
                 <div className={styles['hr']}> <hr /> </div>
 
                 <div className={styles['buttonContainer']}>
-                    <button className={styles['removeButtonStyle']} onClick={remove}>삭제하기</button>
+                    <BuyingPostRemoveButton />
                     <button className={styles['okButtonStyle']} onClick={update}>등록하기</button>
                 </div>
             </div>

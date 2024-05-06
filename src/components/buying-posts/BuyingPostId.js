@@ -33,6 +33,7 @@ function BuyingPostsId() {
     }, [id]);
 
     const price = data.price && data.price.toLocaleString();
+    const userId = Number(localStorage.getItem('userId'));
 
     return (
         <>
@@ -51,14 +52,14 @@ function BuyingPostsId() {
                                 <BuyingPostIdInfo data={data}/>
                             </div>
                             <div className={styles['buttonDiv']}>
-                                {data.user && data.user.id !== 1 && (
+                                {data.user && data.user.id !== userId && (
                                     <>
                                         <button className={styles['chattingButton']}>채팅하기</button>
                                         <button className={styles['heartButton']}>찜하기</button>
                                     </>
                                 )}
                                 
-                                {data.user && data.user.id === 1 && (
+                                {data.user && data.user.id === userId && (
                                     <Link to={`/buying-posts/${id}/edit`}> <button className={styles['updateButton']}>수정하기</button> </Link>
                                 )}
                             </div>

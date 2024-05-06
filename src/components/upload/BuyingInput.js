@@ -20,7 +20,10 @@ function BuyingInput() {
         setTitle(e.target.value);
     }
     const priceValue = (e) => {
-        setPrice(e.target.value);
+        const inputValue = e.target.value;
+        if (!isNaN(inputValue)) {
+            setPrice(inputValue);
+        }
     }
     const locationValue = (e) => {
         setLocation(e.target.value);
@@ -30,11 +33,12 @@ function BuyingInput() {
     }
 
 
+    const userId = Number(localStorage.getItem('userId'));
     const addBuyWrite = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post(`${HOST}/selling-posts`, {
-                userId: 1,
+                userId: userId,
                 title: title,
                 description: desc,
                 price: price,
@@ -74,7 +78,7 @@ function BuyingInput() {
                     <p>가격</p>
                     <input 
                         placeholder='거래 가격' 
-                        type='number' 
+                        type='text' 
                         className={styles['price']}
                         value={price}
                         onChange={priceValue}

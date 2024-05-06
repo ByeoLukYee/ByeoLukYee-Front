@@ -8,6 +8,7 @@ import '../../styles/common/Styles.css';
 import styles from '../../styles/edit/SellWriteEdit.module.css';
 
 import RadioButton from './RadioButton';
+import SellingPostRemoveButton from './SellingPostRemoveButton';
 
 function SellWriteEdit({ updateData }) {
     const navigate = useNavigate();
@@ -31,7 +32,10 @@ function SellWriteEdit({ updateData }) {
         setTitle(e.target.value);
     }
     const priceValue = (e) => {
-        setPrice(e.target.value);
+        const inputValue = e.target.value;
+        if (!isNaN(inputValue)) {
+            setPrice(inputValue);
+        }
     }
     const locationValue = (e) => {
         setLocation(e.target.value);
@@ -69,23 +73,6 @@ function SellWriteEdit({ updateData }) {
         }
     }
 
-    // 삽니다 글쓰기 selling-posts/id DELETE
-    // 삭제하기
-    const remove = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.delete(`${HOST}/buying-posts/${id}`);
-            if (response.status === 204) {
-                console.log("게시글 삭제 완료");
-                navigate('/buying-posts');
-            } else {
-                console.log("게시글 삭제 실패 : ", response.status);
-            }
-        } catch(error) {
-            console.log("삭제 api 호출 실패 : ", error);
-        }
-    }
-
     return (
         <>
             <div className={styles['container']}>
@@ -106,7 +93,7 @@ function SellWriteEdit({ updateData }) {
                         <p>가격</p>
                         <input 
                             placeholder='희망 거래 가격' 
-                            type='number' 
+                            type='text' 
                             className={styles['price']}
                             value={price}
                             onChange={priceValue}
@@ -146,7 +133,7 @@ function SellWriteEdit({ updateData }) {
                 <div className={styles['hr']}> <hr /> </div>
 
                 <div className={styles['buttonContainer']}>
-                    <button className={styles['removeButtonStyle']} onClick={remove}>삭제하기</button>
+                    <SellingPostRemoveButton />
                     <button className={styles['okButtonStyle']} onClick={update}>등록하기</button>
                 </div>
             </div>

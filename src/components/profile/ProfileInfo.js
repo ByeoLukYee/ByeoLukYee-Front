@@ -10,11 +10,11 @@ import ProfileMyInfo from './ProfileMyInfo';
 
 function ProfileInfo() {
     const [data, setData] = useState([]);
-    let id = 1;
+    let userId = Number(localStorage.getItem('userId'));
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`${HOST}/users/${id}`);
+                const response = await axios.get(`${HOST}/users/${userId}`);
                 if (response.status === 200) {
                     setData(response.data);
                 }
@@ -24,7 +24,6 @@ function ProfileInfo() {
         }
         fetchData();
     }, []);
-    console.log(data);
 
     return (
         <>
