@@ -41,7 +41,7 @@ function BuyingPostsId() {
                 <Header />
                 <div className={styles['topContainer']}>
                     <div className={styles['topDiv']}>
-                        <div className={styles['imgDiv']}> <img src='/images/exampleImg.png' alt="product" /> </div>
+                        <div className={styles['imgDiv']}> <img src={data.images.uploadedFilename} alt="images" /> </div>
                         <div className={styles['sellInformationContainer']}>
                             <div>
                                 <div className={styles['titleDiv']}>
