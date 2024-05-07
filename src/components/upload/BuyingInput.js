@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
+import ImageUpload from './ImageUpload';
+
 function BuyingInput() {
     // 팝니다 글쓰기 buying-posts/upload
     // 내가 쓴 팝니다 글쓰기 데이터 정보 post
@@ -15,6 +17,7 @@ function BuyingInput() {
     const [desc, setDesc] = useState('');
     const [price, setPrice] = useState('');
     const [location, setLocation] = useState('');
+    const [uploadedImages, setUploadedImages] = useState([]);
 
     const titleValue = (e) => {
         setTitle(e.target.value);
@@ -32,23 +35,41 @@ function BuyingInput() {
         setDesc(e.target.value);
     }
 
-
     const userId = Number(localStorage.getItem('userId'));
     const addBuyWrite = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${HOST}/selling-posts`, {
+            const request = await axios.post(`${HOST}/selling-posts`, {
                 userId: userId,
                 title: title,
                 description: desc,
                 price: price,
-                location: location
+                location: location,
             });
-            console.log(response);
 
-            if (response.status === 201) {
+            if (request.status === 201) {
                 console.log("업로드 성공");
-                const id = response.data.id;
+                const id = request.data.id;
+                if (uploadedImages.length > 0) {
+                    const formData = new FormData();
+                    uploadedImages.forEach((imageURL, index) => {
+                        formData.append(`image_${index}`, imageURL);
+                    });
+                    console.log(uploadedImages);
+                    
+                    // /post-images/{id} 서버 연결
+                    fetch(`${HOST}/post-images/${id}`, {
+                        method: 'POST',
+                        cache: 'no-cache',
+                        body: uploadedImages,
+                        headers: { 'Content-Type': 'multipart/form-data' },
+                    })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log(data);
+                    });
+                }
+
                 navigate(`/buying-posts/${id}`);
             } else {
                 console.error("업로드 실패");
@@ -62,6 +83,7 @@ function BuyingInput() {
     return (
         <>
             <div className={styles['inputContainer']}>
+                <ImageUpload onImagesUpload={setUploadedImages} />
                 {/* 제목 */}
                 <div className={styles['textDiv']}>
                     <p>제목</p>
