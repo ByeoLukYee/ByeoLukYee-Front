@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 import '../../styles/common/Styles.css';
 import styles from '../../styles/common/PageNumber.module.css';
 
-function PageNumber({ totalPosts, postsPerPage, onPageChange }) {
-    const [selected, setSelected] = useState(1);
+function PageNumber({ totalPosts, postsPerPage, currentPage, onPageChange }) {
     const pageCount = Math.ceil(totalPosts / postsPerPage);
+
     const handleSelectedClick = (number) => {
-        setSelected(number);
         onPageChange(number);
     };
 
@@ -20,15 +19,18 @@ function PageNumber({ totalPosts, postsPerPage, onPageChange }) {
 
     return (
         <>
-            <div className={pathName === '/selling-posts' ? styles['sellingSelectDiv'] : (pathName === '/buying-posts' ? styles['buyingSelectDiv'] : '')}>
-                <div className={styles['div']}>
-                    {pageNumbers.map(number => (
-                        <div key={number} className={number === selected ? styles['selected'] : ''} onClick={() => handleSelectedClick(number)}>
-                            <p>{number}</p>
-                        </div>
-                    ))}
+            {
+                pageNumbers.length > 0 &&
+                <div className={pathName === '/selling-posts' ? styles['sellingSelectDiv'] : (pathName === '/buying-posts' ? styles['buyingSelectDiv'] : '')}>
+                    <div className={styles['div']}>
+                        {pageNumbers.map(number => (
+                            <div key={number} className={number === currentPage ? styles['selected'] : ''} onClick={() => handleSelectedClick(number)}>
+                                <p>{number}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            }
         </>
     )
 }
