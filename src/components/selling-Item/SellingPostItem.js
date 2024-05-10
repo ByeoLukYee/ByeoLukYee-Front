@@ -11,6 +11,13 @@ function SellingPostItem({ status, price, title, id, images }) {
   const containerStyle = {
     backgroundColor: status === '판매완료' ? '#F6F6F6' : ''
   }
+  const textStyle = {
+    color: status === '판매완료' ? '#D2D2D2' : ''
+  }
+  const imgStyle = {
+    backgroundColor: status === '판매완료' ? '#ABABAB' : '',
+    opacity: status === '판매완료' ? '0.5' : ''
+  }
 
   return (
     <>
@@ -18,12 +25,12 @@ function SellingPostItem({ status, price, title, id, images }) {
         <div className={sellStyle["boxContainer"]} style={containerStyle}>
 
           <div className={sellStyle["lookImgStyle"]}>
-            <img src={images} alt="image" />
+            <img src="/images/exampleImg.png" alt="image" style={imgStyle}/>
           </div>
 
           <div className={sellStyle['contextContainer']}>
             <div className={sellStyle["textContainer"]}>
-              <p># {status}</p>
+              <p style={textStyle}># {status}</p>
               <p>{title}</p>
               <p style={{ top: "5%" }}>{price}원</p>
             </div>

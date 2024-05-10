@@ -12,6 +12,9 @@ function BuyPostItem({ title, description, price, status, id }) {
     const containerStyle = {
         backgroundColor: status === '경매완료' ? '#F6F6F6' : ''
     }
+    const textStyle = {
+        color: status === '경매완료' ? '#D2D2D2' : ''
+    }
 
     return(
         <>
@@ -28,7 +31,7 @@ function BuyPostItem({ title, description, price, status, id }) {
                         </div>
                     </div>
                     <div className={buyStyle['secondDiv']}>
-                        <p>#{status}</p>
+                        <p style={textStyle}>#{status}</p>
                         <div className={buyStyle['iconDiv']}>
                             <div className={buyStyle['eyesVectorDiv']}>
                                 <VscEye className={buyStyle['eyesVector']}/>

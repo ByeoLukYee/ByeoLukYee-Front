@@ -7,11 +7,14 @@ import buyingStyle from '../../styles/buying-Item/BuyingPostItem.module.css';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function BuyingPostItem({ title, status, price, desc, id, userName }) {
+function BuyingPostItem({ title, status, price, image, desc, id, userName }) {
     // 삽니다 게시글 각각의 item 컴포넌트
     // BuyingPostItemList에서 보낸 title, status, price, desc, userName를 받아서 화면에 보여주기
     const containerStyle = {
         backgroundColor: status === '경매완료' ? '#F6F6F6' : ''
+    }
+    const textStyle = {
+        color: status === '경매완료' ? '#D2D2D2' : ''
     }
 
     return(
@@ -22,13 +25,13 @@ function BuyingPostItem({ title, status, price, desc, id, userName }) {
                      
                     <div className={buyingStyle['topDiv']}>
                         <div className={buyingStyle['topLeftDiv']}>
-                            <div className={buyingStyle['imgDiv']}> <img src={process.env.PUBLIC_URL + "/images/exampleImg.png"} alt="example" /> </div>
+                            <div className={buyingStyle['imgDiv']}> <img src="/images/exampleImg.png" alt="example" /> </div>
                             <div style={{display: 'flex', flexDirection: 'column', rowGap: '5px'}}>
                                 <p>{userName}</p>
                                 <p>2024-04-04</p>
                             </div>
                         </div>
-                        <p>#{status}</p>
+                        <p style={textStyle}>#{status}</p>
                     </div>
 
                     <div className={buyingStyle['middleDiv']}>
