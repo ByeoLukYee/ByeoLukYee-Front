@@ -48,7 +48,7 @@ function SellingPostItemList({ data }) {
                       status={post.krStatus}
                       price={price}
                       id={post.id}
-                      images={post.images.uploadedFilename}
+                      images={post.images}
                   />
               </div>
           ))}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
-import { HOST } from '../../config/Config';
+import { HOST, ImageUrl } from '../../config/Config';
 import { Link } from "react-router-dom";
 
 import '../../styles/common/Styles.css';
@@ -41,7 +41,11 @@ function BuyingPostsId() {
                 <Header />
                 <div className={styles['topContainer']}>
                     <div className={styles['topDiv']}>
-                        <div className={styles['imgDiv']}> <img src='/images/exampleImg.png' alt="images" /> </div>
+                        <div className={styles['imgDiv']}>
+                            {data.images.map((image, index) => (
+                                <img key={index} src={`${ImageUrl}/${image.uploadedFilename}`} alt="image"/>
+                            ))}
+                        </div>
                         <div className={styles['sellInformationContainer']}>
                             <div>
                                 <div className={styles['titleDiv']}>
