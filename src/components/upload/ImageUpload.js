@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/upload/ImageUpload.module.css';
+import { ImageUrl } from '../../config/Config';
 
-function ImageUpload({ onImagesUpload }) {
+function ImageUpload({ onImagesUpload, initialImages }) {
     const [imageURLs, setImageURLs] = useState([]);
+
+    useEffect(() => {
+        if (initialImages) {
+            const urls = initialImages.map(image => `${ImageUrl}/${image.uploadedFilename}`);
+            setImageURLs(urls);
+        }
+    }, [initialImages]);
 
     const handleFileChange = (event) => {
         const files = event.target.files;
@@ -23,6 +31,11 @@ function ImageUpload({ onImagesUpload }) {
         onImagesUpload(prevImages => [...prevImages, ...uploadUrls]);
     };
 
+    const removeImage = (indexToRemove) => {
+        setImageURLs(prevURLs => prevURLs.filter((url, index) => index !== indexToRemove));
+        onImagesUpload(prevImages => prevImages.filter((file, index) => index !== indexToRemove));
+    };
+
     return (
         <>
             <div className={styles['imgScroll']}>
@@ -34,6 +47,7 @@ function ImageUpload({ onImagesUpload }) {
                     {imageURLs.map((imageURL, index) => (
                         <div key={index} className={styles['imgDiv']}>
                             <img 
+                                onClick={() => removeImage(index)}
                                 src={imageURL}
                                 alt={`Uploaded Image ${index + 1}`}
                                 className={styles['imageURL']}

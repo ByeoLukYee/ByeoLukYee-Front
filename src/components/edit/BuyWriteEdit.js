@@ -20,6 +20,7 @@ function BuyWriteEdit({ updateData }) {
     const [price, setPrice] = useState('');
     const [location, setLocation] = useState('');
     const [postStatus, setPostStatus] = useState(0);
+    const [uploadedImages, setUploadedImages] = useState([]);
 
     useEffect(() => {
         if (updateData) {
@@ -27,6 +28,7 @@ function BuyWriteEdit({ updateData }) {
             setDesc(updateData.description);
             setPrice(updateData.price);
             setLocation(updateData.location);
+            setUploadedImages(updateData.images);
         }
     }, [updateData]);
 
@@ -95,7 +97,7 @@ function BuyWriteEdit({ updateData }) {
         <>
              <div className={styles['container']}>
                 <div className={styles['topDiv']}>
-                    <ImageUpload />
+                    <ImageUpload initialImages={uploadedImages} />
                 </div>
 
                 <div className={styles['inputContainer']}>
