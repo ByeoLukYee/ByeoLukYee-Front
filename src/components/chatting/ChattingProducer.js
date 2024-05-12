@@ -5,7 +5,7 @@ function ChattingProducer({ name }) {
     return (
         <>
              <div className={styles['container']}>
-                <div className={styles['img']}> <img src='/images/exampleImg.png' alt='example'/> </div>
+                <div className={styles['img']}> <img src='/images/profileImage.png' alt='example'/> </div>
                 <div className={styles['textDiv']}>
                     <p>{name}</p>
                     <p>3413</p>
