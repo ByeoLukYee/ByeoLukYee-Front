@@ -16,6 +16,15 @@
     margin-bottom: 5%;
 }
 
+.searchSelectDiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 20%; */
+    margin-bottom: 5%;
+}
+
 .div {
     display: flex;
     column-gap: 10px;

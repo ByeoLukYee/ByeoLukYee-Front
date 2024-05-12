@@ -21,7 +21,7 @@ function PageNumber({ totalPosts, postsPerPage, currentPage, onPageChange }) {
         <>
             {
                 pageNumbers.length > 0 &&
-                <div className={pathName === '/selling-posts' ? styles['sellingSelectDiv'] : (pathName === '/buying-posts' ? styles['buyingSelectDiv'] : '')}>
+                <div className={pathName === '/selling-posts' ? styles['sellingSelectDiv'] : (pathName === '/buying-posts' ? styles['buyingSelectDiv'] : styles['searchSelectDiv'])}>
                     <div className={styles['div']}>
                         {pageNumbers.map(number => (
                             <div key={number} className={number === currentPage ? styles['selected'] : ''} onClick={() => handleSelectedClick(number)}>
