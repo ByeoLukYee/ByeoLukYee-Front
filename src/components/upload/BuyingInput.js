@@ -18,6 +18,7 @@ function BuyingInput() {
     const [price, setPrice] = useState('');
     const [location, setLocation] = useState('');
     const [uploadedImages, setUploadedImages] = useState([]);
+    const [id, setId] = useState('');
 
     const titleValue = (e) => {
         setTitle(e.target.value);
@@ -49,34 +50,41 @@ function BuyingInput() {
 
             if (request.status === 201) {
                 console.log("업로드 성공");
-                const id = request.data.id;
-                if (uploadedImages.length > 0) {
+                const postId = request.data.id;
+                setId(postId);
+
+                if (uploadedImages.length > 0) { 
                     const formData = new FormData();
-                    uploadedImages.forEach((imageURL, index) => {
-                        formData.append(`image_${index}`, imageURL);
+                    uploadedImages.forEach(image => {
+                        formData.append("file", image);
                     });
-                    console.log(uploadedImages);
-                    
-                    // /post-images/{id} 서버 연결
-                    fetch(`${HOST}/post-images/${id}`, {
-                        method: 'POST',
-                        cache: 'no-cache',
-                        body: uploadedImages,
-                        headers: { 'Content-Type': 'multipart/form-data' },
-                    })
-                    .then((response) => response.json())
-                    .then((data) => {
-                        console.log(data);
-                    });
+                    uploadedImage(postId, formData);
+                } else {
+                    console.log("업로드할 이미지가 없습니다.");
+                    navigate(`/buying-posts/${postId}`);
                 }
 
-                navigate(`/buying-posts/${id}`);
             } else {
                 console.error("업로드 실패");
             }
             
         } catch(error) {
             console.error("요청 실패 : ", error);
+        }
+    }
+
+    const uploadedImage = async (postId, formData) => {
+        try {
+            const response = await axios.post(`${HOST}/post-images/${postId}`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                }
+            });
+            
+            console.log("이미지 업로드 성공", response.data);
+            navigate(`/buying-posts/${postId}`);
+        } catch (error) {
+            console.error("이미지 업로드 요청 실패 : ", error);
         }
     }
 

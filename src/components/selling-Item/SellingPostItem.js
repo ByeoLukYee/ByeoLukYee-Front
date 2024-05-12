@@ -26,7 +26,12 @@ function SellingPostItem({ status, price, title, id, images }) {
         <div className={sellStyle["boxContainer"]} style={containerStyle}>
 
           <div className={sellStyle["lookImgStyle"]}>
-            <img src={`${ImageUrl}/${images[0].uploadedFilename}`} alt="image" style={imgStyle}/>
+            {
+              images.length > 0 ?
+              <img src={`${ImageUrl}/${images[0].uploadedFilename}`} alt="image" style={imgStyle}/>
+              :
+              <img src="/images/exampleImg.png" />
+            }
           </div>
 
           <div className={sellStyle['contextContainer']}>
