@@ -30,13 +30,14 @@ function SellingPostItemList() {
 
     return (
         <div className={styles['three-grid-container']}>
-            {data.length > 0 && data.map(item  => (
+            {data && data.length > 0 && data.map(item  => (
                 <div key={item.id} className={styles['grid-item']}> 
                     <SellingPostItem
                         status={item.krStatus}
                         price={item.price}
                         title={item.title}
                         id={item.id}
+                        images={item.images}
                     />
                 </div>
             ))}

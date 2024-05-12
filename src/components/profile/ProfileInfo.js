@@ -8,9 +8,8 @@ import ProfileActivityInfo from './ProfileActivityInfo';
 
 import ProfileMyInfo from './ProfileMyInfo';
 
-function ProfileInfo() {
+function ProfileInfo({ userId }) {
     const [data, setData] = useState([]);
-    let userId = Number(localStorage.getItem('userId'));
     useEffect(() => {
         async function fetchData() {
             try {

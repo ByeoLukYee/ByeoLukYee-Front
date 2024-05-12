@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import { HOST } from '../../config/Config';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -12,16 +13,16 @@ import { BsEnvelope } from "react-icons/bs";
 import { BsCodeSlash } from "react-icons/bs";
 import { LuBookMarked } from "react-icons/lu";
 import { BsBoxArrowInRight } from "react-icons/bs";
-import { HOST } from '../../config/Config';
+import { BsPersonX } from "react-icons/bs";
 
-function ProfileList({ showSelectComponent }) {
+
+function ProfileList({ showSelectComponent, userId }) {
     const navigate = useNavigate();
-    const id = Number(localStorage.getItem('userId'));
-    const Logout = async (e) => {
+    const userIdRemove = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.delete(`${HOST}/users/${id}`);
-            if (response.status === 200) {
+            const response = await axios.delete(`${HOST}/users/${userId}`);
+            if (response.status === 204) {
                 console.log("로그아웃 성공");
                 navigate('/signin');
                 localStorage.removeItem('userId');
@@ -31,6 +32,12 @@ function ProfileList({ showSelectComponent }) {
         } catch(error) {
             console.log("서버 연결 실패 : ", error);
         }
+    }
+
+    const Logout = () => {
+        console.log("로그아웃 성공");
+        localStorage.removeItem('userId');
+        navigate('/signin');
     }
 
     return (
@@ -56,6 +63,7 @@ function ProfileList({ showSelectComponent }) {
                 <div className={styles['selectorDiv2']}>
                     <p>계정</p>
                     <div className={styles['iconDiv']}> <BsBoxArrowInRight className={styles['icon']} /> <p onClick={Logout}>로그아웃</p> </div>
+                    <div className={styles['iconDiv']}> <BsPersonX className={styles['icon']} /> <p onClick={userIdRemove}>탈퇴하기</p> </div>
                 </div>
             </div>
         </>
