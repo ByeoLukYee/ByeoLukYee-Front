@@ -36,10 +36,10 @@ function BuyingPostItemList({ data }) {
                             title={post.title}
                             status={post.krStatus}
                             price={price}
-                            images={post.images}
                             desc={post.description}
                             id={post.id}
                             userName={post.user.name}
+                            date={post.createdAt}
                         />
                     </div>
                 ))}
