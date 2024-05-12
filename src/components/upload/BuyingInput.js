@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
+import ImageUpload from './ImageUpload';
+
 function BuyingInput() {
     // 팝니다 글쓰기 buying-posts/upload
     // 내가 쓴 팝니다 글쓰기 데이터 정보 post
@@ -15,6 +17,8 @@ function BuyingInput() {
     const [desc, setDesc] = useState('');
     const [price, setPrice] = useState('');
     const [location, setLocation] = useState('');
+    const [uploadedImages, setUploadedImages] = useState([]);
+    const [id, setId] = useState('');
 
     const titleValue = (e) => {
         setTitle(e.target.value);
@@ -32,24 +36,34 @@ function BuyingInput() {
         setDesc(e.target.value);
     }
 
-
     const userId = Number(localStorage.getItem('userId'));
     const addBuyWrite = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${HOST}/selling-posts`, {
+            const request = await axios.post(`${HOST}/selling-posts`, {
                 userId: userId,
                 title: title,
                 description: desc,
                 price: price,
-                location: location
+                location: location,
             });
-            console.log(response);
 
-            if (response.status === 201) {
+            if (request.status === 201) {
                 console.log("업로드 성공");
-                const id = response.data.id;
-                navigate(`/buying-posts/${id}`);
+                const postId = request.data.id;
+                setId(postId);
+
+                if (uploadedImages.length > 0) { 
+                    const formData = new FormData();
+                    uploadedImages.forEach(image => {
+                        formData.append("file", image);
+                    });
+                    uploadedImage(postId, formData);
+                } else {
+                    console.log("업로드할 이미지가 없습니다.");
+                    navigate(`/buying-posts/${postId}`);
+                }
+
             } else {
                 console.error("업로드 실패");
             }
@@ -59,9 +73,25 @@ function BuyingInput() {
         }
     }
 
+    const uploadedImage = async (postId, formData) => {
+        try {
+            const response = await axios.post(`${HOST}/post-images/${postId}`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                }
+            });
+            
+            console.log("이미지 업로드 성공", response.data);
+            navigate(`/buying-posts/${postId}`);
+        } catch (error) {
+            console.error("이미지 업로드 요청 실패 : ", error);
+        }
+    }
+
     return (
         <>
             <div className={styles['inputContainer']}>
+                <ImageUpload onImagesUpload={setUploadedImages} />
                 {/* 제목 */}
                 <div className={styles['textDiv']}>
                     <p>제목</p>

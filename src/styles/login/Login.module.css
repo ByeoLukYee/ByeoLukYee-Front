@@ -17,6 +17,16 @@
     justify-content: center;
 }
 
+.errorMessage {
+    bottom: 13%;
+    margin-bottom: -8%;
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--SemiBold);
+    font-size: 13px;
+    color: red;
+}
+
 /* 타이틀 */
 .titleContainer {
     display: flex;

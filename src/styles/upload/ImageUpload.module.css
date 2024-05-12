@@ -35,3 +35,7 @@
 .imgDiv:last-child {
     margin-right: 3%;
 }
+
+.imgContainer input[type="file"] {
+    display: none;
+}

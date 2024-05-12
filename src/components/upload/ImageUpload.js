@@ -3,33 +3,42 @@ import React, { useState } from 'react';
 import '../../styles/common/Styles.css';
 import styles from '../../styles/upload/ImageUpload.module.css';
 
-function ImageUpload() {
+function ImageUpload({ onImagesUpload }) {
     const [imageURLs, setImageURLs] = useState([]);
 
-    const handleImageUpload = () => {
-        const input = document.createElement('input');
-        input.type = 'file';
-        input.accept = 'image/*';
-        input.onchange = (event) => {
-            const selectedFile = event.target.files[0];
-            const objectURL = URL.createObjectURL(selectedFile);
-            setImageURLs(prevImageURLs => [...prevImageURLs, objectURL]);
-        };
-        input.click();
-    };
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        const urls = [];
+        const uploadUrls = [];
 
-    // image저장하는 api를 axios.post하여 image를 저장하기
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            if (file.type.startsWith('image/')) {
+                const url = URL.createObjectURL(file);
+                urls.push(url);
+                uploadUrls.push(file);
+            }
+        }
+        setImageURLs(prevURLs => [...prevURLs, ...urls]);
+        onImagesUpload(prevImages => [...prevImages, ...uploadUrls]);
+    };
 
     return (
         <>
             <div className={styles['imgScroll']}>
                 <div className={styles['imgContainer']}>
-                    <div className={styles['imgDiv']} onClick={handleImageUpload}>
+                    <label htmlFor='fileInput' className={styles['imgDiv']}>
                         <p>클릭하여<br />사진 업로드</p>
-                    </div>
+                    </label>
+                    <input type="file" id="fileInput" multiple onChange={handleFileChange} />
                     {imageURLs.map((imageURL, index) => (
                         <div key={index} className={styles['imgDiv']}>
-                            <img src={imageURL} alt={`Uploaded Image ${index + 1}`} className={styles['imageURL']} />
+                            <img 
+                                src={imageURL}
+                                alt={`Uploaded Image ${index + 1}`}
+                                className={styles['imageURL']}
+                                id='imgUrl'
+                            />
                         </div>
                     ))}
                 </div>

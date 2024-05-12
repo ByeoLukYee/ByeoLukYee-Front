@@ -8,7 +8,6 @@ import '../../styles/common/Styles.css';
 import styles from '../../styles/edit/SellWriteEdit.module.css';
 
 import RadioButton from './RadioButton';
-import SellingPostRemoveButton from './SellingPostRemoveButton';
 
 function SellWriteEdit({ updateData }) {
     const navigate = useNavigate();
@@ -73,6 +72,21 @@ function SellWriteEdit({ updateData }) {
         }
     }
 
+    const remove = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.delete(`${HOST}/buying-posts/${id}`);
+            if (response.status === 204) {
+                console.log("게시글 삭제 완료", response.data);
+                navigate('/buying-posts');
+            } else {
+                console.log("게시글 삭제 실패 : ", response.status);
+            }
+        } catch(error) {
+            console.log("삭제 api 호출 실패 : ", error);
+        }
+    }
+
     return (
         <>
             <div className={styles['container']}>
@@ -133,7 +147,7 @@ function SellWriteEdit({ updateData }) {
                 <div className={styles['hr']}> <hr /> </div>
 
                 <div className={styles['buttonContainer']}>
-                    <SellingPostRemoveButton />
+                    <button className={styles['removeButtonStyle']} onClick={remove}>삭제하기</button>
                     <button className={styles['okButtonStyle']} onClick={update}>등록하기</button>
                 </div>
             </div>

@@ -44,7 +44,7 @@ hr {
     margin: 0 auto;
     border: 0;
     border-style: solid;
-    background: var(--gray-300);
+    background: var(--gray-100);
 }
 
 .textDiv {

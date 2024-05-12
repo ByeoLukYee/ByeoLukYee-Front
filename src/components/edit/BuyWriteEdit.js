@@ -9,7 +9,6 @@ import styles from '../../styles/edit/BuyWriteEdit.module.css';
 
 import ImageUpload from '../upload/ImageUpload';
 import RadioButton from './RadioButton';
-import BuyingPostRemoveButton from './BuyingPostRemoveButton';
 
 function BuyWriteEdit({ updateData }) {
     // 팝니다 글쓰기 buying-posts/id/edit PUT
@@ -74,6 +73,21 @@ function BuyWriteEdit({ updateData }) {
 
         } catch(error) {
             console.error("데이터 삽입 실패 : ", error);
+        }
+    }
+
+    const remove = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.delete(`${HOST}/selling-posts/${id}`);
+            if (response.status === 204) {
+                console.log("게시글 삭제 완료", response.data);
+                navigate('/selling-posts');
+            } else {
+                console.log("게시글 삭제 실패 : ", response.status);
+            }
+        } catch(error) {
+            console.log("삭제 api 호출 실패 : ", error);
         }
     }
 
@@ -142,7 +156,7 @@ function BuyWriteEdit({ updateData }) {
                 <div className={styles['hr']}> <hr /> </div>
 
                 <div className={styles['buttonContainer']}>
-                    <BuyingPostRemoveButton />
+                    <button className={styles['removeButtonStyle']} onClick={remove}>삭제하기</button>
                     <button className={styles['okButtonStyle']} onClick={update}>등록하기</button>
                 </div>
             </div>

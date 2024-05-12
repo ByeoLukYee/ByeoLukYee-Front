@@ -6,23 +6,17 @@ import styles from '../../styles/common/Header.module.css';
 
 import SearchInput from './SearchInput';
 
-// import { useSelector } from 'react-redux';
-
 function Header({ onTitleClick }) {
-    // const isLoggedIn = useSelector(state => state.isLoggedIn);
     const navigate = useNavigate();
-    const handleMenuClick = (path) => {
-        navigate(path);
-    }
 
-    // const handleMenuClick = (path) => {
-    //     if (!isLoggedIn) {
-    //         console.log('로그인 안함');
-    //         navigate('/signin');
-    //     } else {
-    //         navigate(path);
-    //     }
-    // };
+    const userId = localStorage.getItem('userId');
+    const handleMenuClick = (path) => {
+        if (!userId) {
+            navigate('/signin');
+        } else {
+            navigate(path);
+        }
+    }
 
     return (
         <>
@@ -32,11 +26,6 @@ function Header({ onTitleClick }) {
                     <div> <SearchInput /> </div>
                 </div>
                 <div className={styles['optionDiv']}>
-                    {/* <Link to='/buying-posts/upload' className={styles['link']}> <p>팝니다 글쓰기</p> </Link>
-                    <Link to='/selling-posts/upload' className={styles['link']}> <p>삽니다 글쓰기</p> </Link>
-                    <Link to='/chatting' className={styles['link']}> <p>채팅</p> </Link>
-                    <Link to='/profile' className={styles['link']}> <p>마이페이지</p> </Link> */}
-                    
                     <p onClick={() => handleMenuClick('/buying-posts/upload')} className={styles['link']}>팝니다 글쓰기</p>
                     <p onClick={() => handleMenuClick('/selling-posts/upload')} className={styles['link']}>삽니다 글쓰기</p>
                     <p onClick={() => handleMenuClick('/chatting')} className={styles['link']}>채팅</p>

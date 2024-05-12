@@ -14,8 +14,19 @@ function RecentlySell() {
     useEffect(() => {
         async function fetchLatestPosts() {
             try {
-                const response = await axios.get(`${HOST}/selling-posts?limit=4&sortBy=createdAt:desc`);
-                setLatestPosts(response.data);
+                const response = await axios.get(`${HOST}/selling-posts`);
+                const sortedData = response.data.sort((a, b) => {
+                    // 내림차순으로 정렬
+                    const dateComparison = new Date(b.createdAt) - new Date(a.createdAt);
+                    // 업로드 날짜가 같은 경우 id를 오름차순으로 정렬
+                    if (dateComparison === 0) {
+                        return b.id - a.id;
+                    }
+                    return dateComparison;
+                });
+                // 정렬된 데이터 중 처음 4개의 데이터만 추출
+                const latestFourPosts = sortedData.slice(0, 4);
+                setLatestPosts(latestFourPosts);
             } catch(error) {
                 console.error("요청 실패 : ", error);
             }

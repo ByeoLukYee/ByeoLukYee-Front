@@ -80,12 +80,12 @@ function SellingPostId() {
                                 </>
                             )}
                             
-                            {data.user && data.user.id === userId && !successful &&(
+                            {data.user && data.user.id === userId && successful &&(
                                 <>
                                     <div className={styles['selectButton']}> <button>선택하기</button> </div>
                                 </>
                             )}
-                            {data.user && data.user.id === userId && successful && (
+                            {data.user && data.user.id === userId && !successful && (
                                 <>
                                     <div className={styles['disabledButton']}> <button disabled>선택하기</button> </div>
                                 </>

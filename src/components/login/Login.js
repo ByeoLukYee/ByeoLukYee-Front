@@ -11,9 +11,10 @@ import Footer from '../common/Footer';
 import Header from '../common/Header';
 
 function Login() {
+    const [fail, setFail] = useState(false);
+
     // 회원가입 화면으로 넘어가기
     const navigate = useNavigate();
-
     const TextClick = (path) => {
         navigate(path);
     };
@@ -40,13 +41,16 @@ function Login() {
 
             if (response.status === 201) {
                 console.log('로그인 성공');
+                setFail(false);
                 localStorage.setItem('userId', response.data.id);
                 navigate('/');
             } else {
                 console.error('로그인 실패');
+                setFail(true);
             }
         } catch (error) {
             console.error('로그인 요청 중 에러:', error);
+            setFail(true);
         }
     };
 
@@ -75,6 +79,10 @@ function Login() {
                             <p className={loginStyles['textStyle']}>비밀번호</p>
                             <input id='txtPw' type="password" placeholder='비밀번호를 입력하시오.' className={loginStyles['inputStyles']} onChange={handlePasswordChange} value={password} />
                         </div>
+                        {
+                            fail &&
+                            <p className={loginStyles['errorMessage']}>이메일과 비밀번호가 틀렸습니다.</p>
+                        }
                         <div className={loginStyles['buttonContainer']}>
                             <button id='btnLogin' className={loginStyles['buttonStyles']} type="submit">로그인</button>
                             <button className={loginStyles['googleButton']}> <img src={'/images/GoogleImg.png'} /> 구글로 로그인</button>

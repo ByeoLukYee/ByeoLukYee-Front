@@ -5,11 +5,19 @@ import sellStyle from "../../styles/selling-Item/SellingPostItem.module.css";
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
+import { ImageUrl } from "../../config/Config";
 
-function SellingPostItem({ status, price, title, id }) {
+function SellingPostItem({ status, price, title, id, images }) {
   // SellingPostItemList.js에서 전달 받은 status, price, title를 화면에 보여주기
   const containerStyle = {
     backgroundColor: status === '판매완료' ? '#F6F6F6' : ''
+  }
+  const textStyle = {
+    color: status === '판매완료' ? '#D2D2D2' : ''
+  }
+  const imgStyle = {
+    backgroundColor: status === '판매완료' ? '#ABABAB' : '',
+    opacity: status === '판매완료' ? '0.5' : ''
   }
 
   return (
@@ -18,15 +26,17 @@ function SellingPostItem({ status, price, title, id }) {
         <div className={sellStyle["boxContainer"]} style={containerStyle}>
 
           <div className={sellStyle["lookImgStyle"]}>
-            <img
-              src={process.env.PUBLIC_URL + "/images/exampleImg.png"}
-              alt="example"
-            />
+            {
+              images.length > 0 ?
+              <img src={`${ImageUrl}/${images[0].uploadedFilename}`} alt="image" style={imgStyle}/>
+              :
+              <img src="/images/exampleImg.png" />
+            }
           </div>
 
           <div className={sellStyle['contextContainer']}>
             <div className={sellStyle["textContainer"]}>
-              <p># {status}</p>
+              <p style={textStyle}># {status}</p>
               <p>{title}</p>
               <p style={{ top: "5%" }}>{price}원</p>
             </div>
