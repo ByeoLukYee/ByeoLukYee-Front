@@ -1,8 +1,16 @@
 .container {
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    row-gap: 30px;
+}
+.defaultHeight {
+    height: 100vh;
+    margin-top: 1%;
+}
+.changeHeight {
+    height: 100%;
+    margin-top: 3.25%;
 }
 
 .selectContainer {
@@ -45,4 +53,10 @@
     height: 1px;
     border: 0;
     background-color: var(--bg);
+}
+
+.footer {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
 }

@@ -1,6 +1,7 @@
 .container {
+    height: auto;
     display: flex;
     flex-direction: column;
-    top: 10%;
+    top: 5%;
     left: 15vw;
 }
