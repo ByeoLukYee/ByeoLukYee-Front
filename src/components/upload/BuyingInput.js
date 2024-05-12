@@ -90,57 +90,59 @@ function BuyingInput() {
 
     return (
         <>
-            <div className={styles['inputContainer']}>
-                <ImageUpload onImagesUpload={setUploadedImages} />
-                {/* 제목 */}
-                <div className={styles['textDiv']}>
-                    <p>제목</p>
-                    <input
-                        placeholder='제목'
-                        type='text'
-                        value={title}
-                        onChange={titleValue}
-                    />
+            <div className={styles['container']}>
+                <div className={styles['inputContainer']}>
+                    <ImageUpload onImagesUpload={setUploadedImages} />
+                    {/* 제목 */}
+                    <div className={styles['textDiv']}>
+                        <p>제목</p>
+                        <input
+                            placeholder='제목'
+                            type='text'
+                            value={title}
+                            onChange={titleValue}
+                        />
+                    </div>
+
+                    {/* 가격 */}
+                    <div className={styles['textDiv']}>
+                        <p>가격</p>
+                        <input 
+                            placeholder='거래 가격' 
+                            type='text' 
+                            className={styles['price']}
+                            value={price}
+                            onChange={priceValue}
+                        />
+                    </div>
+
+                    {/* 거래 희망 장소 */}
+                    <div className={styles['textDiv']}>
+                        <p>거래 희망 장소</p>
+                        <input 
+                            placeholder='희망 거래 장소'
+                            type='text'
+                            value={location}
+                            onChange={locationValue}
+                        />
+                    </div>
+
+                    {/* 설명 */}
+                    <div className={styles['contextDiv']}>
+                        <p>설명</p>
+                        <textarea 
+                            placeholder='상품 상세 정보'
+                            value={desc}
+                            onChange={descValue}
+                        />
+                    </div>
+
+                    <div className={styles['hr']}> <hr /> </div>
                 </div>
 
-                {/* 가격 */}
-                <div className={styles['textDiv']}>
-                    <p>가격</p>
-                    <input 
-                        placeholder='거래 가격' 
-                        type='text' 
-                        className={styles['price']}
-                        value={price}
-                        onChange={priceValue}
-                    />
+                <div className={styles['buttonContainer']}>
+                    <button className={styles['okButtonStyle']} onClick={addBuyWrite}>등록하기</button>
                 </div>
-
-                {/* 거래 희망 장소 */}
-                <div className={styles['textDiv']}>
-                    <p>거래 희망 장소</p>
-                    <input 
-                        placeholder='희망 거래 장소'
-                        type='text'
-                        value={location}
-                        onChange={locationValue}
-                    />
-                </div>
-
-                {/* 설명 */}
-                <div className={styles['contextDiv']}>
-                    <p>설명</p>
-                    <textarea 
-                        placeholder='상품 상세 정보'
-                        value={desc}
-                        onChange={descValue}
-                    />
-                </div>
-
-                <div className={styles['hr']}> <hr /> </div>
-            </div>
-
-            <div className={styles['buttonContainer']}>
-                <button className={styles['buttonStyle']} onClick={addBuyWrite}>등록하기</button>
             </div>
         </>
     )

@@ -3,7 +3,7 @@ import styles from '../../styles/upload/BuyingPostUpload.module.css';
 
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import BuyingWrite from './BuyingWrite';
+import BuyingInput from './BuyingInput';
 
 function BuyingPostsUpload() {
     return (
@@ -12,7 +12,7 @@ function BuyingPostsUpload() {
                 <Header />
 
                 <div className={styles['uploadDiv']}>
-                    <BuyingWrite />
+                    <BuyingInput />
                 </div>
 
                 <Footer />

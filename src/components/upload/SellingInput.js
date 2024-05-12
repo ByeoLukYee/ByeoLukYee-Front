@@ -115,7 +115,6 @@ function SellingInput() {
                 <div className={styles['hr']}> <hr /> </div>
 
                 <div className={styles['buttonContainer']}>
-                    <button className={styles['removeButtonStyle']} onClick={resetInputs}>삭제하기</button>
                     <button className={styles['okButtonStyle']} onClick={addSellWrite}>등록하기</button>
                 </div>
             </div>
