@@ -10,7 +10,7 @@ function ProducerItem({ onClick }) {
     return (
         <>
             <div className={styles['container']} onClick={handleClick}>
-                <div className={styles['img']}> <img src='/images/exampleImg.png' alt='example'/> </div>
+                <div className={styles['img']}> <img src='/images/profileImage.png' alt='example'/> </div>
                 <div className={styles['textDiv']}>
                     <p>최보람</p>
                     <div className={styles['text']}>
