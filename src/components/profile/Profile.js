@@ -22,15 +22,17 @@ function Profile() {
         }
     };
 
+    const id = Number(localStorage.getItem("userId"));
+
     return( 
        <div className={styles['container']}>
             <Header />
             
             <div className={styles['divContainer']}>
-                <ProfileList showSelectComponent={setShowSelectComponent} />
+                <ProfileList showSelectComponent={setShowSelectComponent} userId={id} />
 
                 <div className={styles['profile']}>
-                    <ProfileInfo />
+                    <ProfileInfo userId={id}/>
                     
                     <div className={styles['lists']}>
                         {/* 바뀌는 화면 */}
