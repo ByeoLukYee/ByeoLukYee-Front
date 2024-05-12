@@ -7,7 +7,7 @@ import buyingStyle from '../../styles/buying-Item/BuyingPostItem.module.css';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function BuyingPostItem({ title, status, price, images, desc, id, userName }) {
+function BuyingPostItem({ title, status, price, desc, id, userName, date }) {
     // 삽니다 게시글 각각의 item 컴포넌트
     // BuyingPostItemList에서 보낸 title, status, price, desc, userName를 받아서 화면에 보여주기
     const containerStyle = {
@@ -25,10 +25,10 @@ function BuyingPostItem({ title, status, price, images, desc, id, userName }) {
                      
                     <div className={buyingStyle['topDiv']}>
                         <div className={buyingStyle['topLeftDiv']}>
-                            <div className={buyingStyle['imgDiv']}> <img src="/images/exampleImg.png" alt="example" /> </div>
+                            <div className={buyingStyle['imgDiv']}> <img src="/images/profileImage.png" alt="example" /> </div>
                             <div style={{display: 'flex', flexDirection: 'column', rowGap: '5px'}}>
                                 <p>{userName}</p>
-                                <p>2024-04-04</p>
+                                <p>{date}</p>
                             </div>
                         </div>
                         <p style={textStyle}>#{status}</p>

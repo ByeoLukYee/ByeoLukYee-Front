@@ -1,13 +1,13 @@
 .middleDiv {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 15px;
     margin-top: 5%;
 }
 .middleDiv > p {
     font-family: var(--SUIT-font);
     font-weight: var(--SemiBold);
-    font-size: 1.1rem;
+    font-size: 22px;
     color: var(--green);
 }
 
@@ -17,18 +17,22 @@
 
     font-family: var(--SUIT-font);
     font-weight: var(--Regular);
-    font-size: 1.1rem;
+    font-size: 18px;
     color: var(--gray-500);
 }
 
 .placeDiv {
     display: flex;
+    align-items: center;
     column-gap: 20px;
 
     font-family: var(--SUIT-font);
     font-weight: var(--Regular);
-    font-size: 1.1rem;
 }
 .placeDiv > p:nth-child(1) {
     color: var(--gray-500);
+    font-size: 18px;
+}
+.placeDiv > p:nth-child(2) {
+    font-size: 20px;
 }
