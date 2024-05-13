@@ -5,12 +5,10 @@ import styles from '../../styles/comment/CommentList.module.css';
 
 import CommentItem from './CommentItem';
 
-function CommentList({ data }) {
-    const [selectedItemIndex, setSelectedItemIndex] = useState(null);
+function CommentList({ data, setSelectedCommentIndex, selectedCommentIndex }) {
     const handleClick = (index) => {
-        setSelectedItemIndex(index);
+        setSelectedCommentIndex(prevIndex => (prevIndex === index ? null : index));
     };
-
     return (
         <>
             <div className={styles['comment-container']}>
@@ -20,7 +18,7 @@ function CommentList({ data }) {
                             <CommentItem 
                                 data={comment}
                                 onClick={() => handleClick(index)}
-                                isSelected={selectedItemIndex === index}
+                                isSelected={selectedCommentIndex === index}
                             />
                         </div>
                     ))
