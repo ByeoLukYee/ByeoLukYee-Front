@@ -15,7 +15,7 @@ import CommentList from '../comment/CommentList';
 
 function SellingPostId() {
     const [showBuyingInput, setShowBuyingInput] = useState(false);
-
+    const [selectedCommentIndex, setSelectedCommentIndex] = useState(null);
     const handleBuyButtonClick = () => {
         setShowBuyingInput(prevState => !prevState);
     };
@@ -46,7 +46,6 @@ function SellingPostId() {
 
     const price = data.price && data.price.toLocaleString();
     const successful = commentData.some(comment => comment.krStatus === '낙찰');
-
     const userId = Number(localStorage.getItem('userId'));
 
     return (
@@ -80,15 +79,15 @@ function SellingPostId() {
                                 </>
                             )}
                             
-                            {data.user && data.user.id === userId && successful &&(
-                                <>
-                                    <div className={styles['selectButton']}> <button>선택하기</button> </div>
-                                </>
+                            {data.user && data.user.id === userId && (successful || selectedCommentIndex !== null) && (
+                                <div className={styles['selectButton']}> 
+                                    <button>선택하기</button> 
+                                </div>
                             )}
-                            {data.user && data.user.id === userId && !successful && (
-                                <>
-                                    <div className={styles['disabledButton']}> <button disabled>선택하기</button> </div>
-                                </>
+                            {data.user && data.user.id === userId && (!successful && selectedCommentIndex === null) && (
+                                <div className={styles['disabledButton']}>
+                                    <button disabled>선택하기</button> 
+                                </div>
                             )}
                         </div>
                     </div>
@@ -98,7 +97,7 @@ function SellingPostId() {
                     <p>경매댓글</p>
                     <div className={styles['commentContainer']}>
                         {showBuyingInput && <SellingInput />}
-                        <CommentList data={commentData}/>
+                        <CommentList data={commentData} setSelectedCommentIndex={setSelectedCommentIndex} selectedCommentIndex={selectedCommentIndex} />
                     </div>
                 </div>
             </div>

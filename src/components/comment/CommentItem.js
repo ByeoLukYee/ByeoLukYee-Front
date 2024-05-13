@@ -10,6 +10,9 @@ function CommentItem({ data, onClick, isSelected }) {
         if (isClickable) {
             onClick();
             setIsClickable(false);
+        } else {
+            onClick();
+            setIsClickable(true);
         }
     };
 
@@ -21,7 +24,7 @@ function CommentItem({ data, onClick, isSelected }) {
 
     return (
         <>
-            <div className={`${styles['container']}`} onClick={handleClick} style={containerStyle}>
+            <div className={`${isSelected ? styles['clickedContainer'] : styles['container']}`} onClick={handleClick} style={containerStyle}>
                 <div className={styles['top']}>
                     <p>{data.title}</p>
                     <div className={styles['info']}>
