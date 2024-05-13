@@ -39,7 +39,6 @@ function SellingPosts() {
 
         fetchData();
     }, [currentPage]);
-    console.log(data);
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -57,7 +56,7 @@ function SellingPosts() {
                 
                 <div className={styles['bodyContainer']}>
                     <div className={styles['sortText']}>
-                        <SelectSort />
+                        <SelectSort data={data} />
                     </div>
 
                     <div className={styles['selling-post-item-list']}>

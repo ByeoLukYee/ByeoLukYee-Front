@@ -3,11 +3,45 @@ import React, { useState } from 'react';
 import '../../styles/common/Styles.css';
 import styles from '../../styles/main/SelectSort.module.css';
 
-function SelectSort() {
+function SelectSort({ data }) {
     const [selectedSort, setSelectedSort] = useState('');
-
     const handleSortClick = (sortType) => {
         setSelectedSort(sortType);
+        switch (sortType) {
+            case '최신순':
+                return sortRecent();
+            case '인기순':
+                return sortPopularity();
+            case '가격 낮은 순':
+                return sortPriceLow();
+            default:
+                return data;
+        }
+    };
+
+    // 데이터 정렬하기
+    const sortRecent = () => {
+        return data.slice().sort((a, b) => {
+            const dateComparison = new Date(b.createdAt) - new Date(a.createdAt);
+            if (dateComparison === 0) {
+                return b.id - a.id;
+            }
+            return dateComparison;
+        });
+    };
+
+    const sortPopularity = () => {
+        return data;
+    }
+
+    const sortPriceLow = () => {
+        return data.sort((a, b) => {
+            const priceLow = a.price - b.price;
+            if (priceLow === 0) {
+                return b.id - a.id;
+            }
+            return priceLow;
+        });
     };
 
     return (

@@ -54,7 +54,7 @@ function BuyingPosts() {
 
             <div className={styles['bodyContainer']}>
                 <div className={styles['sortTextDiv']}>
-                    <SelectSort />
+                    <SelectSort data={data} />
                 </div>
 
                 <div className={styles['buying-post-item-list']}>
