@@ -20,6 +20,8 @@ function CommentItem({ data, onClick, isSelected }) {
         backgroundColor: data.krStatus === "낙찰" ? '#FFFBED' : '',
     };
 
+    console.log(data);
+
     const price = data.price && data.price.toLocaleString() + ' 원';
 
     return (
