@@ -44,6 +44,37 @@ function SellingPostId() {
         fetchData();
     }, [id]);
 
+    const complete = async () => {
+        try {
+            // 삽니다 게시물 경매완료
+            const selectedComment = data[selectedCommentIndex];
+            const response = await axios.put(`${HOST}/buying-posts/${id}`, {
+                title: selectedComment.title,
+                description: selectedComment.description,
+                price: selectedComment.price,
+                location: selectedComment.location,
+                status: "COMPLATE"
+            });
+            if (response.status === 200) {
+                console.log("댓글 선택 성공");
+                // 댓글 낙찰
+                const selectedComment = commentData[selectedCommentIndex];
+                const commentResponse = await axios.put(`${HOST}/selling-comments/${commentData.id}`, {
+                    title: selectedComment.title,
+                    description: selectedComment.description,
+                    price: selectedComment.price,
+                    location: selectedComment.location,
+                    status: "WON"
+                });
+                if(commentResponse.status === 200) {
+                    console.log("댓글 낙찰 성공");
+                }
+            }
+        } catch (error) {
+            console.error("댓글 선택 실패: ", error);
+        }
+    };
+
     const price = data.price && data.price.toLocaleString();
     const successful = commentData.some(comment => comment.krStatus === '낙찰');
     const userId = Number(localStorage.getItem('userId'));
@@ -81,7 +112,7 @@ function SellingPostId() {
                             
                             {data.user && data.user.id === userId && (successful || selectedCommentIndex !== null) && (
                                 <div className={styles['selectButton']}> 
-                                    <button>선택하기</button> 
+                                    <button onClick={complete}>선택하기</button> 
                                 </div>
                             )}
                             {data.user && data.user.id === userId && (!successful && selectedCommentIndex === null) && (
