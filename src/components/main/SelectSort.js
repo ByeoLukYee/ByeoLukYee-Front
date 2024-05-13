@@ -3,43 +3,48 @@ import React, { useState } from 'react';
 import '../../styles/common/Styles.css';
 import styles from '../../styles/main/SelectSort.module.css';
 
-function SelectSort({ data }) {
+function SelectSort({ data, onSort }) {
     const [selectedSort, setSelectedSort] = useState('');
     const handleSortClick = (sortType) => {
         setSelectedSort(sortType);
-        switch (sortType) {
-            case '최신순':
-                return sortRecent();
-            case '인기순':
-                return sortPopularity();
-            case '가격 낮은 순':
-                return sortPriceLow();
-            default:
-                return data;
+        if (sortType === '최신순') {
+            const sortedData = sortRecent();
+            onSort(sortedData);
+        } else if (sortType === '인기순') {
+            const sortedData = sortPopularity();
+            onSort(sortedData);
+        } else if (sortType === '가격 낮은 순') {
+            const sortedData = sortPriceLow();
+            onSort(sortedData);
         }
     };
 
     // 데이터 정렬하기
     const sortRecent = () => {
-        return data.slice().sort((a, b) => {
+        const sortedData = [...data];
+        return sortedData.sort((a, b) => {
             const dateComparison = new Date(b.createdAt) - new Date(a.createdAt);
             if (dateComparison === 0) {
                 return b.id - a.id;
             }
+            console.log("최신순으로 정렬");
             return dateComparison;
         });
     };
 
     const sortPopularity = () => {
-        return data;
+        const sortedData = [...data];
+        return sortedData;
     }
 
     const sortPriceLow = () => {
-        return data.sort((a, b) => {
+        const sortedData = [...data];
+        return sortedData.sort((a, b) => {
             const priceLow = a.price - b.price;
             if (priceLow === 0) {
-                return b.id - a.id;
+                return a.id - b.id;
             }
+            console.log("가격 낮은 순으로 정렬");
             return priceLow;
         });
     };

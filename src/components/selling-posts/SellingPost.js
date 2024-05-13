@@ -44,6 +44,11 @@ function SellingPosts() {
         setCurrentPage(pageNumber);
     };
 
+    // 데이터 정렬
+    const handleSort = (sortedData) => {
+        setData(sortedData);
+    };
+
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
@@ -56,7 +61,7 @@ function SellingPosts() {
                 
                 <div className={styles['bodyContainer']}>
                     <div className={styles['sortText']}>
-                        <SelectSort data={data} />
+                        <SelectSort data={data} onSort={handleSort} />
                     </div>
 
                     <div className={styles['selling-post-item-list']}>
