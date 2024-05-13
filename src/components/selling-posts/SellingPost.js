@@ -39,6 +39,7 @@ function SellingPosts() {
 
         fetchData();
     }, [currentPage]);
+    console.log(data);
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
