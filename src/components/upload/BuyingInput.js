@@ -39,6 +39,13 @@ function BuyingInput() {
     const userId = Number(localStorage.getItem('userId'));
     const addBuyWrite = async (e) => {
         e.preventDefault();
+        
+        // 이미지 추가 안하면 경고창 뜸
+        if (uploadedImages.length === 0) {
+            alert("이미지를 추가해주세요.");
+            return;
+        }
+
         try {
             const request = await axios.post(`${HOST}/selling-posts`, {
                 userId: userId,
