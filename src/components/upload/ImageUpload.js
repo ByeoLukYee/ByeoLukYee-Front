@@ -32,18 +32,31 @@ function ImageUpload({ onImagesUpload, initialImages }) {
     };
 
     const removeImage = (indexToRemove) => {
-        setImageURLs(prevURLs => prevURLs.filter((url, index) => index !== indexToRemove));
-        onImagesUpload(prevImages => prevImages.filter((file, index) => index !== indexToRemove));
+        if (window.location.pathname === '/buying-posts/upload') {
+            setImageURLs(prevURLs => prevURLs.filter((url, index) => index !== indexToRemove));
+            onImagesUpload(prevImages => prevImages.filter((file, index) => index !== indexToRemove));
+        } else {
+            alert("이미지는 수정할 수 없습니다.");
+        }
+    };
+
+    const handleLabelClick = () => {
+        if (window.location.pathname !== '/buying-posts/upload') {
+            alert("이미지는 수정할 수 없습니다.");
+        }
     };
 
     return (
         <>
             <div className={styles['imgScroll']}>
                 <div className={styles['imgContainer']}>
-                    <label htmlFor='fileInput' className={styles['imgDiv']}>
+                    <label htmlFor='fileInput' className={styles['imgDiv']} onClick={handleLabelClick}>
                         <p>클릭하여<br />사진 업로드</p>
                     </label>
-                    <input type="file" id="fileInput" multiple onChange={handleFileChange} />
+                    {
+                        window.location.pathname === '/buying-posts/upload' &&
+                        <input type="file" id="fileInput" multiple onChange={handleFileChange} />
+                    }
                     {imageURLs.map((imageURL, index) => (
                         <div key={index} className={styles['imgDiv']}>
                             <img 
