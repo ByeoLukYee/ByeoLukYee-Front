@@ -8,7 +8,7 @@ import ProfileActivityInfo from './ProfileActivityInfo';
 
 import ProfileMyInfo from './ProfileMyInfo';
 
-function ProfileInfo({ userId }) {
+function ProfileInfo({ userId, sellingPostDataLength, buyingPostDataLength, commentDataLength }) {
     const [data, setData] = useState([]);
     useEffect(() => {
         async function fetchData() {
@@ -24,11 +24,16 @@ function ProfileInfo({ userId }) {
         fetchData();
     }, []);
 
+    // 전달 받은 sellingPostData.length, buyingPostData.length, commentData.length ProfileActivityInfo 컴포넌트에 전달
     return (
         <>
             <div className={styles['container']}>
                 <ProfileMyInfo data={data}/>
-                <ProfileActivityInfo />
+                <ProfileActivityInfo 
+                    sellingPostDataLength={sellingPostDataLength} 
+                    buyingPostDataLength={buyingPostDataLength} 
+                    commentDataLength={commentDataLength}
+                />
             </div>
         </>
     )

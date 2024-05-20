@@ -1,49 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { HOST } from "../../config/Config";
-import axios from "axios";
-
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-Item/SellGrid.module.css';
 
 import SellingPostItem from '../selling-Item/SellingPostItem';
 
 
-function SellingPostItemList() {
-    //  user.id가 같은 selling-posts item만 GET
-    const [data, setData] = useState([]);
-    let userId = Number(localStorage.getItem('userId'));
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await axios.get(`${HOST}/selling-posts`);
-                if (response.status === 200) {
-                    const filteredData = response.data.filter(item => item.user.id === userId);
-                    setData(filteredData);
-                }
-            } catch (error) {
-                console.error("데이터 가져오기 실패: ", error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
+function SellingPostItemList({ sellingPostData }) {
+    // 전달받은 sellingPostData 화면에 보여주기
     return (
         <div className={styles['three-grid-container']}>
-            {data && data.length > 0 && data.map(item  => (
-                <div key={item.id} className={styles['grid-item']}> 
-                    <SellingPostItem
-                        status={item.krStatus}
-                        price={item.price}
-                        title={item.title}
-                        id={item.id}
-                        images={item.images}
-                    />
-                </div>
-            ))}
-            {data.length <= 0 && 
+            {Array.isArray(sellingPostData) && sellingPostData.length > 0 ? (
+                sellingPostData.map(item  => (
+                    <div key={item.id} className={styles['grid-item']}> 
+                        <SellingPostItem
+                            status={item.krStatus}
+                            price={item.price}
+                            title={item.title}
+                            id={item.id}
+                            images={item.images}
+                        />
+                    </div>
+                ))
+            ) : (
                 <p>게시글 없습니다.</p>
-            }
+            )}
         </div>
     )
 }

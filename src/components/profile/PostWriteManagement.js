@@ -5,7 +5,7 @@ import ProfileSellingPostItemList from '../../components/profile/ProfileSellingP
 import ProfileBuyPostItemList from '../../components/profile/ProfileBuyPostItemList';
 import ProfileCommentList from '../../components/profile/ProfileCommentList';
 
-function PostWriteManagement() {
+function PostWriteManagement({ sellingPostData, buyingPostData, commentData }) {
     return (
         <>
             <div className={styles['container']}>
@@ -13,7 +13,7 @@ function PostWriteManagement() {
                     <p>내가 쓴 팝니다 글</p>
 
                     <div className={styles['itemList']}>
-                        <ProfileSellingPostItemList />
+                        <ProfileSellingPostItemList sellingPostData={sellingPostData} />
                     </div>
                 </div>
 
@@ -21,7 +21,7 @@ function PostWriteManagement() {
                     <p>내가 쓴 삽니다 글</p>
 
                     <div className={styles['itemList']}>
-                        <ProfileBuyPostItemList />
+                        <ProfileBuyPostItemList buyingPostData={buyingPostData} />
                     </div>
                 </div>
 
@@ -29,7 +29,7 @@ function PostWriteManagement() {
                     <p>내가 올린 경매댓글</p>
 
                     <div className={styles['itemList']}>
-                        <ProfileCommentList />
+                        <ProfileCommentList commentData={commentData} />
                     </div>
                 </div>
             </div>
