@@ -44,7 +44,6 @@
 
 .textContainer > p:nth-child(1) {
     color: var(--green); /* 판매중 */
-    /* color: var(--gray-300); */ /* 판매완료 */
     font-family: var(--SUIT-font);
     font-weight: var(--Regular);
     font-size: 0.9rem;
@@ -53,11 +52,19 @@
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
     font-size: 0.9rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .textContainer > p:nth-child(3) {
     font-family: var(--SUIT-font);
     font-weight: var(--ExtraBold);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 

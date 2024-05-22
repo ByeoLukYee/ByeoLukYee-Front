@@ -29,13 +29,16 @@
     font-family: var(--SUIT-font);
     font-weight: var(--Medium);
     font-size: 0.9rem;
-    /* gray-700 : 낙찰 */
 }
 .contextDiv > p:nth-child(2) {
     font-family: var(--SUIT-font);
     font-weight: var(--Regular);
     font-size: 0.8rem;
     color: var(--gray-500);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .moneyDiv {
@@ -46,14 +49,12 @@
 .moneyDiv > p:nth-child(1) {
     font-family: var(--SUIT-font);
     font-weight: var(--ExtraBold);
-    /* gray-700 : 낙찰 */
 }
 .moneyDiv > p:nth-child(2) {
     font-family: var(--SUIT-font);
     font-weight: var(--Regular);
     font-size: 0.7rem;
     color: var(--gray-500);
-    /* text: 낙찰가 */
 }
 
 .secondDiv {
@@ -68,7 +69,6 @@
     font-weight: var(--Regular);
     font-size: 0.8rem;
     color: var(--green);
-    /* gray-500 : 낙찰, 예약중 */
 }
 .iconDiv {
     display: flex;
