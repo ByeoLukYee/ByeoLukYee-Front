@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
-function SellingInput() {
+function SellingInput({ addComments }) {
     // 삽니다 글쓰기 selling-posts/upload
     // 내가 쓴 삽니다 글쓰기 데이터 정보 post
     const navigate = useNavigate();
@@ -57,6 +57,7 @@ function SellingInput() {
                 console.log("업로드 성공");
                 const id = response.data.id;
                 navigate(`/selling-posts/${id}`);
+                addComments(); // 댓글 불러오기
             }
         } catch(error) {
             console.error("요청 실패 : ", error);
