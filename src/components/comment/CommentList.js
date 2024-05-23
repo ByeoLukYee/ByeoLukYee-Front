@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 import '../../styles/common/Styles.css';
 import styles from '../../styles/comment/CommentList.module.css';
 

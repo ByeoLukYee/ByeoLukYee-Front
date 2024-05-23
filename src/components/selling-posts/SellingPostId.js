@@ -10,8 +10,8 @@ import Header from '../common/Header';
 import Footer from '../common/Footer';
 import SellingPostIdConsumerInfo from './SellingPostIdConsumerInfo';
 import SellingPostIdInfo from './SellingPostIdInfo';
-import SellingInput from  './SellingCommentInput';
 import CommentList from '../comment/CommentList';
+import CommentInput from './CommentInput';
 
 function SellingPostId() {
     const [showBuyingInput, setShowBuyingInput] = useState(false);
@@ -24,25 +24,30 @@ function SellingPostId() {
     const [data, setData] = useState([]);
     const [commentData, setCommentData] = useState([]);
     const { id } = useParams();
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await axios.get(`${HOST}/buying-posts/${id}`);
-                if (response.status === 200) {
-                    setData(response.data);
-                    // 댓글 api 불러오기
-                    const commentResponse = await axios.get(`${HOST}/buying-posts/${id}/selling-comments`);
-                    if(commentResponse.status === 200) {
-                        setCommentData(commentResponse.data);
-                    }
+    async function fetchData() {
+        try {
+            const response = await axios.get(`${HOST}/buying-posts/${id}`);
+            if (response.status === 200) {
+                setData(response.data);
+                // 댓글 api 불러오기
+                const commentResponse = await axios.get(`${HOST}/buying-posts/${id}/selling-comments`);
+                if(commentResponse.status === 200) {
+                    console.log("댓글 정보 불러오기 성공");
+                    setCommentData(commentResponse.data);
+                } else {
+                    console.log("댓글 정보 불러오기 실패", commentResponse.status);
                 }
-            } catch (error) {
-                console.error("데이터 가져오기 실패: ", error);
             }
+        } catch (error) {
+            console.error("데이터 가져오기 실패: ", error);
         }
-
+    }
+    useEffect(() => {
         fetchData();
     }, [id]);
+    const addComments = () => {
+        fetchData();
+    }
 
     const complete = async () => {
         try {
@@ -66,8 +71,11 @@ function SellingPostId() {
                     location: selectedComment.location,
                     status: "WON"
                 });
+
                 if(commentResponse.status === 200) {
                     console.log("댓글 낙찰 성공");
+                } else {
+                    console.log("댓글 낙찰 실패", commentResponse.status);
                 }
             }
         } catch (error) {
@@ -127,7 +135,7 @@ function SellingPostId() {
                 <div className={styles['bottomContainer']}>
                     <p>경매댓글</p>
                     <div className={styles['commentContainer']}>
-                        {showBuyingInput && <SellingInput />}
+                        {showBuyingInput && <CommentInput addComments={addComments} setShowBuyingInput={setShowBuyingInput} />}
                         <CommentList data={commentData} setSelectedCommentIndex={setSelectedCommentIndex} selectedCommentIndex={selectedCommentIndex} />
                     </div>
                 </div>

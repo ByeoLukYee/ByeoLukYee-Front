@@ -9,18 +9,19 @@ function BuyPostItemList({ buyingPostData }) {
         <div className={styles['profile-grid-container']}>
             {Array.isArray(buyingPostData) && buyingPostData.length > 0 ? (
                 buyingPostData.map(item  => (
-                    <div key={item.id} className={styles['grid-item']}> 
+                    <div key={item.id} className={styles['buy-grid-item']}> 
                         <BuyPostItem
                             status={item.krStatus}
                             price={item.price}
                             title={item.title}
+                            description={item.description}
                             id={item.id}
                             images={item.images}
                         />
                     </div>
                 ))
             ) : (
-                <p>게시글 없습니다.</p>
+                <p>작성글 없습니다.</p>
             )}
         </div>
     )

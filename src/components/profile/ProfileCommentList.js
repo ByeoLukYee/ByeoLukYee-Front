@@ -7,7 +7,7 @@ function ProfileCommentList({ commentData }) {
     return (
         <>
             <div className={styles['comment-container']}>
-                {
+                {Array.isArray(commentData) && commentData.length > 0 ? (
                     commentData.length > 0 && commentData.map((item, index) => {
                         return (
                             <div className={styles['comment-item']} key={index}>
@@ -15,12 +15,10 @@ function ProfileCommentList({ commentData }) {
                             </div>
                         )
                     })
-                }
+                ) : (
+                    <p>경매댓글 없습니다.</p>
+                )}
             </div>
-
-            {commentData.length <= 0 &&
-                <p>경매 댓글 없습니다.</p>
-            }
         </>
     )
 }
