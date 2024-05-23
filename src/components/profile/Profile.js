@@ -26,10 +26,13 @@ function Profile() {
             try {
                 const response = await axios.get(`${HOST}/users/${userId}/selling-posts`);
                 if (response.status === 200) {
+                    console.log("팝니다 정보 가져오기 성공");
                     setSellingPostData(response.data);
+                } else {
+                    console.log("팝니다 정보 가져오기 실패", response.status);
                 }
             } catch (error) {
-                console.error("데이터 가져오기 실패: ", error);
+                console.error("팝니다 서버 연결 실패: ", error);
             }
         };
 
@@ -37,10 +40,13 @@ function Profile() {
             try {
                 const response = await axios.get(`${HOST}/users/${userId}/buying-posts`);
                 if (response.status === 200) {
+                    console.log("삽니다 정보 가져오기 성공");
                     setBuyingPostData(response.data);
+                } else {
+                    console.log("삽니다 정보 가져오기 실패", response.status);
                 }
             } catch (error) {
-                console.error("데이터 가져오기 실패: ", error);
+                console.error("삽니다 서버 연결 실패: ", error);
             }
         };
 
@@ -48,10 +54,13 @@ function Profile() {
             try {
                 const response = await axios.get(`${HOST}/users/${userId}/selling-comments`);
                 if(response.status === 200) {
+                    console.log("댓글 정보 가져오기 성공");
                     setCommentData(response.data);
+                } else {
+                    console.log("댓글 정보 가져오기 실패", response.status);
                 }
             } catch(error) {
-                console.error("댓글 불러오기 실패 : ", error);
+                console.error("댓글 서버 연결 실패 : ", error);
             }
         }
 

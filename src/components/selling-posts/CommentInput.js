@@ -1,16 +1,15 @@
-import '../../styles/common/Styles.css';
-import styles from '../../styles/upload/SellingInput.module.css';
-
+import React, { useState } from 'react';
 import { HOST } from '../../config/Config';
-import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
-function SellingInput() {
+import '../../styles/common/Styles.css';
+import styles from '../../styles/selling-posts/CommentInput.module.css';
+import { useParams } from 'react-router';
+
+
+function CommentInput({ addComments, setShowBuyingInput }) {
     // 삽니다 글쓰기 selling-posts/upload
     // 내가 쓴 삽니다 글쓰기 데이터 정보 post
-    const navigate = useNavigate();
-
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
     const [price, setPrice] = useState('');
@@ -34,21 +33,25 @@ function SellingInput() {
 
 
     const userId = localStorage.getItem('userId');
-    const addSellWrite = async (e) => {
+    const { id } = useParams();
+    const addCommentWrite = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${HOST}/buying-posts`, {
+            const response = await axios.post(`${HOST}/selling-comments`, {
                 userId: userId,
                 title: title,
                 description: desc,
                 price: price,
-                location: location
+                location: location,
+                referenceItemId: id
             });
 
             if (response.status === 201) {
-                console.log("업로드 성공");
-                const id = response.data.id;
-                navigate(`/selling-posts/${id}`);
+                console.log("댓글 업로드 성공");
+                addComments();
+                setShowBuyingInput(false);
+            } else {
+                console.log("댓글 업로드 실패", response.status);
             }
         } catch(error) {
             console.error("댓글 서버 연결 실패 : ", error);
@@ -107,11 +110,11 @@ function SellingInput() {
                 <div className={styles['hr']}> <hr /> </div>
 
                 <div className={styles['buttonContainer']}>
-                    <button className={styles['okButtonStyle']} onClick={addSellWrite}>등록하기</button>
+                    <button className={styles['okButtonStyle']} onClick={addCommentWrite}>등록하기</button>
                 </div>
             </div>
         </>
     )
 }
 
-export default SellingInput;
+export default CommentInput;
