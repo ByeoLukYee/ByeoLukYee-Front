@@ -59,7 +59,11 @@ function Join() {
                 console.error('회원가입 실패');
             }
         } catch (error) {
-            console.error('회원가입 요청 중 에러:', error);
+            if (error.response.data.message === "이미 가입된 이메일입니다.") {
+                alert(error.response.data.message);
+            } else{
+                console.error('회원가입 요청 중 에러:', error);
+            }
         }
     };
 
