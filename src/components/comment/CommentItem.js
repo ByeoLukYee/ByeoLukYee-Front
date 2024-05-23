@@ -5,6 +5,7 @@ import styles from '../../styles/comment/CommentItem.module.css';
 
 function CommentItem({ data, onClick, isSelected }) {
     const [isClickable, setIsClickable] = useState(true);
+    console.log(isSelected);
 
     const handleClick = () => {
         if (isClickable) {
