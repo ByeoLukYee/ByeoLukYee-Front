@@ -21,7 +21,7 @@ function SellingPostItemList({ sellingPostData }) {
                     </div>
                 ))
             ) : (
-                <p>게시글 없습니다.</p>
+                <p>작성글 없습니다.</p>
             )}
         </div>
     )

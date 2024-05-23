@@ -79,12 +79,14 @@ function Profile() {
                 <ProfileList showSelectComponent={setShowSelectComponent} userId={userId} />
 
                 <div className={styles['profile']}>
-                    <ProfileInfo 
-                        userId={userId} 
-                        sellingPostDataLength={sellingPostData.length} 
-                        buyingPostDataLength={buyingPostData.length} 
-                        commentDataLength={commentData.length}
-                    />
+                    <div className={styles['profileInfo']}>
+                        <ProfileInfo 
+                            userId={userId} 
+                            sellingPostDataLength={sellingPostData.length} 
+                            buyingPostDataLength={buyingPostData.length} 
+                            commentDataLength={commentData.length}
+                        />
+                    </div>
                     
                     <div className={styles['lists']}>
                         {/* 바뀌는 화면 */}
