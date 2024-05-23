@@ -1,8 +1,8 @@
 import '../../styles/common/Styles.css';
-import styles from '../../styles/comment/CommentItem.module.css';
+import styles from '../../styles/profile/ProfileCommentItem.module.css';
 
 function ProfileCommentItem({ commentData }) {
-    const price = commentData.price && commentData.price.toLocaleString() + ' 원';
+    const price = commentData.price >= 0 && commentData.price.toLocaleString() + ' 원';
     return (
         <>
             <div className={styles['container']}>
