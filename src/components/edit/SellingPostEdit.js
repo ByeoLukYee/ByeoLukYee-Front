@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { HOST } from '../../config/Config';
 import { useParams } from 'react-router';
 
 import '../../styles/common/Styles.css';
@@ -17,7 +16,7 @@ function SellingPostEdit() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`${HOST}/buying-posts/${id}`);
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/buying-posts/${id}`);
                 if (response.status === 200) {
                     setData(response.data);
                 }

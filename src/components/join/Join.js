@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import { HOST } from "../../config/Config";
-
 import joinStyles from '../../styles/join/Join.module.css';
 import '../../styles/common/Styles.css';
 
@@ -45,7 +43,7 @@ function Join() {
             }
 
             let studentId = `${userData.grade}${userData.class}${userData.number}`;
-            const response = await axios.post(`${HOST}/users`, {
+            const response = await axios.post(`${process.env.REACT_APP_HOST}/users`, {
                 name: userData.name,
                 email: userData.email,
                 password: userData.password,

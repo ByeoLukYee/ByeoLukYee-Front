@@ -1,10 +1,9 @@
-import '../../styles/common/Styles.css';
-import styles from '../../styles/upload/SellingInput.module.css';
-
-import { HOST } from '../../config/Config';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+
+import '../../styles/common/Styles.css';
+import styles from '../../styles/upload/SellingInput.module.css';
 
 function SellingInput() {
     // 삽니다 글쓰기 selling-posts/upload
@@ -37,7 +36,7 @@ function SellingInput() {
     const addSellWrite = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${HOST}/buying-posts`, {
+            const response = await axios.post(`${process.env.REACT_APP_HOST}/buying-posts`, {
                 userId: userId,
                 title: title,
                 description: desc,

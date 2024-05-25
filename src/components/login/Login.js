@@ -2,8 +2,6 @@ import axios from "axios";
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
-import { HOST } from "../../config/Config";
-
 import loginStyles from '../../styles/login/Login.module.css';
 import '../../styles/common/Styles.css';
 
@@ -34,7 +32,7 @@ function Login() {
         e.preventDefault();
         try {
             // 서버로 로그인 요청
-            const response = await axios.post(`${HOST}/users/signin`, {
+            const response = await axios.post(`${process.env.REACT_APP_HOST}/users/signin`, {
                 email: email,
                 password: password
             });

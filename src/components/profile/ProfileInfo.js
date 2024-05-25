@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { HOST } from '../../config/Config';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/profile/ProfileInfo.module.css';
@@ -13,7 +12,7 @@ function ProfileInfo({ userId, sellingPostDataLength, buyingPostDataLength, comm
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`${HOST}/users/${userId}`);
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${userId}`);
                 if (response.status === 200) {
                     setData(response.data);
                 }

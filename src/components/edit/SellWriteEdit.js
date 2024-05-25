@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
-import { HOST } from '../../config/Config';
 import { useNavigate } from "react-router-dom";
 
 import '../../styles/common/Styles.css';
@@ -52,7 +51,7 @@ function SellWriteEdit({ updateData }) {
     const update = async (e) => {
         e.preventDefault();
         try {
-            const request = await axios.put(`${HOST}/buying-posts/${id}`, {
+            const request = await axios.put(`${process.env.REACT_APP_HOST}/buying-posts/${id}`, {
                 title: title,
                 description: desc,
                 price: price,
@@ -75,7 +74,7 @@ function SellWriteEdit({ updateData }) {
     const remove = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.delete(`${HOST}/buying-posts/${id}`);
+            const response = await axios.delete(`${process.env.REACT_APP_HOST}/buying-posts/${id}`);
             if (response.status === 204) {
                 console.log("게시글 삭제 완료", response.data);
                 navigate('/buying-posts');

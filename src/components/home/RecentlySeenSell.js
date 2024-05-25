@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { HOST } from '../../config/Config';
 import { Link } from 'react-router-dom';
 
 import '../../styles/common/Styles.css';
@@ -14,7 +13,7 @@ function RecentlySeenSell() {
     // useEffect(() => {
     //     async function fetchData() {
     //         try {
-    //             const response = await axios.get(`${HOST}/selling-posts?limit=4&sortBy=createdAt:desc`);
+    //             const response = await axios.get(`${process.env.REACT_APP_HOST}/selling-posts?limit=4&sortBy=createdAt:desc`);
     //             setData(response.data);
     //         } catch(error) {
     //             console.error("요청 실패 : ", error);

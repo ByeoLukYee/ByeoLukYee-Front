@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { HOST } from '../../config/Config';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -24,7 +23,7 @@ function Profile() {
     useEffect(() => {
         async function sellingData() {
             try {
-                const response = await axios.get(`${HOST}/users/${userId}/selling-posts`);
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${userId}/selling-posts`);
                 if (response.status === 200) {
                     console.log("팝니다 정보 가져오기 성공");
                     setSellingPostData(response.data);
@@ -38,7 +37,7 @@ function Profile() {
 
         async function buyingData() {
             try {
-                const response = await axios.get(`${HOST}/users/${userId}/buying-posts`);
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${userId}/buying-posts`);
                 if (response.status === 200) {
                     console.log("삽니다 정보 가져오기 성공");
                     setBuyingPostData(response.data);
@@ -52,7 +51,7 @@ function Profile() {
 
         async function commentData() {
             try {
-                const response = await axios.get(`${HOST}/users/${userId}/selling-comments`);
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${userId}/selling-comments`);
                 if(response.status === 200) {
                     console.log("댓글 정보 가져오기 성공");
                     setCommentData(response.data);
