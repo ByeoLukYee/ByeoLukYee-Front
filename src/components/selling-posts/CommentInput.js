@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { HOST } from '../../config/Config';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -37,7 +36,7 @@ function CommentInput({ addComments, setShowBuyingInput }) {
     const addCommentWrite = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${HOST}/selling-comments`, {
+            const response = await axios.post(`${process.env.REACT_APP_HOST}/selling-comments`, {
                 userId: userId,
                 title: title,
                 description: desc,

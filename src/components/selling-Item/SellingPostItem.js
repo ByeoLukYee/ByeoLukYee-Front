@@ -5,7 +5,6 @@ import sellStyle from "../../styles/selling-Item/SellingPostItem.module.css";
 
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
-import { ImageUrl } from "../../config/Config";
 
 function SellingPostItem({ status, price, title, id, images }) {
   // SellingPostItemList.js에서 전달 받은 status, price, title를 화면에 보여주기
@@ -29,7 +28,7 @@ function SellingPostItem({ status, price, title, id, images }) {
             <div className={sellStyle['imgDiv']}>
               {
                 images.length > 0 ?
-                <img src={`${ImageUrl}/${images[0].uploadedFilename}`} alt="image" style={imgStyle}/>
+                <img src={`${process.env.REACT_APP_IMAGEURL}/${images[0].uploadedFilename}`} alt="image" style={imgStyle}/>
                 :
                 <img src="/images/exampleImg.png" />
               }

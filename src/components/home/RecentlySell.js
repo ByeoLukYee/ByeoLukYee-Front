@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { HOST } from '../../config/Config';
 import { Link } from 'react-router-dom';
 
 import '../../styles/common/Styles.css';
@@ -14,7 +13,7 @@ function RecentlySell() {
     useEffect(() => {
         async function fetchLatestPosts() {
             try {
-                const response = await axios.get(`${HOST}/selling-posts`);
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/selling-posts`);
                 const sortedData = response.data.sort((a, b) => {
                     // 내림차순으로 정렬
                     const dateComparison = new Date(b.createdAt) - new Date(a.createdAt);

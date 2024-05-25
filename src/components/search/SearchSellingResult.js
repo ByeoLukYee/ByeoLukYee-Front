@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { HOST } from '../../config/Config';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/search/SearchSellingResult.module.css';
@@ -15,7 +14,7 @@ function SearchSellingResult({ keyword, data, setData }) {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`${HOST}/selling-posts`);
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/selling-posts`);
                 if (response.status === 200) {
                     const filteredData = response.data.filter(item => {
                         const titleMatch = typeof item.title === 'string' && item.title.includes(keyword);

@@ -1,10 +1,9 @@
-import '../../styles/common/Styles.css';
-import styles from '../../styles/upload/BuyingInput.module.css';
-
-import { HOST } from '../../config/Config';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+
+import '../../styles/common/Styles.css';
+import styles from '../../styles/upload/BuyingInput.module.css';
 
 import ImageUpload from './ImageUpload';
 
@@ -47,7 +46,7 @@ function BuyingInput() {
         }
 
         try {
-            const request = await axios.post(`${HOST}/selling-posts`, {
+            const request = await axios.post(`${process.env.REACT_APP_HOST}/selling-posts`, {
                 userId: userId,
                 title: title,
                 description: desc,
@@ -82,7 +81,7 @@ function BuyingInput() {
 
     const uploadedImage = async (postId, formData) => {
         try {
-            const response = await axios.post(`${HOST}/post-images/${postId}`, formData, {
+            const response = await axios.post(`${process.env.REACT_APP_HOST}/post-images/${postId}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { HOST } from '../../config/Config';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -21,13 +20,13 @@ function ProfileList({ showSelectComponent, userId }) {
     const userIdRemove = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.delete(`${HOST}/users/${userId}`);
+            const response = await axios.delete(`${process.env.REACT_APP_HOST}/users/${userId}`);
             if (response.status === 204) {
-                console.log("로그아웃 성공");
+                console.log("탈퇴 성공");
                 navigate('/signin');
                 localStorage.removeItem('userId');
             } else {
-                console.log("로그아웃 실패", response.status);
+                console.log("탈퇴 실패", response.status);
             }
         } catch(error) {
             console.log("서버 연결 실패 : ", error);

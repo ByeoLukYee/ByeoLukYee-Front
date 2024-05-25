@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import { HOST } from '../../config/Config';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -26,11 +25,11 @@ function SellingPostId() {
     const { id } = useParams();
     async function fetchData() {
         try {
-            const response = await axios.get(`${HOST}/buying-posts/${id}`);
+            const response = await axios.get(`${process.env.REACT_APP_HOST}/buying-posts/${id}`);
             if (response.status === 200) {
                 setData(response.data);
                 // 댓글 api 불러오기
-                const commentResponse = await axios.get(`${HOST}/buying-posts/${id}/selling-comments`);
+                const commentResponse = await axios.get(`${process.env.REACT_APP_HOST}/buying-posts/${id}/selling-comments`);
                 if(commentResponse.status === 200) {
                     console.log("댓글 정보 불러오기 성공");
                     setCommentData(commentResponse.data);
@@ -53,7 +52,7 @@ function SellingPostId() {
         try {
             // 삽니다 게시물 경매완료
             const selectedComment = data[selectedCommentIndex];
-            const response = await axios.put(`${HOST}/buying-posts/${id}`, {
+            const response = await axios.put(`${process.env.REACT_APP_HOST}/buying-posts/${id}`, {
                 title: selectedComment.title,
                 description: selectedComment.description,
                 price: selectedComment.price,
@@ -64,7 +63,7 @@ function SellingPostId() {
                 console.log("댓글 선택 성공");
                 // 댓글 낙찰
                 const selectedComment = commentData[selectedCommentIndex];
-                const commentResponse = await axios.put(`${HOST}/selling-comments/${commentData.id}`, {
+                const commentResponse = await axios.put(`${process.env.REACT_APP_HOST}/selling-comments/${commentData.id}`, {
                     title: selectedComment.title,
                     description: selectedComment.description,
                     price: selectedComment.price,

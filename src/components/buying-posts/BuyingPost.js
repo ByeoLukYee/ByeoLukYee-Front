@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { HOST } from '../../config/Config';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -27,7 +26,7 @@ function BuyingPosts() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`${HOST}/buying-posts`);
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/buying-posts`);
                 if (response.status === 200) {
                     setData(response.data);
                 }

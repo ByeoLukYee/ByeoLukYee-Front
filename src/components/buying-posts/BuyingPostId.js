@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
-import { HOST, ImageUrl } from '../../config/Config';
 import { Link } from "react-router-dom";
 
 import '../../styles/common/Styles.css';
@@ -27,7 +26,7 @@ function BuyingPostsId() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`${HOST}/selling-posts/${id}`);
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/selling-posts/${id}`);
                 if (response.status === 200) {
                     setData(response.data);
                 }
@@ -69,7 +68,7 @@ function BuyingPostsId() {
                             }
                             {data && data.images && data.images.length > 0 ? (
                                 data.images.map((image, index) => (
-                                    <img key={index} src={`${ImageUrl}/${image.uploadedFilename}`} alt="image" style={{ display: index === currentIndex ? 'block' : 'none' }}/>
+                                    <img key={index} src={`${process.env.IMAGEURL}/${image.uploadedFilename}`} alt="image" style={{ display: index === currentIndex ? 'block' : 'none' }}/>
                                 ))
                             ) : (
                                 <img src='/images/exampleImg.png' alt="example image" />

@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/upload/ImageUpload.module.css';
-import { ImageUrl } from '../../config/Config';
 
 function ImageUpload({ onImagesUpload, initialImages }) {
     const [imageURLs, setImageURLs] = useState([]);
 
     useEffect(() => {
         if (initialImages) {
-            const urls = initialImages.map(image => `${ImageUrl}/${image.uploadedFilename}`);
+            const urls = initialImages.map(image => `${process.env.REACT_APP_IMAGEURL}/${image.uploadedFilename}`);
             setImageURLs(urls);
         }
     }, [initialImages]);
