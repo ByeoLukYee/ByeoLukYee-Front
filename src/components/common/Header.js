@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import '../../styles/common/Styles.css';
@@ -9,13 +9,15 @@ import SearchInput from './SearchInput';
 function Header({ onTitleClick }) {
     const navigate = useNavigate();
 
-    const userId = localStorage.getItem('userId');
-    const handleMenuClick = (path) => {
+    useEffect(() => {
+        const userId = localStorage.getItem('userId');
         if (!userId) {
             navigate('/signin');
-        } else {
-            navigate(path);
         }
+    }, [navigate]);
+
+    const handleMenuClick = (path) => {
+        navigate(path);
     }
 
     return (
