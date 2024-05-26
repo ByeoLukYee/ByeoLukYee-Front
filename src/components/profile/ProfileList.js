@@ -24,7 +24,7 @@ function ProfileList({ showSelectComponent, userId }) {
             if (response.status === 204) {
                 console.log("탈퇴 성공");
                 navigate('/signin');
-                localStorage.removeItem('userId');
+                localStorage.removeItem('id');
             } else {
                 console.log("탈퇴 실패", response.status);
             }
@@ -35,7 +35,7 @@ function ProfileList({ showSelectComponent, userId }) {
 
     const Logout = () => {
         console.log("로그아웃 성공");
-        localStorage.removeItem('userId');
+        localStorage.removeItem('id');
         navigate('/signin');
     }
 

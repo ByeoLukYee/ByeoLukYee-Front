@@ -84,7 +84,7 @@ function SellingPostId() {
 
     const price = data.price && data.price.toLocaleString();
     const successful = commentData.some(comment => comment.krStatus === '낙찰');
-    const userId = Number(localStorage.getItem('userId'));
+    const userId = localStorage.getItem('id');
 
     return (
         <div className={styles['container']}>

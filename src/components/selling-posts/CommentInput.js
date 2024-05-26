@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-posts/CommentInput.module.css';
-import { useParams } from 'react-router';
 
 
 function CommentInput({ addComments, setShowBuyingInput }) {
@@ -31,7 +31,7 @@ function CommentInput({ addComments, setShowBuyingInput }) {
     }
 
 
-    const userId = localStorage.getItem('userId');
+    const userId = localStorage.getItem('id');
     const { id } = useParams();
     const addCommentWrite = async (e) => {
         e.preventDefault();

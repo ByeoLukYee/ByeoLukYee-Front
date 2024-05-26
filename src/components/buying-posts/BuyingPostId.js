@@ -54,7 +54,7 @@ function BuyingPostsId() {
     };
 
     const price = data.price && data.price.toLocaleString();
-    const userId = Number(localStorage.getItem('userId'));
+    const userId = localStorage.getItem('id');
 
     return (
         <>

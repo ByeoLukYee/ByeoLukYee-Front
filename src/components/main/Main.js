@@ -18,7 +18,7 @@ function Main() {
     };
 
     useEffect(() => {
-        const userId = localStorage.getItem('userId');
+        const userId = localStorage.getItem('id');
         if (!userId) {
             navigate('/signin');
         }
