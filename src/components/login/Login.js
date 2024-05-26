@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import loginStyles from '../../styles/login/Login.module.css';
 import '../../styles/common/Styles.css';
@@ -9,27 +9,22 @@ import Footer from '../common/Footer';
 import Header from '../common/Header';
 
 function Login() {
-    const [fail, setFail] = useState(false);
-
-    // 회원가입 화면으로 넘어가기
     const navigate = useNavigate();
-    const TextClick = (path) => {
-        navigate(path);
-    };
- 
+    const [fail, setFail] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
+    // 회원가입 화면으로 넘어가기
+    const TextClick = (path) => {
+        navigate(path);
     };
 
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
+    const handleEmailChange = (e) => setEmail(e.target.value);
+    const handlePasswordChange = (e) => setPassword(e.target.value);
+
+    const handleLogin = async () => {
         try {
             // 서버로 로그인 요청
             const response = await axios.post(`${process.env.REACT_APP_HOST}/users/signin`, {
@@ -40,24 +35,52 @@ function Login() {
             if (response.status === 201) {
                 console.log('로그인 성공');
                 setFail(false);
-                localStorage.setItem('userId', response.data.id);
+                localStorage.setItem('id', response.data.id);
                 navigate('/');
             } else {
                 console.error('로그인 실패');
                 setFail(true);
             }
         } catch (error) {
-            console.error('로그인 요청 중 에러:', error);
             setFail(true);
+            if (error.response.data.errorMessage === "유저가 존재하지 않습니다.") {
+                setErrorMessage('존재하지 않는 유저입니다.');
+            } else if (error.response.data.errorMessage === "비밀번호가 알맞지 않습니다.") {
+                setErrorMessage(error.response.data.errorMessage);
+            } else {
+                console.error('서버 연결 실패', error);
+            }
         }
     };
 
     useEffect(() => {
-        const userId = localStorage.getItem('userId');
+        const userId = localStorage.getItem('id');
         if (userId) {
             navigate('/');
         }
     }, [navigate]);
+
+    // const handleGoogleLogin = async () => {
+    //     try {
+    //         const response = await axios.get(`${process.env.REACT_APP_HOST}/oauth2/authorization/google`);
+    //         if (response.status === 200) {
+    //             const { user } = response.data;
+    //             const checkResponse = await axios.get(`${process.env.REACT_APP_HOST}/users/${user.id}`);
+    //             if (checkResponse.status === 200) {
+    //                 localStorage.setItem('userId', user.id);
+    //                 navigate('/');
+    //             } else {
+    //                 localStorage.setItem('googleName', user.name);
+    //                 localStorage.setItem('googleEmail', user.email);
+    //                 navigate('/signup');
+    //             }
+    //         } else {
+    //             console.log("구글 로그인 실패", response.status);
+    //         }
+    //     } catch (error) {
+    //         console.error('서버 연결 실패', error);
+    //     }
+    // };
 
     return (
         <div className={loginStyles['container']}>
@@ -79,11 +102,15 @@ function Login() {
                         </div>
                         {
                             fail &&
-                            <p className={loginStyles['errorMessage']}>이메일과 비밀번호가 틀렸습니다.</p>
+                            <p className={loginStyles['errorMessage']}>{errorMessage}</p>
                         }
                         <div className={loginStyles['buttonContainer']}>
-                            <button id='btnLogin' className={loginStyles['buttonStyles']} type="submit">로그인</button>
-                            <button className={loginStyles['googleButton']}> <img src={'/images/GoogleImg.png'} /> 구글로 로그인</button>
+                            <button id='btnLogin' className={loginStyles['buttonStyles']}>로그인</button>
+                            <Link to={`${process.env.REACT_APP_HOST}/oauth2/authorization/google`} style={{ textDecoration: 'none', color: 'black' }}>
+                                <button className={loginStyles['googleButton']} type='button'> 
+                                    <img src={'/images/GoogleImg.png'} /> 구글로 로그인
+                                </button>
+                            </Link>
                         </div>
                     </div>
                     <div className={loginStyles['miniTextStyles']}>

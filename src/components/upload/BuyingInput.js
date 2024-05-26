@@ -35,7 +35,7 @@ function BuyingInput() {
         setDesc(e.target.value);
     }
 
-    const userId = Number(localStorage.getItem('userId'));
+    const userId = localStorage.getItem('id');
     const addBuyWrite = async (e) => {
         e.preventDefault();
         

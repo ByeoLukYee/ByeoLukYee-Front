@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-posts/SellingCommentInput.module.css';
-import { useParams } from 'react-router';
 
 
 function SellingInput() {

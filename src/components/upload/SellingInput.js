@@ -32,7 +32,7 @@ function SellingInput() {
     }
 
 
-    const userId = localStorage.getItem('userId');
+    const userId = localStorage.getItem('id');
     const addSellWrite = async (e) => {
         e.preventDefault();
         try {

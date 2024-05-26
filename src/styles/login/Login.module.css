@@ -100,26 +100,26 @@ input:focus {
     flex-direction: column;
     row-gap: 20px;
 }
-.buttonContainer > button {
-    padding: 5%;
-
-    font-family: var(--SUIT-font);
-    font-weight: var(--Medium);
-}
 
 .buttonStyles {
+    width: 100%;
     height: 6vh;
+    padding: 5%;
     background-color: var(--bg);
     border: 0;
     border-radius: 6px;
     cursor : pointer;
     font-size: 1.1rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
 }
 .googleButton {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 6vh;
+    padding: 5%;
     column-gap: 10px;
     border-color: var(--gray-300);
     border-style: solid;
@@ -128,6 +128,8 @@ input:focus {
     background-color: white;
     cursor : pointer;
     font-size: 1.1rem;
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
 }
 
 .miniTextStyles {
