@@ -12,7 +12,13 @@ function SellingPostIdConsumerInfo({ user }) {
         <>
             <div className={styles['container']}>
                 <div className={styles['outBox']}>
-                    <div className={styles['img']}> <img src="/images/profileImage.png" alt="example" /> </div>
+                    <div className={styles['img']}>
+                        {
+                            user.profileUrl ?
+                            <img src={`${user.profileUrl}`} /> : <img src={'/images/profileImage.png'} />
+
+                        }
+                    </div>
                     <div className={styles['inBox']}>
                         <p>{user.name}</p>
                         <div className={styles['userInfo']}>

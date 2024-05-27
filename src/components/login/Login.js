@@ -60,28 +60,6 @@ function Login() {
         }
     }, [navigate]);
 
-    // const handleGoogleLogin = async () => {
-    //     try {
-    //         const response = await axios.get(`${process.env.REACT_APP_HOST}/oauth2/authorization/google`);
-    //         if (response.status === 200) {
-    //             const { user } = response.data;
-    //             const checkResponse = await axios.get(`${process.env.REACT_APP_HOST}/users/${user.id}`);
-    //             if (checkResponse.status === 200) {
-    //                 localStorage.setItem('userId', user.id);
-    //                 navigate('/');
-    //             } else {
-    //                 localStorage.setItem('googleName', user.name);
-    //                 localStorage.setItem('googleEmail', user.email);
-    //                 navigate('/signup');
-    //             }
-    //         } else {
-    //             console.log("구글 로그인 실패", response.status);
-    //         }
-    //     } catch (error) {
-    //         console.error('서버 연결 실패', error);
-    //     }
-    // };
-
     return (
         <div className={loginStyles['container']}>
             <Header />
@@ -107,7 +85,7 @@ function Login() {
                         <div className={loginStyles['buttonContainer']}>
                             <button id='btnLogin' className={loginStyles['buttonStyles']}>로그인</button>
                             <Link to={`${process.env.REACT_APP_HOST}/oauth2/authorization/google`} style={{ textDecoration: 'none', color: 'black' }}>
-                                <button className={loginStyles['googleButton']} type='button'> 
+                                <button className={loginStyles['googleButton']} type='button'>
                                     <img src={'/images/GoogleImg.png'} /> 구글로 로그인
                                 </button>
                             </Link>

@@ -13,7 +13,13 @@ function BuyingPostIdProducerInfo({ user }) {
     
     return (
         <>
-        <div className={styles['userImg']}> <img src='/images/profileImage.png' alt="example" /> </div>
+        <div className={styles['userImg']}>
+            {
+                user.profileUrl ?
+                <img src={`${user.profileUrl}`} /> : <img src={'/images/profileImage.png'} />
+
+            }
+        </div>
             <div className={styles['profileDiv']}>
                 <p>{user.name}</p>
                 <div className={styles['myInformation']}>
