@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { HOST } from '../../config/Config';
-import axios from 'axios';
+import React, { useState } from 'react';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-Item/SellGrid.module.css';
