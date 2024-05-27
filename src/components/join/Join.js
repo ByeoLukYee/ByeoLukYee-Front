@@ -92,20 +92,6 @@ function Join() {
         return true;
     };
 
-    // useEffect(() => {
-    //     const googleName = localStorage.getItem('googleName');
-    //     const googleEmail = localStorage.getItem('googleEmail');
-    //     if (googleName && googleEmail) {
-    //         setUserData({
-    //             ...userData,
-    //             name: googleName,
-    //             email: googleEmail
-    //         });
-    //         localStorage.removeItem('googleName');
-    //         localStorage.removeItem('googleEmail');
-    //     }
-    // }, []);
-
     return(
         <div className={joinStyles['divContainer']}>
             <Header />
