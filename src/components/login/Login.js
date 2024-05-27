@@ -24,7 +24,18 @@ function Login() {
     const handleEmailChange = (e) => setEmail(e.target.value);
     const handlePasswordChange = (e) => setPassword(e.target.value);
 
-    const handleLogin = async () => {
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        if(!email) {
+            setErrorMessage("이메일을 입력하세요.");
+            setFail(true);
+            return;
+        } else if (!password) {
+            setErrorMessage("비밀번호를 입력하세요.");
+            setFail(true);
+            return;
+        }
+
         try {
             // 서버로 로그인 요청
             const response = await axios.post(`${process.env.REACT_APP_HOST}/users/signin`, {
