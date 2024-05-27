@@ -24,7 +24,13 @@ function ProfileMyInfo({ data }) {
     return (
         <>
             <div className={styles['container']}>
-                <div className={styles['imgDiv']}> <img src={'/images/profileImage.png'} /> </div>
+                <div className={styles['imgDiv']}>
+                    {
+                        data.profileUrl ?
+                        <img src={`${data.profileUrl}`} /> : <img src={'/images/profileImage.png'} />
+
+                    }
+                </div>
                 <div className={styles['information']}>
                     <div className={styles['enameDiv']}>
                         <div className={styles['nameDiv']}> <p>{data.name}</p> </div>
