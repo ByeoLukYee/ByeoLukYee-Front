@@ -9,13 +9,6 @@ import SearchInput from './SearchInput';
 function Header({ onTitleClick }) {
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const userId = localStorage.getItem('id');
-        if (!userId) {
-            navigate('/signin');
-        }
-    }, [navigate]);
-
     const handleMenuClick = (path) => {
         navigate(path);
     }
