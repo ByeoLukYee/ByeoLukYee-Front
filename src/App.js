@@ -29,6 +29,8 @@ function App() {
                 <Route path="/signin" element={<Login />} />
                 <Route path="/signup" element={<Join />} />
 
+                <Route path='/login/oauth2/code/google' element={<OAuth2RedirectHandler />} />
+
                 <Route path="/" element={<Main />} />
 
                 <Route path='/selling-posts' element={<SellingPost />} />
@@ -46,8 +48,6 @@ function App() {
                 <Route path='/profile' element={<Profile />} />
 
                 <Route path='/search' element={<Search />} />
-
-                <Route path='/login/oauth2/code/google' element={<OAuth2RedirectHandler />} />
             </Routes>
         </Router>
     )

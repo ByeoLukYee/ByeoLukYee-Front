@@ -94,12 +94,13 @@ function Login() {
                         }
                         <div className={loginStyles['buttonContainer']}>
                             <button id='btnLogin' className={loginStyles['buttonStyles']}>로그인</button>
-                            <a href={`${process.env.REACT_APP_HOST}/oauth2/authorization/google`} style={{ textDecoration: 'none', color: 'black' }}>
 
+                            <a href={`${process.env.REACT_APP_HOST}/oauth2/authorization/google`} style={{ textDecoration: 'none', color: 'black' }}>
                                 <button className={loginStyles['googleButton']} type='button'>
                                     <img src={'/images/GoogleImg.png'} /> 구글로 로그인
                                 </button>
                             </a>
+                            
                         </div>
                     </div>
                     <div className={loginStyles['miniTextStyles']}>
