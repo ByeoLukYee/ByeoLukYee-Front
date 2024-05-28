@@ -101,11 +101,11 @@ function Login() {
                                 </button>
                             </a>
                             
+                            <div className={loginStyles['miniTextStyles']}>
+                                <p>계정이 없다면?</p>
+                                <p onClick={() => TextClick('/signup')}>회원가입</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className={loginStyles['miniTextStyles']}>
-                        <p>계정이 없다면?</p>
-                        <p onClick={() => TextClick('/signup')}>회원가입</p>
                     </div>
                 </form>
             </div>
