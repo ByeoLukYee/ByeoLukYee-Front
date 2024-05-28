@@ -21,15 +21,12 @@ const OAuth2RedirectHandler = () => {
                     if (userInfo && userInfo.id) {
                         localStorage.setItem('id', userInfo.id);
                         navigate('/');
-                    } else {
-                        navigate('/signin');
                     }
                 } catch (error) {
                     console.error('OAuth2 token fetch error:', error);
                 }
             }
         };
-
         fetchOAuthToken();
     }, [location]);
 };
