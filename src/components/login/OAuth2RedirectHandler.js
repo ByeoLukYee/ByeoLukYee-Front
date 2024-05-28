@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+
 import { useLocation } from 'react-router-dom';
 
 const OAuth2RedirectHandler = () => {
