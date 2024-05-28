@@ -10,7 +10,12 @@ function Header({ onTitleClick }) {
     const navigate = useNavigate();
 
     const handleMenuClick = (path) => {
-        navigate(path);
+        const userId = localStorage.getItem("id");
+        if (!userId) {
+            navigate("/");
+        } else {
+            navigate(path);
+        }
     }
 
     return (
