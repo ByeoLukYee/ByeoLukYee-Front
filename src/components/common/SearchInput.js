@@ -15,13 +15,20 @@ function SearchInput() {
     // 엔터 키 입력 시 검색 실행
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            search();
+            const userId = localStorage.getItem("id");
+            if (!userId) {
+                navigate("/");
+            } else {
+                search();
+            }
         }
     };
 
     const search = () => {
         if (searchKeyword.trim() !== '') {
             navigate(`/search?keyword=${encodeURIComponent(searchKeyword)}`);
+        } else {
+            navigate('/');
         }
     };
 
