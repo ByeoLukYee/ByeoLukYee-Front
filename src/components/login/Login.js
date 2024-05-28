@@ -1,9 +1,9 @@
 import axios from "axios";
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
-import loginStyles from '../../styles/login/Login.module.css';
 import '../../styles/common/Styles.css';
+import loginStyles from '../../styles/login/Login.module.css';
 
 import Footer from '../common/Footer';
 import Header from '../common/Header';
@@ -26,7 +26,7 @@ function Login() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        if(!email) {
+        if (!email) {
             setErrorMessage("이메일을 입력하세요.");
             setFail(true);
             return;
@@ -95,11 +95,11 @@ function Login() {
                         }
                         <div className={loginStyles['buttonContainer']}>
                             <button id='btnLogin' className={loginStyles['buttonStyles']}>로그인</button>
-                            <Link to={`${process.env.REACT_APP_HOST}/oauth2/authorization/google`} style={{ textDecoration: 'none', color: 'black' }}>
+                            <a href={`${process.env.REACT_APP_HOST}/oauth2/authorization/google`} style={{ textDecoration: 'none', color: 'black' }}>
                                 <button className={loginStyles['googleButton']} type='button'>
                                     <img src={'/images/GoogleImg.png'} /> 구글로 로그인
                                 </button>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                     <div className={loginStyles['miniTextStyles']}>
