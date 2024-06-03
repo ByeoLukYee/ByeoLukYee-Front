@@ -31,7 +31,7 @@ function CommentInput({ addComments, setShowBuyingInput }) {
     }
 
 
-    const userId = localStorage.getItem('id');
+    const userId = Number(localStorage.getItem('id'));
     const { id } = useParams();
     const addCommentWrite = async (e) => {
         e.preventDefault();

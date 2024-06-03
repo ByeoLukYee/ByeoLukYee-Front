@@ -22,7 +22,7 @@ function BuyingPostsId() {
     const [wishes, setWishes] = useState([]);
     const [liked, setLiked] = useState(false);
     const { id } = useParams();
-    const userId = localStorage.getItem('id');
+    const userId = Number(localStorage.getItem('id'));
     const price = data.price && data.price.toLocaleString();
 
     async function fetchData() {

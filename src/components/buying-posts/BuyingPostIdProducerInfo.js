@@ -1,29 +1,15 @@
-import '../../styles/common/Styles.css';
-import styles from '../../styles/buying-posts/BuyingPostIdProducerInfo.module.css';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import '../../styles/common/Styles.css';
+import styles from '../../styles/buying-posts/BuyingPostIdProducerInfo.module.css';
+
 function BuyingPostIdProducerInfo({ user }) {
-    const [data, setData] = useState([]);
     const [sellingPostData, setSellingPostData] = useState([]);
     const [buyingPostData, setBuyingPostData] = useState([]);
 
     const userId = user.id;
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await axios.get(`${process.env.REACT_APP_HOST}/users`);
-                if (response.status === 200) {
-                    console.log("회원 정보 불러오기 성공");
-                    setData(response.data);
-                } else {
-                    console.log("회원 정보 불러오기 실패", response.status);
-                }
-            } catch(error) {
-                console.log("서버 연결 실패", error);
-            }
-        }
-
         async function sellingData() {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${userId}/selling-posts`);
@@ -52,10 +38,9 @@ function BuyingPostIdProducerInfo({ user }) {
             }
         };
 
-        fetchData();
         buyingData();
         sellingData();
-    })
+    }, []);
 
     let studentId = user.studentId;
     let grade = studentId[0];

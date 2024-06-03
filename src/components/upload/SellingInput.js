@@ -31,8 +31,7 @@ function SellingInput() {
         setDesc(e.target.value);
     }
 
-
-    const userId = localStorage.getItem('id');
+    const userId = Number(localStorage.getItem('id'));
     const addSellWrite = async (e) => {
         e.preventDefault();
         try {
