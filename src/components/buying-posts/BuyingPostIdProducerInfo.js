@@ -1,10 +1,62 @@
 import '../../styles/common/Styles.css';
 import styles from '../../styles/buying-posts/BuyingPostIdProducerInfo.module.css';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function BuyingPostIdProducerInfo({ user }) {
-    // 사용자의 정보를 보여주는 컴포넌트
-    // user/ name, studentId를 props로 받아서 넣기
-    // 팝니다와 삽니다 갯수는 api 다시 살펴보기
+    const [data, setData] = useState([]);
+    const [sellingPostData, setSellingPostData] = useState([]);
+    const [buyingPostData, setBuyingPostData] = useState([]);
+
+    const userId = user.id;
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/users`);
+                if (response.status === 200) {
+                    console.log("회원 정보 불러오기 성공");
+                    setData(response.data);
+                } else {
+                    console.log("회원 정보 불러오기 실패", response.status);
+                }
+            } catch(error) {
+                console.log("서버 연결 실패", error);
+            }
+        }
+
+        async function sellingData() {
+            try {
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${userId}/selling-posts`);
+                if (response.status === 200) {
+                    console.log("팝니다 정보 가져오기 성공");
+                    setSellingPostData(response.data);
+                } else {
+                    console.log("팝니다 정보 가져오기 실패", response.status);
+                }
+            } catch (error) {
+                console.error("팝니다 서버 연결 실패: ", error);
+            }
+        };
+
+        async function buyingData() {
+            try {
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${userId}/buying-posts`);
+                if (response.status === 200) {
+                    console.log("삽니다 정보 가져오기 성공");
+                    setBuyingPostData(response.data);
+                } else {
+                    console.log("삽니다 정보 가져오기 실패", response.status);
+                }
+            } catch (error) {
+                console.error("삽니다 서버 연결 실패: ", error);
+            }
+        };
+
+        fetchData();
+        buyingData();
+        sellingData();
+    })
+
     let studentId = user.studentId;
     let grade = studentId[0];
     let classroom = studentId[1];
@@ -25,8 +77,8 @@ function BuyingPostIdProducerInfo({ user }) {
                 <div className={styles['myInformation']}>
                     <p>{formattedStudentId}</p>
                     <div style={{display: 'flex', columnGap: '15px'}}>
-                        <div style={{display: 'flex', columnGap: '5px'}}> <p>팝니다</p> <p>6</p> </div> 
-                        <div style={{display: 'flex', columnGap: '5px'}}> <p>삽니다</p> <p>2</p> </div>
+                        <div style={{display: 'flex', columnGap: '5px'}}> <p>팝니다</p> <p>{sellingPostData.length}</p> </div> 
+                        <div style={{display: 'flex', columnGap: '5px'}}> <p>삽니다</p> <p>{buyingPostData.length}</p> </div>
                     </div>
                 </div>
             </div>

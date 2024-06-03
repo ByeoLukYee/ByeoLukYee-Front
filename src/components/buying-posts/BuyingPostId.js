@@ -18,24 +18,38 @@ import { FaCircle } from "react-icons/fa6";
 
 function BuyingPostsId() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    // 팝니다 글 쓴 정보를 보여주는 화면
-    // /buying-posts/{id} GET
-    // Image GET해서 exampleImg대신 src에 넣기
     const [data, setData] = useState([]);
+    const [wishes, setWishes] = useState([]);
+    const [liked, setLiked] = useState(false);
     const { id } = useParams();
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await axios.get(`${process.env.REACT_APP_HOST}/selling-posts/${id}`);
-                if (response.status === 200) {
-                    setData(response.data);
+    const userId = localStorage.getItem('id');
+    const price = data.price && data.price.toLocaleString();
+
+    async function fetchData() {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_HOST}/selling-posts/${id}`);
+            if (response.status === 200) {
+                setData(response.data);
+                const wishesResponse = await axios.get(`${process.env.REACT_APP_HOST}/wishes`);
+                if (wishesResponse.status === 200) {
+                    console.log("찜하기 데이터 가져오기 성공");
+                    setWishes(wishesResponse.data);
+                    const wish = wishesResponse.data.find(wish => wish.postId === parseInt(id) && wish.userId === parseInt(userId) && wish.liked);
+                    if (wish) {
+                        setLiked(true);
+                    }
+                } else {
+                    console.log("찜하기 데이터 가져오기 실패", wishesResponse.status);
                 }
-            } catch (error) {
-                console.error("데이터 가져오기 실패: ", error);
             }
+        } catch (error) {
+            console.error("데이터 가져오기 실패: ", error);
         }
+    }
+
+    useEffect(() => {
         fetchData();
-    }, [id]);
+    }, [id, userId]);
 
 
     const nextImage = () => {
@@ -53,8 +67,26 @@ function BuyingPostsId() {
         }
     };
 
-    const price = data.price && data.price.toLocaleString();
-    const userId = localStorage.getItem('id');
+    const handleClickedWish = () => {
+        async function wishData() {
+            try {
+                const reqeust = await axios.post(`${process.env.REACT_APP_HOST}/wishes`, {
+                    userId: userId,
+                    postId: id
+                });
+                if (reqeust.status === 201) {
+                    console.log("찜하기 서버 요청 성공");
+                    fetchData();
+                    setLiked(!liked);
+                } else {
+                    console.log("찜하기 서버 요청 실패", reqeust.status);
+                }
+            } catch(error) {
+                console.error("서버 연결 실패", error);
+            }
+        }
+        wishData();
+    }
 
     return (
         <>
@@ -97,7 +129,12 @@ function BuyingPostsId() {
                                 {data.user && data.user.id !== userId && (
                                     <>
                                         <button className={styles['chattingButton']}>채팅하기</button>
-                                        <button className={styles['heartButton']}>찜하기</button>
+                                        <button 
+                                            className={liked ? styles['selectButton'] : styles['heartButton']}
+                                            onClick={handleClickedWish}
+                                        >
+                                            찜하기
+                                        </button>
                                     </>
                                 )}
                                 
