@@ -37,10 +37,6 @@ function BuyPostItem({ title, description, price, status, id }) {
                                 <VscEye className={buyStyle['eyesVector']}/>
                                 <p>0</p>
                             </div>
-                            <div className={buyStyle['heartVectorDiv']}>
-                                <GoHeart className={buyStyle['heartVector']}/>
-                                <p>0</p>
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -103,17 +103,13 @@
     display: flex;
     column-gap: 7px;
 }
-.iconDiv > .eyesVectorDiv,
-.iconDiv > .heartVectorDiv {
+.iconDiv > .eyesVectorDiv {
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--gray-300);
-    column-gap: 1px;
+    column-gap: 5px;
 
     font-family: var(--SUIT-font);
     font-weight: var(--Regular);
-}
-.heartVector {
-    font-size: 0.9rem;
 }

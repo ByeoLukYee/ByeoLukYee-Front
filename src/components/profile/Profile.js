@@ -19,7 +19,8 @@ function Profile() {
     const [sellingPostData, setSellingPostData] = useState([]);
     const [buyingPostData, setBuyingPostData] = useState([]);
     const [commentData, setCommentData] = useState([]);
-    const userId = Number(localStorage.getItem("id"));
+
+    const userId = localStorage.getItem("id");
     useEffect(() => {
         async function sellingData() {
             try {
