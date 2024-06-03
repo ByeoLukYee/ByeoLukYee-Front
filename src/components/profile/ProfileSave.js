@@ -1,10 +1,32 @@
+import React, { useEffect, useState } from 'react';
+
 import '../../styles/common/Styles.css';
 import styles from '../../styles/profile/ProfileSave.module.css'
 
 import SellingPostItemList from '../../components/selling-Item/SellingPostItemList';
 import BuyPostItemList from '../../components/buying-Item/BuyPostItemList';
+import axios from 'axios';
 
 function ProfileSave() {
+    const [data, setData] = useState([]);
+    const id = localStorage.getItem("id");
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${id}/wishes`);
+                if (response.status === 200) {
+                    console.log("내가 찜한 팝니다 데이터 불러오기 성공");
+                    setData(response.data);
+                } else {
+                    console.log("내가 찜한 팝니다 데이터 불러오기 실패", response.status);
+                }
+            } catch(error) {
+                console.error("서버 연결 실패", error);
+            }
+        }
+        fetchData();
+    }, []);
+
     return (
         <>
             <div className={styles['container']}>
@@ -16,13 +38,13 @@ function ProfileSave() {
                     </div>
                 </div>
 
-                <div className={styles['buyContainer']}>
+                {/* <div className={styles['buyContainer']}>
                     <p>내가 찜한 삽니다 글</p>
 
                     <div className={styles['itemList']}>
                         <BuyPostItemList />
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     )

@@ -8,7 +8,6 @@ function SellingPostIdInfo({ data }) {
                 <div className={styles['textContainer']}>
                     <p>#{data.krStatus}</p>
                     <div className={styles['GoodSee']}>
-                        <p>좋아요 4</p>
                         <p>조회 20</p>
                     </div>                    
                     <div className={styles['place']}>
