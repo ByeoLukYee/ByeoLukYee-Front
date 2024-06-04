@@ -90,6 +90,8 @@ function BuyingPostsId() {
         wishData();
     }
 
+    console.log(data.description);
+
     return (
         <>
             <div className={styles["container"]}>
@@ -150,7 +152,7 @@ function BuyingPostsId() {
                     <div className={styles['contextContainer']}>
                         <p>상품 정보</p>
                         <div className={styles['informationDiv']}>
-                            <p>{data.description}</p>
+                            <pre>{data.description}</pre>
                         </div>
                     </div>
                     <div className={styles['hrDiv']}> <hr /> </div>
