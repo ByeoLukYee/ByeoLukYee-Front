@@ -191,7 +191,7 @@
 .informationDiv::-webkit-scrollbar {
     display: none;
 }
-.informationDiv > p {
+.informationDiv > pre {
     font-family: var(--SUIT-font);
     font-weight: var(--Regular);
     font-size: 1.1rem;
