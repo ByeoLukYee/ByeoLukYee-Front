@@ -21,16 +21,16 @@ function SellingPostItem({ status, price, title, id, images }) {
 
   return (
     <>
-      <Link to={`/buying-posts/${id}`} style={{textDecoration: "none", color: "black"}}>
+      <Link to={`/buying-posts/${id}`} style={{ textDecoration: "none", color: "black" }}>
         <div className={sellStyle["boxContainer"]} style={containerStyle}>
 
           <div className={sellStyle["lookImgStyle"]}>
             <div className={sellStyle['imgDiv']}>
               {
                 images.length > 0 ?
-                <img src={`${process.env.REACT_APP_IMAGEURL}/${images[0].uploadedFilename}`} alt="image" style={imgStyle}/>
-                :
-                <img src="/images/exampleImg.png" />
+                  <img src={`${process.env.REACT_APP_IMAGEURL}/${images[0].uploadedFilename}`} alt="image" style={imgStyle} />
+                  :
+                  <img src="/images/exampleImg.png" />
               }
             </div>
           </div>
@@ -46,7 +46,7 @@ function SellingPostItem({ status, price, title, id, images }) {
               {/* 몇명 봤는지, 누가 찜했는지 */}
               <div className={sellStyle["eyesVectorDiv"]}>
                 <VscEye className={sellStyle["eyesVector"]} />
-                <p>0</p> 
+                <p>0</p>
               </div>
               <div className={sellStyle["heartVectorDiv"]}>
                 <GoHeart className={sellStyle["heartVector"]} />
