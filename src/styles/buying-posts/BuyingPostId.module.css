@@ -107,13 +107,10 @@
     display: flex;
     column-gap: 20px;
 }
-.buttonDiv > button {
-    height: 8.5vh;
-    border-radius: 10px;
-}
-
 .chattingButton {
     width: 22vw;
+    height: 8.5vh;
+    border-radius: 10px;
     border: 0;
     background-color: var(--bg);
     cursor: pointer;
@@ -125,6 +122,8 @@
 
 .heartButton {
     width: 10vw;
+    height: 8.5vh;
+    border-radius: 10px;
     cursor: pointer;
     border: 1px solid var(--bg);
     background-color: white;
@@ -137,6 +136,8 @@
 
 .selectButton {
     width: 10vw;
+    height: 8.5vh;
+    border-radius: 10px;
     cursor: pointer;
     border: 0;
     background-color: #FFF5D0;
@@ -149,6 +150,9 @@
 
 .updateButton {
     width: 32vw;
+    height: 8.5vh;
+    border-radius: 10px;
+    border: 0;
     background-color: var(--bg);
     cursor: pointer;
 
