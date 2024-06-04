@@ -105,7 +105,7 @@ function BuyingPostsId() {
                                     <img key={index} src={`${process.env.REACT_APP_IMAGEURL}/${image.uploadedFilename}`} alt="image" style={{ display: index === currentIndex ? 'block' : 'none' }} />
                                 ))
                             ) : (
-                                <img src='/images/exampleImg.png' alt="example image" />
+                                <img src='/images/notImage.png' alt="example image" />
                             )}
                             {data && data.images && data.images.length >= 2 &&
                                 <FaChevronRight className={`${styles['rightIcon']} ${styles['icon']}`} onClick={nextImage} />
