@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
 
-import '../../styles/common/Styles.css';
 import styles from '../../styles/buying-posts/BuyingPostId.module.css';
+import '../../styles/common/Styles.css';
 
-import Header from '../common/Header';
 import Footer from '../common/Footer';
-import BuyingPostIdProducerInfo from './BuyingPostIdProducerInfo';
+import Header from '../common/Header';
 import BuyingPostIdInfo from './BuyingPostIdInfo';
+import BuyingPostIdProducerInfo from './BuyingPostIdProducerInfo';
 
-import { FaChevronRight } from "react-icons/fa6";
-import { FaChevronLeft } from "react-icons/fa6";
 import { FaRegCircle } from "react-icons/fa";
-import { FaCircle } from "react-icons/fa6";
+import { FaChevronLeft, FaChevronRight, FaCircle } from "react-icons/fa6";
 
 function BuyingPostsId() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -81,7 +79,7 @@ function BuyingPostsId() {
                 } else {
                     console.log("찜하기 서버 요청 실패", reqeust.status);
                 }
-            } catch(error) {
+            } catch (error) {
                 console.error("서버 연결 실패", error);
             }
         }
@@ -96,23 +94,23 @@ function BuyingPostsId() {
                     <div className={styles['topDiv']}>
                         <div className={styles['imgDiv']}>
                             {data && data.images && data.images.length >= 2 &&
-                                <FaChevronLeft className={`${styles['leftIcon']} ${styles['icon']}`} onClick={preImage}/>
+                                <FaChevronLeft className={`${styles['leftIcon']} ${styles['icon']}`} onClick={preImage} />
                             }
                             {data && data.images && data.images.length > 0 ? (
                                 data.images.map((image, index) => (
-                                    <img key={index} src={`${process.env.IMAGEURL}/${image.uploadedFilename}`} alt="image" style={{ display: index === currentIndex ? 'block' : 'none' }}/>
+                                    <img key={index} src={`${process.env.REACT_APP_IMAGEURL}/${image.uploadedFilename}`} alt="image" style={{ display: index === currentIndex ? 'block' : 'none' }} />
                                 ))
                             ) : (
                                 <img src='/images/exampleImg.png' alt="example image" />
                             )}
                             {data && data.images && data.images.length >= 2 &&
-                                <FaChevronRight className={`${styles['rightIcon']} ${styles['icon']}`} onClick={nextImage}/>
+                                <FaChevronRight className={`${styles['rightIcon']} ${styles['icon']}`} onClick={nextImage} />
                             }
                             <div className={styles['circles']}>
                                 {data && data.images && data.images.length >= 2 && data.images.map((_, index) => (
-                                    index === currentIndex ? 
-                                    <FaCircle key={index} className={styles['fillCircle']} /> : 
-                                    <FaRegCircle key={index} className={styles['circle']} />
+                                    index === currentIndex ?
+                                        <FaCircle key={index} className={styles['fillCircle']} /> :
+                                        <FaRegCircle key={index} className={styles['circle']} />
                                 ))}
                             </div>
                         </div>
@@ -123,13 +121,13 @@ function BuyingPostsId() {
                                     <div className={styles['moneyDiv']}> <p>{price}</p> <p>원</p> </div>
                                 </div>
                                 <hr />
-                                <BuyingPostIdInfo data={data}/>
+                                <BuyingPostIdInfo data={data} />
                             </div>
                             <div className={styles['buttonDiv']}>
                                 {data.user && data.user.id !== userId && (
                                     <>
                                         <button className={styles['chattingButton']}>채팅하기</button>
-                                        <button 
+                                        <button
                                             className={liked ? styles['selectButton'] : styles['heartButton']}
                                             onClick={handleClickedWish}
                                         >
@@ -137,7 +135,7 @@ function BuyingPostsId() {
                                         </button>
                                     </>
                                 )}
-                                
+
                                 {data.user && data.user.id === userId && (
                                     <Link to={`/buying-posts/${id}/edit`}> <button className={styles['updateButton']}>수정하기</button> </Link>
                                 )}
@@ -146,14 +144,14 @@ function BuyingPostsId() {
                     </div>
                     <div className={styles['hrDiv']}> <hr /> </div>
                     <div className={styles['contextContainer']}>
-                        <p>상품 정보</p> 
+                        <p>상품 정보</p>
                         <div className={styles['informationDiv']}>
                             <p>{data.description}</p>
                         </div>
                     </div>
                     <div className={styles['hrDiv']}> <hr /> </div>
                     <div className={styles['contextContainer']}>
-                        <p>판매자 정보</p> 
+                        <p>판매자 정보</p>
                         <div className={styles['userContainer']}>
                             <div className={styles['userDiv']}>
                                 {data.user && (
