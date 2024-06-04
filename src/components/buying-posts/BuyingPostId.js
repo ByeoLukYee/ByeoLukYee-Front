@@ -38,6 +38,7 @@ function BuyingPostsId() {
                 if (wishesResponse.status === 200) {
                     console.log("찜하기 데이터 가져오기 성공");
                     setWishes(wishesResponse.data);
+                    setLiked(wishes.isLiked);
                 } else {
                     console.log("찜하기 데이터 가져오기 실패", wishesResponse.status);
                 }
@@ -79,7 +80,7 @@ function BuyingPostsId() {
                 if (reqeust.status === 201) {
                     console.log("찜하기 서버 요청 성공");
                     fetchData();
-                    setLiked(!liked);
+                    setLiked(wishes.isLiked);
                 } else {
                     console.log("찜하기 서버 요청 실패", reqeust.status);
                 }
@@ -89,8 +90,6 @@ function BuyingPostsId() {
         }
         wishData();
     }
-
-    console.log(data.description);
 
     return (
         <>
