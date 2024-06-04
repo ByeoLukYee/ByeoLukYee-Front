@@ -17,7 +17,6 @@ function BuyingInput() {
     const [price, setPrice] = useState('');
     const [location, setLocation] = useState('');
     const [uploadedImages, setUploadedImages] = useState([]);
-    const [id, setId] = useState('');
 
     const titleValue = (e) => {
         setTitle(e.target.value);
@@ -32,7 +31,9 @@ function BuyingInput() {
         setLocation(e.target.value);
     }
     const descValue = (e) => {
-        setDesc(e.target.value);
+        let text = e.target.value;
+        let content = text.replace("\r\n","<br>");
+        setDesc(content);
     }
 
     const userId = Number(localStorage.getItem('id'));
@@ -57,7 +58,6 @@ function BuyingInput() {
             if (request.status === 201) {
                 console.log("업로드 성공");
                 const postId = request.data.id;
-                setId(postId);
 
                 if (uploadedImages.length > 0) { 
                     const formData = new FormData();
