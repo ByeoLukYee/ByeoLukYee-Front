@@ -30,7 +30,7 @@ function SellingPostItem({ status, price, title, id, images }) {
                 images.length > 0 ?
                   <img src={`${process.env.REACT_APP_IMAGEURL}/${images[0].uploadedFilename}`} alt="image" style={imgStyle} />
                   :
-                  <img src="/images/exampleImg.png" />
+                  <img src="/images/notImage.png" />
               }
             </div>
           </div>
