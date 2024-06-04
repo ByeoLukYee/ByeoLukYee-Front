@@ -27,18 +27,22 @@ function BuyingPostsId() {
         try {
             const response = await axios.get(`${process.env.REACT_APP_HOST}/selling-posts/${id}`);
             if (response.status === 200) {
+                console.log("팝니다 단일 조회 성공");
                 setData(response.data);
-                const wishesResponse = await axios.get(`${process.env.REACT_APP_HOST}/wishes`);
+                const wishesResponse = await axios.get(`${process.env.REACT_APP_HOST}/wishes/checking`, {
+                    params: {
+                        user: userId,
+                        post: id
+                    }
+                });
                 if (wishesResponse.status === 200) {
                     console.log("찜하기 데이터 가져오기 성공");
                     setWishes(wishesResponse.data);
-                    const wish = wishesResponse.data.find(wish => wish.postId === parseInt(id) && wish.userId === parseInt(userId) && wish.liked);
-                    if (wish) {
-                        setLiked(true);
-                    }
                 } else {
                     console.log("찜하기 데이터 가져오기 실패", wishesResponse.status);
                 }
+            } else {
+                console.log("팝니다 단일 조회 실패", response.status);
             }
         } catch (error) {
             console.error("데이터 가져오기 실패: ", error);
