@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -30,8 +31,8 @@ function SellingInput() {
     const descValue = (e) => {
         setDesc(e.target.value);
     }
-
-    const userId = Number(localStorage.getItem('id'));
+    
+    const userId = useSelector(state => state.userId);
     const addSellWrite = async (e) => {
         e.preventDefault();
         try {

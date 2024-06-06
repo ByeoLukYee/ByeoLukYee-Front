@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { logout } from '../../redux/actions';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -17,6 +19,8 @@ import { BsPersonX } from "react-icons/bs";
 
 function ProfileList({ showSelectComponent, userId }) {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const userIdRemove = async (e) => {
         e.preventDefault();
         try {
@@ -24,7 +28,7 @@ function ProfileList({ showSelectComponent, userId }) {
             if (response.status === 204) {
                 console.log("탈퇴 성공");
                 navigate('/signin');
-                localStorage.removeItem('id');
+                dispatch(logout());
             } else {
                 console.log("탈퇴 실패", response.status);
             }
@@ -35,7 +39,7 @@ function ProfileList({ showSelectComponent, userId }) {
 
     const Logout = () => {
         console.log("로그아웃 성공");
-        localStorage.removeItem('id');
+        dispatch(logout());
         navigate('/signin');
     }
 

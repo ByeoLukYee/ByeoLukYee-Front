@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { loginSuccess } from '../../redux/actions';
 
 import '../../styles/common/Styles.css';
 import loginStyles from '../../styles/login/Login.module.css';
@@ -14,6 +16,9 @@ function Login() {
     const [errorMessage, setErrorMessage] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const dispatch = useDispatch();
+    const userId = useSelector(state => state.userId);
 
     // 회원가입 화면으로 넘어가기
     const TextClick = (path) => {
@@ -45,7 +50,7 @@ function Login() {
             if (response.status === 201) {
                 console.log('로그인 성공');
                 setFail(false);
-                localStorage.setItem('id', response.data.id);
+                dispatch(loginSuccess(response.data.id));
                 navigate('/');
             } else {
                 console.error('로그인 실패');
@@ -64,7 +69,6 @@ function Login() {
     };
 
     useEffect(() => {
-        const userId = Number(localStorage.getItem('id'));
         if (userId) {
             navigate('/');
         }

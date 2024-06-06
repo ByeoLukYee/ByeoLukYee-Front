@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/main/Main.module.css';
@@ -17,8 +18,8 @@ function Main() {
         setSelectedTab('/');
     };
 
+    const userId = useSelector(state => state.userId);
     useEffect(() => {
-        const userId = Number(localStorage.getItem('id'));
         if (!userId) {
             navigate('/signin');
         }

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 import styles from '../../styles/buying-posts/BuyingPostId.module.css';
 import '../../styles/common/Styles.css';
@@ -20,7 +21,8 @@ function BuyingPostsId() {
     const [wishes, setWishes] = useState([]);
     const [liked, setLiked] = useState(false);
     const { id } = useParams();
-    const userId = Number(localStorage.getItem('id'));
+    
+    const userId = useSelector(state => state.userId);
     const price = data.price && data.price.toLocaleString();
 
     async function fetchData() {

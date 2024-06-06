@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { useEffect } from 'react';
-
 import { useLocation, useNavigate  } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loginSuccess } from '../../redux/actions';
 
 const OAuth2RedirectHandler = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchOAuthToken = async () => {
@@ -19,7 +21,7 @@ const OAuth2RedirectHandler = () => {
                     console.log(userInfo); // 유저 정보 출력
 
                     if (userInfo && userInfo.id) {
-                        localStorage.setItem('id', userInfo.id);
+                        dispatch(loginSuccess(userInfo.id));
                         navigate('/');
                     }
                 } catch (error) {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { Icon } from "@iconify/react";
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/common/PageNumber.module.css';
@@ -28,6 +28,10 @@ function PageNumber({ totalPosts, postsPerPage, currentPage, onPageChange }) {
                                 <p>{number}</p>
                             </div>
                         ))}
+                        {
+                            pageNumbers.length > 5 &&
+                            <Icon icon='iconamoon:arrow-right-2-light' style={{ color: '#E0E0E0', fontSize: '20px', cursor: 'pointer'}} />
+                        }
                     </div>
                 </div>
             }
