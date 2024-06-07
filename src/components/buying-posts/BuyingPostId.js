@@ -22,8 +22,8 @@ function BuyingPostsId() {
     const [liked, setLiked] = useState(false);
     const { id } = useParams();
     
-    const userId = useSelector(state => state.userId);
     const price = data.price && data.price.toLocaleString();
+    const userId = useSelector(state => state.userId);
 
     async function fetchData() {
         try {
@@ -40,7 +40,7 @@ function BuyingPostsId() {
                 if (wishesResponse.status === 200) {
                     console.log("찜하기 데이터 가져오기 성공");
                     setWishes(wishesResponse.data);
-                    setLiked(wishes.isLiked);
+                    setLiked(wishesResponse.data.isLiked);
                 } else {
                     console.log("찜하기 데이터 가져오기 실패", wishesResponse.status);
                 }
