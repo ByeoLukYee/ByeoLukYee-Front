@@ -1,21 +1,23 @@
-import { LOGIN_SUCCESS, LOGOUT } from './actionTypes';
+import { LOGIN_SUCCESS, LOGOUT, SESSION_STORAGE_KEY } from './actionTypes';
 
 const initialState = {
-  userId: null,
+  userId: sessionStorage.getItem(SESSION_STORAGE_KEY) || null,
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case LOGIN_SUCCESS:
-        return {
-            ...state,
-            userId: action.payload,
-        };
+            sessionStorage.setItem(SESSION_STORAGE_KEY, action.payload);
+            return {
+                ...state,
+                userId: action.payload,
+            };
         case LOGOUT:
-        return {
-            ...state,
-            userId: null,
-        };
+            sessionStorage.removeItem(SESSION_STORAGE_KEY);
+            return {
+                ...state,
+                userId: null,
+            };
         default:
             return state;
     }
