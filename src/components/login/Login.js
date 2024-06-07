@@ -20,6 +20,12 @@ function Login() {
     const dispatch = useDispatch();
     const userId = useSelector(state => state.userId);
 
+    useEffect(() => {
+        if (userId) {
+          navigate('/');
+        }
+      }, [userId, navigate]);
+
     // 회원가입 화면으로 넘어가기
     const TextClick = (path) => {
         navigate(path);
@@ -67,12 +73,6 @@ function Login() {
             }
         }
     };
-
-    useEffect(() => {
-        if (userId) {
-            navigate('/');
-        }
-    }, [navigate]);
 
     return (
         <div className={loginStyles['container']}>
