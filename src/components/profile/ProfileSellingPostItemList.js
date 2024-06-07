@@ -4,11 +4,12 @@ import styles from '../../styles/selling-Item/SellGrid.module.css';
 import SellingPostItem from '../selling-Item/SellingPostItem';
 
 
-function SellingPostItemList({ sellingPostData }) {
+function ProfileSellingPostItemList({ sellingPostData }) {
+    console.log(sellingPostData);
     // 전달받은 sellingPostData 화면에 보여주기
     return (
         <div className={styles['three-grid-container']}>
-            {Array.isArray(sellingPostData) && sellingPostData.length > 0 ? (
+            {sellingPostData.length > 0 ? (
                 sellingPostData.map(item  => (
                     <div key={item.id} className={styles['grid-item']}> 
                         <SellingPostItem
@@ -16,7 +17,7 @@ function SellingPostItemList({ sellingPostData }) {
                             price={item.price}
                             title={item.title}
                             id={item.id}
-                            images={item.images}
+                            images={item.images[0]}
                         />
                     </div>
                 ))
@@ -27,4 +28,4 @@ function SellingPostItemList({ sellingPostData }) {
     )
 }
 
-export default SellingPostItemList;
+export default ProfileSellingPostItemList;

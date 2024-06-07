@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import '../../styles/common/Styles.css';
 import styles from '../../styles/profile/ProfileSave.module.css'
 
-import SellingPostItemList from '../../components/selling-Item/SellingPostItemList';
+import ProfileSellingPostItemList from './ProfileSellingPostItemList';
 import BuyPostItemList from '../../components/buying-Item/BuyPostItemList';
 import axios from 'axios';
 
@@ -35,7 +35,7 @@ function ProfileSave() {
                     <p>내가 찜한 팝니다 글</p>
 
                     <div className={styles['itemList']}>
-                        <SellingPostItemList />
+                        <ProfileSellingPostItemList sellingPostData={data} />
                     </div>
                 </div>
 
