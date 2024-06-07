@@ -13,7 +13,7 @@ function Header({ onTitleClick }) {
     const userId = useSelector(state => state.userId);
     const handleMenuClick = (path) => {
         if (!userId) {
-            navigate("/");
+            navigate("/signin");
         } else {
             navigate(path);
         }
