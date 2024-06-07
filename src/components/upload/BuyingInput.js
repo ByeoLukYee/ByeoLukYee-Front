@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -36,7 +37,7 @@ function BuyingInput() {
         setDesc(content);
     }
 
-    const userId = Number(localStorage.getItem('id'));
+    const userId = useSelector(state => state.userId);
     const addBuyWrite = async (e) => {
         e.preventDefault();
         

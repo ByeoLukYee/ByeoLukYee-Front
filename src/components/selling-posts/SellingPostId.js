@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -84,7 +85,7 @@ function SellingPostId() {
 
     const price = data.price && data.price.toLocaleString();
     const successful = commentData.some(comment => comment.krStatus === '낙찰');
-    const userId = Number(localStorage.getItem('id'));
+    const userId = useSelector(state => state.userId);
 
     return (
         <div className={styles['container']}>

@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/common/Header.module.css';
@@ -9,10 +10,10 @@ import SearchInput from './SearchInput';
 function Header({ onTitleClick }) {
     const navigate = useNavigate();
 
+    const userId = useSelector(state => state.userId);
     const handleMenuClick = (path) => {
-        const userId = localStorage.getItem("id");
         if (!userId) {
-            navigate("/");
+            navigate("/signin");
         } else {
             navigate(path);
         }

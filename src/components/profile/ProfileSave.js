@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/profile/ProfileSave.module.css'
 
-import SellingPostItemList from '../../components/selling-Item/SellingPostItemList';
+import ProfileSellingPostItemList from './ProfileSellingPostItemList';
 import BuyPostItemList from '../../components/buying-Item/BuyPostItemList';
 import axios from 'axios';
 
 function ProfileSave() {
     const [data, setData] = useState([]);
-    const id = localStorage.getItem("id");
+    const userId = useSelector(state => state.userId);
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${id}/wishes`);
+                const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${userId}/wishes`);
                 if (response.status === 200) {
                     console.log("내가 찜한 팝니다 데이터 불러오기 성공");
                     setData(response.data);
@@ -34,7 +35,7 @@ function ProfileSave() {
                     <p>내가 찜한 팝니다 글</p>
 
                     <div className={styles['itemList']}>
-                        <SellingPostItemList />
+                        <ProfileSellingPostItemList sellingPostData={data} />
                     </div>
                 </div>
 

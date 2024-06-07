@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -19,8 +20,8 @@ function Profile() {
     const [sellingPostData, setSellingPostData] = useState([]);
     const [buyingPostData, setBuyingPostData] = useState([]);
     const [commentData, setCommentData] = useState([]);
-
-    const userId = Number(localStorage.getItem('id'));
+    
+    const userId = useSelector(state => state.userId);
     useEffect(() => {
         async function sellingData() {
             try {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 import '../../styles/common/Styles.css';
@@ -30,8 +31,7 @@ function CommentInput({ addComments, setShowBuyingInput }) {
         setDesc(e.target.value);
     }
 
-
-    const userId = Number(localStorage.getItem('id'));
+    const userId = useSelector(state => state.userId);
     const { id } = useParams();
     const addCommentWrite = async (e) => {
         e.preventDefault();
