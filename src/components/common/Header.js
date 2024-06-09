@@ -33,7 +33,7 @@ function Header({ onTitleClick }) {
                     <p onClick={() => handleMenuClick('/profile')} className={styles['link']}>마이페이지</p>
                 </div>
             </nav>
-            <div style={{textAlign: 'center'}}> <hr /> </div>
+            <div className={styles['hr']}> <hr /> </div>
         </>
     )
 }
