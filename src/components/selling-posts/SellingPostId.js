@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
@@ -14,6 +15,7 @@ import CommentList from '../comment/CommentList';
 import CommentInput from './CommentInput';
 
 function SellingPostId() {
+    const navigate = useNavigate();
     const [showBuyingInput, setShowBuyingInput] = useState(false);
     const [selectedCommentIndex, setSelectedCommentIndex] = useState(null);
     const handleBuyButtonClick = () => {
@@ -48,38 +50,37 @@ function SellingPostId() {
     const addComments = () => {
         fetchData();
     }
-
+    
     const complete = async () => {
+        if (selectedCommentIndex === null) return;
         try {
             // 삽니다 게시물 경매완료
-            const selectedComment = data[selectedCommentIndex];
             const response = await axios.put(`${process.env.REACT_APP_HOST}/buying-posts/${id}`, {
-                title: selectedComment.title,
-                description: selectedComment.description,
-                price: selectedComment.price,
-                location: selectedComment.location,
-                status: "COMPLATE"
+                ...data,
+                krStatus: "경매완료",
+                status: 'COMPLETE'
             });
             if (response.status === 200) {
                 console.log("댓글 선택 성공");
                 // 댓글 낙찰
                 const selectedComment = commentData[selectedCommentIndex];
-                const commentResponse = await axios.put(`${process.env.REACT_APP_HOST}/selling-comments/${commentData.id}`, {
-                    title: selectedComment.title,
-                    description: selectedComment.description,
-                    price: selectedComment.price,
-                    location: selectedComment.location,
-                    status: "WON"
+                const commentResponse = await axios.put(`${process.env.REACT_APP_HOST}/selling-comments/${selectedComment.id}`, {
+                    ...selectedComment,
+                    krStatus: "낙찰",
+                    status: 'WON'
                 });
 
                 if(commentResponse.status === 200) {
                     console.log("댓글 낙찰 성공");
+                    navigate('/buying-posts');
                 } else {
                     console.log("댓글 낙찰 실패", commentResponse.status);
                 }
+            } else {
+                console.log("댓글 선택 실패", response.status)
             }
         } catch (error) {
-            console.error("댓글 선택 실패: ", error);
+            console.error("서버 연결 실패: ", error);
         }
     };
 
@@ -95,9 +96,9 @@ function SellingPostId() {
                 <div className={styles['topContainer']}>
                     <div className={styles['container1']}>
                         <div className={styles['contextDiv']}>
-                            <p>{data.title}</p>
+                            <p>{data ? data.title : '제목없음'}</p>
                             <hr />
-                            <p>{data.description}</p>
+                            <pre>{data ? data.description : '내용없음'}</pre>
                         </div>
                         <div className={styles['priceDiv']}>
                             <p>희망 거래 가격</p>
@@ -118,14 +119,9 @@ function SellingPostId() {
                                 </>
                             )}
                             
-                            {data.user && data.user.id === Number(userId) && (successful || selectedCommentIndex !== null) && (
-                                <div className={styles['selectButton']}> 
-                                    <button onClick={complete}>선택하기</button> 
-                                </div>
-                            )}
-                            {data.user && data.user.id === Number(userId) && (!successful && selectedCommentIndex === null) && (
-                                <div className={styles['disabledButton']}>
-                                    <button disabled>선택하기</button> 
+                            {data.user && data.user.id === Number(userId) && (
+                                <div className={successful || selectedCommentIndex === null ? styles['disabledButton'] : styles['selectButton']}>
+                                    <button onClick={complete} disabled={successful || selectedCommentIndex === null}>선택하기</button>
                                 </div>
                             )}
                         </div>
@@ -136,7 +132,12 @@ function SellingPostId() {
                     <p>경매댓글</p>
                     <div className={styles['commentContainer']}>
                         {showBuyingInput && <CommentInput addComments={addComments} setShowBuyingInput={setShowBuyingInput} />}
-                        <CommentList data={commentData} setSelectedCommentIndex={setSelectedCommentIndex} selectedCommentIndex={selectedCommentIndex} />
+                        <CommentList 
+                            data={commentData} 
+                            setSelectedCommentIndex={setSelectedCommentIndex} 
+                            selectedCommentIndex={selectedCommentIndex} 
+                            disableSelection={successful}
+                        />
                     </div>
                 </div>
             </div>
