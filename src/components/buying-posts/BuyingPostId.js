@@ -56,7 +56,7 @@ function BuyingPostsId() {
         fetchData();
     }, [id, userId]);
 
-
+    // 이미지 여러개일 경우 >, < 누르면 다음 이미지, 이전 이미지 표시
     const nextImage = () => {
         if (currentIndex < data.images.length - 1) {
             setCurrentIndex(currentIndex + 1);
@@ -72,25 +72,22 @@ function BuyingPostsId() {
         }
     };
 
-    const handleClickedWish = () => {
-        async function wishData() {
-            try {
-                const reqeust = await axios.post(`${process.env.REACT_APP_HOST}/wishes`, {
-                    userId: userId,
-                    postId: id
-                });
-                if (reqeust.status === 201) {
-                    console.log("찜하기 서버 요청 성공");
-                    fetchData();
-                    setLiked(wishes.isLiked);
-                } else {
-                    console.log("찜하기 서버 요청 실패", reqeust.status);
-                }
-            } catch (error) {
-                console.error("서버 연결 실패", error);
+    const handleClickedWish = async () => {
+        try {
+            const reqeust = await axios.post(`${process.env.REACT_APP_HOST}/wishes`, {
+                userId: userId,
+                postId: id
+            });
+            if (reqeust.status === 201) {
+                console.log("찜하기 서버 요청 성공");
+                fetchData();
+                setLiked(wishes.isLiked);
+            } else {
+                console.log("찜하기 서버 요청 실패", reqeust.status);
             }
+        } catch (error) {
+            console.error("서버 연결 실패", error);
         }
-        wishData();
     }
 
     return (
