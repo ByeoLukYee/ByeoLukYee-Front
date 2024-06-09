@@ -131,7 +131,7 @@ function BuyingPostsId() {
                                 <BuyingPostIdInfo data={data} />
                             </div>
                             <div className={styles['buttonDiv']}>
-                                {data.user && data.user.id !== userId && (
+                                {data.user && data.user.id !== Number(userId) && (
                                     <>
                                         <button className={styles['chattingButton']}>채팅하기</button>
                                         <button
@@ -143,7 +143,7 @@ function BuyingPostsId() {
                                     </>
                                 )}
 
-                                {data.user && data.user.id === userId && (
+                                {data.user && data.user.id === Number(userId) && (
                                     <Link to={`/buying-posts/${id}/edit`}> <button className={styles['updateButton']}>수정하기</button> </Link>
                                 )}
                             </div>

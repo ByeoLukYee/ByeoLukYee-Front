@@ -17,7 +17,7 @@ function ProfileSellingPostItemList({ sellingPostData }) {
                             price={item.price}
                             title={item.title}
                             id={item.id}
-                            images={item.images[0]}
+                            images={item.images}
                         />
                     </div>
                 ))

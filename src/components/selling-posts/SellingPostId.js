@@ -112,18 +112,18 @@ function SellingPostId() {
                                 )}
                                 <SellingPostIdInfo data={data} />
                             </div>
-                            {data.user && data.user.id !== userId && (
+                            {data.user && data.user.id !== Number(userId) && (
                                 <>
                                    <div className={styles['particButton']}> <button onClick={handleBuyButtonClick}>참여하기</button> </div>
                                 </>
                             )}
                             
-                            {data.user && data.user.id === userId && (successful || selectedCommentIndex !== null) && (
+                            {data.user && data.user.id === Number(userId) && (successful || selectedCommentIndex !== null) && (
                                 <div className={styles['selectButton']}> 
                                     <button onClick={complete}>선택하기</button> 
                                 </div>
                             )}
-                            {data.user && data.user.id === userId && (!successful && selectedCommentIndex === null) && (
+                            {data.user && data.user.id === Number(userId) && (!successful && selectedCommentIndex === null) && (
                                 <div className={styles['disabledButton']}>
                                     <button disabled>선택하기</button> 
                                 </div>
