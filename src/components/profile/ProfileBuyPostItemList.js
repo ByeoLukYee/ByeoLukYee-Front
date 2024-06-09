@@ -8,15 +8,10 @@ function BuyPostItemList({ buyingPostData }) {
     return (
         <div className={styles['profile-grid-container']}>
             {Array.isArray(buyingPostData) && buyingPostData.length > 0 ? (
-                buyingPostData.map(item  => (
-                    <div key={item.id} className={styles['buy-grid-item']}> 
+                buyingPostData.map((item, index)  => (
+                    <div key={index} className={styles['buy-grid-item']}> 
                         <BuyPostItem
-                            status={item.krStatus}
-                            price={item.price}
-                            title={item.title}
-                            description={item.description}
-                            id={item.id}
-                            images={item.images}
+                            post={item}
                         />
                     </div>
                 ))

@@ -17,7 +17,7 @@ function ProfileInfo({ userId, sellingPostDataLength, buyingPostDataLength, comm
                     setData(response.data);
                 }
             } catch(error) {
-                console.log("유저 데이터 GET 실패 : ", error);
+                console.log("서버 연결 실패 : ", error);
             }
         }
         fetchData();

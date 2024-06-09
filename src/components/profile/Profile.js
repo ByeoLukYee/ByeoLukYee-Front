@@ -71,10 +71,12 @@ function Profile() {
         commentData();
     }, []);
 
+    const filteredSellingPostData = sellingPostData.filter(post => !post.isDeleted);
+
     const showComponent = () => {
         switch (showSelectComponent) {
             case 'writeManagement':
-                return <ProfileWriteManagement sellingPostData={sellingPostData} buyingPostData={buyingPostData} commentData={commentData} />;
+                return <ProfileWriteManagement sellingPostData={filteredSellingPostData} buyingPostData={buyingPostData} commentData={commentData} />;
             default:
                 return <ProfileSave />;
         }
@@ -92,7 +94,7 @@ function Profile() {
                     <div className={styles['profileInfo']}>
                         <ProfileInfo 
                             userId={userId} 
-                            sellingPostDataLength={sellingPostData.length} 
+                            sellingPostDataLength={filteredSellingPostData.length} 
                             buyingPostDataLength={buyingPostData.length} 
                             commentDataLength={commentData.length}
                         />
