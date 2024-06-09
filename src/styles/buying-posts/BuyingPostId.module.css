@@ -17,10 +17,16 @@
     left: 15vw;
     margin-bottom: 10%;
 }
+.topContainer hr {
+    border: 0;
+    height: 1px;
+    background: var(--gray-300);
+}
+
 .topDiv {
     display: flex;
     column-gap: 9%;
-    margin-bottom: 5%;
+    margin-bottom: 53px;
 }
 
 .imgDiv {
@@ -164,6 +170,9 @@
 .hrDiv {
     width: 68%;
     display: flex;
+    border: 0;
+    height: 1px;
+    background: var(--gray-300);
 }
 
 .contextContainer {
@@ -194,7 +203,7 @@
 .informationDiv > pre {
     font-family: var(--SUIT-font);
     font-weight: var(--Regular);
-    font-size: 1.1rem;
+    font-size: 17px;
 }
 
 .userContainer {

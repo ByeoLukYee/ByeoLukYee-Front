@@ -3,6 +3,11 @@
     flex-direction: column;
     row-gap: 10px;
 }
+.container > hr {
+    border: 0;
+    height: 1px;
+    background: var(--gray-100);
+}
 
 .chatting-box{
     height: 25vw;

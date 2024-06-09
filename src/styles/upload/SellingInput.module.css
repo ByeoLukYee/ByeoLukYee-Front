@@ -17,10 +17,10 @@
 .hr {
     width: 60vw;
     height: 1px;
+    background: var(--gray-300);
 }
-.hr hr {
-    border: none;
-    background-color: var(--gray-300);
+.hr > hr {
+    border: 0;
 }
 
 .textDiv:first-child {

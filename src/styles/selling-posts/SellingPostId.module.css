@@ -38,15 +38,20 @@
     row-gap: 15px;
     border-color: var(--gray-300);
 }
+.contextDiv > hr {
+    border: 0;
+    height: 1px;
+    background: var(--gray-300);
+}
 .contextDiv > p:nth-child(1) { /* title */
     font-family: var(--SUIT-font);
     font-weight: var(--SemiBold);
     font-size: 2rem;
 }
-.contextDiv > p:nth-child(3) { /* context */
+.contextDiv > pre { /* context */
     font-family: var(--SUIT-font);
     font-weight: var(--Regular);
-    font-size: 1.2rem;
+    font-size: 17px;
     color: var(--gray-800);
 }
 
