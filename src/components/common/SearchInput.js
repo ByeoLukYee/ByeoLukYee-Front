@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import '../../styles/common/Styles.css';
 import searchInputStyle from '../../styles/common/SearchInput.module.css';
@@ -13,9 +14,9 @@ function SearchInput() {
     };
 
     // 엔터 키 입력 시 검색 실행
+    const userId = useSelector(state => state.userId);
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            const userId = localStorage.getItem("id");
             if (!userId) {
                 navigate("/");
             } else {
