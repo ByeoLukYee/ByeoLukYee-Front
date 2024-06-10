@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
+
 import '../../styles/common/Styles.css';
 import styles from '../../styles/chatting/ProducerItem.module.css';
 
-function ProducerItem({ onClick }) {
+function ProducerItem({ onClick, userData }) {
     const handleClick = () => {
-        onClick();
+        onClick(userData);
     };
 
     return (
         <>
             <div className={styles['container']} onClick={handleClick}>
-                <div className={styles['img']}> <img src='/images/profileImage.png' alt='example'/> </div>
+                <div className={styles['img']}>
+                    {
+                        userData.profileUrl ? (
+                            <img src={userData.profileUrl} alt='profileImage'/>
+                        ) : (
+                            <img src='/images/profileImg.png' alt='profileImage'/>
+                        )
+                    }
+                </div>
                 <div className={styles['textDiv']}>
-                    <p>최보람</p>
+                    <p>{userData.name}</p>
                     <div className={styles['text']}>
                         {/* 마지막 채팅 내용 */}
                         <p>네 그럼 거래 가능합니다.</p>
