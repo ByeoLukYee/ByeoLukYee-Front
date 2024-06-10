@@ -5,7 +5,6 @@ import styles from '../../styles/comment/CommentItem.module.css';
 
 function CommentItem({ data, onClick, isSelected }) {
     const [isClickable, setIsClickable] = useState(true);
-    console.log(isSelected);
 
     const handleClick = () => {
         if (isClickable) {
@@ -18,8 +17,12 @@ function CommentItem({ data, onClick, isSelected }) {
     };
 
     const containerStyle = {
-        backgroundColor: data.krStatus === "낙찰" ? '#FFFBED' : '',
+        backgroundColor: data.krStatus === "낙찰" ? '#FFFBED' : ''
     };
+
+    const hrStyle = {
+        background: data.krStatus === "낙찰" ? '#FFD53A' : ''
+    }
 
     const price = data.price >= 0 && data.price.toLocaleString() + ' 원';
 
@@ -33,7 +36,7 @@ function CommentItem({ data, onClick, isSelected }) {
                         <p>{data.location}</p>
                     </div>
                 </div>
-                <div className={`${styles['hr']} ${isSelected ? styles['clickedHr'] : styles['defalutHr']}`}> <hr /> </div>
+                <div className={`${styles['hr']} ${isSelected ? styles['clickedHr'] : styles['defalutHr']}`} style={hrStyle}> <hr /> </div>
                 <div className={styles['bottom']}>
                     <p>{data.description}</p>
                 </div>

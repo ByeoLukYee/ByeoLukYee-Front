@@ -5,24 +5,19 @@ import SellingPostItem from '../selling-Item/SellingPostItem';
 
 
 function ProfileSellingPostItemList({ sellingPostData }) {
-    console.log(sellingPostData);
     // 전달받은 sellingPostData 화면에 보여주기
     return (
         <div className={styles['three-grid-container']}>
             {sellingPostData.length > 0 ? (
-                sellingPostData.map(item  => (
-                    <div key={item.id} className={styles['grid-item']}> 
+                sellingPostData.map((item, index)  => (
+                    <div key={index} className={styles['grid-item']}> 
                         <SellingPostItem
-                            status={item.krStatus}
-                            price={item.price}
-                            title={item.title}
-                            id={item.id}
-                            images={item.images}
+                            post={item}
                         />
                     </div>
                 ))
             ) : (
-                <p>작성글 없습니다.</p>
+                <p>찜한 글이 없습니다.</p>
             )}
         </div>
     )

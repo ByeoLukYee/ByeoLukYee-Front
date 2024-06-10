@@ -26,12 +26,10 @@ function Chatting() {
                     <div className={styles['bodyContainer']}>
                         <div className={styles['chattingList']}>
                             <p>나의 채팅방</p>
-                            {/* <ProducerList /> */}
                             <ProducerList onItemClick={handleItemClick} />
                         </div>
 
                         <div className={styles['chattingScreen']}>
-                            {/* <ChattingScreen /> */}
                             {isScreenVisible && selectedProducer && ( 
                                 <ChattingScreen selectedProducer={selectedProducer} />
                             )}

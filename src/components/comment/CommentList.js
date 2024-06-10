@@ -3,10 +3,13 @@ import styles from '../../styles/comment/CommentList.module.css';
 
 import CommentItem from './CommentItem';
 
-function CommentList({ data, setSelectedCommentIndex, selectedCommentIndex }) {
+function CommentList({ data, setSelectedCommentIndex, selectedCommentIndex, disableSelection }) {
     const handleClick = (index) => {
-        setSelectedCommentIndex(prevIndex => (prevIndex === index ? null : index));
+        if (!disableSelection) {
+            setSelectedCommentIndex(prevIndex => (prevIndex === index ? null : index));
+        }
     };
+
     return (
         <>
             <div className={styles['comment-container']}>

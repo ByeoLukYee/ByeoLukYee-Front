@@ -2,9 +2,10 @@
     width: 17vw;
     height: 9vh;
     display: flex;
-    column-gap: 20px;
     justify-content: flex-start;
     align-items: center;
+    column-gap: 10px;
+
 }
 
 .img {

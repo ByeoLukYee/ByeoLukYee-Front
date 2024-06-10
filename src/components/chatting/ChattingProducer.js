@@ -1,14 +1,14 @@
 import '../../styles/common/Styles.css';
 import styles from '../../styles/chatting/ChattingProducer.module.css';
 
-function ChattingProducer({ name }) {
+function ChattingProducer({ producer }) {
     return (
         <>
              <div className={styles['container']}>
-                <div className={styles['img']}> <img src='/images/profileImage.png' alt='example'/> </div>
+                <div className={styles['img']}> <img src={producer.profileUrl} alt='example'/> </div>
                 <div className={styles['textDiv']}>
-                    <p>{name}</p>
-                    <p>3413</p>
+                    <p>{producer.name}</p>
+                    <p>{producer.studentId}</p>
                 </div>
             </div>
         </>    

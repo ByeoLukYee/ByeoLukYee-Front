@@ -6,29 +6,30 @@ import sellStyle from "../../styles/selling-Item/SellingPostItem.module.css";
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function SellingPostItem({ status, price, title, id, images }) {
+function SellingPostItem({ post }) {
   // SellingPostItemList.js에서 전달 받은 status, price, title를 화면에 보여주기
   const containerStyle = {
-    backgroundColor: status === '판매완료' ? '#F6F6F6' : ''
+    backgroundColor: post.krStatus === '판매완료' ? '#F6F6F6' : ''
   }
   const textStyle = {
-    color: status === '판매완료' ? '#D2D2D2' : ''
+    color: post.krStatus === '판매완료' ? '#D2D2D2' : ''
   }
   const imgStyle = {
-    backgroundColor: status === '판매완료' ? '#ABABAB' : '',
-    opacity: status === '판매완료' ? '0.5' : ''
+    backgroundColor: post.krStatus === '판매완료' ? '#ABABAB' : '',
+    opacity: post.krStatus === '판매완료' ? '0.5' : ''
   }
 
+  let price = post.price && post.price.toLocaleString();
   return (
     <>
-      <Link to={`/buying-posts/${id}`} style={{ textDecoration: "none", color: "black" }}>
+      <Link to={`/buying-posts/${post.id}`} style={{ textDecoration: "none", color: "black" }}>
         <div className={sellStyle["boxContainer"]} style={containerStyle}>
 
           <div className={sellStyle["lookImgStyle"]}>
             <div className={sellStyle['imgDiv']}>
               {
-                images && images.length > 0 ?
-                  <img src={`${process.env.REACT_APP_IMAGEURL}/${images[0].uploadedFilename}`} alt="image" style={imgStyle} />
+                post.images && post.images.length > 0 ?
+                  <img src={`${process.env.REACT_APP_IMAGEURL}/${post.images[0].uploadedFilename}`} alt="image" style={imgStyle} />
                   :
                   <img src="/images/notImage.png" />
               }
@@ -37,8 +38,8 @@ function SellingPostItem({ status, price, title, id, images }) {
 
           <div className={sellStyle['contextContainer']}>
             <div className={sellStyle["textContainer"]}>
-              <p style={textStyle}># {status}</p>
-              <p>{title}</p>
+              <p style={textStyle}># {post.krStatus}</p>
+              <p>{post.title}</p>
               <p style={{ top: "5%" }}>{price}원</p>
             </div>
 
@@ -50,7 +51,7 @@ function SellingPostItem({ status, price, title, id, images }) {
               </div>
               <div className={sellStyle["heartVectorDiv"]}>
                 <GoHeart className={sellStyle["heartVector"]} />
-                <p>0</p>
+                <p>{post.wishCount}</p>
               </div>
             </div>
           </div>

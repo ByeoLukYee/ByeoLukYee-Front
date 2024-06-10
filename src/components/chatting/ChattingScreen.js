@@ -34,7 +34,7 @@ function ChattingScreen({ selectedProducer }) {
             {selectedProducer && (
                 <div className={styles['container']}>
                     <ChattingProducer 
-                        name={selectedProducer.name}
+                        producer={selectedProducer}
                     />
                     <hr />
                     <div className={styles['chatting-box']}>
