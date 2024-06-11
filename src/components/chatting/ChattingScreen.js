@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { ChattingContext } from './ChattingProvider';
+import axios from 'axios';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/chatting/ChattingScreen.module.css';
@@ -7,27 +9,33 @@ import ChattingProducer from './ChattingProducer';
 import ChattingBox from './ChattingBox';
 import InputBox from './InputBox';
 
-function ChattingScreen({ selectedProducer }) {
+function ChattingScreen({ selectedProducer, userId }) {
+    const { saveLastMessage } = useContext(ChattingContext);
     const [messages, setMessages] = useState([]);
 
-    const handleSendMessage = (message) => {
-        if (message.trim() !== '') {
-            setMessages([...messages, message]);
+    const handleSendMessage = async () => {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_HOST}/chatrooms/${selectedProducer.chatRoomId}/messages`);
+            if (response.status === 200) {
+                console.log("메시지 조회 성공");
+                setMessages(response.data);
+
+                // 마지막으로 보낸 메시지 조회 후 Provider에 저장
+                if (response.data.length > 0) {
+                    const lastMessage = response.data[response.data.length - 1].content;
+                    saveLastMessage(lastMessage);
+                }
+            } else {
+                console.log("메시지 조회 실패", response.status);
+            }
+        } catch(error) {
+            console.error("서버 연결 실패", error);
         }
     };
 
-    const currentDate = () => {
-        const date = new Date();
-        const year = date.getFullYear();
-        const month = date.getMonth() + 1;
-        const day = date.getDate();
-        
-        const weekDay = ['일', '월', '화', '수', '목', '금', '토'];
-        const week = date.getDay();
-    
-        return `${year}년 ${month}월 ${day}일 (${weekDay[week]})`;
-    };
-    // const lastMessage = messages.length > 0 ? messages[messages.length - 1] : '';
+    useEffect(() => {
+        handleSendMessage();
+    }, []);
 
     return (
         <>
@@ -38,15 +46,18 @@ function ChattingScreen({ selectedProducer }) {
                     />
                     <hr />
                     <div className={styles['chatting-box']}>
-                        <ChattingBox 
-                            date={currentDate()} 
-                            messages={[...messages]} 
-                            message={messages}
+                        <ChattingBox
+                            messages={messages}
+                            userId={userId}
                         />
                         
                     </div>
                     <div className={styles['input-box']}>
-                        <InputBox onSendMessage={handleSendMessage} />
+                        <InputBox 
+                            userId={userId}
+                            chatRoomId={selectedProducer.chatRoomId}
+                            handleSendMessage={handleSendMessage}
+                        />
                     </div>
                 </div>
             )}

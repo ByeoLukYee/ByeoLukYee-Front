@@ -31,7 +31,7 @@ function CommentInput({ addComments, setShowBuyingInput }) {
         setDesc(e.target.value);
     }
 
-    const userId = useSelector(state => state.userId);
+    const userId = Number(useSelector(state => state.userId));
     const { id } = useParams();
     const addCommentWrite = async (e) => {
         e.preventDefault();

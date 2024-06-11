@@ -10,7 +10,7 @@ import axios from 'axios';
 
 function ProfileSave() {
     const [data, setData] = useState([]);
-    const userId = useSelector(state => state.userId);
+    const userId = Number(useSelector(state => state.userId));
     useEffect(() => {
         async function fetchData() {
             try {

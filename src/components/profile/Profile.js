@@ -21,7 +21,7 @@ function Profile() {
     const [buyingPostData, setBuyingPostData] = useState([]);
     const [commentData, setCommentData] = useState([]);
     
-    const userId = useSelector(state => state.userId);
+    const userId = Number(useSelector(state => state.userId));
     useEffect(() => {
         async function sellingData() {
             try {

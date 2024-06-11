@@ -2,8 +2,9 @@ import React, { useState, useRef } from 'react';
 
 import '../../styles/common/Styles.css'
 import style from '../../styles/chatting/InputBox.module.css'
+import axios from 'axios';
 
-function InputBox({ onSendMessage }) {
+function InputBox({ userId, chatRoomId, handleSendMessage }) {
     const [message, setMessage] = useState('');
     const inputRef = useRef(null);
 
@@ -13,11 +14,29 @@ function InputBox({ onSendMessage }) {
 
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            onSendMessage(message);
+            SendMessage();
             setMessage('');
             inputRef.current.focus();
         }
     };
+
+    async function SendMessage() {
+        try {
+            const request = await axios.post(`${process.env.REACT_APP_HOST}/messages`, {
+                chatRoomId: chatRoomId,
+                userId: userId,
+                content: message
+            });
+            if (request.status === 201) {
+                console.log("메시지 전송 성공");
+                handleSendMessage();
+            } else {
+                console.log("메시지 전송 실패", request.status);
+            }
+        } catch(error) {
+            console.error("서버 연결 실패", error);
+        }
+    }
 
     return(
         <>
