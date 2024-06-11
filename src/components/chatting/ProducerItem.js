@@ -3,9 +3,9 @@ import React from 'react';
 import '../../styles/common/Styles.css';
 import styles from '../../styles/chatting/ProducerItem.module.css';
 
-function ProducerItem({ onClick, userData }) {
+function ProducerItem({ onClick, userData, chatRoomId }) {
     const handleClick = () => {
-        onClick(userData);
+        onClick(userData, chatRoomId);
     };
 
     return (

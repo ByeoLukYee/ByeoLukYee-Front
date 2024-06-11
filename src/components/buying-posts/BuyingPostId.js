@@ -1,8 +1,9 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import { ChattingContext } from '../chatting/ChattingProvider';
+import axios from 'axios';
 
 import styles from '../../styles/buying-posts/BuyingPostId.module.css';
 import '../../styles/common/Styles.css';
@@ -16,6 +17,7 @@ import { FaRegCircle } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight, FaCircle } from "react-icons/fa6";
 
 function BuyingPostsId() {
+    const navigate = useNavigate();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [data, setData] = useState([]);
     const [wishes, setWishes] = useState([]);
@@ -25,6 +27,7 @@ function BuyingPostsId() {
     const price = data.price && data.price.toLocaleString();
     const userId = Number(useSelector(state => state.userId));
 
+    // 팝니다 단일 조회 및 찜한 목록 조회 서버
     async function fetchData() {
         try {
             const response = await axios.get(`${process.env.REACT_APP_HOST}/selling-posts/${id}`);
@@ -72,6 +75,7 @@ function BuyingPostsId() {
         }
     };
 
+    // 찜하기 서버
     const handleClickedWish = async () => {
         try {
             const reqeust = await axios.post(`${process.env.REACT_APP_HOST}/wishes`, {
@@ -87,6 +91,28 @@ function BuyingPostsId() {
             }
         } catch (error) {
             console.error("서버 연결 실패", error);
+        }
+    }
+
+    // 채팅룸 만드는 서버
+    const makeChattingRoom = async () => {
+        try {
+            const reqeust = await axios.post(`${process.env.REACT_APP_HOST}/chatrooms`, {
+                user1: userId,
+                user2: data.user.id
+            });
+            if (reqeust.status === 200) {
+                console.log("채팅방 만들기 성공");
+            } else {
+                console.log("채팅방 만들기 실패", reqeust.status);
+            }
+        } catch(error) {
+            if (error.response.status === 409) {
+                // 존재한 채팅방으로 이동하기
+                navigate('/chatting');
+            } else {
+                console.error("서버 연결 실패", error);
+            }
         }
     }
 
@@ -130,7 +156,7 @@ function BuyingPostsId() {
                             <div className={styles['buttonDiv']}>
                                 {data.user && data.user.id !== userId && (
                                     <>
-                                        <button className={styles['chattingButton']}>채팅하기</button>
+                                        <button className={styles['chattingButton']} onClick={makeChattingRoom}>채팅하기</button>
                                         <button
                                             className={liked ? styles['selectButton'] : styles['heartButton']}
                                             onClick={handleClickedWish}
