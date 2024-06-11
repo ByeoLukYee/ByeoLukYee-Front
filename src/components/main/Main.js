@@ -18,7 +18,7 @@ function Main() {
         setSelectedTab('/');
     };
 
-    const userId = useSelector(state => state.userId);
+    const userId = Number(useSelector(state => state.userId));
     useEffect(() => {
         if (!userId) {
             navigate('/signin');

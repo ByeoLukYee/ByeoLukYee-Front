@@ -23,7 +23,7 @@ function BuyingPostsId() {
     const { id } = useParams();
     
     const price = data.price && data.price.toLocaleString();
-    const userId = useSelector(state => state.userId);
+    const userId = Number(useSelector(state => state.userId));
 
     async function fetchData() {
         try {
@@ -128,7 +128,7 @@ function BuyingPostsId() {
                                 <BuyingPostIdInfo data={data} />
                             </div>
                             <div className={styles['buttonDiv']}>
-                                {data.user && data.user.id !== Number(userId) && (
+                                {data.user && data.user.id !== userId && (
                                     <>
                                         <button className={styles['chattingButton']}>채팅하기</button>
                                         <button
@@ -140,7 +140,7 @@ function BuyingPostsId() {
                                     </>
                                 )}
 
-                                {data.user && data.user.id === Number(userId) && (
+                                {data.user && data.user.id === userId && (
                                     <Link to={`/buying-posts/${id}/edit`}> <button className={styles['updateButton']}>수정하기</button> </Link>
                                 )}
                             </div>

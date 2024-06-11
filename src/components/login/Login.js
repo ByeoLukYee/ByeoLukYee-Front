@@ -18,7 +18,7 @@ function Login() {
     const [password, setPassword] = useState('');
 
     const dispatch = useDispatch();
-    const userId = useSelector(state => state.userId);
+    const userId = Number(useSelector(state => state.userId));
 
     useEffect(() => {
         if (userId) {

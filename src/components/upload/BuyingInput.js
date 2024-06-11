@@ -37,7 +37,7 @@ function BuyingInput() {
         setDesc(content);
     }
 
-    const userId = useSelector(state => state.userId);
+    const userId = Number(useSelector(state => state.userId));
     const addBuyWrite = async (e) => {
         e.preventDefault();
         

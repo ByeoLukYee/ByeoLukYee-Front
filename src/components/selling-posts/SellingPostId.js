@@ -86,7 +86,7 @@ function SellingPostId() {
 
     const price = data.price && data.price.toLocaleString();
     const successful = commentData.some(comment => comment.krStatus === '낙찰');
-    const userId = useSelector(state => state.userId);
+    const userId = Number(useSelector(state => state.userId));
 
     return (
         <div className={styles['container']}>
@@ -113,13 +113,13 @@ function SellingPostId() {
                                 )}
                                 <SellingPostIdInfo data={data} />
                             </div>
-                            {data.user && data.user.id !== Number(userId) && (
+                            {data.user && data.user.id !== userId && (
                                 <>
                                    <div className={styles['particButton']}> <button onClick={handleBuyButtonClick}>참여하기</button> </div>
                                 </>
                             )}
                             
-                            {data.user && data.user.id === Number(userId) && (
+                            {data.user && data.user.id === userId && (
                                 <div className={successful || selectedCommentIndex === null ? styles['disabledButton'] : styles['selectButton']}>
                                     <button onClick={complete} disabled={successful || selectedCommentIndex === null}>선택하기</button>
                                 </div>

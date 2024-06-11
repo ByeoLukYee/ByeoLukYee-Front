@@ -32,7 +32,7 @@ function SellingInput() {
         setDesc(e.target.value);
     }
     
-    const userId = useSelector(state => state.userId);
+    const userId = Number(useSelector(state => state.userId));
     const addSellWrite = async (e) => {
         e.preventDefault();
         try {
