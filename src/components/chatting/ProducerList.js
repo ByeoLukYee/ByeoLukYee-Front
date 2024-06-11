@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/chatting/ProducerList.module.css';
@@ -7,6 +8,7 @@ import ProducerItem from './ProducerItem';
 import axios from 'axios';
 
 function ProducerList({ onItemClick }) {
+    const userId = Number(useSelector(state => state.userId));
     const [clicked, setClicked] = useState('');
     const [chatrooms, setChatRooms] = useState([]);
     const handleClick = (userData) => {
@@ -25,7 +27,8 @@ function ProducerList({ onItemClick }) {
             const response = await axios.get(`${process.env.REACT_APP_HOST}/chatrooms`);
             if (response.status === 200) {
                 console.log("생성된 채팅방 데이터 불러오기 성공");
-                setChatRooms(response.data);
+                const filteredChatRooms = response.data.filter(data => userId === data.user1.id || userId === data.user2.id);
+                setChatRooms(filteredChatRooms);
             } else {
                 console.log("생성된 채팅방 데이터 불러오기 실패", response.status);
             }
