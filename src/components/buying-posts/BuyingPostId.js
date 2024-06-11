@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
-import { ChattingContext } from '../chatting/ChattingProvider';
 import axios from 'axios';
 
 import styles from '../../styles/buying-posts/BuyingPostId.module.css';
@@ -103,6 +102,7 @@ function BuyingPostsId() {
             });
             if (reqeust.status === 200) {
                 console.log("채팅방 만들기 성공");
+                navigate('/catting');
             } else {
                 console.log("채팅방 만들기 실패", reqeust.status);
             }

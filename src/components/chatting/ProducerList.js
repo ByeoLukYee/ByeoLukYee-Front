@@ -1,27 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { ChattingContext } from './ChattingProvider';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/chatting/ProducerList.module.css';
 
 import ProducerItem from './ProducerItem';
-import axios from 'axios';
 
 function ProducerList({ onItemClick, userId }) {
-    const [clicked, setClicked] = useState('');
+    const [clicked, setClicked] = useState(null);
     const [chatrooms, setChatRooms] = useState([]);
-    const { clickedChatRoom, chatInfo } = useContext(ChattingContext);
-    const handleClick = (userData, chatRoomId) => {
-        setClicked(!clicked);
-        clickedChatRoom({
-            name: userData.name, 
-            studentId: userData.studentId, 
-            profileUrl: userData.profileUrl,
-            chatRoomId: chatRoomId,
-            lastMessage: '네 그럼 거래 가능합니다.',
-            lastMessageDate: '2024-04-12'
+    const handleClick = (yourData, index) => {
+        setClicked(index);
+        onItemClick({
+            name: yourData.name, 
+            studentId: yourData.studentId, 
+            profileUrl: yourData.profileUrl,
         });
-        onItemClick(chatInfo);
     }
 
     async function ProducerListData() {
@@ -48,9 +42,19 @@ function ProducerList({ onItemClick, userId }) {
                 {
                     chatrooms && chatrooms.length > 0 ? (
                         chatrooms.map((item, index) => {
+                            let yourData;
+                            if (item.user1.id === userId) {
+                                yourData = item.user2
+                            } else {
+                                yourData = item.user1
+                            }
                             return (
-                                <div key={index} className={clicked ? `${styles['clickedContainer']}` : styles['container']}> 
-                                    <ProducerItem onClick={handleClick} userData={item.user2} chatRoomId={item.id} />
+                                <div key={index} className={clicked === index ? `${styles['clickedContainer']}` : styles['container']}> 
+                                    <ProducerItem 
+                                        userData={yourData} 
+                                        chatRoomId={item.id}
+                                        onClick={() => handleClick(yourData, index)}
+                                    />
                                 </div>
                             )
                         })

@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ChattingContext } from './ChattingProvider';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/chatting/ProducerItem.module.css';
 
 function ProducerItem({ onClick, userData, chatRoomId }) {
+    const { saveChatRoomId } = useContext(ChattingContext);
     const handleClick = () => {
-        onClick(userData, chatRoomId);
+        onClick(userData);
+        saveChatRoomId(chatRoomId);
     };
 
     return (
@@ -22,12 +25,10 @@ function ProducerItem({ onClick, userData, chatRoomId }) {
                 </div>
                 <div className={styles['textDiv']}>
                     <p>{userData.name}</p>
-                    <div className={styles['text']}>
-                        {/* 마지막 채팅 내용 */}
+                    {/* <div className={styles['text']}>
                         <p>네 그럼 거래 가능합니다.</p>
-                        {/* 마지막 채팅 날짜 */}
                         <p>2024-04-12</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

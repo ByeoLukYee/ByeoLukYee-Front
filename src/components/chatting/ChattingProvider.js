@@ -5,6 +5,7 @@ export const ChattingContext = createContext();
 function ChattingProvider({ children }) {
     const [lastMessage, setLastMessage] = useState([]);
     const [chatInfo, setChatInfo] = useState(null);
+    const [chatRoomId, setChatRoomId] = useState(null);
 
     const saveLastMessage = (lastMessage) => {
         setLastMessage(lastMessage);
@@ -14,8 +15,12 @@ function ChattingProvider({ children }) {
         setChatInfo(chatInfo);
     }
 
+    const saveChatRoomId = (id) => {
+        setChatRoomId(id);
+    }
+
     return (
-        <ChattingContext.Provider value={{ lastMessage, saveLastMessage, chatInfo, clickedChatRoom }}>
+        <ChattingContext.Provider value={{ lastMessage, saveLastMessage, chatInfo, clickedChatRoom, chatRoomId, saveChatRoomId }}>
             { children }
         </ChattingContext.Provider>
     )
