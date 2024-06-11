@@ -4,8 +4,8 @@
 }
 
 .img {
-    width: 3vw;
-    height: 7vh;
+    width: 46px;
+    height: 46px;
 }
 .img img {
     width: 100%;
@@ -21,6 +21,7 @@
     justify-content: center;
 }
 .textDiv > p {
+    font-size: 16px;
     font-family: var(--SUIT-font);
     font-weight: var(--SemiBold);
 }
