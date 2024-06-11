@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { ChattingContext } from './ChattingProvider';
 
 import '../../styles/common/Styles.css';
@@ -10,10 +10,6 @@ import InputBox from './InputBox';
 
 function ChattingScreen({ selectedProducer, userId, messages, handleSendMessage }) {
     const { chatRoomId } = useContext(ChattingContext);
-
-    useEffect(() => {
-        handleSendMessage();
-    }, [chatRoomId]);
 
     return (
         <>
@@ -28,6 +24,7 @@ function ChattingScreen({ selectedProducer, userId, messages, handleSendMessage 
                             messages={messages}
                             userId={userId}
                             handleSendMessage={handleSendMessage}
+                            chatRoomId={chatRoomId}
                         />
                         
                     </div>

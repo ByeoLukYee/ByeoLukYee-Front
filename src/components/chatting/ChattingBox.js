@@ -6,7 +6,7 @@ import styles from '../../styles/chatting/ChattingBox.module.css'
 import MyChat from './MyChat';
 import YourChat from './YourChat';
 
-function ChattingBox({ messages, userId, handleSendMessage }) {
+function ChattingBox({ messages, userId, handleSendMessage, chatRoomId }) {
     // const chatRef = useRef(null);
 
     // useEffect(() => {
@@ -17,7 +17,7 @@ function ChattingBox({ messages, userId, handleSendMessage }) {
 
     useEffect(() => {
         handleSendMessage();
-    }, []);
+    }, [chatRoomId]);
 
     return(
         <div className={styles['chatting-box']}>
