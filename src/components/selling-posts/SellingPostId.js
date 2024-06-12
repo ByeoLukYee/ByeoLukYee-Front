@@ -18,14 +18,19 @@ function SellingPostId() {
     const navigate = useNavigate();
     const [showBuyingInput, setShowBuyingInput] = useState(false);
     const [selectedCommentIndex, setSelectedCommentIndex] = useState(null);
+    const [data, setData] = useState([]);
+    const [commentData, setCommentData] = useState([]);
+    const { id } = useParams();
+
+    const price = data.price && data.price.toLocaleString();
+    const successful = commentData.some(comment => comment.krStatus === '낙찰');
+    const userId = Number(useSelector(state => state.userId));
+
     const handleBuyButtonClick = () => {
         setShowBuyingInput(prevState => !prevState);
     };
     
     // /selling-posts/{id}에서 GET
-    const [data, setData] = useState([]);
-    const [commentData, setCommentData] = useState([]);
-    const { id } = useParams();
     async function fetchData() {
         try {
             const response = await axios.get(`${process.env.REACT_APP_HOST}/buying-posts/${id}`);
@@ -83,10 +88,6 @@ function SellingPostId() {
             console.error("서버 연결 실패: ", error);
         }
     };
-
-    const price = data.price && data.price.toLocaleString();
-    const successful = commentData.some(comment => comment.krStatus === '낙찰');
-    const userId = Number(useSelector(state => state.userId));
 
     return (
         <div className={styles['container']}>

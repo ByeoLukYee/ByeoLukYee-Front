@@ -13,23 +13,31 @@ import Footer from '../../components/common/Footer';
 import PageNumber from '../common/PageNumber';
 
 function SellingPosts() {
+    // 팝니다 게시글
     const [selectedTad, setSelectedTab] = useState('/');
+    const [checkData, setCheckData] = useState([]);
+    const [data, setData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const postsPerPage = 16;
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
+
     const handleTitleClick = () => {
         setSelectedTab('/');
     };
 
-    // 팝니다 게시글
-    // /selling-posts GET해서 팝니다 게시물 데이터 가져오기
-    // 가져온 데이터는 SellingPostItemList에 전달하기
-    const [data, setData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const postsPerPage = 16;
     useEffect(() => {
         async function fetchData() {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_HOST}/selling-posts`);
                 if (response.status === 200) {
+                    console.log("팝니다 게시글 불러오기 성공");
                     setData(response.data);
+                    check();
+                } else {
+                    console.log("팝니다 게시글 불러오기 실패", response.status);
                 }
             } catch (error) {
                 console.error("데이터 가져오기 실패: ", error);
@@ -48,9 +56,23 @@ function SellingPosts() {
         setData(sortedData);
     };
 
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
+    async function check() {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_HOST}/view-histories`, {
+                params: {
+                    type: 'selling'
+                }
+            });
+            if (response.status === 200) {
+                console.log("조회수 불러오기 성공");
+                setCheckData(response.data);
+            } else {
+                console.log("조회수 불러오기 실패", response.status);
+            }
+        } catch(error) {
+            console.error("서버 연결 실패", error);
+        }
+    }
 
     return (
         <>
@@ -64,7 +86,7 @@ function SellingPosts() {
                     </div>
 
                     <div className={styles['selling-post-item-list']}>
-                        <SellingPostItemList data={currentPosts} />
+                        <SellingPostItemList data={currentPosts} checkData={checkData} />
                     </div>
                 </div>
                 <PageNumber totalPosts={data.length} postsPerPage={postsPerPage} currentPage={currentPage} onPageChange={handlePageChange}/>

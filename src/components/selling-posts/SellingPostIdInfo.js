@@ -1,7 +1,7 @@
 import '../../styles/common/Styles.css';
 import styles from '../../styles/selling-posts/SellingPostIdInfo.module.css';
 
-function SellingPostIdInfo({ data }) {
+function SellingPostIdInfo({ data, viewCount }) {
     return (
         <>
             <div className={styles['container']}>

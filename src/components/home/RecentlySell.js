@@ -7,7 +7,7 @@ import styles from '../../styles/home/RecentlySell.module.css';
 
 import SellingPostItemList from '../selling-Item/SellingPostItemList';
 
-function RecentlySell() {
+function RecentlySell({ viewData }) {
     // 최신 팝니다 서버 연결
     const [latestPosts, setLatestPosts] = useState([]);
     useEffect(() => {
@@ -38,7 +38,7 @@ function RecentlySell() {
         <>
             <div className={styles['sellTextDiv']}> <p>따끈따근 최신 팝니다 글</p> </div>
             <div className={styles['sellContainer']}>
-                <SellingPostItemList data={latestPosts} /> 
+                <SellingPostItemList data={latestPosts} checkData={viewData} />
             </div>
 
             <div className={styles['sellMoreDiv']}>

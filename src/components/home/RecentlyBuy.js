@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -6,10 +6,12 @@ import '../../styles/common/Styles.css';
 import styles from '../../styles/home/RecentlyBuy.module.css';
 
 import BuyPostItemList from "../buying-Item/BuyPostItemList";
+import { viewCountContext } from '../selling-posts/ViewCountProvider';
 
-function RecentlyBuy() {
+function RecentlyBuy({ viewData }) {
     // 최신 삽니다 서버 연결
     const [latestPosts, setLatestPosts] = useState([]);
+
     useEffect(() => {
         async function fetchLatestPosts() {
             try {
@@ -38,7 +40,7 @@ function RecentlyBuy() {
         <>
             <div className={styles['buyTextDiv']}> <p>따끈따근 최신 삽니다 글</p> </div>
             <div className={styles['buyContainer']}>
-                <BuyPostItemList data={latestPosts}/>
+                <BuyPostItemList data={latestPosts} viewData={viewData} />
             </div>
 
             <div className={styles['buyMoreDiv']}>

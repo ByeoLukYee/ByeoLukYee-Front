@@ -6,7 +6,7 @@ import styles from '../../styles/selling-Item/SellGrid.module.css';
 import SellingPostItem from './SellingPostItem';
 import PageNumber from '../common/PageNumber';
 
-function SellingPostItemList({ data }) {
+function SellingPostItemList({ data, checkData }) {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 16;
   
@@ -41,6 +41,7 @@ function SellingPostItemList({ data }) {
               <div key={index} className={styles['grid-item']}> 
                   <SellingPostItem
                       post={post}
+                      checkData={checkData}
                   />
               </div>
           ))}
