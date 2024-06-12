@@ -2,9 +2,7 @@ import Search from "../components/search/Search";
 
 function SearchPage() {
     return (
-        <>
-            <Search />
-        </>
+        <Search />
     )
 }
 

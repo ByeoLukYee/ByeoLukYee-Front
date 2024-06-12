@@ -2,9 +2,7 @@ import Chatting from '../components/chatting/Chatting';
 
 function ChattingPage() {
     return (
-        <>
-            <Chatting />
-        </>
+        <Chatting />
     )
 }
 

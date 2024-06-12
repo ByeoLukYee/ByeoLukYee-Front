@@ -3,9 +3,7 @@ import Join from '../components/join/Join'
 
 function JoinPage() {
     return (
-        <div>
-            <Join />
-        </div>
+        <Join />
     )
 }
 
