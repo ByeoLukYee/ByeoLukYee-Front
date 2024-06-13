@@ -19,7 +19,6 @@ function Chatting() {
 
     const handleItemClick = (chatInfo) => {
         setSelectedProducer(chatInfo);
-        handleSendMessage();
     };
 
     const handleSendMessage = async () => {
