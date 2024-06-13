@@ -11,20 +11,22 @@ import axios from 'axios';
 function ProfileSave() {
     const [data, setData] = useState([]);
     const userId = Number(useSelector(state => state.userId));
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${userId}/wishes`);
-                if (response.status === 200) {
-                    console.log("내가 찜한 팝니다 데이터 불러오기 성공");
-                    setData(response.data);
-                } else {
-                    console.log("내가 찜한 팝니다 데이터 불러오기 실패", response.status);
-                }
-            } catch(error) {
-                console.error("서버 연결 실패", error);
+
+    async function fetchData() {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${userId}/wishes`);
+            if (response.status === 200) {
+                console.log("내가 찜한 팝니다 데이터 불러오기 성공");
+                setData(response.data);
+            } else {
+                console.log("내가 찜한 팝니다 데이터 불러오기 실패", response.status);
             }
+        } catch(error) {
+            console.error("서버 연결 실패", error);
         }
+    }
+
+    useEffect(() => {
         fetchData();
     }, []);
 

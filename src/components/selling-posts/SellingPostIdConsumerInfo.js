@@ -48,6 +48,8 @@ function SellingPostIdConsumerInfo({ user }) {
     let number = studentId.slice(2);
     let formattedStudentId = `${grade}학년 ${classroom}반 ${number}번`;
 
+    const filteredSellingPostData = sellingPostData.filter(post => !post.isDeleted);
+
     return (
         <>
             <div className={styles['container']}>
@@ -63,7 +65,7 @@ function SellingPostIdConsumerInfo({ user }) {
                         <p>{user.name}</p>
                         <div className={styles['userInfo']}>
                             <p>{formattedStudentId}</p>
-                            <div className={styles['info']}> <p>팝니다 {sellingPostData.length}</p> <p>삽니다 {buyingPostData.length}</p> </div>
+                            <div className={styles['info']}> <p>팝니다 {filteredSellingPostData.length}</p> <p>삽니다 {buyingPostData.length}</p> </div>
                         </div>
                     </div>
                 </div>

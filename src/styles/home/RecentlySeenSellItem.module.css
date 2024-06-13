@@ -1,0 +1,94 @@
+.boxContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 7%;
+    border-radius: 10px;
+    border-color: var(--gray-200);
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+}
+
+.lookImgStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+
+.imgDiv {
+    width: 282px;
+    height: 220px;
+}
+
+.imgDiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contextContainer {
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+}
+.textContainer {
+    display: flex;
+    row-gap: 3px;
+    flex-direction: column;
+}
+
+.textContainer > p:nth-child(1) {
+    color: var(--green); /* 판매중 */
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+    font-size: 0.9rem;
+}
+.textContainer > p:nth-child(2) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--Medium);
+    font-size: 0.9rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.textContainer > p:nth-child(3) {
+    font-family: var(--SUIT-font);
+    font-weight: var(--ExtraBold);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* 본 횟수, 찜 횟수 전체 Div */
+.vectorDiv {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 10px;
+    top: 10%;
+}
+
+/* 본 횟수, 찜 횟수 Div */
+.eyesVectorDiv, .heartVectorDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1px;
+    color: var(--gray-300);
+
+    font-family: var(--SUIT-font);
+    font-weight: var(--Regular);
+}
+
+.heartVector {
+    font-size: 0.9rem;
+}

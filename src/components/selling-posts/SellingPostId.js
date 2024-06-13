@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -13,19 +13,25 @@ import SellingPostIdConsumerInfo from './SellingPostIdConsumerInfo';
 import SellingPostIdInfo from './SellingPostIdInfo';
 import CommentList from '../comment/CommentList';
 import CommentInput from './CommentInput';
+import { viewCountContext } from './ViewCountProvider';
 
 function SellingPostId() {
     const navigate = useNavigate();
     const [showBuyingInput, setShowBuyingInput] = useState(false);
     const [selectedCommentIndex, setSelectedCommentIndex] = useState(null);
+    const [data, setData] = useState([]);
+    const [commentData, setCommentData] = useState([]);
+    const { id } = useParams();
+
+    const price = data.price && data.price.toLocaleString();
+    const successful = commentData.some(comment => comment.krStatus === '낙찰');
+    const userId = Number(useSelector(state => state.userId));
+
     const handleBuyButtonClick = () => {
         setShowBuyingInput(prevState => !prevState);
     };
     
     // /selling-posts/{id}에서 GET
-    const [data, setData] = useState([]);
-    const [commentData, setCommentData] = useState([]);
-    const { id } = useParams();
     async function fetchData() {
         try {
             const response = await axios.get(`${process.env.REACT_APP_HOST}/buying-posts/${id}`);
@@ -44,12 +50,31 @@ function SellingPostId() {
             console.error("데이터 가져오기 실패: ", error);
         }
     }
+
+    // 게시글 조회 서버
+    async function Check() {
+        try {
+            const reqeust = await axios.post(`${process.env.REACT_APP_HOST}/view-histories?type=buying`, {
+                postId: id,
+                userId: userId
+            });
+            if (reqeust.status === 201) {
+                console.log("게시글 조회 성공");
+            } else {
+                console.log("게시글 조회 실패", reqeust.status);
+            }
+        } catch(error) {
+            console.error("서버 연결 실패", error);
+        }
+    }
+
     useEffect(() => {
         fetchData();
     }, [id]);
-    const addComments = () => {
-        fetchData();
-    }
+
+    useEffect(() => {
+        Check();
+    }, []);
     
     const complete = async () => {
         if (selectedCommentIndex === null) return;
@@ -83,10 +108,6 @@ function SellingPostId() {
             console.error("서버 연결 실패: ", error);
         }
     };
-
-    const price = data.price && data.price.toLocaleString();
-    const successful = commentData.some(comment => comment.krStatus === '낙찰');
-    const userId = Number(useSelector(state => state.userId));
 
     return (
         <div className={styles['container']}>
@@ -131,7 +152,7 @@ function SellingPostId() {
                 <div className={styles['bottomContainer']}>
                     <p>경매댓글</p>
                     <div className={styles['commentContainer']}>
-                        {showBuyingInput && <CommentInput addComments={addComments} setShowBuyingInput={setShowBuyingInput} />}
+                        {showBuyingInput && <CommentInput addComments={fetchData} setShowBuyingInput={setShowBuyingInput} />}
                         <CommentList 
                             data={commentData} 
                             setSelectedCommentIndex={setSelectedCommentIndex} 

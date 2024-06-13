@@ -2,9 +2,7 @@ import SellingPostId from '../components/selling-posts/SellingPostId';
 
 function SellingPostIdPage() {
     return(
-        <>
-            <SellingPostId />
-        </>
+        <SellingPostId />
     )
 }
 

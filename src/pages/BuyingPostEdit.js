@@ -2,9 +2,7 @@ import BuyingPostEdit from "../components/edit/BuyingPostEdit";
 
 function BuyingPostEditPage() {
     return (
-        <>
-            <BuyingPostEdit />
-        </>
+        <BuyingPostEdit />
     )
 }
 

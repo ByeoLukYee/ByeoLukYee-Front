@@ -1,33 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import '../../styles/common/Styles.css';
 import styles from '../../styles/home/RecentlySeenSell.module.css';
 
-import SellingPostItemList from '../selling-Item/SellingPostItemList';
+import RecentlySeenSellList from './RecentlySeenSellList';
 
-function RecentlySeenSell() {
+function RecentlySeenSell({ viewData }) {
     // 최근 본 팝니다 서버 불러오기
-    // const [data, setData] = useState([]);
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         try {
-    //             const response = await axios.get(`${process.env.REACT_APP_HOST}/selling-posts?limit=4&sortBy=createdAt:desc`);
-    //             setData(response.data);
-    //         } catch(error) {
-    //             console.error("요청 실패 : ", error);
-    //         }
-    //     }
+    const userId = Number(useSelector(state => state.userId));
+    const [checkData, setCheckData] = useState([]);
 
-    //     fetchData();
-    // }, []);
+    async function UserCheck() {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_HOST}/users/${userId}/view-histories`, {
+                params: {
+                    type: 'selling'
+                }
+            });
+            if (response.status === 200) {
+                console.log("최근 본 팝니다 게시글 조회 성공");
+                setCheckData(response.data);
+            } else {
+                console.log("최근 본 팝니다 게시글 조회 실패", response.status);
+            }
+        } catch(error) {
+            console.error("서버 연결 실패", error);
+        }
+    }
+
+    useEffect(() => {
+        UserCheck();
+    }, []);
+
+    const getUniqueRecentPosts = (data) => {
+        const postMap = new Map();
+        data.forEach(item => {
+            postMap.set(item.post.id, item);
+        });
+        const uniquePosts = Array.from(postMap.values()).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        return uniquePosts.slice(-4).reverse();
+    };
+
+    const uniqueRecentPosts = getUniqueRecentPosts(checkData);
 
     return (
         <>
             <div className={styles['sellTextDiv']}> <p>최근 본 팝니다</p> </div>
             <div className={styles['sellContainer']}>
-                {/* <SellingPostItemList data={data}/> */}
+                <RecentlySeenSellList data={uniqueRecentPosts} viewData={viewData} />
             </div>
 
             <div className={styles['sellMoreDiv']}>

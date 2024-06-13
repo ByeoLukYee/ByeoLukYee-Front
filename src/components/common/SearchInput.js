@@ -14,24 +14,37 @@ function SearchInput() {
     };
 
     // 엔터 키 입력 시 검색 실행
-    const userId = useSelector(state => state.userId);
+    // const userId = useSelector(state => state.userId);
+    // const handleKeyDown = (event) => {
+    //     if (event.key === 'Enter') {
+    //         if (!userId) {
+    //             navigate("/");
+    //         } else {
+    //             search();
+    //         }
+    //     }
+    // };
+
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            if (!userId) {
-                navigate("/");
-            } else {
-                search();
-            }
+            search();
         }
     };
+
+    // const search = () => {
+    //     if (searchKeyword.trim() !== '') {
+    //         navigate(`/search?keyword=${encodeURIComponent(searchKeyword)}`);
+    //     } else {
+    //         navigate('/');
+    //     }
+    // };
 
     const search = () => {
         if (searchKeyword.trim() !== '') {
             navigate(`/search?keyword=${encodeURIComponent(searchKeyword)}`);
-        } else {
-            navigate('/');
         }
     };
+
 
     return(
         <div className={searchInputStyle['searchDiv']}>

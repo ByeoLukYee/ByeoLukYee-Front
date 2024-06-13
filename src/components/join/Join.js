@@ -15,7 +15,7 @@ function Join() {
     // 로그인 화면으로 넘어가기
     const navigate = useNavigate();
     const TextClick = (path) => {
-      navigate(path);
+        navigate(path);
     };
 
     const [userData, setUserData] = useState({
@@ -131,7 +131,7 @@ function Join() {
                     </div>
                     <div className={joinStyles['miniTextStyles']}>
                         <p>이미 계정이 있다면?</p>
-                        <p onClick={() => TextClick('/')}>로그인하기</p>
+                        <p onClick={() => TextClick('/signin')}>로그인하기</p>
                     </div>
                 </form>
             </div>

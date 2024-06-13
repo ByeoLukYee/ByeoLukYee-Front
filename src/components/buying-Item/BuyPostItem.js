@@ -1,14 +1,24 @@
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import '../../styles/common/Styles.css';
 
 import buyStyle from '../../styles/buying-Item/BuyPostItem.module.css';
 
+import { viewCountContext } from "../selling-posts/ViewCountProvider";
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
  
-function BuyPostItem({ post }) {
-    // home 화면 최신 글 데이터 정보 화면에 보여주기
+function BuyPostItem({ post, viewData }) {
+    const navigate = useNavigate();
+    const { saveSellingViewCount } = useContext(viewCountContext);
+
+    const countMatchingIds = () => {
+        if (!viewData || !post) return 0;
+        const matchingPostId = viewData.filter(data => data.post.id === post.id);
+        return matchingPostId.length;
+    };
+
     const containerStyle = {
         backgroundColor: post.krStatus === '경매완료' ? '#F6F6F6' : ''
     }
@@ -16,32 +26,35 @@ function BuyPostItem({ post }) {
         color: post.krStatus === '경매완료' ? '#D2D2D2' : ''
     }
 
+    const movePage = () => {
+        navigate(`/selling-posts/${post.id}`);
+        saveSellingViewCount(countMatchingIds());
+    }
+
     let price = post.price && post.price.toLocaleString()
     return(
         <>
-            <Link to={`/selling-posts/${post.id}`} style={{ textDecoration: "none", color: 'black' }}>
-                <div className={buyStyle['BoxContainer']} style={containerStyle}>
-                    <div className={buyStyle['firstDiv']}>
-                        <div className={buyStyle['contextDiv']}>
-                            <p>{post.title}</p>
-                            <p>{post.description}</p>
-                        </div>
-                        <div className={buyStyle['moneyDiv']}>
-                            <p>{price}원</p>
-                            <p>희망 구매 가격</p>
-                        </div>
+            <div className={buyStyle['BoxContainer']} style={containerStyle} onClick={movePage}>
+                <div className={buyStyle['firstDiv']}>
+                    <div className={buyStyle['contextDiv']}>
+                        <p>{post.title}</p>
+                        <p>{post.description}</p>
                     </div>
-                    <div className={buyStyle['secondDiv']}>
-                        <p style={textStyle}>#{post.krStatus}</p>
-                        <div className={buyStyle['iconDiv']}>
-                            <div className={buyStyle['eyesVectorDiv']}>
-                                <VscEye className={buyStyle['eyesVector']}/>
-                                <p>0</p>
-                            </div>
+                    <div className={buyStyle['moneyDiv']}>
+                        <p>{price}원</p>
+                        <p>희망 구매 가격</p>
+                    </div>
+                </div>
+                <div className={buyStyle['secondDiv']}>
+                    <p style={textStyle}>#{post.krStatus}</p>
+                    <div className={buyStyle['iconDiv']}>
+                        <div className={buyStyle['eyesVectorDiv']}>
+                            <VscEye className={buyStyle['eyesVector']}/>
+                            <p>{countMatchingIds()}</p>
                         </div>
                     </div>
                 </div>
-            </Link>
+            </div>
         </>
     )
 }
