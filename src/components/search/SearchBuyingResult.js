@@ -9,7 +9,7 @@ import PageNumber from '../common/PageNumber';
 
 function SearchBuyingResult({ keyword, data, setData }) {
     const [currentPage, setCurrentPage] = useState(1);
-    const [checkData, setCheckData] = useState([]);
+    // const [checkData, setCheckData] = useState([]);
 
     let postsPerPage = 8;
     const indexOfLastPost = currentPage * postsPerPage;
@@ -32,7 +32,7 @@ function SearchBuyingResult({ keyword, data, setData }) {
                         return titleMatch || statusMatch || priceMatch;
                     });
                     setData(filteredData);
-                    check();
+                    // check();
                     console.log("데이터 가져오기 성공");
                 }
             } catch(error) {
@@ -42,28 +42,28 @@ function SearchBuyingResult({ keyword, data, setData }) {
         fetchData();
     }, [keyword, currentPage]);
 
-    async function check() {
-        try {
-            const response = await axios.get(`${process.env.REACT_APP_HOST}/view-histories`, {
-                params: {
-                    type: 'buying'
-                }
-            });
-            if (response.status === 200) {
-                console.log("조회수 불러오기 성공");
-                setCheckData(response.data);
-            } else {
-                console.log("조회수 불러오기 실패", response.status);
-            }
-        } catch(error) {
-            console.error("서버 연결 실패", error);
-        }
-    }
+    // async function check() {
+    //     try {
+    //         const response = await axios.get(`${process.env.REACT_APP_HOST}/view-histories`, {
+    //             params: {
+    //                 type: 'buying'
+    //             }
+    //         });
+    //         if (response.status === 200) {
+    //             console.log("조회수 불러오기 성공");
+    //             setCheckData(response.data);
+    //         } else {
+    //             console.log("조회수 불러오기 실패", response.status);
+    //         }
+    //     } catch(error) {
+    //         console.error("서버 연결 실패", error);
+    //     }
+    // }
 
     return (
         <>
             <div className={styles['container']}>
-                <BuyingPostList data={currentPosts} checkData={checkData} />
+                <BuyingPostList data={currentPosts} />
             </div>
             <PageNumber totalPosts={data.length} postsPerPage={postsPerPage} currentPage={currentPage} onPageChange={handlePageChange} />
         </>

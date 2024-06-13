@@ -8,7 +8,6 @@ import styles from '../../styles/home/RecentlyBuy.module.css';
 import BuyPostItemList from "../buying-Item/BuyPostItemList";
 
 function RecentlyBuy({ viewData }) {
-    console.log(viewData);
     // 최신 삽니다 서버 연결
     const [latestPosts, setLatestPosts] = useState([]);
 

@@ -9,15 +9,9 @@ import buyingStyle from '../../styles/buying-Item/BuyingPostItem.module.css';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function BuyingPostItem({ post, checkData }) {
+function BuyingPostItem({ post }) {
     const navigate = useNavigate();
     const { saveBuyingViewCount } = useContext(viewCountContext);
-    
-    const countMatchingIds = () => {
-        if (!checkData || !post) return 0;
-        const matchingPostId = checkData.filter(data => data.post.id === post.id);
-        return matchingPostId.length;
-    };
     
     const containerStyle = {
         backgroundColor: post.krStatus === '경매완료' ? '#F6F6F6' : ''
@@ -28,7 +22,7 @@ function BuyingPostItem({ post, checkData }) {
 
     const ClickedItem = () => {
         navigate(`/selling-posts/${post.id}`);
-        saveBuyingViewCount(countMatchingIds());
+        saveBuyingViewCount(post.views);
     }
 
     let price = post.price && post.price.toLocaleString()
@@ -69,7 +63,7 @@ function BuyingPostItem({ post, checkData }) {
                     <div className={buyingStyle['iconDiv']}>
                         <div className={buyingStyle['eyesVectorDiv']}>
                             <VscEye className={buyingStyle['eyesVector']}/>
-                            <p>{countMatchingIds()}</p>
+                            <p>{post.views}</p>
                         </div>
                     </div>
                 </div>

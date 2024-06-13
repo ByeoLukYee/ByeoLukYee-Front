@@ -6,7 +6,7 @@ import styles from '../../styles/buying-Item/BuyGrid.module.css';
 import BuyingPostItem from './BuyingPostItem';
 import PageNumber from '../common/PageNumber';
 
-function BuyingPostItemList({ data, checkData }) {
+function BuyingPostItemList({ data }) {
     const [currentPage, setCurrentPage] = useState(1);
 
     const postsPerPage = 8;
@@ -30,7 +30,6 @@ function BuyingPostItemList({ data, checkData }) {
                     <div key={index} className={styles['buying-grid-item']}> 
                         <BuyingPostItem
                             post={post}
-                            checkData={checkData}
                         />
                     </div>
                 ))}
