@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -6,9 +6,9 @@ import '../../styles/common/Styles.css';
 import styles from '../../styles/home/RecentlyBuy.module.css';
 
 import BuyPostItemList from "../buying-Item/BuyPostItemList";
-import { viewCountContext } from '../selling-posts/ViewCountProvider';
 
 function RecentlyBuy({ viewData }) {
+    console.log(viewData);
     // 최신 삽니다 서버 연결
     const [latestPosts, setLatestPosts] = useState([]);
 

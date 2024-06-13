@@ -3,14 +3,19 @@ import { createContext, useState } from "react";
 export const viewCountContext = createContext();
 
 function ViewCountProvider({ children }) {
-    const [viewCount, setViewCount] = useState(0);
+    const [sellingViewCount, setSellingViewCount] = useState(0);
+    const [buyingViewCount, setBuyingViewCount] = useState(0);
 
-    const saveViewCount = (count) => {
-        setViewCount(count);
+    const saveSellingViewCount = (count) => {
+        setSellingViewCount(count);
+    }
+
+    const saveBuyingViewCount = (count) => {
+        setBuyingViewCount(count)
     }
 
     return (
-        <viewCountContext.Provider value={{ viewCount, saveViewCount }}>
+        <viewCountContext.Provider value={{ sellingViewCount, saveSellingViewCount, buyingViewCount, saveBuyingViewCount }}>
             { children }
         </viewCountContext.Provider>
     )
