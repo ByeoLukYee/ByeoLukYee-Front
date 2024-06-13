@@ -10,7 +10,7 @@ import { VscEye } from "react-icons/vsc";
 
 function SellingPostItem({ post, checkData }) {
   const navigate = useNavigate();
-  const { saveViewCount } = useContext(viewCountContext);
+  const { saveSellingViewCount } = useContext(viewCountContext);
 
   const countMatchingIds = () => {
     if (!checkData || !post) return 0;
@@ -32,7 +32,7 @@ function SellingPostItem({ post, checkData }) {
 
   const selectPost = () => {
     navigate(`/buying-posts/${post.id}`);
-    saveViewCount(countMatchingIds());
+    saveSellingViewCount(countMatchingIds());
   }
 
   let price = post.price && post.price.toLocaleString();

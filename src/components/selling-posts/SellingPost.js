@@ -14,7 +14,6 @@ import PageNumber from '../common/PageNumber';
 
 function SellingPosts() {
     // 팝니다 게시글
-    const [selectedTad, setSelectedTab] = useState('/');
     const [checkData, setCheckData] = useState([]);
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -23,10 +22,6 @@ function SellingPosts() {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
-
-    const handleTitleClick = () => {
-        setSelectedTab('/');
-    };
 
     useEffect(() => {
         async function fetchData() {
@@ -77,7 +72,7 @@ function SellingPosts() {
     return (
         <>
             <div className={styles['container']}>
-                <Header onTitleClick={handleTitleClick} />
+                <Header />
                 <SelectPost />
                 
                 <div className={styles['bodyContainer']}>

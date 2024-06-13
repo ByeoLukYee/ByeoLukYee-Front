@@ -14,9 +14,6 @@ import Footer from '../common/Footer';
 
 function Profile() {
     const [showSelectComponent, setShowSelectComponent] = useState('');
-    // 팝니다, 삽니다 게시글 get (내가 올린 것만)
-    // sellingPostData, buyingPostData, commentData ProfileWriteManagement 컴포넌트에 전달
-    // sellingPostData.length, buyingPostData.length, commentData.length ProfileInfo 컴포넌트에 전달
     const [sellingPostData, setSellingPostData] = useState([]);
     const [buyingPostData, setBuyingPostData] = useState([]);
     const [commentData, setCommentData] = useState([]);
