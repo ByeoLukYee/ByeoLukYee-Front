@@ -9,15 +9,9 @@ import { viewCountContext } from "../selling-posts/ViewCountProvider";
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
  
-function BuyPostItem({ post, viewData }) {
+function BuyPostItem({ post }) {
     const navigate = useNavigate();
     const { saveSellingViewCount } = useContext(viewCountContext);
-
-    const countMatchingIds = () => {
-        if (!viewData || !post) return 0;
-        const matchingPostId = viewData.filter(data => data.post.id === post.id);
-        return matchingPostId.length;
-    };
 
     const containerStyle = {
         backgroundColor: post.krStatus === '경매완료' ? '#F6F6F6' : ''
@@ -28,7 +22,7 @@ function BuyPostItem({ post, viewData }) {
 
     const movePage = () => {
         navigate(`/selling-posts/${post.id}`);
-        saveSellingViewCount(countMatchingIds());
+        saveSellingViewCount(post.views);
     }
 
     let price = post.price && post.price.toLocaleString()
@@ -50,7 +44,7 @@ function BuyPostItem({ post, viewData }) {
                     <div className={buyStyle['iconDiv']}>
                         <div className={buyStyle['eyesVectorDiv']}>
                             <VscEye className={buyStyle['eyesVector']}/>
-                            <p>{countMatchingIds()}</p>
+                            <p>{post.views}</p>
                         </div>
                     </div>
                 </div>

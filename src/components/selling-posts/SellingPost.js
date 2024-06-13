@@ -14,7 +14,7 @@ import PageNumber from '../common/PageNumber';
 
 function SellingPosts() {
     // 팝니다 게시글
-    const [checkData, setCheckData] = useState([]);
+    // const [checkData, setCheckData] = useState([]);
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -30,7 +30,7 @@ function SellingPosts() {
                 if (response.status === 200) {
                     console.log("팝니다 게시글 불러오기 성공");
                     setData(response.data);
-                    check();
+                    // check();
                 } else {
                     console.log("팝니다 게시글 불러오기 실패", response.status);
                 }
@@ -51,23 +51,23 @@ function SellingPosts() {
         setData(sortedData);
     };
 
-    async function check() {
-        try {
-            const response = await axios.get(`${process.env.REACT_APP_HOST}/view-histories`, {
-                params: {
-                    type: 'selling'
-                }
-            });
-            if (response.status === 200) {
-                console.log("조회수 불러오기 성공");
-                setCheckData(response.data);
-            } else {
-                console.log("조회수 불러오기 실패", response.status);
-            }
-        } catch(error) {
-            console.error("서버 연결 실패", error);
-        }
-    }
+    // async function check() {
+    //     try {
+    //         const response = await axios.get(`${process.env.REACT_APP_HOST}/view-histories`, {
+    //             params: {
+    //                 type: 'selling'
+    //             }
+    //         });
+    //         if (response.status === 200) {
+    //             console.log("조회수 불러오기 성공");
+    //             setCheckData(response.data);
+    //         } else {
+    //             console.log("조회수 불러오기 실패", response.status);
+    //         }
+    //     } catch(error) {
+    //         console.error("서버 연결 실패", error);
+    //     }
+    // }
 
     return (
         <>
@@ -81,7 +81,7 @@ function SellingPosts() {
                     </div>
 
                     <div className={styles['selling-post-item-list']}>
-                        <SellingPostItemList data={currentPosts} checkData={checkData} />
+                        <SellingPostItemList data={currentPosts} />
                     </div>
                 </div>
                 <PageNumber totalPosts={data.length} postsPerPage={postsPerPage} currentPage={currentPage} onPageChange={handlePageChange}/>

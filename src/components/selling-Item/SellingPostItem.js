@@ -8,15 +8,9 @@ import { viewCountContext } from '../selling-posts/ViewCountProvider';
 import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
 
-function SellingPostItem({ post, checkData }) {
+function SellingPostItem({ post }) {
   const navigate = useNavigate();
   const { saveSellingViewCount } = useContext(viewCountContext);
-
-  const countMatchingIds = () => {
-    if (!checkData || !post) return 0;
-    const matchingPostId = checkData.filter(data => data.post.id === post.id);
-    return matchingPostId.length;
-  };
 
   // SellingPostItemList.js에서 전달 받은 status, price, title를 화면에 보여주기
   const containerStyle = {
@@ -32,7 +26,7 @@ function SellingPostItem({ post, checkData }) {
 
   const selectPost = () => {
     navigate(`/buying-posts/${post.id}`);
-    saveSellingViewCount(countMatchingIds());
+    saveSellingViewCount(post.views);
   }
 
   let price = post.price && post.price.toLocaleString();
@@ -61,7 +55,7 @@ function SellingPostItem({ post, checkData }) {
             {/* 몇명 봤는지, 누가 찜했는지 */}
             <div className={sellStyle["eyesVectorDiv"]}>
               <VscEye className={sellStyle["eyesVector"]} />
-              <p>{countMatchingIds()}</p>
+              <p>{post.views}</p>
             </div>
             <div className={sellStyle["heartVectorDiv"]}>
               <GoHeart className={sellStyle["heartVector"]} />
