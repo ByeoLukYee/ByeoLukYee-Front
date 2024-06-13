@@ -18,13 +18,13 @@ function Login() {
     const [password, setPassword] = useState('');
 
     // const dispatch = useDispatch();
-    const userId = Number(useSelector(state => state.userId));
+    // const userId = Number(useSelector(state => state.userId));
 
-    useEffect(() => {
-        if (userId) {
-          navigate('/');
-        }
-      }, [userId, navigate]);
+    // useEffect(() => {
+    //     if (userId) {
+    //       navigate('/');
+    //     }
+    // }, [userId, navigate]);
 
     // 회원가입 화면으로 넘어가기
     const TextClick = (path) => {
@@ -93,7 +93,7 @@ function Login() {
                             <input id='txtPw' type="password" placeholder='비밀번호를 입력하시오.' className={loginStyles['inputStyles']} onChange={handlePasswordChange} value={password} />
                         </div>
                         <div className={loginStyles['buttonContainer']}>
-                            <button id='btnLogin' className={loginStyles['buttonStyles']}>로그인</button>
+                            <button id='btnLogin' className={loginStyles['buttonStyles']} type='button'>로그인</button>
 
                             <a href={`${process.env.REACT_APP_HOST}/oauth2/authorization/google`} style={{ textDecoration: 'none', color: 'black' }}>
                                 <button className={loginStyles['googleButton']} type='button'>

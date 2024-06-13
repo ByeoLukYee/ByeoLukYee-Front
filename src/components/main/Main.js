@@ -11,24 +11,19 @@ import SelectPost from './SelectPost';
 import Home from '../home/Home';
 
 function Main() {
-    const navigate = useNavigate();
-    const [selectedTab, setSelectedTab] = useState('/');
+    // const navigate = useNavigate();
 
-    const handleTitleClick = () => {
-        setSelectedTab('/');
-    };
-
-    const userId = Number(useSelector(state => state.userId));
-    useEffect(() => {
-        if (!userId) {
-            navigate('/signin');
-        }
-    }, [navigate]);
+    // const userId = Number(useSelector(state => state.userId));
+    // useEffect(() => {
+    //     if (!userId) {
+    //         navigate('/signin');
+    //     }
+    // }, [navigate]);
 
     return (
         <>
             <div className={styles["container"]}>
-                <Header onTitleClick={handleTitleClick} />
+                <Header />
                 <div className={styles['textDiv']}>
                     <SelectPost />
                 </div>

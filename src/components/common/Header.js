@@ -7,23 +7,27 @@ import styles from '../../styles/common/Header.module.css';
 
 import SearchInput from './SearchInput';
 
-function Header({ onTitleClick }) {
+function Header() {
     const navigate = useNavigate();
 
-    const userId = useSelector(state => state.userId);
+    // const userId = useSelector(state => state.userId);
+    // const handleMenuClick = (path) => {
+    //     if (!userId) {
+    //         navigate("/signin");
+    //     } else {
+    //         navigate(path);
+    //     }
+    // }
+
     const handleMenuClick = (path) => {
-        if (!userId) {
-            navigate("/signin");
-        } else {
-            navigate(path);
-        }
+        navigate(path);
     }
 
     return (
         <>
             <nav className={styles['nav']}>
                 <div className={styles['container1']}>
-                    <div className={styles['titleDiv']} onClick={onTitleClick}> <p onClick={() => handleMenuClick('/')}>벼룩이</p> </div>
+                    <div className={styles['titleDiv']}> <p onClick={() => handleMenuClick('/')}>벼룩이</p> </div>
                     <div> <SearchInput /> </div>
                 </div>
                 <div className={styles['optionDiv']}>
