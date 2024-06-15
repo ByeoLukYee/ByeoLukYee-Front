@@ -23,10 +23,16 @@
     display: flex;
     justify-content: space-between;
 }
-.top > p {
+.top p {
     font-family: var(--SUIT-font);
     font-weight: var(--SemiBold);
     font-size: 1.3rem;
+}
+
+.location {
+    width: 5vw;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .info {

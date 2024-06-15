@@ -33,7 +33,9 @@ function CommentItem({ data, onClick, isSelected }) {
                     <p>{data.title}</p>
                     <div className={styles['info']}>
                         <p>{price}</p>
-                        <p>{data.location}</p>
+                        <div className={styles['location']}>
+                            <p>{data.location}</p>
+                        </div>
                     </div>
                 </div>
                 <div className={`${styles['hr']} ${isSelected ? styles['clickedHr'] : styles['defalutHr']}`} style={hrStyle}> <hr /> </div>

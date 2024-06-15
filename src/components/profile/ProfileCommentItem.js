@@ -10,7 +10,9 @@ function ProfileCommentItem({ commentData }) {
                     <p>{commentData.title}</p>
                     <div className={styles['info']}>
                         <p>{price}</p>
-                        <p>{commentData.location}</p>
+                        <div className={styles['location']}>
+                            <p>{commentData.location}</p>
+                        </div>
                     </div>
                 </div>
                 <div className={`${styles['hr']} ${styles['defalutHr']}`}> <hr /> </div>
