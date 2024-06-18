@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import Join from './pages/Join';
-import Login from './pages/Login';
 import Main from './pages/Main';
 import Profile from './pages/Profile';
 
@@ -26,7 +25,6 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/signin" element={<Login />} />
                 <Route path="/signup" element={<Join />} />
 
                 <Route path='/login/oauth2/code/google' element={<OAuth2RedirectHandler />} />
