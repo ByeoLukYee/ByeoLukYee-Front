@@ -27,7 +27,7 @@ function ProfileList({ showSelectComponent, userId }) {
             const response = await axios.delete(`${process.env.REACT_APP_HOST}/users/${userId}`);
             if (response.status === 204) {
                 console.log("탈퇴 성공");
-                navigate('/signin');
+                navigate('/');
                 dispatch(logout());
             } else {
                 console.log("탈퇴 실패", response.status);
@@ -40,7 +40,7 @@ function ProfileList({ showSelectComponent, userId }) {
     const Logout = () => {
         console.log("로그아웃 성공");
         dispatch(logout());
-        navigate('/signin');
+        navigate('/');
     }
 
     return (
