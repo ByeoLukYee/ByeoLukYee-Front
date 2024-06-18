@@ -13,8 +13,8 @@
     display: none;
 }
 .buy-grid-item {
-    width: 15vw;
-    height: 11vh;
+    width: 290px;
+    height: 100px;
 }
 
 /* /component/buying-Item/buyingPostItemList.js (삽니다 글쓰기 item 리스트) */
@@ -25,7 +25,6 @@
     justify-content: flex-start;
     align-items: center;
     column-gap: 5%;
-    row-gap: 5%;
     margin-bottom: 5%;
 }
 .buying-grid-item {

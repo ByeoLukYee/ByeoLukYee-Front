@@ -115,7 +115,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 6vh;
+    height: 50px;
     padding: 5%;
     column-gap: 10px;
     border-color: var(--gray-300);
