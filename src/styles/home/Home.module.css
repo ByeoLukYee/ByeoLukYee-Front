@@ -10,14 +10,14 @@
 }
 
 .imgContainer {
-    width: 100%;
-    height: 45vh;
+    width: 200%;
+    height: 432px;
     display: flex;
-    column-gap: 3.8%;
+    column-gap: 21px;
     margin-bottom: 6%;
 }
 .imgDiv {
-    width: 21vw;
+    width: 432px;
     height: 100%;
 }
 .imgDiv > img {

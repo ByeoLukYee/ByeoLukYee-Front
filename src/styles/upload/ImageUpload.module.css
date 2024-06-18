@@ -6,14 +6,14 @@
     display: none;
 }
 .imgContainer {
-    width: calc((13vw + 10px) * 10);
+    width: calc((208px + 10px) * 10);
     display: flex;
     column-gap: 15px;
     padding-top: 4%;
 }
 .imgDiv {
-    width: 13vw;
-    height: 26vh;
+    width: 220px;
+    height: 220px;
     border-style: dotted;
     border-width: 1px;
     display: flex;
