@@ -19,6 +19,8 @@ function SelectSort({ data, onSort }) {
         }
     };
 
+    console.log(data);
+
     // 데이터 정렬하기
     const sortRecent = () => {
         const sortedData = [...data];
@@ -34,7 +36,14 @@ function SelectSort({ data, onSort }) {
 
     const sortPopularity = () => {
         const sortedData = [...data];
-        return sortedData;
+        return sortedData.sort((a, b) => {
+            const popularityComparison = b.views - a.views;
+            if (popularityComparison === 0) {
+                return b.id - a.id;
+            }
+            console.log("인기순으로 정렬");
+            return popularityComparison;
+        });
     }
 
     const sortPriceLow = () => {
