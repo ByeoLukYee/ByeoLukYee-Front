@@ -37,10 +37,8 @@ function RecentlySeenSell({ viewData }) {
 
     const getUniqueRecentPosts = (data) => {
         const postMap = new Map();
-        console.log(data);
         data.forEach(item => {
-            console.log(item.user.id)
-            if (item.user.id !== userId) {
+            if (item.post.id !== userId) {
                 postMap.set(item.post.id, item);
             }
         });
