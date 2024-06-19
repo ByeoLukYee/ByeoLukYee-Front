@@ -22,7 +22,16 @@ function RecentlySeenSell({ viewData }) {
             });
             if (response.status === 200) {
                 console.log("최근 본 팝니다 게시글 조회 성공");
-                setCheckData(response.data);
+                const filteredData = response.data.filter(item => item.post.user.id !== userId);
+                const uniqueItemsMap = new Map();
+                for (let i = filteredData.length - 1; i >= 0; i--) {
+                    const item = filteredData[i];
+                    if (!uniqueItemsMap.has(item.post.id)) {
+                        uniqueItemsMap.set(item.post.id, item);
+                    }
+                }
+                const uniqueItems = Array.from(uniqueItemsMap.values()).slice(0, -1);
+                setCheckData(uniqueItems);
             } else {
                 console.log("최근 본 팝니다 게시글 조회 실패", response.status);
             }
@@ -36,23 +45,26 @@ function RecentlySeenSell({ viewData }) {
     }, []);
 
     const getUniqueRecentPosts = (data) => {
+        console.log(data);
         const postMap = new Map();
         data.forEach(item => {
-            if (item.post.id !== userId) {
-                postMap.set(item.post.id, item);
-            }
+            postMap.set(item.post.id, item);
         });
-        const uniquePosts = Array.from(postMap.values()).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        return uniquePosts.slice(-4).reverse();
+
+        const lastFourPosts = Array.from(postMap.values()).slice(-4).reverse();
+        console.log("중복된 배열 제거 : ", Array.from(postMap.values()));
+        console.log("마지막 4개 추출 : ", lastFourPosts);
+        return lastFourPosts;
     };
 
-    const uniqueRecentPosts = getUniqueRecentPosts(checkData);
+    // const uniqueRecentPosts = getUniqueRecentPosts(checkData);
+    // console.log(uniqueRecentPosts);
 
     return (
         <>
             <div className={styles['sellTextDiv']}> <p>최근 본 팝니다</p> </div>
             <div className={styles['sellContainer']}>
-                <RecentlySeenSellList data={uniqueRecentPosts} viewData={viewData} />
+                <RecentlySeenSellList data={checkData} viewData={viewData} />
             </div>
 
             <div className={styles['sellMoreDiv']}>
