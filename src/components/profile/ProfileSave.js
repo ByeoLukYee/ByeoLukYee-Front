@@ -30,6 +30,8 @@ function ProfileSave() {
         fetchData();
     }, []);
 
+    const filteredSellingPostData = data.filter(post => !post.isDeleted);
+
     return (
         <>
             <div className={styles['container']}>
@@ -37,7 +39,7 @@ function ProfileSave() {
                     <p>내가 찜한 팝니다 글</p>
 
                     <div className={styles['itemList']}>
-                        <ProfileSellingPostItemList sellingPostData={data} />
+                        <ProfileSellingPostItemList sellingPostData={filteredSellingPostData} />
                     </div>
                 </div>
 
