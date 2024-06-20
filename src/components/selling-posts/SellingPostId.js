@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -13,7 +13,6 @@ import SellingPostIdConsumerInfo from './SellingPostIdConsumerInfo';
 import SellingPostIdInfo from './SellingPostIdInfo';
 import CommentList from '../comment/CommentList';
 import CommentInput from './CommentInput';
-import { viewCountContext } from './ViewCountProvider';
 
 function SellingPostId() {
     const navigate = useNavigate();

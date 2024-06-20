@@ -1,17 +1,14 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import '../../styles/common/Styles.css';
 
 import buyStyle from '../../styles/buying-Item/BuyPostItem.module.css';
 
-import { viewCountContext } from "../selling-posts/ViewCountProvider";
-import { GoHeart } from "react-icons/go";
 import { VscEye } from "react-icons/vsc";
  
 function BuyPostItem({ post }) {
     const navigate = useNavigate();
-    const { saveSellingViewCount } = useContext(viewCountContext);
 
     const containerStyle = {
         backgroundColor: post.krStatus === '경매완료' ? '#F6F6F6' : ''
@@ -22,7 +19,6 @@ function BuyPostItem({ post }) {
 
     const movePage = () => {
         navigate(`/selling-posts/${post.id}`);
-        saveSellingViewCount(post.views);
     }
 
     let price = post.price && post.price.toLocaleString()
