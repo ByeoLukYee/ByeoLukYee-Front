@@ -18,7 +18,7 @@ function SellingPosts() {
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
 
-    const postsPerPage = 16;
+    const postsPerPage = 12;
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
