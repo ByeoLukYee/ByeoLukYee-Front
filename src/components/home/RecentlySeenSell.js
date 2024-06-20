@@ -44,27 +44,29 @@ function RecentlySeenSell({ viewData }) {
         UserCheck();
     }, []);
 
-    const getUniqueRecentPosts = (data) => {
-        console.log(data);
-        const postMap = new Map();
-        data.forEach(item => {
-            postMap.set(item.post.id, item);
-        });
+    // const getUniqueRecentPosts = (data) => {
+    //     console.log(data);
+    //     const postMap = new Map();
+    //     data.forEach(item => {
+    //         postMap.set(item.post.id, item);
+    //     });
 
-        const lastFourPosts = Array.from(postMap.values()).slice(-4).reverse();
-        console.log("중복된 배열 제거 : ", Array.from(postMap.values()));
-        console.log("마지막 4개 추출 : ", lastFourPosts);
-        return lastFourPosts;
-    };
+    //     const lastFourPosts = Array.from(postMap.values()).slice(-4).reverse();
+    //     console.log("중복된 배열 제거 : ", Array.from(postMap.values()));
+    //     console.log("마지막 4개 추출 : ", lastFourPosts);
+    //     return lastFourPosts;
+    // };
 
     // const uniqueRecentPosts = getUniqueRecentPosts(checkData);
     // console.log(uniqueRecentPosts);
+
+    const filteredSellingPostData = checkData.filter(post => !post.post.isDeleted);
 
     return (
         <>
             <div className={styles['sellTextDiv']}> <p>최근 본 팝니다</p> </div>
             <div className={styles['sellContainer']}>
-                <RecentlySeenSellList data={checkData} viewData={viewData} />
+                <RecentlySeenSellList data={filteredSellingPostData} viewData={viewData} />
             </div>
 
             <div className={styles['sellMoreDiv']}>

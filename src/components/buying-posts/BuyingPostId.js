@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
@@ -11,14 +11,12 @@ import Footer from '../common/Footer';
 import Header from '../common/Header';
 import BuyingPostIdInfo from './BuyingPostIdInfo';
 import BuyingPostIdProducerInfo from './BuyingPostIdProducerInfo';
-import { viewCountContext } from '../selling-posts/ViewCountProvider';
 
 import { FaRegCircle } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight, FaCircle } from "react-icons/fa6";
 
 function BuyingPostsId() {
     const navigate = useNavigate();
-    const { sellingViewCount } = useContext(viewCountContext);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [data, setData] = useState([]);
     const [wishes, setWishes] = useState([]);
@@ -174,7 +172,7 @@ function BuyingPostsId() {
                                     <div className={styles['moneyDiv']}> <p>{price}</p> <p>원</p> </div>
                                 </div>
                                 <hr />
-                                <BuyingPostIdInfo data={data} sellingViewCount={sellingViewCount} />
+                                <BuyingPostIdInfo data={data} />
                             </div>
                             <div className={styles['buttonDiv']}>
                                 {data.user && data.user.id !== userId && (

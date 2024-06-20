@@ -10,7 +10,7 @@ import RecentlyBuy from "./RecentlyBuy";
 
 function Home() {
   const [sellingViewData, setSellingViewData] = useState([]);
-  const [buyingViewData, setBuyingViewData] = useState([]);
+  // const [buyingViewData, setBuyingViewData] = useState([]);
 
   async function sellingCheck() {
     try {
@@ -30,27 +30,27 @@ function Home() {
     }
   }
 
-  async function buyingCheck() {
-    try {
-        const response = await axios.get(`${process.env.REACT_APP_HOST}/view-histories`, {
-            params: {
-                type: 'buying'
-            }
-        });
-        if (response.status === 200) {
-            console.log("삽니다 조회수 불러오기 성공");
-            setBuyingViewData(response.data);
-        } else {
-            console.log("삽니다 조회수 불러오기 실패", response.status);
-        }
-    } catch(error) {
-        console.error("서버 연결 실패", error);
-    }
-  }
+  // async function buyingCheck() {
+  //   try {
+  //       const response = await axios.get(`${process.env.REACT_APP_HOST}/view-histories`, {
+  //           params: {
+  //               type: 'buying'
+  //           }
+  //       });
+  //       if (response.status === 200) {
+  //           console.log("삽니다 조회수 불러오기 성공");
+  //           setBuyingViewData(response.data);
+  //       } else {
+  //           console.log("삽니다 조회수 불러오기 실패", response.status);
+  //       }
+  //   } catch(error) {
+  //       console.error("서버 연결 실패", error);
+  //   }
+  // }
 
   useEffect(() => {
     sellingCheck();
-    buyingCheck();
+    // buyingCheck();
   }, []);
 
   return (
@@ -67,11 +67,11 @@ function Home() {
       </div>
 
       <div className={styles['recentlySellDiv']}>
-        <RecentlySell viewData={sellingViewData} />
+        <RecentlySell />
       </div>
 
       <div className={styles['recentlyBuyDiv']}>
-        <RecentlyBuy viewData={buyingViewData} />
+        <RecentlyBuy />
       </div>
 
     </div>

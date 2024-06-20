@@ -7,7 +7,7 @@ import styles from '../../styles/home/RecentlyBuy.module.css';
 
 import BuyPostItemList from "../buying-Item/BuyPostItemList";
 
-function RecentlyBuy({ viewData }) {
+function RecentlyBuy() {
     // 최신 삽니다 서버 연결
     const [latestPosts, setLatestPosts] = useState([]);
 
@@ -35,11 +35,13 @@ function RecentlyBuy({ viewData }) {
         fetchLatestPosts();
     }, []);
 
+    const filteredSellingPostData = latestPosts.filter(post => !post.isDeleted);
+    
     return (
         <>
             <div className={styles['buyTextDiv']}> <p>따끈따근 최신 삽니다 글</p> </div>
             <div className={styles['buyContainer']}>
-                <BuyPostItemList data={latestPosts} viewData={viewData} />
+                <BuyPostItemList data={filteredSellingPostData} />
             </div>
 
             <div className={styles['buyMoreDiv']}>
